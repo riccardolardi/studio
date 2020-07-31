@@ -55,6 +55,7 @@ function Intro(props) {
     let newContent = '';
     for (let i = 0; i < chars.length; i++) {
       const style = `transition: opacity 250ms ${500 + Math.random() * 500}ms`;
+      if (i === 0) newContent += `<span class="char divider divider-top divider-right"><span style="${style}"></span></span>`
       let nextChar = `<span class="char"><span style="${style}">${chars[i]}</span></span>`;
       if (chars[i] === ',') nextChar = '<br/>';
       if (chars[i] === ' ') nextChar = ' ';
