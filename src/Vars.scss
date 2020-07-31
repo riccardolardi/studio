@@ -1,0 +1,48 @@
+// colors
+$primaryColor: blue; 
+$secondaryColor: white;
+$accentColor: orange;
+
+// sizes
+$pad: 6.4vmin;
+
+// breakpoints
+$breakMobile: 0 767px;
+$breakTablet: 768px 1024px;
+$breakDesktop: 1025px;
+
+// fonts
+@font-face {
+  font-family: 'Nantes';
+  src: url('./fonts/NantesTrialWeb-Regular.woff2') format('woff2'),
+       url('./fonts/NantesTrialWeb-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cadiz';
+  font-weight: normal;
+  src: url('./fonts/CadizTrialWeb-Book.woff2') format('woff2'),
+       url('./fonts/CadizTrialWeb-Book.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cadiz';
+  font-weight: bold;
+  src: url('./fonts/CadizTrialWeb-Bold.woff2') format('woff2'),
+       url('./fonts/CadizTrialWeb-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cadiz';
+  font-weight: 100;
+  src: url('./fonts/CadizTrialWeb-Light.woff2') format('woff2'),
+       url('./fonts/CadizTrialWeb-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cadiz';
+  font-weight: 100;
+  font-style: italic;
+  src: url('./fonts/CadizTrialWeb-LightItalic.woff2') format('woff2'),
+       url('./fonts/CadizTrialWeb-LightItalic.woff') format('woff');
+}

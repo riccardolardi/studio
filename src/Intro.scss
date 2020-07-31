@@ -1,0 +1,235 @@
+@import './Vars.scss';
+@import 'breakpoint-sass';
+
+.Intro {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  height: 100vh;
+
+  &.mounted {
+
+    .char-anim1 span, 
+    .char-anim2 .inner .char span, 
+    .contact-link, 
+    .emoji {
+      opacity: 1;
+    }
+
+    .contact-link,
+    .emoji {
+      transform: translateX(0px);
+    }
+  }
+
+  &.inside {
+
+    .logo .logo-symbol {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+
+      &:nth-of-type(1n) {
+        transition: all 500ms 0ms;
+      }
+
+      &:nth-of-type(2n) {
+        transition: all 500ms 125ms;
+      }
+
+      &:nth-of-type(3n) {
+        transition: all 500ms 250ms;
+      }
+    }
+  }
+
+  &.past {
+
+    .char-anim1,
+    .logo {
+      position: absolute;
+      top: auto;
+      bottom: 0px;
+    }
+
+    .char-anim2, 
+    .emoji {
+      position: absolute;
+    }
+  }
+
+  .char-anim1 {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: $pad 0 $pad $pad;
+    height: 100vh;
+
+    span {
+      opacity: 0;
+    }
+  }
+
+  .char-anim2 {
+    position: fixed;
+    right: $pad;
+    bottom: $pad;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+    font-size: $pad * 0.8;
+    line-height: $pad;
+
+    .inner {
+      position: relative;
+
+      span {
+        display: inline-block;
+      }
+
+      .char span {
+        opacity: 0;
+      }
+    }
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    width: 50vw;
+    height: 100vh;
+    transform: translateX(-50%);
+
+    @include breakpoint($breakMobile) {
+      height: auto;
+      width: 80%;
+      bottom: 0px;
+    }
+
+    .logo-symbol {
+      width: 20%;
+      opacity: 0;
+      transform: translate3d(0, -10vh, 0);
+
+      svg {
+        fill: $secondaryColor;
+        width: 100%;
+      }
+    }
+  }
+
+  .contact-link {
+    display: block;
+    position: fixed;
+    top: $pad;
+    right: $pad;
+    opacity: 0;
+    transform: translateX(10vw);
+    transition: all 250ms 1s;
+
+    a {
+      display: block;
+      color: $secondaryColor;
+      text-decoration: none;
+      font-size: $pad * 2;
+      animation: 9s linear infinite email;
+    }
+  }
+
+  .emoji {
+    position: fixed;
+    bottom: $pad;
+    left: $pad;
+    font-size: $pad * 2;
+    transition: all 250ms 1.25s;
+    transform: translateX(-10vw);
+    opacity: 0;
+
+    .inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      animation: 3s ease-in-out infinite alternate emoji;
+
+      label {
+        position: relative;
+        color: $primaryColor;
+        background-color: $secondaryColor;
+        padding: 0 $pad / 4;
+        border-radius: $pad / 4;
+        font-size: $pad / 2;
+        line-height: $pad;
+        margin-left: $pad / 4;
+
+        &:before {
+          position: absolute;
+          left: -6px;
+          top: 50%;
+          margin-top: -6px;
+          content: "";
+          width: 0; 
+          height: 0; 
+          border-top: 6px solid transparent;
+          border-bottom: 6px solid transparent;
+          border-right: 6px solid $secondaryColor;
+        }
+      }
+    }
+
+    @include breakpoint($breakMobile) {
+      font-size: $pad * 1.5;
+
+      .inner {
+        flex-direction: column-reverse;
+
+        label {
+          margin-bottom: $pad / 2;
+
+          &:before {
+            left: 50%;
+            top: auto;
+            bottom: -6px;
+            margin: 0 0 -6px -6px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid $secondaryColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes email {
+  from {
+    transform: rotate3d(1,1,1,0deg);
+  }
+  25%{
+    transform: rotate3d(1,1,1,-90deg);
+  }
+  50%{
+    transform: rotate3d(1,1,1,-180deg);
+  }
+  75%{
+    transform: rotate3d(1,1,1,-270deg);
+  }
+  to{
+    transform:rotate3d(1,1,1,-360deg);
+  }
+}
+
+@keyframes emoji {
+  0% {
+    transform: rotate3d(1, 1, 1, -12deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 17deg);
+  }
+}
