@@ -39,10 +39,10 @@ function News(props) {
       <section id="news" className={classes}>
         <h3><span className="inner">News</span></h3>
         <article className="with-image image-right">
-          <span class="char divider divider-top divider-left">
-            <span />
-          </span>
           <div className="text">
+            <span class="char divider divider-top divider-left">
+              <span />
+            </span>
             <h4>Samses aper nullat dit</h4>
             <span className="date">12.03.2020</span>
             <p>Adipisicing jerky pork chop kevin, esse kielbasa spare ribs ball tip pig dolore duis. Spare ribs consequat consectetur eu voluptate mollit et ullamco pork belly exercitation ut.</p>
@@ -52,10 +52,10 @@ function News(props) {
           </div>
         </article>
         <article className="with-image image-right">
-          <span class="char divider divider-top divider-left">
-            <span />
-          </span>
           <div className="text">
+            <span class="char divider divider-top divider-left">
+              <span />
+            </span>
             <h4>Parabet nullat ditet</h4>
             <span className="date">12.03.2020</span>
             <p>Brisket sunt shank burgdoggen drumstick. Ipsum in tongue nisi. Cupidatat magna minim eiusmod kevin. Swine cillum filet mignon, eiusmod minim et ball tip ut elit chicken in voluptate. Ham hock brisket tail, cow aliqua minim bresaola et veniam meatball t-bone sed proident.</p>
@@ -65,10 +65,10 @@ function News(props) {
           </div>
         </article>
         <article className="with-image image-right">
-          <span class="char divider divider-top divider-left">
-            <span />
-          </span>
           <div className="text">
+            <span class="char divider divider-top divider-left">
+              <span />
+            </span>
             <h4>Mensut memem debet dare, gusto</h4>
             <span className="date">12.03.2020</span>
             <p>Bacon ipsum dolor amet ham hock non ground round andouille dolore meatloaf.</p><p>Ut esse picanha turducken aliqua filet mignon tenderloin. Kielbasa nulla pork landjaeger pig. Turducken tempor jowl tail shank dolore.</p>

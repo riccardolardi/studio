@@ -97,7 +97,7 @@
         content: "––";
         position: absolute;
         top: 0px;
-        left: 0px;
+        left: 2px;
       }
     }
 
@@ -110,7 +110,7 @@
     }
 
     &.divider-left {
-      
+      left: 0px;
     }
 
     &.divider-right {
