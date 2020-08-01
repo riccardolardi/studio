@@ -1,0 +1,128 @@
+@import './Vars.scss';
+@import 'breakpoint-sass';
+
+#news {
+	position: relative;
+  visibility: hidden;
+  min-height: 100vh;
+
+  &.inside {
+    visibility: visible;
+
+    h3 .inner {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 250ms 500ms;
+    }
+
+    .overlay {
+      visibility: visible;
+      transition: visibility 0ms 250ms;
+    }
+  }
+
+  h3 {
+  	position: fixed;
+  	top: $pad * 6.4;
+  	left: $pad * 2;
+    z-index: 10;
+
+    .inner {
+      display: block;
+      opacity: 0;
+      transform: translateX(-2vw);
+      transition: opacity 250ms 0ms transform 0ms 250ms;
+    }
+  }
+
+  article {
+    position: relative;
+    top: -33.333vh;
+  	padding: 0 0 0 $pad;
+    margin-bottom: $pad * 2;
+
+    @include breakpoint($breakMobile) {
+      top: -50vh;
+    }
+
+    h4 {
+      font-weight: bold;
+    }
+
+  	&.with-image {
+  		display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      @include breakpoint($breakMobile) {
+        display: block;
+      }
+
+	  	.text {
+	  		width: 42%;
+
+        @include breakpoint($breakMobile) {
+          width: 100%;
+        }
+	  	}
+
+  		&.image-right {
+
+  		}
+  	}
+
+  	.image {
+  		width: 42%;
+
+      @include breakpoint($breakMobile) {
+        margin-top: $pad / 2;
+        width: 100%;
+      }
+
+  		img {
+  			display: block;
+  			max-width: 100%;
+        max-height: 50vh;
+  		}
+  	}
+  }
+
+  .overlay {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 0px;
+    left: $pad;
+    right: $pad;
+    height: 100vh;
+    padding: 0 0 0 $pad;
+    pointer-events: none;
+    visibility: hidden;
+
+    @include breakpoint($breakMobile) {
+      display: block;
+    }
+
+    span {
+      display: block;
+      width: 42%;
+      height: 100%;
+
+      &:first-child {
+        background-image: linear-gradient(to top, rgba(255,255,255,0) 65%, rgba(255,255,255,0.75) 100%);
+        background-size: cover;
+
+        @include breakpoint($breakMobile) {
+          width: 100%;
+        }
+      }
+
+      &:last-child {
+
+        @include breakpoint($breakMobile) {
+          display: none;
+        }
+      }
+    }
+  }
+}

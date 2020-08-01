@@ -1,20 +1,14 @@
 @import './Vars.scss';
 @import 'breakpoint-sass';
 
-.Intro {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+#header {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  background-color: $primaryColor;
-  color: $secondaryColor;
   height: 100vh;
   transition: all 250ms;
 
-  &.mounted {
+  &.is-ready {
 
     .char-anim1 span, 
     .char-anim2 h2 .char span, 
@@ -49,24 +43,16 @@
     }
   }
 
-  &.past {
+  &.above {
 
-    .char-anim1,
-    .logo {
-      position: absolute;
-      top: auto;
-      bottom: 0px;
-    }
-
-    .char-anim2, 
-    .emoji {
-      position: absolute;
+    .char-anim2 {
+      opacity: 0;
+      transform: translateY(-2vh);
+      pointer-events: none;
     }
   }
 
-  &.has-scrolled {
-    background-color: $secondaryColor;
-    color: $primaryColor;
+  &.is-scrolled {
 
     .emoji {
       transition: opacity 250ms 0ms, transform 250ms 250ms;
@@ -75,15 +61,24 @@
     }
 
     .contact-link {
-      transition: opacity 250ms 250ms, transform 250ms 250ms;
+      transition: all 250ms 250ms;
       transform: translateX(10vw);
       opacity: 0;
+    }
+
+    .logo {
+      visibility: hidden;
+      transition: visibility 0ms 250ms;
     }
 
     .logo-symbol {
       opacity: 0;
       transform: translate3d(0, -10vh, 0) !important;
-      transition: opacity 0ms 250ms, transform 0ms 250ms !important;
+      transition: all 0ms 250ms !important;
+    }
+
+    .char-anim2 {
+      pointer-events: none;
     }
   } 
 
@@ -93,6 +88,7 @@
     top: 0px;
     padding: $pad 0 $pad $pad;
     height: 100vh;
+    z-index: 10;
 
     span {
       opacity: 0;
@@ -107,6 +103,7 @@
     flex-direction: column;
     justify-content: flex-end;
     text-align: right;
+    z-index: 10;
 
     h2 {
       position: relative;
@@ -130,6 +127,7 @@
     left: 50%;
     width: 50vw;
     height: 100vh;
+    visibility: visible;
     transform: translateX(-50%);
 
     @include breakpoint($breakMobile) {
@@ -150,78 +148,43 @@
     }
   }
 
-  .contact-link {
-    display: block;
-    position: fixed;
-    top: $pad;
-    right: $pad;
-    opacity: 0;
-    transform: translateX(10vw);
-    transition: all 250ms 1s;
-
-    a {
-      display: block;
-      color: $secondaryColor;
-      text-decoration: none;
-      font-size: $pad * 2;
-      animation: 9s linear infinite email;
-    }
-  }
-
   .emoji {
     position: fixed;
-    bottom: $pad * -0.1;
+    bottom: -4px;
     left: $pad;
-    font-size: $pad * 1.5;
-    transition: all 250ms 1.25s;
-    transform: translateY(2vh);
+    text-align: center;
     opacity: 0;
+    transform: translateY(2vh);
+    transition: all 250ms 1.25s;
 
-    .inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    span {
+      display: block;
+      font-size: $pad * 1.4;
+      line-height: $pad * 1.4;
+    }
 
-      label {
-        position: relative;
-        color: $primaryColor;
-        background-color: $secondaryColor;
-        padding: 0 $pad / 4;
-        border-radius: $pad / 4;
-        font-size: $pad / 2;
-        line-height: $pad;
-        margin-bottom: $pad / 2;
+    label {
+      display: block;
+      position: relative;
+      color: $primaryColor;
+      background-color: $secondaryColor;
+      padding: 0 $pad / 4;
+      border-radius: $pad / 4;
+      font-size: $pad * 0.4;
+      line-height: $pad;
+      height: $pad;
+      margin-bottom: $pad / 4;
 
-        &:before {
-          position: absolute;
-          left: 50%;
-          bottom: 0px;
-          margin: 0 0 -6px -6px;
-          border-left: 6px solid transparent;
-          border-right: 6px solid transparent;
-          border-top: 6px solid $secondaryColor;
-          content: "";
-        }
+      &:before {
+        position: absolute;
+        left: 50%;
+        bottom: 0px;
+        margin: 0 0 -6px -6px;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $secondaryColor;
+        content: "";
       }
     }
-  }
-}
-
-@keyframes email {
-  from {
-    transform: rotate3d(1,1,1,0deg);
-  }
-  25%{
-    transform: rotate3d(1,1,1,-90deg);
-  }
-  50%{
-    transform: rotate3d(1,1,1,-180deg);
-  }
-  75%{
-    transform: rotate3d(1,1,1,-270deg);
-  }
-  to{
-    transform:rotate3d(1,1,1,-360deg);
   }
 }

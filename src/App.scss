@@ -1,12 +1,22 @@
 @import './Vars.scss';
 @import 'breakpoint-sass';
 
-.App {
+#app {
   font-family: 'Buenos Aires', sans-serif;
   font-weight: normal;
   font-style: normal;
+  font-size: $pad * 0.6;
+  font-feature-settings: "ss01", "dlig";
+  letter-spacing: calc(-0.015em + 0.14px);
+  line-height: calc(1.14em + 0.1vw);
   background-color: $secondaryColor;
   color: $primaryColor;
+  transition: background-color 250ms 0ms;
+
+  &.is-intro {
+    background-color: $primaryColor;
+    color: $secondaryColor;
+  }
 
   h1 {
     font-size: $pad;
@@ -23,12 +33,32 @@
     line-height: calc(1.14em + 0.1vw);
   }
 
+  h3 {
+    font-size: $pad * 1.4;
+    font-feature-settings: "ss01", "dlig";
+    letter-spacing: calc(-0.015em + 0.14px);
+    line-height: calc(1.14em + 0.1vw);
+  }
+
+  p {
+    margin-bottom: $pad / 4;
+    hyphens: auto;
+
+    &:first-of-type {
+      margin-top: $pad / 4;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   .logo-symbol {
 
     svg {
       display: block;
       height: auto;
-      fill: $primaryColor;
+      fill: $secondaryColor;
     }
 
     &.box svg {
@@ -49,21 +79,30 @@
   }
 
   .divider {
+    display: block;
     position: absolute;
     width: $pad;
-    height: $pad * 0.06;
+    height: $pad;
+    line-height: $pad;
 
     span {
+      display: block;
       position: absolute;
       top: 0px;
       left: 0px;
-      background-color: white;
       width: 100%;
       height: 100%;
+
+      &:before {
+        content: "––";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
     }
 
     &.divider-top {
-      top: -$pad * 0.5;
+      top: -$pad;
     }
 
     &.divider-bottom {
@@ -71,11 +110,22 @@
     }
 
     &.divider-left {
-      left: 0px;
+      
     }
 
     &.divider-right {
+      left: auto;
       right: 0px;
+
+      span {
+        left: auto;
+        right: 0px;
+
+        &:before {
+          left: auto;
+          right: 2px;
+        }        
+      }
     }
   }
 }

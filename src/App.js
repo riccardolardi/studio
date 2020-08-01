@@ -1,11 +1,14 @@
 import React from 'react';
 import Classnames from 'classnames';
-import Intro from './Intro.js';
-import Home from './Home.js';
+import { useWindowScroll } from 'react-use';
+import Nav from './Nav.js';
+import Header from './Header.js';
+import News from './News.js';
 import './App.scss';
 
 function App() {
   const [visibleBlocks, setVisibleBlocks] = React.useState([null, null, null, null, null]);
+  const { y: scrollY } = useWindowScroll();
 
   function setBlockVisibility(index, visibility) {
     const val = visibility === 'inside' ? true : false;
@@ -15,21 +18,25 @@ function App() {
   }
 
   const classes = Classnames({
-    'App': true
+    'is-intro': visibleBlocks[0] && !visibleBlocks[1],
+    'is-news': visibleBlocks[0] && visibleBlocks[1]
   });
 
   return (
-    <div className={classes}>
-      <Intro 
+    <main id="app" className={classes}>
+      <Header 
         index={0} 
+        scrollY={scrollY} 
         setBlockVisibility={setBlockVisibility} 
-        pastIntro={visibleBlocks[1]} 
+        isScrolled={visibleBlocks[1]}
       />
-      {<Home 
+      <News 
         index={1} 
+        scrollY={scrollY} 
         setBlockVisibility={setBlockVisibility} 
-      />}
-    </div>
+      />
+      <Nav show={!(visibleBlocks[0] && !visibleBlocks[1])} />
+    </main>
   );
 }
 

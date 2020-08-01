@@ -1,16 +1,15 @@
 import React from 'react';
 import Classnames from 'classnames';
-import { useWindowScroll } from 'react-use';
 import { Waypoint } from 'react-waypoint';
 import tweens from 'tween-functions';
-import './Intro.scss';
+import './Header.scss';
 
 const charAnims = [];
-let introHeight;
+let headerHeight;
 
-function Intro(props) {
+function Header(props) {
   const [wpState, setWpState] = React.useState(null);
-  const [mounted, setMounted] = React.useState(false);
+  const [isReady, setIsReady] = React.useState(null);
   const charAnimRef1 = React.useRef(null);
   const charAnimRef2 = React.useRef(null);
   const symbolsRef = [
@@ -18,13 +17,12 @@ function Intro(props) {
     React.useRef(null), 
     React.useRef(null)
   ];
-  const { y: scrollY } = useWindowScroll();
 
   React.useLayoutEffect(() => {
-    introHeight = document.querySelector('.Intro').offsetHeight;
+    headerHeight = document.querySelector('header').offsetHeight;  
     prepareCharAnim1();
     prepareCharAnim2();
-    setTimeout(() => setMounted(true), 1000);
+    setTimeout(() => setIsReady(true), 1000);
   }, []);
 
   React.useEffect(() => {
@@ -33,11 +31,11 @@ function Intro(props) {
 
   React.useEffect(() => {
     charAnimRef2.current.querySelectorAll('.char').forEach((el, index) => {
-      const tweenedVal = tweens.easeInCubic(scrollY, 0, introHeight, 300);
+      const tweenedVal = tweens.easeInQuad(props.scrollY, 0, headerHeight, 300);
       const newVal = tweenedVal * charAnims[index][2];
-      const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal));
+      const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal / 2));
       const newRotateStyle = charAnims[index][1].replace('$', newVal / 10);
-      const newOpacityStyle = 1 - Math.abs(newVal / 500);
+      const newOpacityStyle = 1 - Math.abs(newVal / 1000);
       el.style.transform = newTranslateStyle;
       if (newVal) {
         el.querySelector('span').style.opacity = newOpacityStyle;
@@ -45,7 +43,7 @@ function Intro(props) {
       }
       el.querySelector('span').style.transform = newRotateStyle;
     });
-  }, [scrollY]);
+  }, [props.scrollY]);
 
   function prepareCharAnim1() {
     const chars = charAnimRef1.current.textContent;
@@ -80,18 +78,15 @@ function Intro(props) {
   }
 
   const classes = Classnames({
-    'Intro': true,
     'block': true,
-    'waypoint': true,
-    'past': props.pastIntro,
-    'mounted': mounted,
-    'has-scrolled': scrollY > 0
+    'is-ready': isReady,
+    'is-scrolled': props.isScrolled
   }, wpState);
 
   return (
     <Waypoint topOffset={1} bottomOffset={1} 
       onPositionChange={event => setWpState(event.currentPosition)}>
-      <div className={classes}>
+      <header id="header" className={classes}>
         <h1 className="char-anim1" ref={charAnimRef1}>Studio Riccardo Lardi</h1>
         <div className="char-anim2">
           <h2 ref={charAnimRef2}>
@@ -117,18 +112,13 @@ function Intro(props) {
             </svg>
           </span>
         </div>
-        <span className="contact-link">
-          <a href="mailto:hello@riccardolardi.com">@</a>
-        </span>
         <div className="emoji coming-soon">
-          <div className="inner">
-            <label>Coming soon</label>
-            <span>🙋‍♂️</span>
-          </div>
+          <label>Scroll down</label>
+          <span>🙋‍♂️</span>
         </div>
-      </div>
+      </header>
     </Waypoint>
   );
 }
 
-export default Intro;
+export default Header;
