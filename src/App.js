@@ -25,10 +25,10 @@ function App() {
         setBlockVisibility={setBlockVisibility} 
         pastIntro={visibleBlocks[1]} 
       />
-      {/*<Home 
+      {<Home 
         index={1} 
         setBlockVisibility={setBlockVisibility} 
-      />*/}
+      />}
     </div>
   );
 }

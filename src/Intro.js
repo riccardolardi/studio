@@ -13,6 +13,11 @@ function Intro(props) {
   const [mounted, setMounted] = React.useState(false);
   const charAnimRef1 = React.useRef(null);
   const charAnimRef2 = React.useRef(null);
+  const symbolsRef = [
+    React.useRef(null), 
+    React.useRef(null), 
+    React.useRef(null)
+  ];
   const { y: scrollY } = useWindowScroll();
 
   React.useLayoutEffect(() => {
@@ -28,7 +33,8 @@ function Intro(props) {
 
   React.useEffect(() => {
     charAnimRef2.current.querySelectorAll('.char').forEach((el, index) => {
-      const newVal = tweens.easeInCubic(scrollY, 0, introHeight, 300) * charAnims[index][2];
+      const tweenedVal = tweens.easeInCubic(scrollY, 0, introHeight, 300);
+      const newVal = tweenedVal * charAnims[index][2];
       const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal));
       const newRotateStyle = charAnims[index][1].replace('$', newVal / 10);
       const newOpacityStyle = 1 - Math.abs(newVal / 500);
@@ -95,17 +101,17 @@ function Intro(props) {
           </h2>
         </div>
         <div className="logo">
-          <span className="logo-symbol box">
+          <span className="logo-symbol box" ref={symbolsRef[0]}>
             <svg height="256" width="256" viewBox="0 0 256 256">
               <rect width="256" height="256" />
             </svg>
           </span>
-          <span className="logo-symbol triangle">
+          <span className="logo-symbol triangle" ref={symbolsRef[1]}>
             <svg height="256" width="256" viewBox="0 0 256 256">
               <polygon points="128,0 0,256 256,256" />
             </svg>
           </span>
-          <span className="logo-symbol circle">
+          <span className="logo-symbol circle" ref={symbolsRef[2]}>
             <svg height="256" width="256" viewBox="0 0 256 256">
               <circle cx="128" cy="128" r="128" />
             </svg>
@@ -116,8 +122,8 @@ function Intro(props) {
         </span>
         <div className="emoji coming-soon">
           <div className="inner">
-            <span>🙋‍♂️</span>
             <label>Coming soon</label>
+            <span>🙋‍♂️</span>
           </div>
         </div>
       </div>
