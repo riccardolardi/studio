@@ -1,19 +1,22 @@
 import React from 'react';
 import Classnames from 'classnames';
-import {useWindowScroll} from 'react-use';
+import { useWindowScroll } from 'react-use';
 import { Waypoint } from 'react-waypoint';
+import tweens from 'tween-functions';
 import './Intro.scss';
 
 const charAnims = [];
+let introHeight;
 
 function Intro(props) {
   const [wpState, setWpState] = React.useState(null);
   const [mounted, setMounted] = React.useState(false);
   const charAnimRef1 = React.useRef(null);
   const charAnimRef2 = React.useRef(null);
-  const { y } = useWindowScroll();
+  const { y: scrollY } = useWindowScroll();
 
   React.useLayoutEffect(() => {
+    introHeight = document.querySelector('.Intro').offsetHeight;
     prepareCharAnim1();
     prepareCharAnim2();
     setTimeout(() => setMounted(true), 1000);
@@ -25,7 +28,7 @@ function Intro(props) {
 
   React.useEffect(() => {
     charAnimRef2.current.querySelectorAll('.char').forEach((el, index) => {
-      const newVal = charAnims[index][2] + y * charAnims[index][3];
+      const newVal = tweens.easeInCubic(scrollY, 0, introHeight, 300) * charAnims[index][2];
       const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal));
       const newRotateStyle = charAnims[index][1].replace('$', newVal / 10);
       const newOpacityStyle = 1 - Math.abs(newVal / 500);
@@ -36,7 +39,7 @@ function Intro(props) {
       }
       el.querySelector('span').style.transform = newRotateStyle;
     });
-  }, [y]);
+  }, [scrollY]);
 
   function prepareCharAnim1() {
     const chars = charAnimRef1.current.textContent;
@@ -55,7 +58,8 @@ function Intro(props) {
     let newContent = '';
     for (let i = 0; i < chars.length; i++) {
       const style = `transition: opacity 250ms ${500 + Math.random() * 500}ms`;
-      if (i === 0) newContent += `<span class="char divider divider-top divider-right"><span style="${style}"></span></span>`
+      if (i === 0) newContent += `<span class="char divider divider-top divider-right">
+        <span style="${style}"></span></span>`;
       let nextChar = `<span class="char"><span style="${style}">${chars[i]}</span></span>`;
       if (chars[i] === ',') nextChar = '<br/>';
       if (chars[i] === ' ') nextChar = ' ';
@@ -63,7 +67,6 @@ function Intro(props) {
       charAnims.push([
         'translateY($px)', 
         'rotate3d(1,1,1,$deg)', 
-        0, 
         Math.random() - 0.5
       ]);
     }
@@ -75,7 +78,8 @@ function Intro(props) {
     'block': true,
     'waypoint': true,
     'past': props.pastIntro,
-    'mounted': mounted
+    'mounted': mounted,
+    'has-scrolled': scrollY > 0
   }, wpState);
 
   return (
@@ -84,11 +88,11 @@ function Intro(props) {
       <div className={classes}>
         <h1 className="char-anim1" ref={charAnimRef1}>Studio Riccardo Lardi</h1>
         <div className="char-anim2">
-          <div className="inner" ref={charAnimRef2}>
+          <h2 ref={charAnimRef2}>
             Interaction Design,
             Media Architecture,
-            Software 'n Web
-          </div>
+            Software & Web
+          </h2>
         </div>
         <div className="logo">
           <span className="logo-symbol box">

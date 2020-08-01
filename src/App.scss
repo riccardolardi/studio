@@ -2,20 +2,25 @@
 @import 'breakpoint-sass';
 
 .App {
-  font-family: 'Cadiz', sans-serif;
-  font-size: $pad;
-  line-height: $pad * 1.2;
+  font-family: 'Buenos Aires', sans-serif;
   font-weight: normal;
   font-style: normal;
   background-color: $secondaryColor;
   color: $primaryColor;
 
   h1 {
+    font-size: $pad;
     font-weight: bold;
+    font-feature-settings: "ss01", "dlig";
+    letter-spacing: calc(-0.015em + 0.14px);
+    line-height: calc(1.14em + 0.1vw);
   }
 
   h2 {
-
+    font-size: $pad * 0.8;
+    font-feature-settings: "ss01", "dlig";
+    letter-spacing: calc(-0.015em + 0.14px);
+    line-height: calc(1.14em + 0.1vw);
   }
 
   .logo-symbol {
@@ -45,7 +50,7 @@
 
   .divider {
     position: absolute;
-    width: $pad * 1.5;
+    width: $pad;
     height: $pad * 0.06;
 
     span {

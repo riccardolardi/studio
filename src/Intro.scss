@@ -12,7 +12,7 @@
   &.mounted {
 
     .char-anim1 span, 
-    .char-anim2 .inner .char span, 
+    .char-anim2 h2 .char span, 
     .contact-link, 
     .emoji {
       opacity: 1;
@@ -59,6 +59,15 @@
     }
   }
 
+  &.has-scrolled {
+
+    .emoji {
+      transition: all 250ms 250ms;
+      transform: translateX(-10vw);
+      opacity: 0;
+    }
+  } 
+
   .char-anim1 {
     position: fixed;
     left: 0px;
@@ -79,9 +88,8 @@
     flex-direction: column;
     justify-content: flex-end;
     text-align: right;
-    font-weight: 100;
 
-    .inner {
+    h2 {
       position: relative;
 
       span {
@@ -145,7 +153,7 @@
     position: fixed;
     bottom: $pad;
     left: $pad;
-    font-size: $pad * 2;
+    font-size: $pad * 1.5;
     transition: all 250ms 1.25s;
     transform: translateX(-10vw);
     opacity: 0;

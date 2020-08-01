@@ -48,7 +48,16 @@ table {
 }
 * {
   box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
 }
-body, html {
-	overflow: hidden; // temp
+body {
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+  font-kerning: normal;
+  font-variant-ligatures: none;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden; // temp
 }
