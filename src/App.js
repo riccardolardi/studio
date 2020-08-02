@@ -4,6 +4,7 @@ import { useWindowScroll, createBreakpoint } from 'react-use';
 import Nav from './Nav.js';
 import Header from './Header.js';
 import News from './News.js';
+import Profile from './Profile.js';
 import './App.scss';
 
 const useBreakpoint = createBreakpoint({
@@ -37,12 +38,20 @@ function App() {
     <main id="app" className={classes}>
       <Header 
         index={0} 
+        active={activeBlockIndex === 0} 
         scrollY={scrollY} 
         setBlockVisibility={setBlockVisibility} 
         isScrolled={visibleBlocks[1]}
       />
       <News 
         index={1} 
+        active={activeBlockIndex === 1} 
+        scrollY={scrollY} 
+        setBlockVisibility={setBlockVisibility} 
+      />
+      <Profile 
+        index={2} 
+        active={activeBlockIndex === 2} 
         scrollY={scrollY} 
         setBlockVisibility={setBlockVisibility} 
       />

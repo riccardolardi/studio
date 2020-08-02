@@ -80,6 +80,7 @@ function Header(props) {
 
   const classes = Classnames({
     'block': true,
+    'is-active': props.active, 
     'is-ready': isReady,
     'is-scrolled': props.isScrolled
   }, wpState);

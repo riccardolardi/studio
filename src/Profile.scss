@@ -1,8 +1,9 @@
 @import './Vars.scss';
 @import 'breakpoint-sass';
 
-#news {
+#profile {
 	position: relative;
+  visibility: hidden;
   min-height: 100vh;
 
   &.is-active {
@@ -11,16 +12,16 @@
       opacity: 1;
       transform: translateX(0px);
       pointer-events: auto;
-      transition: all 250ms 500ms;
+      transition: all 250ms 250ms;
     }
   }
 
   &.inside {
+    visibility: visible;
 
     h3 .inner {
       opacity: 1;
       transform: translateX(0);
-      transition: all 250ms 250ms;
     }
 
     .overlay {
@@ -44,14 +45,14 @@
       display: block;
       opacity: 0;
       transform: translateX(-2vw);
-      transition: opacity 250ms 0ms, transform 0ms 250ms;
+      transition: all 250ms 0ms;
     }
   }
 
   article {
     position: relative;
     top: -50vh;
-  	padding: 0 0 0 $pad;
+    padding: 0 0 0 $pad;
     margin-bottom: $pad * 2;
     opacity: 0;
     transform: translateX(-2vw);
@@ -66,44 +67,6 @@
     h4 {
       font-weight: bold;
     }
-
-  	&.with-image {
-  		display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-
-      @include breakpoint($breakMobile) {
-        display: block;
-      }
-
-	  	.text {
-        position: relative;
-	  		width: 42%;
-        margin: $pad 0;
-
-        @include breakpoint($breakMobile) {
-          width: 100%;
-        }
-	  	}
-
-  		&.image-right {
-
-  		}
-  	}
-
-  	.image {
-  		width: 42%;
-
-      @include breakpoint($breakMobile) {
-        width: 100%;
-      }
-
-  		img {
-  			display: block;
-  			max-width: 100%;
-        max-height: 50vh;
-  		}
-  	}
   }
 
   .overlay {

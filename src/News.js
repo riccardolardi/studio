@@ -20,16 +20,20 @@ function News(props) {
   }, [wpState]);
 
   React.useEffect(() => {
+    if (!props.active) return;
     const newsElScrollPercent = (1 - ((newsEl.offsetTop + newsEl.offsetHeight) - 
       (props.scrollY + window.innerHeight)) / newsEl.offsetHeight);
+    if (newsElScrollPercent > 1 || wpState !== 'inside') return;
     const newTransform = `translateY(-${newsElScrollPercent * 100}px)`;
-    const newOpacity = tweens.easeInOutQuad(newsElScrollPercent, 1, 0, 1);
+    const newOpacity = tweens.easeInQuart(newsElScrollPercent, 1, 0, 1);
     document.querySelector('#news h3').style.transform = newTransform;
     document.querySelector('#news h3').style.opacity = newOpacity;
   }, [props.scrollY]);
 
   const classes = Classnames({
     'block': true,
+    'is-active': props.active, 
+    'is-inactive': !props.active, 
     'is-ready': isReady
   }, wpState);
 

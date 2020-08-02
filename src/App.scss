@@ -98,6 +98,13 @@
     @include breakpoint($breakMobile) {
       padding: 0 $pad * 4;
     }
+
+    &.is-inactive {
+
+      h3 {
+        opacity: 0 !important;
+      }
+    }
   }
 
   .divider {
