@@ -18,6 +18,10 @@ function Nav(props) {
 	}, []);
 
 	React.useEffect(() => {
+		setActive(activeIndex);
+	}, [isOpen]);
+
+	React.useEffect(() => {
 		if (props.activeBlockIndex === 0) {
 			setIsOpen(false);
 			return;
@@ -29,12 +33,22 @@ function Nav(props) {
 		if (event) event.preventDefault();
 		const activeLiEl = liEls[index];
 		if (!activeLiEl) return;
-		const liElXs = [activeLiEl.offsetLeft, activeLiEl.parentElement.parentElement.offsetWidth - activeLiEl.offsetLeft - activeLiEl.offsetWidth];
-		setTimeout(() => activeBarEl.style.left = `${liElXs[0]}px`, 
-			index < activeIndex ? 0 : 250);
-		setTimeout(() => activeBarEl.style.right = `${liElXs[1]}px`, 
-			index < activeIndex ? 250 : 0);
+		const liElDimsH = 
+			[activeLiEl.offsetLeft, activeLiEl.parentElement.parentElement.offsetWidth - 
+				activeLiEl.offsetLeft - activeLiEl.offsetWidth];
+		const liElDimsV = 
+			[activeLiEl.offsetTop, activeLiEl.parentElement.parentElement.offsetHeight - 
+				activeLiEl.offsetTop - activeLiEl.offsetHeight];
+		if (props.isMobile) {
+			setTimeout(() => activeBarEl.style.top = `${liElDimsV[0]}px`, index < activeIndex ? 0 : 250);
+			setTimeout(() => activeBarEl.style.bottom = `${liElDimsV[1]}px`, index < activeIndex ? 250 : 0);
+		} else {
+			setTimeout(() => activeBarEl.style.left = `${liElDimsH[0]}px`, index < activeIndex ? 0 : 250);
+			setTimeout(() => activeBarEl.style.right = `${liElDimsH[1]}px`, index < activeIndex ? 250 : 0);
+		}
 		setActiveIndex(index);
+		liEls.forEach(el => el.classList.remove('active'));
+		liEls[index].classList.add('active');
 	}
 
   const classes = Classnames({
@@ -45,6 +59,7 @@ function Nav(props) {
   return (
     <nav id="nav" className={classes}>
 	    <div className="menu-drawer">
+	    	<span className="site-title">Studio<br/>Riccardo<br/>Lardi</span>
 	    	<ul>
 		    	<li className="menu-item"><a href="news" onClick={setActive.bind(this, 0)}>News</a></li>
 		    	<li className="menu-item"><a href="profile" onClick={setActive.bind(this, 1)}>Profil</a></li>

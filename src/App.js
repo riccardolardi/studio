@@ -1,15 +1,21 @@
 import React from 'react';
 import Classnames from 'classnames';
-import { useWindowScroll } from 'react-use';
+import { useWindowScroll, createBreakpoint } from 'react-use';
 import Nav from './Nav.js';
 import Header from './Header.js';
 import News from './News.js';
 import './App.scss';
 
+const useBreakpoint = createBreakpoint({
+  mobile: 767, 
+  other: 768
+});
+
 function App() {
   const [activeBlockIndex, setActiveBlockIndex] = React.useState(null);
   const [visibleBlocks, setVisibleBlocks] = React.useState([null, null, null, null, null]);
   const { y: scrollY } = useWindowScroll();
+  const isMobile = useBreakpoint() === 'mobile';
 
   React.useEffect(() => {
     setActiveBlockIndex(visibleBlocks.lastIndexOf(true));
@@ -43,6 +49,7 @@ function App() {
       <Nav 
         show={!(visibleBlocks[0] && !visibleBlocks[1])} 
         activeBlockIndex={activeBlockIndex} 
+        isMobile={isMobile} 
       />
     </main>
   );

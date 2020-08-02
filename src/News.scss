@@ -29,7 +29,7 @@
 
     @include breakpoint($breakMobile) {
       top: 20vh;
-      left: $pad;
+      left: $pad * 3;
     }
 
     .inner {

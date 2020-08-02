@@ -14,8 +14,8 @@
   transition: background-color 250ms 0ms;
 
   @include breakpoint($breakMobile) {
-    font-size: $pad * 1.2;
-    line-height: calc(1.14em + 0.4vw);
+    font-size: $pad * 1.4;
+    line-height: calc(1.14em + 1.2vw);
   }
 
   &.is-intro {
@@ -23,7 +23,7 @@
     color: $secondaryColor;
   }
 
-  h1 {
+  h1, .site-title {
     font-size: $pad;
     font-weight: bold;
     font-feature-settings: "ss01", "dlig";
@@ -31,7 +31,7 @@
     line-height: calc(1.14em + 0.1vw);
 
     @include breakpoint($breakMobile) {
-      font-size: $pad * 1.6;
+      font-size: $pad * 1.8;
       line-height: calc(1.14em + 0.4vw);
     }
   }
@@ -43,7 +43,7 @@
     line-height: calc(1.14em + 0.1vw);
 
     @include breakpoint($breakMobile) {
-      font-size: $pad * 1.6;
+      font-size: $pad * 1.8;
     }
   }
 
@@ -54,7 +54,7 @@
     line-height: calc(1.14em + 0.1vw);
 
     @include breakpoint($breakMobile) {
-      font-size: $pad * 2;
+      font-size: $pad * 2.4;
     }
   }
 
@@ -94,6 +94,10 @@
 
   .block {
     padding: $pad;
+
+    @include breakpoint($breakMobile) {
+      padding: 0 $pad * 4;
+    }
   }
 
   .divider {
@@ -102,6 +106,7 @@
     width: $pad;
     height: $pad;
     line-height: $pad;
+    font-weight: bold;
 
     span {
       display: block;

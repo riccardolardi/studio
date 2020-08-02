@@ -82,9 +82,14 @@
 
   .char-anim1 {
     position: fixed;
-    left: $pad;
     top: $pad;
+    left: $pad;
     z-index: 10;
+
+    @include breakpoint($breakMobile) {
+      top: $pad * 2;
+      left: $pad * 2;
+    }
 
     span {
       opacity: 0;
@@ -100,6 +105,11 @@
     justify-content: flex-end;
     text-align: right;
     z-index: 10;
+
+    @include breakpoint($breakMobile) {
+      bottom: $pad * 2;
+      right: $pad * 2;
+    }
 
     h2 {
       position: relative;
