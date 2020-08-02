@@ -3,13 +3,13 @@ $primaryColor: blue;
 $secondaryColor: white;
 $accentColor: orange;
 
-// sizes
-$pad: 6.4vmin;
-
 // breakpoints
 $breakMobile: 0 767px;
 $breakTablet: 768px 1024px;
 $breakDesktop: 1025px;
+
+// sizes
+$pad: 2.8vw;
 
 // fonts
 @font-face {

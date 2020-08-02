@@ -8,10 +8,15 @@
   font-size: $pad * 0.6;
   font-feature-settings: "ss01", "dlig";
   letter-spacing: calc(-0.015em + 0.14px);
-  line-height: calc(1.14em + 0.1vw);
+  line-height: calc(1.14em + 0.4vw);
   background-color: $secondaryColor;
   color: $primaryColor;
   transition: background-color 250ms 0ms;
+
+  @include breakpoint($breakMobile) {
+    font-size: $pad * 1.2;
+    line-height: calc(1.14em + 0.4vw);
+  }
 
   &.is-intro {
     background-color: $primaryColor;
@@ -24,6 +29,11 @@
     font-feature-settings: "ss01", "dlig";
     letter-spacing: calc(-0.015em + 0.14px);
     line-height: calc(1.14em + 0.1vw);
+
+    @include breakpoint($breakMobile) {
+      font-size: $pad * 1.6;
+      line-height: calc(1.14em + 0.4vw);
+    }
   }
 
   h2 {
@@ -31,6 +41,10 @@
     font-feature-settings: "ss01", "dlig";
     letter-spacing: calc(-0.015em + 0.14px);
     line-height: calc(1.14em + 0.1vw);
+
+    @include breakpoint($breakMobile) {
+      font-size: $pad * 1.6;
+    }
   }
 
   h3 {
@@ -38,6 +52,10 @@
     font-feature-settings: "ss01", "dlig";
     letter-spacing: calc(-0.015em + 0.14px);
     line-height: calc(1.14em + 0.1vw);
+
+    @include breakpoint($breakMobile) {
+      font-size: $pad * 2;
+    }
   }
 
   p {
@@ -103,6 +121,10 @@
 
     &.divider-top {
       top: -$pad;
+
+      @include breakpoint($breakMobile) {
+        top: -$pad * 2;
+      }
     }
 
     &.divider-bottom {

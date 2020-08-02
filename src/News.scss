@@ -12,7 +12,7 @@
     h3 .inner {
       opacity: 1;
       transform: translateX(0);
-      transition: all 250ms 500ms;
+      transition: all 250ms 250ms;
     }
 
     .overlay {
@@ -23,9 +23,14 @@
 
   h3 {
   	position: fixed;
-  	top: $pad * 6.4;
+  	top: 33.333vh;
   	left: $pad * 2;
     z-index: 10;
+
+    @include breakpoint($breakMobile) {
+      top: 20vh;
+      left: $pad;
+    }
 
     .inner {
       display: block;
@@ -37,12 +42,13 @@
 
   article {
     position: relative;
-    top: -33.333vh;
+    top: -50vh;
   	padding: 0 0 0 $pad;
     margin-bottom: $pad * 2;
 
     @include breakpoint($breakMobile) {
-      top: -50vh;
+      padding: 0;
+      margin-bottom: $pad * 4;
     }
 
     h4 {
@@ -61,6 +67,7 @@
 	  	.text {
         position: relative;
 	  		width: 42%;
+        margin: $pad 0;
 
         @include breakpoint($breakMobile) {
           width: 100%;
@@ -76,7 +83,6 @@
   		width: 42%;
 
       @include breakpoint($breakMobile) {
-        margin-top: $pad / 2;
         width: 100%;
       }
 
@@ -102,6 +108,7 @@
 
     @include breakpoint($breakMobile) {
       display: block;
+      padding: 0;
     }
 
     span {

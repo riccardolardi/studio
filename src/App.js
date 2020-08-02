@@ -7,8 +7,13 @@ import News from './News.js';
 import './App.scss';
 
 function App() {
+  const [activeBlockIndex, setActiveBlockIndex] = React.useState(null);
   const [visibleBlocks, setVisibleBlocks] = React.useState([null, null, null, null, null]);
   const { y: scrollY } = useWindowScroll();
+
+  React.useEffect(() => {
+    setActiveBlockIndex(visibleBlocks.lastIndexOf(true));
+  }, [visibleBlocks]);
 
   function setBlockVisibility(index, visibility) {
     const val = visibility === 'inside' ? true : false;
@@ -35,7 +40,10 @@ function App() {
         scrollY={scrollY} 
         setBlockVisibility={setBlockVisibility} 
       />
-      <Nav show={!(visibleBlocks[0] && !visibleBlocks[1])} />
+      <Nav 
+        show={!(visibleBlocks[0] && !visibleBlocks[1])} 
+        activeBlockIndex={activeBlockIndex} 
+      />
     </main>
   );
 }

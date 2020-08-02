@@ -5,13 +5,11 @@ import tweens from 'tween-functions';
 import './Header.scss';
 
 const charAnims = [];
-let headerHeight;
+let headerHeight, chars1, chars2;
 
 function Header(props) {
   const [wpState, setWpState] = React.useState(null);
   const [isReady, setIsReady] = React.useState(null);
-  const charAnimRef1 = React.useRef(null);
-  const charAnimRef2 = React.useRef(null);
   const symbolsRef = [
     React.useRef(null), 
     React.useRef(null), 
@@ -30,7 +28,7 @@ function Header(props) {
   }, [wpState]);
 
   React.useEffect(() => {
-    charAnimRef2.current.querySelectorAll('.char').forEach((el, index) => {
+    chars2.forEach((el, index) => {
       const tweenedVal = tweens.easeInQuad(props.scrollY, 0, headerHeight, 300);
       const newVal = tweenedVal * charAnims[index][2];
       const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal / 2));
@@ -46,19 +44,21 @@ function Header(props) {
   }, [props.scrollY]);
 
   function prepareCharAnim1() {
-    const chars = charAnimRef1.current.textContent;
+    const charAnimEl = document.querySelector('#header .char-anim1');
+    chars1 = charAnimEl.textContent;
     let newContent = '';
-    for (let i = 0; i < chars.length; i++) {
+    for (let i = 0; i < chars1.length; i++) {
       const style = `transition: opacity 250ms ${Math.random() * 500}ms`;
-      let nextChar = `<span class="char" style="${style}">${chars[i]}</span>`;
-      if (chars[i] === ' ') nextChar = '<br/>';
+      let nextChar = `<span class="char" style="${style}">${chars1[i]}</span>`;
+      if (chars1[i] === ' ') nextChar = '<br/>';
       newContent += nextChar;
     }
-    charAnimRef1.current.innerHTML = newContent;
+    charAnimEl.innerHTML = newContent;
   }
 
   function prepareCharAnim2() {
-    const chars = charAnimRef2.current.textContent;
+    const charAnimEl = document.querySelector('header .char-anim2 h2');
+    const chars = charAnimEl.textContent;
     let newContent = '';
     for (let i = 0; i < chars.length; i++) {
       const style = `transition: opacity 250ms ${500 + Math.random() * 500}ms`;
@@ -74,7 +74,8 @@ function Header(props) {
         Math.random() - 0.5
       ]);
     }
-    charAnimRef2.current.innerHTML = newContent;
+    charAnimEl.innerHTML = newContent;
+    chars2 = document.querySelectorAll('header .char-anim2 .char');
   }
 
   const classes = Classnames({
@@ -87,9 +88,9 @@ function Header(props) {
     <Waypoint topOffset={1} bottomOffset={1} 
       onPositionChange={event => setWpState(event.currentPosition)}>
       <header id="header" className={classes}>
-        <h1 className="char-anim1" ref={charAnimRef1}>Studio Riccardo Lardi</h1>
+        <h1 className="char-anim1">Studio Riccardo Lardi</h1>
         <div className="char-anim2">
-          <h2 ref={charAnimRef2}>
+          <h2>
             Interaction Design,
             Media Architecture,
             Software & Web

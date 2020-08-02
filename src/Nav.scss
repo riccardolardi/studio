@@ -6,28 +6,109 @@
   position: fixed;
   top: $pad * 1.35;
   right: $pad;
-  justify-content: center;
-  align-items: center;
-  width: $pad * 2;
-  height: $pad * 2;
-  background-color: $primaryColor;
-  color: $secondaryColor;
-  opacity: 0;
-  transform: translateX(2vw) rotateZ(45deg);
-  transition: all 250ms 0ms;
-  cursor: pointer;
   pointer-events: none;
   z-index: 10;
 
+  @include breakpoint($breakMobile) {
+    width: $pad * 4;
+    height: $pad * 4;
+  }
+
   &.show {
-  	opacity: 1;
-  	transform: translateX(0) rotateZ(0deg);
-  	transition: all 250ms 250ms;
+    pointer-events: auto;
+
+    .menu-button {
+      opacity: 1;
+      transform: translateX(0) rotateZ(0deg);
+      transition: all 250ms 250ms;
+    }
+  }
+
+  &.is-open {
+
+    svg {
+      transform: rotateZ(-90deg);
+
+      &.menu-icon {
+        opacity: 0;
+      }
+
+      &.close-icon {
+        opacity: 1;
+      }
+    }
+
+    .menu-drawer {
+      visibility: visible;
+      width: auto;
+      height: auto;
+      transform: translateX(0px);
+      opacity: 1;
+      transition: width 0ms, height 0ms, opacity 250ms, transform 250ms;
+
+      .active-bar {
+        transition: all 250ms;
+      }
+    }
+  }
+
+  .menu-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $pad * 2;
+    height: $pad * 2;
+    background-color: $primaryColor;
+    color: $secondaryColor;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(2vw) rotateZ(45deg);
+    transition: all 250ms 0ms;
+  }
+
+  .menu-drawer {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: $primaryColor;
+    margin-right: $pad / 12;
+    padding: 0 $pad / 2;
+    opacity: 0;
+    transform: translateX(2vw);
+
+    .active-bar {
+      position: absolute;
+      bottom: $pad * 0.5;
+      background-color: $secondaryColor;
+      height: $pad * 0.06;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      margin-right: $pad / 2;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    a {
+      display: block;
+      color: $secondaryColor;
+      text-decoration: none;
+    }
   }
 
   svg {
     pointer-events: none;
     fill: white;
+    transform: rotateZ(0);
+    transition: all 250ms;
 
     &.menu-icon {
       position: absolute;

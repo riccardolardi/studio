@@ -23,7 +23,7 @@ function News(props) {
     const newsElScrollPercent = (1 - ((newsEl.offsetTop + newsEl.offsetHeight) - 
       (props.scrollY + window.innerHeight)) / newsEl.offsetHeight);
     const newTransform = `translateY(-${newsElScrollPercent * 100}px)`;
-    const newOpacity = tweens.easeInSine(newsElScrollPercent, 1, 0, 1);
+    const newOpacity = tweens.easeInOutQuad(newsElScrollPercent, 1, 0, 1);
     document.querySelector('#news h3').style.transform = newTransform;
     document.querySelector('#news h3').style.opacity = newOpacity;
   }, [props.scrollY]);
@@ -40,7 +40,7 @@ function News(props) {
         <h3><span className="inner">News</span></h3>
         <article className="with-image image-right">
           <div className="text">
-            <span class="char divider divider-top divider-left">
+            <span className="char divider divider-top divider-left">
               <span />
             </span>
             <h4>Samses aper nullat dit</h4>
@@ -53,7 +53,7 @@ function News(props) {
         </article>
         <article className="with-image image-right">
           <div className="text">
-            <span class="char divider divider-top divider-left">
+            <span className="char divider divider-top divider-left">
               <span />
             </span>
             <h4>Parabet nullat ditet</h4>
@@ -66,7 +66,7 @@ function News(props) {
         </article>
         <article className="with-image image-right">
           <div className="text">
-            <span class="char divider divider-top divider-left">
+            <span className="char divider divider-top divider-left">
               <span />
             </span>
             <h4>Mensut memem debet dare, gusto</h4>
