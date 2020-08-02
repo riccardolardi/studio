@@ -19,17 +19,6 @@ function Profile(props) {
     props.setBlockVisibility(props.index, wpState);
   }, [wpState]);
 
-  React.useEffect(() => {
-    if (!props.active) return;
-    const profileElScrollPercent = (1 - ((profileEl.offsetTop + profileEl.offsetHeight) - 
-      (props.scrollY + window.innerHeight)) / profileEl.offsetHeight);
-    if (profileElScrollPercent > 1 || wpState !== 'inside') return;
-    const newTransform = `translateY(-${profileElScrollPercent * 100}px)`;
-    const newOpacity = tweens.easeInQuart(profileElScrollPercent, 1, 0, 1);
-    document.querySelector('#profile h3').style.transform = newTransform;
-    document.querySelector('#profile h3').style.opacity = newOpacity;
-  }, [props.scrollY]);
-
   const classes = Classnames({
     'block': true,
     'is-active': props.active, 
@@ -41,7 +30,7 @@ function Profile(props) {
     <Waypoint topOffset={1} bottomOffset={1} 
       onPositionChange={event => setWpState(event.currentPosition)}>
       <section id="profile" className={classes}>
-        <h3><span className="inner">Profil</span></h3>
+        <h3>Profil</h3>
         <article>
           Hello!
         </article>

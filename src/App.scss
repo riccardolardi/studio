@@ -11,7 +11,7 @@
   line-height: calc(1.14em + 0.4vw);
   background-color: $secondaryColor;
   color: $primaryColor;
-  transition: background-color 250ms 0ms;
+  transition: color 125ms 0ms, background-color 125ms 0ms;
 
   @include breakpoint($breakMobile) {
     font-size: $pad * 1.4;
@@ -97,13 +97,6 @@
 
     @include breakpoint($breakMobile) {
       padding: 0 $pad * 4;
-    }
-
-    &.is-inactive {
-
-      h3 {
-        opacity: 0 !important;
-      }
     }
   }
 

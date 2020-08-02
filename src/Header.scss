@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   height: 100vh;
-  transition: all 250ms;
+  transition: all 125ms;
 
   &.is-ready {
 
@@ -38,7 +38,7 @@
       }
 
       &:nth-of-type(3n) {
-        transition: all 500ms 250ms;
+        transition: all 500ms 125ms;
       }
     }
   }
@@ -53,26 +53,20 @@
   &.is-scrolled {
 
     .emoji {
-      transition: opacity 250ms 0ms, transform 250ms 250ms;
+      transition: opacity 125ms 0ms, transform 125ms 125ms;
       transform: translateY(2vh);
-      opacity: 0;
-    }
-
-    .contact-link {
-      transition: all 250ms 250ms;
-      transform: translateX(10vw);
       opacity: 0;
     }
 
     .logo {
       visibility: hidden;
-      transition: visibility 0ms 250ms;
+      transition: visibility 0ms 125ms;
     }
 
     .logo-symbol {
       opacity: 0;
       transform: translate3d(0, -10vh, 0) !important;
-      transition: all 0ms 250ms !important;
+      transition: all 0ms 125ms !important;
     }
 
     .char-anim2 {
@@ -161,7 +155,7 @@
     text-align: center;
     opacity: 0;
     transform: translateY(2vh);
-    transition: all 250ms 1.25s;
+    transition: all 125ms 1.25s;
 
     span {
       display: block;

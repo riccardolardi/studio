@@ -48,7 +48,7 @@ function Header(props) {
     chars1 = charAnimEl.textContent;
     let newContent = '';
     for (let i = 0; i < chars1.length; i++) {
-      const style = `transition: opacity 250ms ${Math.random() * 500}ms`;
+      const style = `transition: opacity 125ms ${Math.random() * 500}ms`;
       let nextChar = `<span class="char" style="${style}">${chars1[i]}</span>`;
       if (chars1[i] === ' ') nextChar = '<br/>';
       newContent += nextChar;
@@ -61,7 +61,7 @@ function Header(props) {
     const chars = charAnimEl.textContent;
     let newContent = '';
     for (let i = 0; i < chars.length; i++) {
-      const style = `transition: opacity 250ms ${500 + Math.random() * 500}ms`;
+      const style = `transition: opacity 125ms ${500 + Math.random() * 500}ms`;
       if (i === 0) newContent += `<span class="char divider divider-top divider-right">
         <span style="${style}"></span></span>`;
       let nextChar = `<span class="char"><span style="${style}">${chars[i]}</span></span>`;

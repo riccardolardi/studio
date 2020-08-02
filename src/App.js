@@ -46,13 +46,11 @@ function App() {
       <News 
         index={1} 
         active={activeBlockIndex === 1} 
-        scrollY={scrollY} 
         setBlockVisibility={setBlockVisibility} 
       />
       <Profile 
         index={2} 
         active={activeBlockIndex === 2} 
-        scrollY={scrollY} 
         setBlockVisibility={setBlockVisibility} 
       />
       <Nav 

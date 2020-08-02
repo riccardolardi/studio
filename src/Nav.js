@@ -40,11 +40,11 @@ function Nav(props) {
 			[activeLiEl.offsetTop, activeLiEl.parentElement.parentElement.offsetHeight - 
 				activeLiEl.offsetTop - activeLiEl.offsetHeight];
 		if (props.isMobile) {
-			setTimeout(() => activeBarEl.style.top = `${liElDimsV[0]}px`, index < activeIndex ? 0 : 250);
-			setTimeout(() => activeBarEl.style.bottom = `${liElDimsV[1]}px`, index < activeIndex ? 250 : 0);
+			setTimeout(() => activeBarEl.style.top = `${liElDimsV[0]}px`, index < activeIndex ? 0 : 125);
+			setTimeout(() => activeBarEl.style.bottom = `${liElDimsV[1]}px`, index < activeIndex ? 125 : 0);
 		} else {
-			setTimeout(() => activeBarEl.style.left = `${liElDimsH[0]}px`, index < activeIndex ? 0 : 250);
-			setTimeout(() => activeBarEl.style.right = `${liElDimsH[1]}px`, index < activeIndex ? 250 : 0);
+			setTimeout(() => activeBarEl.style.left = `${liElDimsH[0]}px`, index < activeIndex ? 0 : 125);
+			setTimeout(() => activeBarEl.style.right = `${liElDimsH[1]}px`, index < activeIndex ? 125 : 0);
 		}
 		setActiveIndex(index);
 		liEls.forEach(el => el.classList.remove('active'));
