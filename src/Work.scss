@@ -3,4 +3,61 @@
 
 #work {
 
+	article {
+
+		@include breakpoint($breakMobile) {
+			margin-bottom: $pad * 6 !important;
+		}
+
+		p {
+
+			@include breakpoint($breakMobile) {
+				margin-bottom: 0;
+			}
+		}
+
+		&.image-left {
+			
+			.text {
+				text-align: left;
+			}
+		}
+
+		&.image-right {
+			
+			.text {
+				text-align: right;
+
+				@include breakpoint($breakMobile) {
+					text-align: left;
+				}
+			}
+
+			.divider {
+
+				@include breakpoint($breakMobile) {
+					right: auto;
+					left: $pad * 0.6;
+				}
+			}
+		}
+
+		.image {
+
+			@include breakpoint($breakMobile) {
+				display: block !important;
+			}
+
+			img {
+
+				@include breakpoint($breakMobile) {
+					max-height: 50vh !important;
+				}
+			}
+		}
+
+		.text {
+			text-align: right;
+		}
+	}
 }

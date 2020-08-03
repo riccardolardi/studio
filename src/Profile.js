@@ -29,7 +29,7 @@ function Profile(props) {
             <li>UX/UI, Interaction Design</li>
             <li>Entwickeln von Apps und Websites</li>
             <li>Prototyping & Testing</li>
-            <li>Agile/iterative Prozesse</li>
+            <li>Agile & iterative Prozesse</li>
           </ul>
         </div>
         <div className="image">
@@ -42,7 +42,7 @@ function Profile(props) {
             <span />
           </span>
           <p>Mit über 10 Jahren Erfahrung im Bereich digitaler Medien und deren Einbettung im physischen Raum bietet das Studio sämtliche Services zur erfolgreichen Umsetzung Ihrer Produktidee.</p>
-          <p>Von der rohen Idee über deren Verfestigung und den ersten Prototypen bis hin zum fertigen Produkt und dessen Inbetriebnahme begleitet das Studio den Kunden und inkludiert diesen partizipativ am Designprozess.</p>
+          <p>Gemeinsam mit dem Kunden begleitet und verwirklicht das Studio Projekte, von der rohen Idee über deren Verfestigung, über den ersten Prototypen bis hin zum fertigen Produkt und dessen Inbetriebnahme. Der Kunde wird partizipativ am Designprozess inkludiert und ist Projektpartner auf Augenhöhe.</p>
           <p>Das Studio bewegt sich in einem dichten Netzwerk von Spezialisten in relevanten Bereichen und greift wo nötig auf diese zu.</p>
         </div>
       </article>

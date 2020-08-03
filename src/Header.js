@@ -4,14 +4,14 @@ import tweens from 'tween-functions';
 import './Header.scss';
 
 const charAnims = [];
-let headerHeight, chars1, chars2;
+let chars1, chars2, appHeight;
 
 function Header(props) {
   const [isReady, setIsReady] = React.useState(null);
   const { index, scrollY, visibility, activeSubTitle, active: isActive } = props;
 
   React.useLayoutEffect(() => {
-    headerHeight = document.querySelector('header').offsetHeight;  
+    appHeight = document.querySelector('#app').offsetHeight;
     prepareCharAnim1();
     prepareCharAnim2();
     setTimeout(() => setIsReady(true), 1000);
@@ -19,7 +19,7 @@ function Header(props) {
 
   React.useEffect(() => {
     chars2.forEach((el, index) => {
-      const tweenedVal = tweens.easeInQuad(scrollY, 0, headerHeight, 300);
+      const tweenedVal = tweens.easeOutSine(scrollY, 0, appHeight, appHeight * 1.2);
       const newVal = tweenedVal * charAnims[index][2];
       const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal / 2));
       const newRotateStyle = charAnims[index][1].replace('$', newVal / 10);

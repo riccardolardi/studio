@@ -56,6 +56,7 @@
 
   h3 {
     font-size: $pad * 1.4;
+    font-weight: bold;
     font-feature-settings: "ss01", "dlig";
     letter-spacing: calc(-0.015em + 0.14px);
     line-height: calc(1.14em + 0.1vw);
@@ -69,12 +70,24 @@
     margin-bottom: $pad / 4;
     hyphens: auto;
 
+    @include breakpoint($breakMobile) {
+      margin-bottom: $pad;
+    }
+
     &:first-of-type {
       margin-top: $pad / 4;
     }
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &+h4 {
+      margin-top: $pad / 2;
+
+      @include breakpoint($breakMobile) {
+        margin-top: $pad * 1.2;
+      }
     }
   }
 
@@ -131,12 +144,14 @@
 
     h3 {
       position: relative;
-      padding: 0 0 0 $pad;
+      top: -10vh;
+      padding: 0 0 0 $pad * 4;
       opacity: 0;
       transition: opacity 125ms;
 
       @include breakpoint($breakMobile) {
-        left: -$pad;
+        top: 0;
+        left: 0;
         padding: 0;
         margin: 0 0 $pad * 4;
       }
@@ -150,6 +165,10 @@
       pointer-events: none;
       transition: opacity 125ms;
 
+      &:last-child {
+        margin-bottom: 0;
+      }
+
       @include breakpoint($breakMobile) {
         padding: 0;
         margin-bottom: $pad * 4;
@@ -160,11 +179,14 @@
       }
 
       ul {
-        margin-top: $pad / 4;
+        margin: $pad / 2 0 0 $pad;
+
+        @include breakpoint($breakMobile) {
+          margin: $pad 0 $pad * 2 $pad * 2.8;
+        }
 
         li {
           list-style-type: square;
-          text-indent: $pad;
         }
       }
 
@@ -234,8 +256,13 @@
     position: relative;
     width: $pad;
     height: $pad;
+    font-size: $pad * 0.7;
     line-height: $pad;
     font-weight: bold;
+
+    @include breakpoint($breakMobile) {
+      font-size: $pad * 1.2;
+    }
 
     span {
       display: block;
@@ -250,6 +277,10 @@
         position: absolute;
         top: 0px;
         left: 2px;
+
+        @include breakpoint($breakMobile) {
+          left: 0px;
+        }
       }
     }
 
@@ -269,10 +300,6 @@
 
       &.divider-top {
         top: -$pad;
-
-        @include breakpoint($breakMobile) {
-          top: -$pad * 2;
-        }
       }
 
       span {

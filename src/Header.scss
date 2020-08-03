@@ -59,8 +59,8 @@
     left: $pad;
     height: $pad * 2;
     padding: $pad / 2;
-    background-color: $primaryColor;
-    color: $secondaryColor;
+    background-color: transparent;
+    color: $primaryColor;
     opacity: 1;
     transform: translateX(0);
     transition: all 125ms 1.25s;
@@ -70,6 +70,8 @@
       padding: $pad;
       top: $pad * 2;
       height: $pad * 6;
+      background-color: $primaryColor;
+      color: $secondaryColor;
     }
 
     .site-title {
@@ -84,11 +86,13 @@
     }
 
     .site-subtitle {
+      display: none;
       position: relative;
       margin-left: $pad;
       line-height: $pad * 1.4;
 
       @include breakpoint($breakMobile) {
+        display: block;
         line-height: $pad * 3.5;
         margin-left: $pad * 2;
       }

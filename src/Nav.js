@@ -16,6 +16,11 @@ function Nav(props) {
 		liEls = document.querySelectorAll('nav li');
 	}, []);
 
+	React.useLayoutEffect(() => {
+		if (show && !isMobile) setTimeout(() => setIsMenuOpen(true), 500);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [show]);
+
 	React.useEffect(() => {
 		setActive(activeIndex);
 		if (isMobile) {

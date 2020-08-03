@@ -6,6 +6,7 @@ import Header from './Header.js';
 import News from './News.js';
 import Profile from './Profile.js';
 import Work from './Work.js';
+import Contact from './Contact.js';
 import './App.scss';
 
 const useBreakpoint = createBreakpoint({
@@ -68,6 +69,10 @@ function App() {
       <Work 
         index={3} 
         active={activeBlockIndex === 3} 
+      />
+      <Contact 
+        index={4} 
+        active={activeBlockIndex === 4} 
       />
       <Nav 
         show={activeBlockIndex > 0} 

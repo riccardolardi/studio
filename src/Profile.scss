@@ -1,6 +1,21 @@
 @import './Vars.scss';
 @import 'breakpoint-sass';
 
-#profile {
+.block#profile {
 
+	article {
+
+		&.with-image {
+
+			.image {
+
+				img {
+
+					@include breakpoint($breakMobile) {
+						max-height: none !important;
+					}
+				}
+			}
+		}
+	}
 }
