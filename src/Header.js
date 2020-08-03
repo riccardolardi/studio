@@ -8,9 +8,7 @@ let headerHeight, chars1, chars2;
 
 function Header(props) {
   const [isReady, setIsReady] = React.useState(null);
-  const { index, scrollY, visibility, active: isActive } = props;
-
-  console.log(visibility)
+  const { index, scrollY, visibility, activeSubTitle, active: isActive } = props;
 
   React.useLayoutEffect(() => {
     headerHeight = document.querySelector('header').offsetHeight;  
@@ -87,12 +85,12 @@ function Header(props) {
         </h2>
       </div>
       <div className="logo">
-        <span className={`logo-symbol box ${visibility < 1 ? 'gone' : ''}`}>
+        <span className={`logo-symbol box ${visibility < 0.8 ? 'gone' : ''}`}>
           <svg height="256" width="256" viewBox="0 0 256 256">
             <rect width="256" height="256" />
           </svg>
         </span>
-        <span className={`logo-symbol triangle ${visibility < 0.8 ? 'gone' : ''}`}>
+        <span className={`logo-symbol triangle ${visibility < 0.7 ? 'gone' : ''}`}>
           <svg height="256" width="256" viewBox="0 0 256 256">
             <polygon points="128,0 0,256 256,256" />
           </svg>
@@ -102,6 +100,10 @@ function Header(props) {
             <circle cx="128" cy="128" r="128" />
           </svg>
         </span>
+      </div>
+      <div className="secondary-header">
+        <span className="site-title">Studio<br/>Riccardo<br/>Lardi</span>
+        <span className="site-subtitle">{activeSubTitle}</span>
       </div>
       <div className="emoji coming-soon">
         <label>Scroll down</label>

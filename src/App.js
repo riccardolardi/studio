@@ -12,27 +12,32 @@ const useBreakpoint = createBreakpoint({
   other: 768
 });
 
-let intersectionObserver;
+let intersectionObserver, blockEls;
 
 function App() {
   const [activeBlockIndex, setActiveBlockIndex] = React.useState(null);
+  const [activeSubTitle, setActiveSubTitle] = React.useState(null);
   const [introVisibility, setIntroVisibility] = React.useState(null);
   const { y: scrollY } = useWindowScroll();
   const isMobile = useBreakpoint() === 'mobile';
 
   React.useLayoutEffect(() => {
+    blockEls = Array.from(document.querySelectorAll('.block'));
     intersectionObserver = new IntersectionObserver(events => {
       events.forEach(event => {
-        if (event.intersectionRect.height >= event.rootBounds.height / 2) {
+        if (event.intersectionRect.height >= event.rootBounds.height * 0.5) {
           const index = parseInt(event.target.getAttribute('data-index'));
+          const newSubtitle = blockEls[index].querySelector('h3')?.textContent;
           if (index === 0) setIntroVisibility(event.intersectionRect.height / event.rootBounds.height);
+          if (newSubtitle) setActiveSubTitle(newSubtitle);
           setActiveBlockIndex(index);
         }
       });
     }, {
+      rootMargin: '0px',
       threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
     });
-    Array.from(document.querySelectorAll('.block')).forEach(el => 
+    blockEls.forEach(el => 
       intersectionObserver.observe(el));
   }, []);
 
@@ -45,6 +50,7 @@ function App() {
       <Header 
         index={0} 
         active={activeBlockIndex === 0} 
+        activeSubTitle={activeSubTitle} 
         visibility={introVisibility} 
         scrollY={scrollY} 
       />

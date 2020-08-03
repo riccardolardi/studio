@@ -99,18 +99,6 @@
       transform: scale(0.9);
     }
 
-    .site-title {
-      display: none;
-
-      @include breakpoint($breakMobile) {
-        display: block;
-        position: absolute;
-        top: $pad * 2;
-        left: $pad * 2;
-        color: $secondaryColor;
-      }
-    }
-
     .active-bar {
       position: absolute;
       bottom: $pad * 0.5;

@@ -60,7 +60,6 @@ function Nav(props) {
   return (
     <nav id="nav" className={classes}>
 	    <div className="menu-drawer">
-	    	<span className="site-title">Studio<br/>Riccardo<br/>Lardi</span>
 	    	<ul>
 		    	<li className="menu-item"><a href="news" onClick={setActive.bind(this, 0)}>News</a></li>
 		    	<li className="menu-item"><a href="profile" onClick={setActive.bind(this, 1)}>Profil</a></li>
