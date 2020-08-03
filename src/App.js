@@ -18,6 +18,7 @@ function App() {
   const [activeBlockIndex, setActiveBlockIndex] = React.useState(null);
   const [activeSubTitle, setActiveSubTitle] = React.useState(null);
   const [introVisibility, setIntroVisibility] = React.useState(null);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(null);
   const { y: scrollY } = useWindowScroll();
   const isMobile = useBreakpoint() === 'mobile';
 
@@ -42,7 +43,8 @@ function App() {
   }, []);
 
   const classes = Classnames({
-    'is-intro': activeBlockIndex === 0
+    'is-intro': activeBlockIndex === 0,
+    'menu-open': isMenuOpen
   });
 
   return (
@@ -64,6 +66,8 @@ function App() {
       />
       <Nav 
         show={activeBlockIndex > 0} 
+        setIsMenuOpen={setIsMenuOpen} 
+        isMenuOpen={isMenuOpen} 
         activeBlockIndex={activeBlockIndex} 
         isMobile={isMobile} 
       />

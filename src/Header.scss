@@ -28,7 +28,7 @@
 
     .emoji {
       opacity: 1;
-      transform: translateX(0px);
+      transform: translateY(0);
       transition: all 125ms 1.25s;
     }
 
@@ -194,13 +194,19 @@
   }
 
   .emoji {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
-    bottom: -4px;
+    bottom: -2px;
     left: $pad;
-    text-align: center;
     opacity: 0;
     transform: translateY(2vh);
     transition: all 125ms 0ms;
+
+    @include breakpoint($breakMobile) {
+      bottom: 0px;
+    }
 
     span {
       display: block;
@@ -208,8 +214,8 @@
       line-height: $pad * 1.4;
 
       @include breakpoint($breakMobile) {
-        font-size: $pad * 3;
-        line-height: $pad * 3;
+        font-size: $pad * 5;
+        line-height: $pad * 5;
       }
     }
 
@@ -227,9 +233,9 @@
 
       @include breakpoint($breakMobile) {
         font-size: $pad;
-        line-height: $pad * 1.6;
-        height: $pad * 1.6;
-        margin-bottom: $pad;
+        line-height: $pad * 2.4;
+        height: $pad * 2.4;
+        margin: 0 0 $pad $pad / 2;
       }
 
       &:before {

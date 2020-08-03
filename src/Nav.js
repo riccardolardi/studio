@@ -1,4 +1,5 @@
 import React from 'react';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import Classnames from 'classnames';
@@ -7,9 +8,8 @@ import './Nav.scss';
 let activeBarEl, liEls;
 
 function Nav(props) {
-	const [isOpen, setIsOpen] = React.useState(false);
 	const [activeIndex, setActiveIndex] = React.useState(null);
-	const { activeBlockIndex, isMobile, show } = props;
+	const { activeBlockIndex, isMobile, show, isMenuOpen, setIsMenuOpen } = props;
 
 	React.useLayoutEffect(() => {
 		activeBarEl = document.querySelector('nav .active-bar');
@@ -18,12 +18,19 @@ function Nav(props) {
 
 	React.useEffect(() => {
 		setActive(activeIndex);
+		if (isMobile) {
+			if (isMenuOpen) {
+				disableBodyScroll(document.querySelector('nav'));
+			} else {
+				enableBodyScroll(document.querySelector('nav'));
+			}
+		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [isOpen]);
+	}, [isMenuOpen]);
 
 	React.useEffect(() => {
 		if (activeBlockIndex === 0) {
-			setIsOpen(false);
+			setIsMenuOpen(false);
 			return;
 		}
 		setActive(activeBlockIndex - 1);
@@ -54,7 +61,7 @@ function Nav(props) {
 
   const classes = Classnames({
     'show': show,
-    'is-open': isOpen
+    'is-open': isMenuOpen
   });
 
   return (
@@ -68,7 +75,7 @@ function Nav(props) {
 		    </ul>
 		    <span className="active-bar" />
 	    </div>
-    	<div className="menu-button" onClick={() => setIsOpen(!isOpen)}>
+    	<div className="menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
 	      <MenuIcon className="menu-icon" fontSize='large' />
 	      <CloseIcon className="close-icon" fontSize='large' />
 	    </div>

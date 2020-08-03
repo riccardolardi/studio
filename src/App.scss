@@ -23,6 +23,13 @@
     color: $secondaryColor;
   }
 
+  &.menu-open {
+
+    @include breakpoint($breakMobile) {
+      background-color: $primaryColor;
+    }
+  }
+
   h1 {
     font-size: $pad;
     font-weight: bold;
