@@ -12,26 +12,32 @@ const useBreakpoint = createBreakpoint({
   other: 768
 });
 
+let intersectionObserver;
+
 function App() {
   const [activeBlockIndex, setActiveBlockIndex] = React.useState(null);
-  const [visibleBlocks, setVisibleBlocks] = React.useState([null, null, null, null, null]);
+  const [introVisibility, setIntroVisibility] = React.useState(null);
   const { y: scrollY } = useWindowScroll();
   const isMobile = useBreakpoint() === 'mobile';
 
-  React.useEffect(() => {
-    setActiveBlockIndex(visibleBlocks.lastIndexOf(true));
-  }, [visibleBlocks]);
-
-  function setBlockVisibility(index, visibility) {
-    const val = visibility === 'inside' ? true : false;
-    const newVisibleBlocks = 
-      visibleBlocks.map((el, elIndex) => elIndex === index ? val : el);
-    setVisibleBlocks(newVisibleBlocks);
-  }
+  React.useLayoutEffect(() => {
+    intersectionObserver = new IntersectionObserver(events => {
+      events.forEach(event => {
+        if (event.intersectionRect.height >= event.rootBounds.height / 2) {
+          const index = parseInt(event.target.getAttribute('data-index'));
+          if (index === 0) setIntroVisibility(event.intersectionRect.height / event.rootBounds.height);
+          setActiveBlockIndex(index);
+        }
+      });
+    }, {
+      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+    });
+    Array.from(document.querySelectorAll('.block')).forEach(el => 
+      intersectionObserver.observe(el));
+  }, []);
 
   const classes = Classnames({
-    'is-intro': visibleBlocks[0] && !visibleBlocks[1],
-    'is-news': visibleBlocks[0] && visibleBlocks[1]
+    'is-intro': activeBlockIndex === 0
   });
 
   return (
@@ -39,22 +45,19 @@ function App() {
       <Header 
         index={0} 
         active={activeBlockIndex === 0} 
+        visibility={introVisibility} 
         scrollY={scrollY} 
-        setBlockVisibility={setBlockVisibility} 
-        isScrolled={visibleBlocks[1]}
       />
       <News 
         index={1} 
         active={activeBlockIndex === 1} 
-        setBlockVisibility={setBlockVisibility} 
       />
       <Profile 
         index={2} 
         active={activeBlockIndex === 2} 
-        setBlockVisibility={setBlockVisibility} 
       />
       <Nav 
-        show={!(visibleBlocks[0] && !visibleBlocks[1])} 
+        show={activeBlockIndex > 0} 
         activeBlockIndex={activeBlockIndex} 
         isMobile={isMobile} 
       />

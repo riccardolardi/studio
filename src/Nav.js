@@ -2,8 +2,6 @@ import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import Classnames from 'classnames';
-import Header from './Header.js';
-import News from './News.js';
 import './Nav.scss';
 
 let activeBarEl, liEls;
@@ -11,6 +9,7 @@ let activeBarEl, liEls;
 function Nav(props) {
 	const [isOpen, setIsOpen] = React.useState(false);
 	const [activeIndex, setActiveIndex] = React.useState(null);
+	const { activeBlockIndex, isMobile, show } = props;
 
 	React.useLayoutEffect(() => {
 		activeBarEl = document.querySelector('nav .active-bar');
@@ -19,15 +18,17 @@ function Nav(props) {
 
 	React.useEffect(() => {
 		setActive(activeIndex);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isOpen]);
 
 	React.useEffect(() => {
-		if (props.activeBlockIndex === 0) {
+		if (activeBlockIndex === 0) {
 			setIsOpen(false);
 			return;
 		}
-		setActive(props.activeBlockIndex - 1);
-	}, [props.activeBlockIndex]);
+		setActive(activeBlockIndex - 1);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [activeBlockIndex]);
 
 	function setActive(index = 0, event) {
 		if (event) event.preventDefault();
@@ -39,7 +40,7 @@ function Nav(props) {
 		const liElDimsV = 
 			[activeLiEl.offsetTop, activeLiEl.parentElement.parentElement.offsetHeight - 
 				activeLiEl.offsetTop - activeLiEl.offsetHeight];
-		if (props.isMobile) {
+		if (isMobile) {
 			setTimeout(() => activeBarEl.style.top = `${liElDimsV[0]}px`, index < activeIndex ? 0 : 125);
 			setTimeout(() => activeBarEl.style.bottom = `${liElDimsV[1]}px`, index < activeIndex ? 125 : 0);
 		} else {
@@ -52,7 +53,7 @@ function Nav(props) {
 	}
 
   const classes = Classnames({
-    'show': props.show,
+    'show': show,
     'is-open': isOpen
   });
 

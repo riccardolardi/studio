@@ -18,18 +18,8 @@
     }
   }
 
-  &.inside {
-
-    .overlay {
-      visibility: visible;
-      transition: visibility 0ms 125ms;
-    }
-  }
-
   h3 {
-  	position: fixed;
-  	top: 33.333vh;
-  	left: $pad * 2;
+  	padding: 0 0 0 $pad;
     z-index: 10;
     opacity: 0;
     transition: opacity 125ms;
@@ -41,7 +31,6 @@
 
   article {
     position: relative;
-    top: -50vh;
   	padding: 0 0 0 $pad;
     margin-bottom: $pad * 2;
     opacity: 0;
@@ -94,45 +83,5 @@
         max-height: 50vh;
   		}
   	}
-  }
-
-  .overlay {
-    display: flex;
-    justify-content: space-evenly;
-    position: fixed;
-    top: 0px;
-    left: $pad;
-    right: $pad;
-    height: 100vh;
-    padding: 0 0 0 $pad;
-    pointer-events: none;
-    visibility: hidden;
-
-    @include breakpoint($breakMobile) {
-      display: block;
-      padding: 0;
-    }
-
-    span {
-      display: block;
-      width: 42%;
-      height: 100%;
-
-      &:first-child {
-        background-image: linear-gradient(to top, rgba(255,255,255,0) 65%, rgba(255,255,255,0.75) 100%);
-        background-size: cover;
-
-        @include breakpoint($breakMobile) {
-          width: 100%;
-        }
-      }
-
-      &:last-child {
-
-        @include breakpoint($breakMobile) {
-          display: none;
-        }
-      }
-    }
   }
 }
