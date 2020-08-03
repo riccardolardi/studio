@@ -32,7 +32,7 @@ function News(props) {
           <img src={imgs[0]} alt="" />
         </div>
       </article>
-      <article className="with-image image-right">
+      <article className="with-image image-left">
         <div className="text">
           <span className="char divider divider-top divider-left">
             <span />

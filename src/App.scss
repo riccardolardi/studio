@@ -78,6 +78,14 @@
     }
   }
 
+  a {
+    text-decoration: none;
+    color: $primaryColor;
+
+    &.link {
+    }
+  }
+
   .logo-symbol {
 
     svg {
@@ -100,16 +108,130 @@
   }
 
   .block {
+    position: relative;
+    min-height: 100vh;
     padding: $pad;
 
     @include breakpoint($breakMobile) {
       padding: 0 $pad * 4;
     }
+
+    &.is-active {
+
+      article {
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity 125ms 125ms;
+      }
+
+      h3 {
+        opacity: 1;
+      }
+    }
+
+    h3 {
+      position: relative;
+      padding: 0 0 0 $pad;
+      opacity: 0;
+      transition: opacity 125ms;
+
+      @include breakpoint($breakMobile) {
+        left: -$pad;
+        padding: 0;
+        margin: 0 0 $pad * 4;
+      }
+    }
+
+    article {
+      position: relative;
+      padding: 0 0 0 $pad;
+      margin-bottom: $pad * 2;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 125ms;
+
+      @include breakpoint($breakMobile) {
+        padding: 0;
+        margin-bottom: $pad * 4;
+      }
+
+      h4 {
+        font-weight: bold;
+      }
+
+      ul {
+        margin-top: $pad / 4;
+
+        li {
+          list-style-type: square;
+          text-indent: $pad;
+        }
+      }
+
+      &.text-center {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .text {
+          width: 66.666%;
+
+          @include breakpoint($breakMobile) {
+            width: 100%;
+          }
+        }
+      }
+
+      &.with-image {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include breakpoint($breakMobile) {
+          display: block;
+        }
+
+        .text {
+          position: relative;
+          width: 42%;
+          margin: $pad 0;
+
+          @include breakpoint($breakMobile) {
+            width: 100%;
+          }
+        }
+
+        &.image-right {
+
+        }
+
+        &.image-left {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 42%;
+
+        @include breakpoint($breakMobile) {
+          width: 100%;
+        }
+
+        img {
+          display: block;
+          max-width: 100%;
+          max-height: 66.666vh;
+        }
+      }
+    }
   }
 
   .divider {
     display: block;
-    position: absolute;
+    position: relative;
     width: $pad;
     height: $pad;
     line-height: $pad;
@@ -131,15 +253,8 @@
       }
     }
 
-    &.divider-top {
-      top: -$pad;
-
-      @include breakpoint($breakMobile) {
-        top: -$pad * 2;
-      }
-    }
-
     &.divider-bottom {
+      position: absolute;
       bottom: -$pad * 0.5;
     }
 
@@ -148,8 +263,17 @@
     }
 
     &.divider-right {
+      position: absolute;
       left: auto;
       right: 0px;
+
+      &.divider-top {
+        top: -$pad;
+
+        @include breakpoint($breakMobile) {
+          top: -$pad * 2;
+        }
+      }
 
       span {
         left: auto;

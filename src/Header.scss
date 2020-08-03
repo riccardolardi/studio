@@ -2,10 +2,8 @@
 @import 'breakpoint-sass';
 
 #header {
-  position: relative;
   display: flex;
   justify-content: space-between;
-  height: 100vh;
   transition: all 125ms;
 
   &.is-active {
