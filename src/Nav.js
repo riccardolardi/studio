@@ -9,7 +9,14 @@ let activeBarEl, liEls;
 
 function Nav(props) {
 	const [activeIndex, setActiveIndex] = React.useState(null);
-	const { activeBlockIndex, isMobile, show, isMenuOpen, setIsMenuOpen } = props;
+	const {
+		activeBlockIndex, 
+		isMobile, 
+		show, 
+		isMenuOpen, 
+		setIsMenuOpen, 
+		moveToBlock
+	} = props;
 
 	React.useLayoutEffect(() => {
 		activeBarEl = document.querySelector('nav .active-bar');
@@ -34,6 +41,7 @@ function Nav(props) {
 	}, [isMenuOpen]);
 
 	React.useEffect(() => {
+		if (document.querySelector('#app').classList.contains('navigating')) return;
 		if (activeBlockIndex === 0) {
 			setIsMenuOpen(false);
 			return;
@@ -42,8 +50,7 @@ function Nav(props) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeBlockIndex]);
 
-	function setActive(index = 0, event) {
-		if (event) event.preventDefault();
+	function setActive(index = 0) {
 		const activeLiEl = liEls[index];
 		if (!activeLiEl) return;
 		const liElDimsH = 
@@ -64,6 +71,12 @@ function Nav(props) {
 		liEls[index].classList.add('active');
 	}
 
+	function linkClicked(index = 0, event) {
+		if (event) event.preventDefault();
+		setActive(index);
+		setTimeout(() => moveToBlock(index));
+	}
+
   const classes = Classnames({
     'show': show,
     'is-open': isMenuOpen
@@ -73,10 +86,10 @@ function Nav(props) {
     <nav id="nav" className={classes}>
 	    <div className="menu-drawer">
 	    	<ul>
-		    	<li className="menu-item"><a href="news" onClick={setActive.bind(this, 0)}>News</a></li>
-		    	<li className="menu-item"><a href="profile" onClick={setActive.bind(this, 1)}>Profil</a></li>
-		    	<li className="menu-item"><a href="work" onClick={setActive.bind(this, 2)}>Projekte</a></li>
-		    	<li className="menu-item"><a href="contact" onClick={setActive.bind(this, 3)}>Kontakt</a></li>
+		    	<li className="menu-item"><a href="news" onClick={linkClicked.bind(this, 0)}>News</a></li>
+		    	<li className="menu-item"><a href="profile" onClick={linkClicked.bind(this, 1)}>Profil</a></li>
+		    	<li className="menu-item"><a href="work" onClick={linkClicked.bind(this, 2)}>Projekte</a></li>
+		    	<li className="menu-item"><a href="contact" onClick={linkClicked.bind(this, 3)}>Kontakt</a></li>
 		    </ul>
 		    <span className="active-bar" />
 	    </div>

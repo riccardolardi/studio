@@ -57,23 +57,6 @@
     }
   }
 
-  &.is-intersecting {
-
-    &+.block#news {
-
-      &.is-active {
-        
-        h3 {
-          transition: opacity 125ms 1.125s, transform 125ms 1.125s;
-
-          @include breakpoint($breakMobile) {
-            transition: opacity 125ms 125ms, transform 125ms 125ms;
-          }
-        }
-      }
-    }
-  }
-
   .secondary-header {
     display: flex;
     align-items: center;
@@ -198,7 +181,7 @@
     @include breakpoint($breakMobile) {
       height: auto;
       width: 80%;
-      bottom: 0px;
+      bottom: 12vh;
     }
 
     .logo-symbol {

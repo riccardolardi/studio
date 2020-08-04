@@ -11,6 +11,7 @@
     "body-scroll-lock": "^3.0.3",
     "breakpoint-sass": "^2.7.1",
     "classnames": "^2.2.6",
+    "easy-scroll": "^0.7.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-device-detect": "^1.13.1",

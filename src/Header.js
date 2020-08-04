@@ -41,7 +41,7 @@ function Header(props) {
 
   React.useEffect(() => {
     chars2.forEach((el, index) => {
-      const tweenedVal = tweens.easeOutSine(scrollY, 0, appHeight, appHeight * 1.2);
+      const tweenedVal = tweens.easeOutSine(scrollY, 0, appHeight * 1.5, appHeight * 1.5);
       const newVal = tweenedVal * charAnims[index][2];
       const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal / 2));
       const newRotateStyle = charAnims[index][1].replace('$', newVal / 10);
@@ -108,17 +108,17 @@ function Header(props) {
         </h2>
       </div>
       <div className="logo">
-        <span className={`logo-symbol box rellax`} data-rellax-speed="6">
+        <span className={`logo-symbol box rellax`} data-rellax-speed="4">
           <svg height="256" width="256" viewBox="0 0 256 256">
             <rect width="256" height="256" />
           </svg>
         </span>
-        <span className={`logo-symbol triangle rellax`} data-rellax-speed="3">
+        <span className={`logo-symbol triangle rellax`} data-rellax-speed="1">
           <svg height="256" width="256" viewBox="0 0 256 256">
             <polygon points="128,0 0,256 256,256" />
           </svg>
         </span>
-        <span className={`logo-symbol circle rellax`} data-rellax-speed="0">
+        <span className={`logo-symbol circle rellax`} data-rellax-speed="-2">
           <svg height="256" width="256" viewBox="0 0 256 256">
             <circle cx="128" cy="128" r="128" />
           </svg>

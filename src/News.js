@@ -9,12 +9,18 @@ const imgs = [
 ]
 
 function News(props) {
-  const { index, active: isActive, intersecting: isIntersecting } = props;
+  const {
+    index,
+    active: isActive,
+    intersecting: isIntersecting, 
+    prevIsIntro
+  } = props;
 
   const classes = Classnames({
     'block': true,
     'is-active': isActive,
-    'is-intersecting': isIntersecting
+    'is-intersecting': isIntersecting, 
+    'prev-is-intro': prevIsIntro
   });
 
   return (

@@ -5,34 +5,4 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-	article {
-
-		&.image-right {
-
-			.text {
-				@include breakpoint($breakMobile) {
-					text-align: left;
-				}
-
-				.divider {
-
-					@include breakpoint($breakMobile) {
-						left: $pad * 0.6;
-					}
-				}
-			}
-		}
-
-		&.image-left {
-			
-			.text {
-				text-align: left;
-			}
-		}
-
-		.text {
-			text-align: right;
-		}
-	}
 }

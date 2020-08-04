@@ -20,7 +20,7 @@ function Contact(props) {
       <h3>Kontakt</h3>
       <article className="with-image image-right">
         <div className="text">
-          <span className="char divider divider-top divider-right">
+          <span className="char divider divider-top divider-left">
             <span />
           </span>
           <h4>Studio Riccardo Lardi</h4>

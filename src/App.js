@@ -1,6 +1,8 @@
 import React from 'react';
 import Classnames from 'classnames';
-import { useWindowScroll, createBreakpoint } from 'react-use';
+import { useWindowScroll, createBreakpoint, usePrevious } from 'react-use';
+import { isSafari } from 'react-device-detect';
+import easyScroll from 'easy-scroll';
 import Nav from './Nav.js';
 import Header from './Header.js';
 import News from './News.js';
@@ -18,10 +20,13 @@ let intersectionObserver, blockEls;
 
 function App() {
   const [activeBlockIndex, setActiveBlockIndex] = React.useState(null);
+  const [prevIsIntro, setPrevIsIntro] = React.useState(null);
   const [intersectingBlockIndexes, setIntersectingBlockIndexes] = React.useState([]);
   const [activeSubTitle, setActiveSubTitle] = React.useState(null);
   const [introVisibility, setIntroVisibility] = React.useState(null);
+  const [navigatingDir, setNavigatingDir] = React.useState(null);
   const [isMenuOpen, setIsMenuOpen] = React.useState(null);
+  const prevBlockIndex = usePrevious(activeBlockIndex);
   const { y: scrollY } = useWindowScroll();
   const isMobile = useBreakpoint() === 'mobile';
 
@@ -47,13 +52,49 @@ function App() {
     }, {
       threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
     });
-    blockEls.forEach(el => 
-      intersectionObserver.observe(el));
+    blockEls.forEach(el => intersectionObserver.observe(el));
   }, []);
+
+  React.useEffect(() => {
+    setPrevIsIntro(prevBlockIndex === 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeBlockIndex]);
+
+  function moveToBlock(index) {
+    if (index === activeBlockIndex - 1 || activeBlockIndex === 0) {
+      if (isMobile) setIsMenuOpen(false);
+      return false;
+    }
+    const newNavDir = index > activeBlockIndex - 1 ? 'down' : 'up';
+    setNavigatingDir(newNavDir);
+    const elTop = blockEls[index + 1]?.offsetTop;
+    const offset = index + 2 < blockEls.length ? window.innerHeight * 0.25 : 0;
+    setTimeout(() => {
+      // window.scroll(0, elTop - offset);
+      const scrollAmount = 
+        newNavDir === 'up' ? window.scrollY - elTop + offset : 
+        elTop - window.scrollY - offset;
+      if (!isSafari) easyScroll({
+        'scrollableDomEle': window,
+        'direction': newNavDir === 'down' ? 'bottom' : 'top',
+        'duration': 250,
+        'easingPreset': 'easeInOutQuad',
+        'scrollAmount': scrollAmount
+      });
+      if (isSafari) window.scroll(0, elTop - offset);
+      setTimeout(() => {
+        setNavigatingDir(null);
+        if (isMobile) setIsMenuOpen(false);
+      }, 375);
+    }, 125);
+  }
 
   const classes = Classnames({
     'is-intro': activeBlockIndex === 0,
-    'menu-open': isMenuOpen
+    'menu-open': isMenuOpen, 
+    'navigating-down': navigatingDir === 'down', 
+    'navigating-up': navigatingDir === 'up', 
+    'navigating': navigatingDir !== null
   });
 
   return (
@@ -70,6 +111,8 @@ function App() {
         index={1} 
         active={activeBlockIndex === 1} 
         intersecting={intersectingBlockIndexes.includes(1)} 
+        prevBlockIndex={prevBlockIndex} 
+        prevIsIntro={prevIsIntro} 
       />
       <Profile 
         index={2} 
@@ -92,6 +135,7 @@ function App() {
         isMenuOpen={isMenuOpen} 
         activeBlockIndex={activeBlockIndex} 
         isMobile={isMobile} 
+        moveToBlock={moveToBlock} 
       />
     </main>
   );

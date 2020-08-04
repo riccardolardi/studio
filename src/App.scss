@@ -30,6 +30,29 @@
     }
   }
 
+  &.navigating-up, 
+  &.navigating-down {
+
+    .block article {
+      opacity: 0 !important;
+      transition: all 125ms 0ms !important;
+    }
+  }
+
+  &.navigating-up {
+
+    .block article {
+      transform: translateY(2vh);
+    }
+  }
+
+  &.navigating-down {
+
+    .block article {
+      transform: translateY(-2vh);
+    }
+  }
+
   h1 {
     font-size: $pad;
     font-weight: bold;
@@ -130,6 +153,19 @@
     }
 
     &.is-active {
+
+      &.prev-is-intro {
+
+        h3 {
+          opacity: 0.999; // hacky...
+          transform: translateX(0.01px); // and again!
+          transition: opacity 125ms 1.125s, transform 125ms 1.125s; // but why??
+
+          @include breakpoint($breakMobile) {
+            transition: opacity 125ms 125ms, transform 125ms 125ms;
+          }
+        }
+      }
 
       article {
         opacity: 1;
