@@ -10,17 +10,7 @@
 		}
 
 		p {
-
-			@include breakpoint($breakMobile) {
-				margin-bottom: 0;
-			}
-		}
-
-		&.image-left {
-			
-			.text {
-				text-align: left;
-			}
+			margin-bottom: 0;
 		}
 
 		&.image-right {
@@ -36,8 +26,14 @@
 			.divider {
 
 				@include breakpoint($breakMobile) {
+					position: relative;
+					top: auto !important;
 					right: auto;
-					left: $pad * 0.6;
+					left: auto;
+
+					span:before {
+						right: auto;
+					}
 				}
 			}
 		}
@@ -54,10 +50,6 @@
 					max-height: 50vh !important;
 				}
 			}
-		}
-
-		.text {
-			text-align: right;
 		}
 	}
 }

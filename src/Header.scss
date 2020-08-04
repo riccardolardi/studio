@@ -34,18 +34,41 @@
 
       .logo-symbol {
         opacity: 1;
-        transform: translateY(0);
 
         &:nth-of-type(1n) {
-          transition: all 500ms 0ms;
+          transition: opacity 250ms 0ms;
         }
 
         &:nth-of-type(2n) {
-          transition: all 500ms 125ms;
+          transition: opacity 250ms 125ms;
         }
 
         &:nth-of-type(3n) {
-          transition: all 500ms 125ms;
+          transition: opacity 250ms 250ms;
+        }
+      }
+    }
+  }
+
+  &.is-ready {
+
+    .logo-symbol {
+      opacity: 1 !important;
+    }
+  }
+
+  &.is-intersecting {
+
+    &+.block#news {
+
+      &.is-active {
+        
+        h3 {
+          transition: opacity 125ms 1.125s, transform 125ms 1.125s;
+
+          @include breakpoint($breakMobile) {
+            transition: opacity 125ms 125ms, transform 125ms 125ms;
+          }
         }
       }
     }
@@ -63,7 +86,7 @@
     color: $primaryColor;
     opacity: 1;
     transform: translateX(0);
-    transition: all 125ms 1.25s;
+    transition: all 125ms 1s;
     z-index: 10;
 
     @include breakpoint($breakMobile) {
@@ -94,7 +117,7 @@
       @include breakpoint($breakMobile) {
         display: block;
         line-height: $pad * 3.5;
-        margin-left: $pad * 2;
+        margin-left: $pad * 3;
       }
 
       &:before {
@@ -104,11 +127,11 @@
         width: $pad * 0.065;
         height: 100%;
         background-color: $secondaryColor;
-        transform: skew(-7deg);
+        transform: skew(-24deg);
 
         @include breakpoint($breakMobile) {
-          width: $pad * 0.14;
-          left: -$pad;
+          width: $pad * 0.18;
+          left: -$pad * 1.5;
         }
       }
     }
@@ -164,7 +187,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 50%;
     width: 50vw;
@@ -181,12 +204,6 @@
     .logo-symbol {
       width: 20%;
       opacity: 0;
-      transform: translate3d(0, -10vh, 0);
-
-      &.gone {
-        transform: translateY(-10vh);
-        opacity: 0;
-      }
 
       svg {
         fill: $secondaryColor;

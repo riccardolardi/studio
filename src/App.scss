@@ -139,21 +139,27 @@
 
       h3 {
         opacity: 1;
+        transform: translateX(0);
+        transition: opacity 125ms 125ms, transform 125ms 125ms;
       }
     }
 
     h3 {
-      position: relative;
-      top: -10vh;
-      padding: 0 0 0 $pad * 4;
+      position: fixed;
+      top: $pad * 3.7;
+      left: $pad * 1.4;
       opacity: 0;
-      transition: opacity 125ms;
+      transform: translateX(-2vw);
+      transition: opacity 125ms 0ms, transform 0ms 125ms;
+      z-index: 10;
 
       @include breakpoint($breakMobile) {
+        position: relative;
         top: 0;
         left: 0;
         padding: 0;
         margin: 0 0 $pad * 4;
+        z-index: 0;
       }
     }
 
@@ -225,6 +231,9 @@
 
         &.image-right {
 
+          .text {
+
+          }
         }
 
         &.image-left {

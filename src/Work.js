@@ -12,11 +12,12 @@ const imgs = [
 ];
 
 function Work(props) {
-  const { index, active: isActive } = props;
+  const { index, active: isActive, intersecting: isIntersecting } = props;
 
   const classes = Classnames({
     'block': true,
-    'is-active': isActive
+    'is-active': isActive,
+    'is-intersecting': isIntersecting
   });
 
   return (

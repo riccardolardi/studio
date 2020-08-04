@@ -45,6 +45,7 @@
       transform: translateX(0px);
       opacity: 1;
       transition: width 0ms, height 0ms, opacity 125ms, transform 125ms;
+      pointer-events: auto;
 
       @include breakpoint($breakMobile) {
         transform: scale(1);
@@ -84,6 +85,7 @@
     opacity: 0;
     transform: translateX(2vw);
     transition: all 125ms;
+    pointer-events: none;
 
     @include breakpoint($breakMobile) {
       position: fixed;

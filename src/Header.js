@@ -1,14 +1,21 @@
 import React from 'react';
 import Classnames from 'classnames';
 import tweens from 'tween-functions';
+import Rellax from 'rellax';
 import './Header.scss';
 
-const charAnims = [];
-let chars1, chars2, appHeight;
+let charAnims = [];
+let chars1, chars2, appHeight, rellax;
 
 function Header(props) {
   const [isReady, setIsReady] = React.useState(null);
-  const { index, scrollY, visibility, activeSubTitle, active: isActive } = props;
+  const { 
+    index, 
+    scrollY, 
+    activeSubTitle, 
+    active: isActive, 
+    intersecting: isIntersecting
+  } = props;
 
   React.useLayoutEffect(() => {
     appHeight = document.querySelector('#app').offsetHeight;
@@ -16,6 +23,21 @@ function Header(props) {
     prepareCharAnim2();
     setTimeout(() => setIsReady(true), 1000);
   }, []);
+
+  React.useEffect(() => {
+    if (isIntersecting) {
+      rellax = new Rellax('.rellax', {
+        speed: -2,
+        center: false,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false
+      });
+    } else {
+      if (rellax) rellax.destroy();
+    }
+  }, [isIntersecting]);
 
   React.useEffect(() => {
     chars2.forEach((el, index) => {
@@ -38,7 +60,7 @@ function Header(props) {
     chars1 = charAnimEl.textContent;
     let newContent = '';
     for (let i = 0; i < chars1.length; i++) {
-      const style = `transition: opacity 125ms ${500 + Math.random() * 500}ms`;
+      const style = `transition: opacity 125ms ${250 + Math.random() * 500}ms`;
       let nextChar = `<span class="char" style="${style}">${chars1[i]}</span>`;
       if (chars1[i] === ' ') nextChar = '<br/>';
       newContent += nextChar;
@@ -51,7 +73,7 @@ function Header(props) {
     const chars = charAnimEl.textContent;
     let newContent = '';
     for (let i = 0; i < chars.length; i++) {
-      const style = `transition: opacity 125ms ${500 + 500 + Math.random() * 500}ms`;
+      const style = `transition: opacity 125ms ${250 + Math.random() * 500}ms`;
       if (i === 0) newContent += `<span class="char divider divider-top divider-right">
         <span style="${style}"></span></span>`;
       let nextChar = `<span class="char"><span style="${style}">${chars[i]}</span></span>`;
@@ -71,6 +93,7 @@ function Header(props) {
   const classes = Classnames({
     'block': true,
     'is-active': isActive, 
+    'is-intersecting': isIntersecting, 
     'is-ready': isReady
   });
 
@@ -85,17 +108,17 @@ function Header(props) {
         </h2>
       </div>
       <div className="logo">
-        <span className={`logo-symbol box ${visibility < 0.8 ? 'gone' : ''}`}>
+        <span className={`logo-symbol box rellax`} data-rellax-speed="6">
           <svg height="256" width="256" viewBox="0 0 256 256">
             <rect width="256" height="256" />
           </svg>
         </span>
-        <span className={`logo-symbol triangle ${visibility < 0.7 ? 'gone' : ''}`}>
+        <span className={`logo-symbol triangle rellax`} data-rellax-speed="3">
           <svg height="256" width="256" viewBox="0 0 256 256">
             <polygon points="128,0 0,256 256,256" />
           </svg>
         </span>
-        <span className={`logo-symbol circle ${visibility < 0.6 ? 'gone' : ''}`}>
+        <span className={`logo-symbol circle rellax`} data-rellax-speed="0">
           <svg height="256" width="256" viewBox="0 0 256 256">
             <circle cx="128" cy="128" r="128" />
           </svg>
