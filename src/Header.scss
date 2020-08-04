@@ -82,7 +82,7 @@
 
     .site-title {
       font-size: $pad * 0.4;
-      line-height: $pad * 0.5;
+      line-height: $pad * 0.45;
       font-weight: bold;
 
       @include breakpoint($breakMobile) {
@@ -163,6 +163,24 @@
 
       .char span {
         opacity: 0;
+      }
+    }
+  }
+
+  .divider {
+
+    &:before {
+      content: none !important;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    span {
+
+      &:before {
+        content: "––";
+        font-family: sans-serif;
+        font-weight: bold;
       }
     }
   }

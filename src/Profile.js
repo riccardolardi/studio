@@ -24,7 +24,7 @@ function Profile(props) {
             <span />
           </span>
           <p>Das Studio spezialisiert sich auf die Planung, Konzeption, Gestaltung und Umsetzung von Projekten zwischen digitalem und physischem Raum.</p>
-          <h4>Dienstleistungen</h4>
+          <h4 className="bold">Dienstleistungen</h4>
           <ul>
             <li>Produktdesign und Konzept</li>
             <li>UX/UI, Interaction Design</li>

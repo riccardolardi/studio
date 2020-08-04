@@ -8,14 +8,13 @@
   font-size: $pad * 0.6;
   font-feature-settings: "dlig", "ss01";
   letter-spacing: calc(-0.015em + 0.14px);
-  line-height: calc(1.14em + 0.5vw);
+  line-height: calc(1.14em + 0.1vw);
   background-color: $secondaryColor;
   color: $primaryColor;
   transition: color 0ms, background-color 125ms 0ms;
 
   @include breakpoint($breakMobile) {
     font-size: $pad * 1.4;
-    line-height: calc(1.14em + 1.2vw);
   }
 
   &.is-intro {
@@ -57,7 +56,7 @@
     font-size: $pad;
 
     @include breakpoint($breakMobile) {
-      font-size: $pad * 1.8;
+      font-size: $pad * 2.4;
     }
   }
 
@@ -87,10 +86,6 @@
 
     @include breakpoint($breakMobile) {
       margin-bottom: $pad;
-    }
-
-    &:first-of-type {
-      margin-top: $pad / 4;
     }
 
     &:last-child {
@@ -123,6 +118,11 @@
     font-family: 'BuenosAiresBold';
     line-height: calc(1.14em + 0.1vw);
     letter-spacing: 0.01em;
+  }
+
+  .margin-bottom {
+    display: block;
+    margin-bottom: $pad / 4;
   }
 
   .logo-symbol {
@@ -205,7 +205,7 @@
     article {
       position: relative;
       padding: 0 0 0 $pad;
-      margin-bottom: $pad * 2;
+      margin-bottom: $pad;
       opacity: 0;
       pointer-events: none;
       transition: opacity 125ms;
@@ -251,7 +251,7 @@
         align-items: center;
 
         @include breakpoint($breakMobile) {
-          display: block;
+          flex-direction: column;
         }
 
         .text {
@@ -266,13 +266,20 @@
 
         &.image-right {
 
-          .text {
+          .image {
 
+            @include breakpoint($breakMobile) {
+              
+            }
           }
         }
 
         &.image-left {
           flex-direction: row-reverse;
+
+          @include breakpoint($breakMobile) {
+            flex-direction: column;
+          }
         }
       }
 
@@ -296,65 +303,21 @@
   }
 
   .divider {
-    display: block;
-    position: relative;
-    width: $pad;
-    height: $pad;
-    font-size: $pad * 0.7;
-    line-height: $pad;
-    font-family: sans-serif;
-    font-weight: bold;
-
-    @include breakpoint($breakMobile) {
-      font-size: $pad * 1.2;
-    }
-
-    span {
-      display: block;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-
-      &:before {
-        content: "––";
-        position: absolute;
-        top: 0px;
-        left: 2px;
-
-        @include breakpoint($breakMobile) {
-          left: 0px;
-        }
-      }
-    }
-
-    &.divider-bottom {
-      position: absolute;
-      bottom: -$pad * 0.5;
-    }
-
-    &.divider-left {
-      left: 0px;
+    display: block !important;
+    margin-bottom: $pad * 0.2;
+    
+    &:before {
+      position: relative;
+      left: $pad * 0.035;
+      content: "––";
+      font-family: sans-serif;
+      font-weight: bold;
     }
 
     &.divider-right {
-      position: absolute;
-      left: auto;
-      right: 0px;
 
-      &.divider-top {
-        top: -$pad;
-      }
-
-      span {
-        left: auto;
-        right: 0px;
-
-        &:before {
-          left: auto;
-          right: 2px;
-        }        
+      &:before {
+        left: 0;
       }
     }
   }

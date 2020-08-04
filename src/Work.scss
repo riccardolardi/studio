@@ -6,11 +6,18 @@
 	article {
 
 		@include breakpoint($breakMobile) {
-			margin-bottom: $pad * 6 !important;
+			margin-bottom: $pad * 3 !important;
 		}
 
 		p {
 			margin-bottom: 0;
+		}
+
+		&.with-image {
+
+			@include breakpoint($breakMobile) {
+				flex-direction: column-reverse;
+			}
 		}
 
 		&.image-right {
@@ -19,36 +26,32 @@
 				text-align: right;
 
 				@include breakpoint($breakMobile) {
-					text-align: left;
+					text-align: right;
 				}
 			}
 
-			.divider {
-
+			.image {
 				@include breakpoint($breakMobile) {
-					position: relative;
-					top: auto !important;
-					right: auto;
-					left: auto;
-
-					span:before {
-						right: auto;
-					}
+					justify-content: flex-end;
 				}
 			}
+
 		}
 
 		.image {
-
-			@include breakpoint($breakMobile) {
-				display: block !important;
-			}
 
 			img {
 
 				@include breakpoint($breakMobile) {
 					max-height: 50vh !important;
 				}
+			}
+		}
+
+		.text {
+
+			@include breakpoint($breakMobile) {
+				margin-bottom: $pad * 2 !important;
 			}
 		}
 	}

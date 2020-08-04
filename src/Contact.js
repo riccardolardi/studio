@@ -23,7 +23,7 @@ function Contact(props) {
           <span className="char divider divider-top divider-left">
             <span />
           </span>
-          <h4 className="bold">Studio Riccardo Lardi</h4>
+          <h4 className="bold margin-bottom">Studio Riccardo Lardi</h4>
           <p>General Guisan-Strasse 78<br/>4054 Basel<br/>Schweiz</p>
           <p><a href="tel:0041793396538">0041 79 339 65 38</a></p>
           <p><a href="mailto:hello@riccardolardi.com">hello@riccardolardi.com</a></p>

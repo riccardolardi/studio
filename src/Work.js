@@ -28,7 +28,7 @@ function Work(props) {
           <span className="char divider divider-top divider-right">
             <span />
           </span>
-          <h4 className="bold">Sommernachts-Ball</h4>
+          <h4 className="bold margin-bottom">Sommernachts-Ball</h4>
           <p>Website, 2020</p>
           <p>Genossenschaftsbund Migros Zürich</p>
         </div>
@@ -41,7 +41,7 @@ function Work(props) {
           <span className="char divider divider-top divider-left">
             <span />
           </span>
-          <h4 className="bold">Simulation M+ Museum</h4>
+          <h4 className="bold margin-bottom">Simulation M+ Museum</h4>
           <p>3D-Simulation für bespielbare Fassade, 2019</p>
           <p>M+ Museum, Hong Kong</p>
         </div>
@@ -54,7 +54,7 @@ function Work(props) {
           <span className="char divider divider-top divider-right">
             <span />
           </span>
-          <h4 className="bold">Hyundai Pavilion Olympia 2018</h4>
+          <h4 className="bold margin-bottom">Hyundai Pavilion Olympia 2018</h4>
           <p>Interaktive Wasserinstallation, 2018</p>
           <p>Hyundai, Pyeongchang, Südkorea</p>
         </div>
@@ -67,7 +67,7 @@ function Work(props) {
           <span className="char divider divider-top divider-left">
             <span />
           </span>
-          <h4 className="bold">Hansel & Gretel</h4>
+          <h4 className="bold margin-bottom">Hansel & Gretel</h4>
           <p>Immersive Videoinstallation, 2017</p>
           <p>Armory Park Avenue, New York</p>
         </div>
@@ -80,7 +80,7 @@ function Work(props) {
           <span className="char divider divider-top divider-right">
             <span />
           </span>
-          <h4 className="bold">Harvard Street Square Facade</h4>
+          <h4 className="bold margin-bottom">Harvard Street Square Facade</h4>
           <p>Mockup für bespielbare Fassade, 2018</p>
           <p>Boston, Cambridge</p>
         </div>
@@ -93,7 +93,7 @@ function Work(props) {
           <span className="char divider divider-top divider-left">
             <span />
           </span>
-          <h4 className="bold">Maersk Visitor Centre</h4>
+          <h4 className="bold margin-bottom">Maersk Visitor Centre</h4>
           <p>Interaktiver Medientisch, 2017</p>
           <p>Maersk, Copenhagen</p>
         </div>
