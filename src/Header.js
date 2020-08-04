@@ -99,7 +99,7 @@ function Header(props) {
 
   return (
     <header id="header" className={classes} data-index={index}>
-      <h1 className="char-anim1">Studio Riccardo Lardi</h1>
+      <h1 className="char-anim1 bold">Studio Riccardo Lardi</h1>
       <div className="char-anim2">
         <h2>
           Interaction Design,
@@ -125,7 +125,7 @@ function Header(props) {
         </span>
       </div>
       <div className="secondary-header">
-        <span className="site-title">Studio<br/>Riccardo<br/>Lardi</span>
+        <span className="site-title bold">Studio<br/>Riccardo<br/>Lardi</span>
         <span className="site-subtitle">{activeSubTitle}</span>
       </div>
       <div className="emoji coming-soon">

@@ -13,29 +13,28 @@ $pad: 2.8vw;
 
 // fonts
 @font-face {
-  font-family: 'Cadiz';
-  font-weight: normal;
-  src: url('./fonts/CadizTrialWeb-Book.woff2') format('woff2'),
-       url('./fonts/CadizTrialWeb-Book.woff') format('woff');
+  font-family: 'BuenosAiresRegular';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/BuenosAiresWeb-Regular.eot');
+  src: url('./fonts/BuenosAiresWeb-Regular.woff2') format('woff2'),
+       url('./fonts/BuenosAiresWeb-Regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Cadiz';
-  font-weight: bold;
-  src: url('./fonts/CadizTrialWeb-Bold.woff2') format('woff2'),
-       url('./fonts/CadizTrialWeb-Bold.woff') format('woff');
+  font-family: 'BuenosAiresBold';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/BuenosAiresWeb-Bold.eot');
+  src: url('./fonts/BuenosAiresWeb-Bold.woff2') format('woff2'),
+       url('./fonts/BuenosAiresWeb-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Buenos Aires';
-  font-weight: normal;
-  src: url('./fonts/BuenosAiresTrialWeb-Regular.woff2') format('woff2'),
-       url('./fonts/BuenosAiresTrialWeb-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Buenos Aires';
-  font-weight: bold;
-  src: url('./fonts/BuenosAiresTrialWeb-Bold.woff2') format('woff2'),
-       url('./fonts/BuenosAiresTrialWeb-Bold.woff') format('woff');
+  font-family: 'AssemblyTrial';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/AssemblyTrial.eot');
+  src: url('./fonts/AssemblyTrial.woff2') format('woff2'),
+       url('./fonts/AssemblyTrial.woff') format('woff');
 }

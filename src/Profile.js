@@ -17,7 +17,7 @@ function Profile(props) {
 
   return (
     <section id="profile" className={classes} data-index={index}>
-      <h3>Profil</h3>
+      <h3 className="bold">Profil</h3>
       <article className="with-image image-right">
         <div className="text">
           <span className="char divider divider-top divider-left">

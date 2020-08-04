@@ -2,13 +2,13 @@
 @import 'breakpoint-sass';
 
 #app {
-  font-family: 'Buenos Aires', sans-serif;
-  font-weight: normal;
+  font-family: 'BuenosAiresRegular', sans-serif;
+  font-weight: 400;
   font-style: normal;
   font-size: $pad * 0.6;
-  font-feature-settings: "ss01", "dlig";
+  font-feature-settings: "dlig", "ss01";
   letter-spacing: calc(-0.015em + 0.14px);
-  line-height: calc(1.14em + 0.4vw);
+  line-height: calc(1.14em + 0.5vw);
   background-color: $secondaryColor;
   color: $primaryColor;
   transition: color 0ms, background-color 125ms 0ms;
@@ -55,22 +55,14 @@
 
   h1 {
     font-size: $pad;
-    font-weight: bold;
-    font-feature-settings: "ss01", "dlig";
-    letter-spacing: calc(-0.015em + 0.14px);
-    line-height: calc(1.14em + 0.1vw);
 
     @include breakpoint($breakMobile) {
       font-size: $pad * 1.8;
-      line-height: calc(1.14em + 0.4vw);
     }
   }
 
   h2 {
     font-size: $pad * 0.8;
-    font-feature-settings: "ss01", "dlig";
-    letter-spacing: calc(-0.015em + 0.14px);
-    line-height: calc(1.14em + 0.1vw);
 
     @include breakpoint($breakMobile) {
       font-size: $pad * 1.8;
@@ -79,14 +71,14 @@
 
   h3 {
     font-size: $pad * 1.4;
-    font-weight: bold;
-    font-feature-settings: "ss01", "dlig";
-    letter-spacing: calc(-0.015em + 0.14px);
-    line-height: calc(1.14em + 0.1vw);
 
     @include breakpoint($breakMobile) {
       font-size: $pad * 2.4;
     }
+  }
+
+  h4 {
+
   }
 
   p {
@@ -120,6 +112,17 @@
 
     &.link {
     }
+  }
+
+  .assembly {
+    font-family: 'AssemblyTrial';
+    font-size: $pad * 4;
+  }
+
+  .bold {
+    font-family: 'BuenosAiresBold';
+    line-height: calc(1.14em + 0.1vw);
+    letter-spacing: 0.01em;
   }
 
   .logo-symbol {
@@ -216,10 +219,6 @@
         margin-bottom: $pad * 4;
       }
 
-      h4 {
-        font-weight: bold;
-      }
-
       ul {
         margin: $pad / 2 0 0 $pad;
 
@@ -303,6 +302,7 @@
     height: $pad;
     font-size: $pad * 0.7;
     line-height: $pad;
+    font-family: sans-serif;
     font-weight: bold;
 
     @include breakpoint($breakMobile) {

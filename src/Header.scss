@@ -144,6 +144,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    line-height: calc(1.14em + 1.4vw);
     text-align: right;
     z-index: 10;
     pointer-events: none;
