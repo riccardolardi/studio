@@ -32,7 +32,7 @@ function Work(props) {
           <p>Website, 2020</p>
           <p>Genossenschaftsbund Migros Zürich</p>
         </div>
-        <div className="image">
+        <div className="image align-left">
           <img src={imgs[0]} alt="" />
         </div>
       </article>
@@ -99,6 +99,11 @@ function Work(props) {
         </div>
         <div className="image">
           <img src={imgs[5]} alt="" />
+        </div>
+      </article>
+      <article className="text-center">
+        <div className="assembly-wrap padding-top">
+          <span className="assembly">&#37;</span>
         </div>
       </article>
     </section>

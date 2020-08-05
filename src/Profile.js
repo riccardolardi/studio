@@ -47,6 +47,11 @@ function Profile(props) {
           <p>Das Studio bewegt sich in einem dichten Netzwerk von Spezialisten in relevanten Bereichen und greift wo nötig auf diese zu.</p>
         </div>
       </article>
+      <article className="text-center">
+        <div className="assembly-wrap">
+          <span className="assembly">&auml;</span>
+        </div>
+      </article>
     </section>
   );
 }

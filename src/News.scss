@@ -3,4 +3,12 @@
 
 #news {
 	
+	.assembly {
+
+    @include breakpoint($breakMobile) {
+      position: relative;
+      top: $pad;
+      left: $pad * 1.75;
+    }
+  }
 }

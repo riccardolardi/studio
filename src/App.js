@@ -68,7 +68,7 @@ function App() {
     const newNavDir = index > activeBlockIndex - 1 ? 'down' : 'up';
     setNavigatingDir(newNavDir);
     const elTop = blockEls[index + 1]?.offsetTop;
-    const offset = index + 2 < blockEls.length ? window.innerHeight * 0.25 : 0;
+    const offset = index + 2 < blockEls.length ? window.innerHeight * 0.225 : 0;
     setTimeout(() => {
       // window.scroll(0, elTop - offset);
       const scrollAmount = 

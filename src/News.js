@@ -65,6 +65,11 @@ function News(props) {
           <img src={imgs[2]} alt="" />
         </div>
       </article>
+      <article className="text-center">
+        <div className="assembly-wrap padding-top">
+          <span className="assembly rotate90">&#162;</span>
+        </div>
+      </article>
     </section>
   );
 }

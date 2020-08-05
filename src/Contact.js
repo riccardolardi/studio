@@ -2,10 +2,6 @@ import React from 'react';
 import Classnames from 'classnames';
 import './Contact.scss';
 
-const imgs = [
-
-];
-
 function Contact(props) {
   const { index, active: isActive, intersecting: isIntersecting } = props;
 
@@ -28,8 +24,8 @@ function Contact(props) {
           <p><a href="tel:0041793396538">0041 79 339 65 38</a></p>
           <p><a href="mailto:hello@riccardolardi.com">hello@riccardolardi.com</a></p>
         </div>
-        <div className="image">
-          
+        <div className="image align-left">
+          <span className="assembly">p</span>
         </div>
       </article>
     </section>

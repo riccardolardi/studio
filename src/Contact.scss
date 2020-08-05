@@ -5,4 +5,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  .image {
+
+  	&.align-left {
+
+	  	@include breakpoint($breakMobile) {
+	  		margin-top: $pad * 2;
+	  	}
+  	}
+  }
+
+  .assembly {
+
+    @include breakpoint($breakMobile) {
+      position: relative;
+      top: $pad * 2;
+      left: $pad * 2;
+    }
+  }
 }
