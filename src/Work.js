@@ -1,5 +1,6 @@
 import React from 'react';
 import Classnames from 'classnames';
+import LazyImage from './LazyImage.js';
 import './Work.scss';
 
 const imgs = [
@@ -33,7 +34,7 @@ function Work(props) {
           <p>Genossenschaftsbund Migros Zürich</p>
         </div>
         <div className="image align-left">
-          <img src={imgs[0]} alt="" />
+          <LazyImage src={imgs[0]} alt="" />
         </div>
       </article>
       <article className="with-image image-left">
@@ -46,7 +47,7 @@ function Work(props) {
           <p>M+ Museum, Hong Kong</p>
         </div>
         <div className="image">
-          <img src={imgs[1]} alt="" />
+          <LazyImage src={imgs[1]} alt="" />
         </div>
       </article>
       <article className="with-image image-right">
@@ -59,7 +60,7 @@ function Work(props) {
           <p>Hyundai, Pyeongchang, Südkorea</p>
         </div>
         <div className="image">
-          <img src={imgs[2]} alt="" />
+          <LazyImage src={imgs[2]} alt="" />
         </div>
       </article>
       <article className="with-image image-left">
@@ -72,7 +73,7 @@ function Work(props) {
           <p>Armory Park Avenue, New York</p>
         </div>
         <div className="image">
-          <img src={imgs[3]} alt="" />
+          <LazyImage src={imgs[3]} alt="" />
         </div>
       </article>
       <article className="with-image image-right">
@@ -85,7 +86,7 @@ function Work(props) {
           <p>Boston, Cambridge</p>
         </div>
         <div className="image">
-          <img src={imgs[4]} alt="" />
+          <LazyImage src={imgs[4]} alt="" />
         </div>
       </article>
       <article className="with-image image-left">
@@ -98,7 +99,7 @@ function Work(props) {
           <p>Maersk, Copenhagen</p>
         </div>
         <div className="image">
-          <img src={imgs[5]} alt="" />
+          <LazyImage src={imgs[5]} alt="" />
         </div>
       </article>
       <article className="text-center">

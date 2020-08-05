@@ -1,5 +1,6 @@
 import React from 'react';
 import Classnames from 'classnames';
+import LazyImage from './LazyImage.js';
 import './Profile.scss';
 
 const imgs = [
@@ -34,7 +35,7 @@ function Profile(props) {
           </ul>
         </div>
         <div className="image">
-          <img src={imgs[0]} alt="" />
+          <LazyImage src={imgs[0]} alt="Riccardo Lardi" width="1024" height="1536" />
         </div>
       </article>
       <article className="text-center">
