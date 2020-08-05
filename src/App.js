@@ -23,7 +23,6 @@ function App() {
   const [prevIsIntro, setPrevIsIntro] = React.useState(null);
   const [intersectingBlockIndexes, setIntersectingBlockIndexes] = React.useState([]);
   const [activeSubTitle, setActiveSubTitle] = React.useState(null);
-  const [introVisibility, setIntroVisibility] = React.useState(null);
   const [navigatingDir, setNavigatingDir] = React.useState(null);
   const [isMenuOpen, setIsMenuOpen] = React.useState(null);
 
@@ -48,7 +47,6 @@ function App() {
         });
         if (event.intersectionRect.height >= event.rootBounds.height * 0.5) {
           const newSubtitle = blockEls[index].querySelector('h3')?.textContent;
-          if (index === 0) setIntroVisibility(event.intersectionRect.height / event.rootBounds.height);
           if (newSubtitle) setActiveSubTitle(newSubtitle);
           setActiveBlockIndex(index);
         }
@@ -72,6 +70,7 @@ function App() {
     setTimeout(() => {
       scrollTo(elTop - offset, !isSafari, () => {
         setNavigatingDir(null);
+        setActiveBlockIndex(index + 1);
         if (isMobile) setIsMenuOpen(false);
       });
     }, 125);
@@ -92,7 +91,6 @@ function App() {
         active={activeBlockIndex === 0} 
         intersecting={intersectingBlockIndexes.includes(0)} 
         activeSubTitle={activeSubTitle} 
-        visibility={introVisibility} 
         isTouch={isTouch} 
         scrollY={scrollY} 
         moveToBlock={moveToBlock} 

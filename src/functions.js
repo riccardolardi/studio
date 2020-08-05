@@ -14,3 +14,9 @@ export const scrollTo = (offset, smooth, callback) => {
     behavior: smooth ? 'smooth' : 'auto'
   });
 }
+
+export const trimSlashes = (pathName) => {
+  if (pathName[0] === '/') pathName = pathName.slice(1);
+  if (pathName.slice(-1) === '/') pathName = pathName.slice(-1);
+  return pathName;
+}
