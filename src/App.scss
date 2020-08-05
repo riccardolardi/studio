@@ -332,7 +332,7 @@
           max-height: 66.666vh;
           opacity: 0;
           transform: translateX(-2vw);
-          transition: all 125ms;
+          transition: all 125ms 125ms;
 
           &.loaded {
             opacity: 1;

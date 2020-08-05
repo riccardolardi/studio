@@ -4,7 +4,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 function LazyImage(props) {
 
   function onLoad(event) {
-    event.nativeEvent.path[0].classList.add('loaded');
+    event.target.classList.add('loaded');
   }
 
   return (<React.Fragment>
