@@ -32,9 +32,17 @@
   &.navigating-up, 
   &.navigating-down {
 
-    .block article {
-      opacity: 0 !important;
-      transition: all 125ms 0ms !important;
+    .block {
+
+      h3 {
+        opacity: 0 !important;
+        transform: translateX(-2vw) !important;
+      }
+
+      article {
+        opacity: 0 !important;
+        transition: all 125ms 0ms !important;
+      }
     }
   }
 

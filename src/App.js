@@ -1,8 +1,8 @@
 import React from 'react';
 import Classnames from 'classnames';
 import { useWindowScroll, createBreakpoint, usePrevious } from 'react-use';
-import { isSafari } from 'react-device-detect';
-import easyScroll from 'easy-scroll';
+import { isSafari, isMobileSafari, isMobile as isTouch } from 'react-device-detect';
+import { scrollTo } from './functions.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
 import News from './News.js';
@@ -26,6 +26,10 @@ function App() {
   const [introVisibility, setIntroVisibility] = React.useState(null);
   const [navigatingDir, setNavigatingDir] = React.useState(null);
   const [isMenuOpen, setIsMenuOpen] = React.useState(null);
+
+  const MobileSafariFix = React.lazy(() => import('./MobileSafariFix.js'));
+  const SafariFix = React.lazy(() => import('./SafariFix.js'));
+
   const prevBlockIndex = usePrevious(activeBlockIndex);
   const { y: scrollY } = useWindowScroll();
   const isMobile = useBreakpoint() === 'mobile';
@@ -61,31 +65,15 @@ function App() {
   }, [activeBlockIndex]);
 
   function moveToBlock(index) {
-    // if (!force && (index === activeBlockIndex - 1 || activeBlockIndex === 0)) {
-    //   if (isMobile) setIsMenuOpen(false);
-    //   return false;
-    // }
     const newNavDir = index > activeBlockIndex - 1 ? 'down' : 'up';
     setNavigatingDir(newNavDir);
     const elTop = blockEls[index + 1]?.offsetTop;
     const offset = index + 2 < blockEls.length ? window.innerHeight * 0.225 : 0;
     setTimeout(() => {
-      // window.scroll(0, elTop - offset);
-      const scrollAmount = 
-        newNavDir === 'up' ? window.scrollY - elTop + offset : 
-        elTop - window.scrollY - offset;
-      if (!isSafari) easyScroll({
-        'scrollableDomEle': window,
-        'direction': newNavDir === 'down' ? 'bottom' : 'top',
-        'duration': 250,
-        'easingPreset': 'easeInOutQuad',
-        'scrollAmount': scrollAmount
-      });
-      if (isSafari) window.scroll(0, elTop - offset);
-      setTimeout(() => {
+      scrollTo(elTop - offset, !isSafari, () => {
         setNavigatingDir(null);
         if (isMobile) setIsMenuOpen(false);
-      }, 375);
+      });
     }, 125);
   }
 
@@ -93,7 +81,7 @@ function App() {
     'is-intro': activeBlockIndex === 0,
     'menu-open': isMenuOpen, 
     'navigating-down': navigatingDir === 'down', 
-    'navigating-up': navigatingDir === 'up', 
+    'navigating-up': navigatingDir === 'up',
     'navigating': navigatingDir !== null
   });
 
@@ -105,6 +93,7 @@ function App() {
         intersecting={intersectingBlockIndexes.includes(0)} 
         activeSubTitle={activeSubTitle} 
         visibility={introVisibility} 
+        isTouch={isTouch} 
         scrollY={scrollY} 
         moveToBlock={moveToBlock} 
       />
@@ -139,6 +128,10 @@ function App() {
         moveToBlock={moveToBlock} 
         isNavigating={navigatingDir !== null} 
       />
+      <React.Suspense fallback={null}>
+        {isMobileSafari && <MobileSafariFix />}
+        {isSafari && <SafariFix />}
+      </React.Suspense>
     </main>
   );
 }
