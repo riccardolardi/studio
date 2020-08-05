@@ -15,12 +15,14 @@ function Nav(props) {
 		show, 
 		isMenuOpen, 
 		setIsMenuOpen, 
-		moveToBlock
+		moveToBlock, 
+		isNavigating 
 	} = props;
 
 	React.useLayoutEffect(() => {
 		activeBarEl = document.querySelector('nav .active-bar');
 		liEls = document.querySelectorAll('nav li');
+		setActiveIndex(0);
 	}, []);
 
 	React.useLayoutEffect(() => {
@@ -41,7 +43,7 @@ function Nav(props) {
 	}, [isMenuOpen]);
 
 	React.useEffect(() => {
-		if (document.querySelector('#app').classList.contains('navigating')) return;
+		if (isNavigating) return;
 		if (activeBlockIndex === 0) {
 			setIsMenuOpen(false);
 			return;
@@ -60,7 +62,7 @@ function Nav(props) {
 			[activeLiEl.offsetTop, activeLiEl.parentElement.parentElement.offsetHeight - 
 				activeLiEl.offsetTop - activeLiEl.offsetHeight];
 		if (isMobile) {
-			setTimeout(() => activeBarEl.style.top = `${liElDimsV[0]}px`, index < activeIndex ? 0 : 125);
+			setTimeout(() => activeBarEl.style.top = `${liElDimsV[0] - 2}px`, index < activeIndex ? 0 : 125);
 			setTimeout(() => activeBarEl.style.bottom = `${liElDimsV[1]}px`, index < activeIndex ? 125 : 0);
 		} else {
 			setTimeout(() => activeBarEl.style.left = `${liElDimsH[0]}px`, index < activeIndex ? 0 : 125);

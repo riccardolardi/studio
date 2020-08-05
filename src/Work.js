@@ -103,7 +103,7 @@ function Work(props) {
       </article>
       <article className="text-center">
         <div className="assembly-wrap padding-top">
-          <span className="assembly">&#37;</span>
+          <span role="img" aria-label="work" className="assembly">&#37;</span>
         </div>
       </article>
     </section>

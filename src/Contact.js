@@ -25,7 +25,7 @@ function Contact(props) {
           <p><a href="mailto:hello@riccardolardi.com">hello@riccardolardi.com</a></p>
         </div>
         <div className="image align-left">
-          <span className="assembly">p</span>
+          <span role="img" aria-label="contact" className="assembly">p</span>
         </div>
       </article>
     </section>

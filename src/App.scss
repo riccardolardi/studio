@@ -123,6 +123,7 @@
 
     @include breakpoint($breakMobile) {
       font-size: $pad * 8;
+      line-height: $pad * 8;
     }
   }
 

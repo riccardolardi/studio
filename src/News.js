@@ -67,7 +67,7 @@ function News(props) {
       </article>
       <article className="text-center">
         <div className="assembly-wrap padding-top">
-          <span className="assembly rotate90">&#162;</span>
+          <span role="img" aria-label="news" className="assembly rotate90">&#162;</span>
         </div>
       </article>
     </section>

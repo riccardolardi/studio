@@ -13,8 +13,9 @@ function Header(props) {
     index, 
     scrollY, 
     activeSubTitle, 
+    moveToBlock, 
     active: isActive, 
-    intersecting: isIntersecting
+    intersecting: isIntersecting 
   } = props;
 
   React.useLayoutEffect(() => {
@@ -125,13 +126,19 @@ function Header(props) {
         </span>
       </div>
       <div className="secondary-header">
-        <span className="site-title bold">Studio<br/>Riccardo<br/>Lardi</span>
+        <span className="site-title bold"><a href="/">Studio<br/>Riccardo<br/>Lardi</a></span>
         <span className="site-subtitle">{activeSubTitle}</span>
       </div>
+      <div className="scroll-down" onClick={() => moveToBlock(0)}>
+        <span role="img" aria-label="attention" className="assembly">@</span>
+        <span role="img" aria-label="scroll-down" className="assembly">N</span>
+      </div>
+      {/*
       <div className="emoji coming-soon">
         <label>Scroll down</label>
         <span role="img" aria-label="scroll-down">🙋‍♂️</span>
       </div>
+      */}
     </header>
   );
 }

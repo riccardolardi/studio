@@ -49,7 +49,7 @@ function Profile(props) {
       </article>
       <article className="text-center">
         <div className="assembly-wrap">
-          <span className="assembly">&auml;</span>
+          <span role="img" aria-label="profile" className="assembly">&auml;</span>
         </div>
       </article>
     </section>

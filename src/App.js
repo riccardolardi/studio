@@ -61,10 +61,10 @@ function App() {
   }, [activeBlockIndex]);
 
   function moveToBlock(index) {
-    if (index === activeBlockIndex - 1 || activeBlockIndex === 0) {
-      if (isMobile) setIsMenuOpen(false);
-      return false;
-    }
+    // if (!force && (index === activeBlockIndex - 1 || activeBlockIndex === 0)) {
+    //   if (isMobile) setIsMenuOpen(false);
+    //   return false;
+    // }
     const newNavDir = index > activeBlockIndex - 1 ? 'down' : 'up';
     setNavigatingDir(newNavDir);
     const elTop = blockEls[index + 1]?.offsetTop;
@@ -106,6 +106,7 @@ function App() {
         activeSubTitle={activeSubTitle} 
         visibility={introVisibility} 
         scrollY={scrollY} 
+        moveToBlock={moveToBlock} 
       />
       <News 
         index={1} 
@@ -136,6 +137,7 @@ function App() {
         activeBlockIndex={activeBlockIndex} 
         isMobile={isMobile} 
         moveToBlock={moveToBlock} 
+        isNavigating={navigatingDir !== null} 
       />
     </main>
   );
