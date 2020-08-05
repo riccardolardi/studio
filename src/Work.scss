@@ -53,10 +53,11 @@
 	}
 
 	.assembly {
+		position: relative;
+		top: $pad;
 
-    @include breakpoint($breakMobile) {
-      position: relative;
-      top: $pad * 2;
-    }
-  }
+		@include breakpoint($breakMobile) {
+			top: $pad * 4;
+		}
+	}
 }

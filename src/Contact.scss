@@ -17,11 +17,6 @@
   }
 
   .assembly {
-
-    @include breakpoint($breakMobile) {
-      position: relative;
-      top: $pad * 2;
-      left: $pad * 2;
-    }
+    
   }
 }

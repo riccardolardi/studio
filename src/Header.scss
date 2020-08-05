@@ -8,12 +8,6 @@
 
   &.is-active {
 
-    .secondary-header {
-      opacity: 0;
-      transform: translateX(-2vw);
-      transition: all 125ms 0ms;
-    }
-
     .char-anim1, 
     .char-anim2 {
       pointer-events: auto;
@@ -26,7 +20,8 @@
 
     .scroll-down {
       opacity: 1;
-      transition: opacity 125ms 1.25s;
+      transition: opacity 125ms 1s;
+      pointer-events: auto;
     }
 
     .logo {
@@ -49,10 +44,12 @@
     }
   }
 
-  &.is-ready {
+  &:not(.is-active) {
 
-    .logo-symbol {
-      opacity: 1 !important;
+    .secondary-header {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 125ms 1s;
     }
   }
 
@@ -66,9 +63,9 @@
     padding: $pad / 2;
     background-color: transparent;
     color: $primaryColor;
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 125ms 1s;
+    opacity: 0;
+    transform: translateX(-2vw);
+    transition: all 0ms 0ms;
     z-index: 10;
 
     @include breakpoint($breakMobile) {
@@ -231,6 +228,7 @@
     cursor: pointer;
     opacity: 0;
     transition: all 125ms 0ms;
+    pointer-events: none;
     z-index: 10;
 
     @include breakpoint($breakMobile) {

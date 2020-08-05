@@ -64,11 +64,9 @@ function News(props) {
           <LazyImage src={imgs[0]} alt="News item 1" width="1148" height="636" />
         </div>
       </article>
-      <article className="text-center">
-        <div className="assembly-wrap padding-top">
-          <span role="img" aria-label="news" className="assembly rotate90">&#162;</span>
-        </div>
-      </article>
+      <div className="assembly-wrap">
+        <span role="img" aria-label="news" className="assembly">&#162;</span>
+      </div>
     </section>
   );
 }

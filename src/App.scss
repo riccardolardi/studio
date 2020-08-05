@@ -9,8 +9,8 @@
   font-feature-settings: "dlig", "ss01";
   letter-spacing: calc(-0.015em + 0.14px);
   line-height: calc(1.14em + 0.1vw);
-  background-color: $secondaryColor;
-  color: $primaryColor;
+  background-color: $primaryColor;
+  color: $secondaryColor;
   transition: color 0ms, background-color 125ms 0ms;
 
   @include breakpoint($breakMobile) {
@@ -20,6 +20,11 @@
   &.is-intro {
     background-color: $primaryColor;
     color: $secondaryColor;
+  }
+
+  &.past-intro {
+    background-color: $secondaryColor;
+    color: $primaryColor;
   }
 
   &.menu-open {
@@ -42,6 +47,17 @@
       article {
         opacity: 0 !important;
         transition: all 125ms 0ms !important;
+      }
+
+      .assembly-wrap, {
+        opacity: 0 !important;
+      }
+
+      &#header {
+
+        .assembly {
+          opacity: 0;
+        }
       }
     }
   }
@@ -112,22 +128,21 @@
   a {
     text-decoration: none;
     color: $primaryColor;
-
-    &.link {
-    }
   }
 
   .assembly-wrap {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: opacity 125ms;
   }
 
   .assembly {
+    display: inline-block;
     font-family: 'AssemblyHumanOne';
     font-size: $pad * 4;
     line-height: $pad * 4;
-    margin-left: -$pad * 2;
 
     @include breakpoint($breakMobile) {
       font-size: $pad * 8;
@@ -215,6 +230,10 @@
         transform: translateX(0);
         transition: opacity 125ms 125ms, transform 125ms 125ms;
       }
+
+      .assembly-wrap {
+        opacity: 1;
+      }
     }
 
     h3 {
@@ -239,7 +258,7 @@
     article {
       position: relative;
       padding: 0 0 0 $pad;
-      margin-bottom: $pad * 2;
+      margin-bottom: $pad * 3;
       opacity: 0;
       pointer-events: none;
       transition: opacity 125ms;
@@ -308,6 +327,10 @@
           @include breakpoint($breakMobile) {
             flex-direction: column;
           }
+
+          img {
+            transform: translateX(2vw);
+          }
         }
       }
 
@@ -332,20 +355,23 @@
           max-height: 66.666vh;
           opacity: 0;
           transform: translateX(-2vw);
-          transition: all 125ms 125ms;
+          transition: all 125ms 500ms;
 
           &.loaded {
             opacity: 1;
             transform: translateX(0);
           }
 
-          &.backdrop {
-            position: absolute;
+          &.placeholder {
             width: auto;
             height: auto;
             z-index: -1;
             transform: none;
             transition: unset;
+          }
+
+          &.loaded+.placeholder {
+            display: none;
           }
         }
       }

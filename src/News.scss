@@ -4,11 +4,11 @@
 #news {
 	
 	.assembly {
+		position: relative;
+		top: $pad;
 
-    @include breakpoint($breakMobile) {
-      position: relative;
-      top: $pad;
-      left: $pad * 1.75;
-    }
+		@include breakpoint($breakMobile) {
+			top: $pad * 4;
+		}
   }
 }

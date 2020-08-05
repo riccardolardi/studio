@@ -8,7 +8,6 @@ let charAnims = [];
 let chars1, chars2, appHeight, rellax;
 
 function Header(props) {
-  const [isReady, setIsReady] = React.useState(null);
   const { 
     index, 
     scrollY, 
@@ -22,7 +21,6 @@ function Header(props) {
     appHeight = document.querySelector('#app').offsetHeight;
     prepareCharAnim1();
     prepareCharAnim2();
-    setTimeout(() => setIsReady(true), 1000);
   }, []);
 
   React.useEffect(() => {
@@ -94,8 +92,7 @@ function Header(props) {
   const classes = Classnames({
     'block': true,
     'is-active': isActive, 
-    'is-intersecting': isIntersecting, 
-    'is-ready': isReady
+    'is-intersecting': isIntersecting
   });
 
   return (

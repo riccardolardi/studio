@@ -78,6 +78,7 @@ function App() {
 
   const classes = Classnames({
     'is-intro': activeBlockIndex === 0,
+    'past-intro': activeBlockIndex > 0,
     'menu-open': isMenuOpen, 
     'navigating-down': navigatingDir === 'down', 
     'navigating-up': navigatingDir === 'up',

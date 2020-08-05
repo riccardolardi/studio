@@ -34,7 +34,7 @@ function Work(props) {
           <p>Genossenschaftsbund Migros Zürich</p>
         </div>
         <div className="image align-left">
-          <LazyImage src={imgs[0]} alt="" />
+          <LazyImage src={imgs[0]} alt="" width="537" height="834" />
         </div>
       </article>
       <article className="with-image image-left">
@@ -47,7 +47,7 @@ function Work(props) {
           <p>M+ Museum, Hong Kong</p>
         </div>
         <div className="image">
-          <LazyImage src={imgs[1]} alt="" />
+          <LazyImage src={imgs[1]} alt="" width="1148" height="636" />
         </div>
       </article>
       <article className="with-image image-right">
@@ -60,7 +60,7 @@ function Work(props) {
           <p>Hyundai, Pyeongchang, Südkorea</p>
         </div>
         <div className="image">
-          <LazyImage src={imgs[2]} alt="" />
+          <LazyImage src={imgs[2]} alt="" width="1200" height="675" />
         </div>
       </article>
       <article className="with-image image-left">
@@ -73,7 +73,7 @@ function Work(props) {
           <p>Armory Park Avenue, New York</p>
         </div>
         <div className="image">
-          <LazyImage src={imgs[3]} alt="" />
+          <LazyImage src={imgs[3]} alt="" width="1200" height="675" />
         </div>
       </article>
       <article className="with-image image-right">
@@ -86,7 +86,7 @@ function Work(props) {
           <p>Boston, Cambridge</p>
         </div>
         <div className="image">
-          <LazyImage src={imgs[4]} alt="" />
+          <LazyImage src={imgs[4]} alt="" width="1200" height="675" />
         </div>
       </article>
       <article className="with-image image-left">
@@ -99,14 +99,12 @@ function Work(props) {
           <p>Maersk, Copenhagen</p>
         </div>
         <div className="image">
-          <LazyImage src={imgs[5]} alt="" />
+          <LazyImage src={imgs[5]} alt="" width="1980" height="1320" />
         </div>
       </article>
-      <article className="text-center">
-        <div className="assembly-wrap padding-top">
-          <span role="img" aria-label="work" className="assembly">&#37;</span>
-        </div>
-      </article>
+      <div className="assembly-wrap">
+        <span role="img" aria-label="work" className="assembly">&#37;</span>
+      </div>
     </section>
   );
 }
