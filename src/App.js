@@ -24,8 +24,8 @@ import Contact from './Contact.js';
 import './App.scss';
 
 const useBreakpoint = createBreakpoint({
-  mobile: 767, 
-  other: 768
+  mobile: 768, 
+  other: 769
 });
 
 let intersectionObserver, blockEls;
@@ -104,7 +104,7 @@ function App() {
       scrollTo(elTop - offset, !force && !isSafari, () => {
         setNavigatingDir(null);
         setActiveBlockIndex(index);
-        setTimeout(() => {if (isMobile) setIsMenuOpen(false)}, 250); // hacky
+        if (window.innerWidth <= 768) setIsMenuOpen(false);
       });
     }, 125);
   }
