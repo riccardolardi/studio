@@ -1,6 +1,10 @@
 import React from 'react';
 import Classnames from 'classnames';
 import { 
+  disableBodyScroll, 
+  enableBodyScroll 
+} from 'body-scroll-lock';
+import { 
   useWindowScroll, 
   createBreakpoint, 
   usePrevious, 
@@ -21,6 +25,7 @@ import News from './News.js';
 import Profile from './Profile.js';
 import Work from './Work.js';
 import Contact from './Contact.js';
+import Project from './Project.js';
 import './App.scss';
 
 const useBreakpoint = createBreakpoint({
@@ -39,6 +44,7 @@ function App() {
   const [navigatingDir, setNavigatingDir] = React.useState(null);
   const [statePopped, setStatePopped] = React.useState(null);
   const [isMenuOpen, setIsMenuOpen] = React.useState(null);
+  const [openProjectId, setOpenProjectId] = React.useState(null);
 
   const MobileSafariFix = React.lazy(() => import('./MobileSafariFix.js'));
   const SafariFix = React.lazy(() => import('./SafariFix.js'));
@@ -89,6 +95,15 @@ function App() {
     setPrevIsIntro(prevBlockIndex === 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeBlockIndex]);
+
+  React.useEffect(() => {
+    if ((isMenuOpen && isMobile) || openProjectId !== null) {
+      disableBodyScroll(document.querySelector('nav'));
+    } else {
+      enableBodyScroll(document.querySelector('nav'));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMenuOpen, openProjectId]);
 
   function onHistoryPopState(event) {
     setStatePopped(true);
@@ -152,6 +167,9 @@ function App() {
         active={activeBlockIndex === 4} 
         intersecting={intersectingBlockIndexes.includes(4)} 
       />
+      {openProjectId !== null && <Project 
+        openProjectId={openProjectId} 
+      />}
       <Nav 
         show={activeBlockIndex > 0} 
         setIsMenuOpen={setIsMenuOpen} 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import Classnames from 'classnames';
@@ -26,14 +25,7 @@ function Nav(props) {
 	}, []);
 
 	React.useEffect(() => {
-		setActive(activeIndex);
-		if (isMobile) {
-			if (isMenuOpen) {
-				disableBodyScroll(document.querySelector('nav'));
-			} else {
-				enableBodyScroll(document.querySelector('nav'));
-			}
-		}
+		if (isMenuOpen) setActive(activeIndex);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isMenuOpen]);
 

@@ -15,6 +15,11 @@ const imgs = [
 function Work(props) {
   const { index, active: isActive, intersecting: isIntersecting } = props;
 
+  function onProjectClicked(index = 0, event) {
+    if (event) event.preventDefault();
+    // ...
+  }
+
   const classes = Classnames({
     'block': true,
     'is-active': isActive,
@@ -25,82 +30,94 @@ function Work(props) {
     <section id="work" className={classes} data-index={index}>
       <h3 className="bold">Projekte</h3>
       <article className="with-image image-right">
-        <div className="text">
-          <span className="char divider divider-top divider-right">
-            <span />
-          </span>
-          <h4 className="bold margin-bottom">Sommernachts-Ball</h4>
-          <p>Website, 2020</p>
-          <p>Genossenschaftsbund Migros Zürich</p>
-        </div>
-        <div className="image align-left">
-          <LazyImage src={imgs[0]} alt="" width="537" height="834" />
-        </div>
+        <a href="/project/sommernachts-ball" alt="" onClick={onProjectClicked.bind(this, 0)}>
+          <div className="text">
+            <span className="char divider divider-top divider-right">
+              <span />
+            </span>
+            <h4 className="bold margin-bottom">Sommernachts-Ball</h4>
+            <p>Website, 2020</p>
+            <p>Genossenschaftsbund Migros Zürich</p>
+          </div>
+          <div className="image">
+            <LazyImage src={imgs[0]} alt="" width="537" height="834" />
+          </div>
+        </a>
       </article>
       <article className="with-image image-left">
-        <div className="text">
-          <span className="char divider divider-top divider-left">
-            <span />
-          </span>
-          <h4 className="bold margin-bottom">Simulation M+ Museum</h4>
-          <p>3D-Simulation für bespielbare Fassade, 2019</p>
-          <p>M+ Museum, Hong Kong</p>
-        </div>
-        <div className="image">
-          <LazyImage src={imgs[1]} alt="" width="1148" height="636" />
-        </div>
+        <a href="/project/mplus" alt="" onClick={onProjectClicked.bind(this, 1)}>
+          <div className="text">
+            <span className="char divider divider-top divider-left">
+              <span />
+            </span>
+            <h4 className="bold margin-bottom">Simulation M+ Museum</h4>
+            <p>3D-Simulation für bespielbare Fassade, 2019</p>
+            <p>M+ Museum, Hong Kong</p>
+          </div>
+          <div className="image">
+            <LazyImage src={imgs[1]} alt="" width="1148" height="636" />
+          </div>
+        </a>
       </article>
       <article className="with-image image-right">
-        <div className="text">
-          <span className="char divider divider-top divider-right">
-            <span />
-          </span>
-          <h4 className="bold margin-bottom">Hyundai Pavilion Olympia 2018</h4>
-          <p>Interaktive Wasserinstallation, 2018</p>
-          <p>Hyundai, Pyeongchang, Südkorea</p>
-        </div>
-        <div className="image">
-          <LazyImage src={imgs[2]} alt="" width="1200" height="675" />
-        </div>
+        <a href="/project/hyundai" alt="" onClick={onProjectClicked.bind(this, 2)}>
+          <div className="text">
+            <span className="char divider divider-top divider-right">
+              <span />
+            </span>
+            <h4 className="bold margin-bottom">Hyundai Pavilion Olympia 2018</h4>
+            <p>Interaktive Wasserinstallation, 2018</p>
+            <p>Hyundai, Pyeongchang, Südkorea</p>
+          </div>
+          <div className="image">
+            <LazyImage src={imgs[2]} alt="" width="1200" height="675" />
+          </div>
+        </a>
       </article>
       <article className="with-image image-left">
-        <div className="text">
-          <span className="char divider divider-top divider-left">
-            <span />
-          </span>
-          <h4 className="bold margin-bottom">Hansel & Gretel</h4>
-          <p>Immersive Videoinstallation, 2017</p>
-          <p>Armory Park Avenue, New York</p>
-        </div>
-        <div className="image">
-          <LazyImage src={imgs[3]} alt="" width="1200" height="675" />
-        </div>
+        <a href="/project/hanselgretel" alt="" onClick={onProjectClicked.bind(this, 3)}>
+          <div className="text">
+            <span className="char divider divider-top divider-left">
+              <span />
+            </span>
+            <h4 className="bold margin-bottom">Hansel & Gretel</h4>
+            <p>Immersive Videoinstallation, 2017</p>
+            <p>Armory Park Avenue, New York</p>
+          </div>
+          <div className="image">
+            <LazyImage src={imgs[3]} alt="" width="1200" height="675" />
+          </div>
+        </a>
       </article>
       <article className="with-image image-right">
-        <div className="text">
-          <span className="char divider divider-top divider-right">
-            <span />
-          </span>
-          <h4 className="bold margin-bottom">Harvard Street Square Facade</h4>
-          <p>Mockup für bespielbare Fassade, 2018</p>
-          <p>Boston, Cambridge</p>
-        </div>
-        <div className="image">
-          <LazyImage src={imgs[4]} alt="" width="1200" height="675" />
-        </div>
+        <a href="/project/boston" alt="" onClick={onProjectClicked.bind(this, 4)}>
+          <div className="text">
+            <span className="char divider divider-top divider-right">
+              <span />
+            </span>
+            <h4 className="bold margin-bottom">Harvard Street Square Facade</h4>
+            <p>Mockup für bespielbare Fassade, 2018</p>
+            <p>Boston, Cambridge</p>
+          </div>
+          <div className="image">
+            <LazyImage src={imgs[4]} alt="" width="1200" height="675" />
+          </div>
+        </a>
       </article>
       <article className="with-image image-left">
-        <div className="text">
-          <span className="char divider divider-top divider-left">
-            <span />
-          </span>
-          <h4 className="bold margin-bottom">Maersk Visitor Centre</h4>
-          <p>Interaktiver Medientisch, 2017</p>
-          <p>Maersk, Copenhagen</p>
-        </div>
-        <div className="image">
-          <LazyImage src={imgs[5]} alt="" width="1980" height="1320" />
-        </div>
+        <a href="/project/maersk" alt="" onClick={onProjectClicked.bind(this, 5)}>
+          <div className="text">
+            <span className="char divider divider-top divider-left">
+              <span />
+            </span>
+            <h4 className="bold margin-bottom">Maersk Visitor Centre</h4>
+            <p>Interaktiver Medientisch, 2017</p>
+            <p>Maersk, Copenhagen</p>
+          </div>
+          <div className="image">
+            <LazyImage src={imgs[5]} alt="" width="1980" height="1320" />
+          </div>
+        </a>
       </article>
       <div className="assembly-wrap">
         <span role="img" aria-label="work" className="assembly">&#37;</span>

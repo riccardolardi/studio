@@ -4,9 +4,22 @@
 #work {
 
 	article {
+		padding: 0 !important;
 
 		@include breakpoint($breakMobile) {
 			margin-bottom: $pad * 3 !important;
+		}
+
+		&>a {
+			display: flex;
+			width: 80vw;
+			justify-content: space-around;
+			align-items: center;
+
+			@include breakpoint($breakMobile) {
+				display: block;
+				width: 100%;
+			}
 		}
 
 		p {
@@ -14,12 +27,9 @@
 		}
 
 		&.image-left {
-			
-			.text {
 
-				@include breakpoint($breakMobile) {
-					text-align: right;
-				}
+			&>a {	
+				flex-direction: row-reverse;
 			}
 		}
 
@@ -35,11 +45,15 @@
 		}
 
 		.image {
+			align-items: flex-start !important;
 
 			img {
+				max-width: 100% !important;
+				max-height: 66.666vh !important;
 
 				@include breakpoint($breakMobile) {
-					max-height: 50vh !important;
+					max-width: 100% !important;
+					max-height: 33.33vh !important;
 				}
 			}
 		}
