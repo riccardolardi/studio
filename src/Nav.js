@@ -38,11 +38,11 @@ function Nav(props) {
 	}, [isMenuOpen]);
 
 	React.useEffect(() => {
-		if (isNavigating) return;
 		if (activeBlockIndex === 0) {
 			setIsMenuOpen(false);
 			return;
 		}
+		if (isNavigating) return;
 		setActive(activeBlockIndex - 1);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeBlockIndex]);

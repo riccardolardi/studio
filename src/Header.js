@@ -46,10 +46,8 @@ function Header(props) {
       const newRotateStyle = charAnims[index][1].replace('$', newVal / 10);
       const newOpacityStyle = 1 - Math.abs(newVal / 1000);
       el.style.transform = newTranslateStyle;
-      if (newVal) {
-        el.querySelector('span').style.opacity = newOpacityStyle;
-        el.querySelector('span').style.transition = 'unset';
-      }
+      el.querySelector('span').style.opacity = newOpacityStyle;
+      el.querySelector('span').style.transition = 'unset';
       el.querySelector('span').style.transform = newRotateStyle;
     });
   }, [scrollY]);

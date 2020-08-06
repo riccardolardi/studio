@@ -82,6 +82,7 @@ function App() {
     blockEls.forEach(el => intersectionObserver.observe(el));
     moveToBlock(slugs.indexOf(trimSlashes(window.location.pathname)), true);
     window.addEventListener('popstate', event => onHistoryPopState(event));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(() => {
@@ -99,7 +100,7 @@ function App() {
     const newNavDir = index > activeBlockIndex ? 'down' : 'up';
     setNavigatingDir(newNavDir);
     const elTop = blockEls[index]?.offsetTop;
-    const offset = index + 1 < blockEls.length ? window.innerHeight * 0.2 : 0;
+    const offset = index + 1 < blockEls.length && index > 0 ? window.innerHeight * 0.2 : 0;
     setTimeout(() => {
       scrollTo(elTop - offset, !force && !isSafari, () => {
         setNavigatingDir(null);
