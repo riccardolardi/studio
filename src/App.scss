@@ -67,12 +67,20 @@
     .block article {
       transform: translateY(2vh);
     }
+
+    .block h3 {
+      transition: all 125ms 0ms !important;
+    }
   }
 
   &.navigating-down {
 
     .block article {
       transform: translateY(-2vh);
+    }
+
+    .block h3 {
+      transition: all 125ms 0ms !important;
     }
   }
 

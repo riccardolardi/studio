@@ -4,6 +4,7 @@
 .block#profile {
 
 	article {
+		margin-bottom: $pad !important;
 
 		&.with-image {
 
@@ -18,4 +19,9 @@
 			}
 		}
 	}
+
+	.assembly {
+		position: relative;
+		top: -$pad;
+  }
 }

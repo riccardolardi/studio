@@ -5,7 +5,6 @@
 	
 	.assembly {
 		position: relative;
-		top: $pad;
 
 		@include breakpoint($breakMobile) {
 			top: $pad * 4;

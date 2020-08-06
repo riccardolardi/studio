@@ -25,11 +25,6 @@ function Nav(props) {
 		setActiveIndex(0);
 	}, []);
 
-	React.useLayoutEffect(() => {
-		if (show && !isMobile) setTimeout(() => setIsMenuOpen(true), 500);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [show]);
-
 	React.useEffect(() => {
 		setActive(activeIndex);
 		if (isMobile) {
@@ -76,7 +71,7 @@ function Nav(props) {
 	function linkClicked(index = 0, event) {
 		if (event) event.preventDefault();
 		setActive(index);
-		setTimeout(() => moveToBlock(index));
+		setTimeout(() => moveToBlock(index + 1));
 	}
 
   const classes = Classnames({

@@ -1,8 +1,20 @@
 import React from 'react';
 import Classnames from 'classnames';
-import { useWindowScroll, createBreakpoint, usePrevious } from 'react-use';
-import { isSafari, isMobileSafari, isMobile as isTouch } from 'react-device-detect';
-import { scrollTo } from './functions.js';
+import { 
+  useWindowScroll, 
+  createBreakpoint, 
+  usePrevious, 
+  useDebounce
+ } from 'react-use';
+import { 
+  isSafari, 
+  isMobileSafari, 
+  isMobile as isTouch 
+} from 'react-device-detect';
+import { 
+  scrollTo, 
+  trimSlashes 
+} from './functions.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
 import News from './News.js';
@@ -17,6 +29,7 @@ const useBreakpoint = createBreakpoint({
 });
 
 let intersectionObserver, blockEls;
+const slugs = ['/', 'news', 'profile', 'work', 'contact'];
 
 function App() {
   const [activeBlockIndex, setActiveBlockIndex] = React.useState(null);
@@ -24,6 +37,7 @@ function App() {
   const [intersectingBlockIndexes, setIntersectingBlockIndexes] = React.useState([]);
   const [activeSubTitle, setActiveSubTitle] = React.useState(null);
   const [navigatingDir, setNavigatingDir] = React.useState(null);
+  const [statePopped, setStatePopped] = React.useState(null);
   const [isMenuOpen, setIsMenuOpen] = React.useState(null);
 
   const MobileSafariFix = React.lazy(() => import('./MobileSafariFix.js'));
@@ -32,6 +46,17 @@ function App() {
   const prevBlockIndex = usePrevious(activeBlockIndex);
   const { y: scrollY } = useWindowScroll();
   const isMobile = useBreakpoint() === 'mobile';
+
+  useDebounce(() => {
+    if (statePopped) {
+      setStatePopped(false);
+      return;
+    }
+    window.history.pushState({
+      index: activeBlockIndex,
+      slug: slugs[activeBlockIndex]
+    }, slugs[activeBlockIndex], slugs[activeBlockIndex]);
+  }, 500, [activeBlockIndex]);
 
   React.useLayoutEffect(() => {
     blockEls = Array.from(document.querySelectorAll('.block'));
@@ -55,6 +80,8 @@ function App() {
       threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
     });
     blockEls.forEach(el => intersectionObserver.observe(el));
+    moveToBlock(slugs.indexOf(trimSlashes(window.location.pathname)), true);
+    window.addEventListener('popstate', event => onHistoryPopState(event));
   }, []);
 
   React.useEffect(() => {
@@ -62,16 +89,22 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeBlockIndex]);
 
-  function moveToBlock(index) {
-    const newNavDir = index > activeBlockIndex - 1 ? 'down' : 'up';
+  function onHistoryPopState(event) {
+    setStatePopped(true);
+    moveToBlock(event.state.index, true);
+  }
+
+  function moveToBlock(index, force = false) {
+    if (index < 0) return;
+    const newNavDir = index > activeBlockIndex ? 'down' : 'up';
     setNavigatingDir(newNavDir);
-    const elTop = blockEls[index + 1]?.offsetTop;
-    const offset = index + 2 < blockEls.length ? window.innerHeight * 0.225 : 0;
+    const elTop = blockEls[index]?.offsetTop;
+    const offset = index + 1 < blockEls.length ? window.innerHeight * 0.2 : 0;
     setTimeout(() => {
-      scrollTo(elTop - offset, !isSafari, () => {
+      scrollTo(elTop - offset, !force && !isSafari, () => {
         setNavigatingDir(null);
-        setActiveBlockIndex(index + 1);
-        if (isMobile) setIsMenuOpen(false);
+        setActiveBlockIndex(index);
+        setTimeout(() => {if (isMobile) setIsMenuOpen(false)}, 250); // hacky
       });
     }, 125);
   }
