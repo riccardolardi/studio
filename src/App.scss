@@ -365,6 +365,12 @@
     &.loaded {
       opacity: 1;
       transform: translateX(0) !important;
+
+      img.placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
 
     img {
@@ -373,11 +379,8 @@
       max-height: 66.666vh;
 
       &.placeholder {
-        position: absolute;
         width: auto;
         height: auto;
-        top: 0;
-        left: 0;
         opacity: 0;
         border-right: $pad * 0.1 solid $primaryColor;
         border-bottom: $pad * 0.1 solid $primaryColor;

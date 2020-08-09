@@ -216,41 +216,24 @@
   }
 
   .scroll-down {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: fixed;
-    bottom: 0;
+    bottom: $pad;
     left: $pad;
-    width: $pad * 2;
-    height: $pad * 4;
     cursor: pointer;
+    color: $secondaryColor;
+    font-size: $pad * 2 !important;
+    line-height: $pad * 2 !important;
     opacity: 0;
     transition: opacity 0ms 0ms;
     pointer-events: none;
+    transform: rotateZ(180deg) rotateY(180deg);
     z-index: 10;
 
     @include breakpoint($breakMobile) {
-      bottom: $pad * 0.75;
-      left: $pad * 1.5;
-      width: $pad * 4;
-      height: $pad * 8;
-    }
-
-    span {
-      display: block;
-      position: absolute;
-      font-size: $pad * 2;
-      line-height: $pad * 2;
-      height: $pad * 2;
-      margin: 0;
-      transform: rotateZ(180deg) rotateY(180deg);
-
-      @include breakpoint($breakMobile) {
-        font-size: $pad * 4;
-        line-height: $pad * 4;
-        height: $pad * 4;
-      }
+      font-size: $pad * 4 !important;
+      line-height: $pad * 4 !important;
+      left: -$pad * 2;
+      bottom: $pad * 2;
     }
   }
 }

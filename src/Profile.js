@@ -44,7 +44,7 @@ function Profile(props) {
             <span />
           </span>
           <p>Mit über 10 Jahren Erfahrung im Bereich digitaler Medien und deren Einbettung im physischen Raum bietet das Studio sämtliche Services zur erfolgreichen Umsetzung Ihrer Produktidee.</p>
-          <p>Gemeinsam mit dem Kunden begleitet und verwirklicht das Studio Projekte, von der rohen Idee über deren Verfestigung, über den ersten Prototypen bis hin zum fertigen Produkt und dessen Inbetriebnahme. Der Kunde wird partizipativ am Designprozess inkludiert und ist Projektpartner auf Augenhöhe.</p>
+          <p>Gemeinsam mit dem Kunden begleitet und verwirklicht das Studio Projekte, von der rohen Idee über deren Verfestigung, über den ersten Prototypen bis hin zum fertigen Produkt und dessen Inbetriebnahme. Der Kunde wird partizipativ am Designprozess miteinbezogen und ist Projektpartner auf Augenhöhe.</p>
           <p>Das Studio bewegt sich in einem dichten Netzwerk von Spezialisten in relevanten Bereichen und greift wo nötig auf diese zu.</p>
         </div>
       </article>

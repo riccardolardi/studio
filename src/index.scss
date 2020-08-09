@@ -53,6 +53,10 @@ table {
     outline: none;
   }
 }
+button {
+	background-color: transparent;
+	border: none;
+}
 html {
   scrollbar-width: none;
   -ms-overflow-style: none;

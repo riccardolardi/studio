@@ -1,8 +1,8 @@
 import React from 'react';
 import Classnames from 'classnames';
 import { 
-  disableBodyScroll, 
-  enableBodyScroll 
+  clearAllBodyScrollLocks, 
+  disableBodyScroll 
 } from 'body-scroll-lock';
 import { 
   useWindowScroll, 
@@ -98,10 +98,12 @@ function App() {
   }, [activeBlockIndex]);
 
   React.useEffect(() => {
-    if ((isMenuOpen && isMobile) || openProjectId !== null) {
-      disableBodyScroll(document.querySelector('nav'));
+    if (isMenuOpen && isMobile) {
+      disableBodyScroll(document.querySelector('#nav'));
+    } else if (openProjectId !== null) {
+      disableBodyScroll(document.querySelector('#project'));
     } else {
-      enableBodyScroll(document.querySelector('nav'));
+      clearAllBodyScrollLocks();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMenuOpen, openProjectId]);
@@ -117,7 +119,8 @@ function App() {
     const newNavDir = index > activeBlockIndex ? 'down' : 'up';
     setNavigatingDir(newNavDir);
     const elTop = blockEls[index]?.offsetTop;
-    const offset = index + 1 < blockEls.length && index > 0 ? window.innerHeight * 0.2 : 0;
+    const offset = index + 1 < blockEls.length && index > 0 ? 
+      window.innerHeight * (isMobile ? 0.3 : 0.2) : 0;
     setTimeout(() => {
       window.scrollTo(0, elTop - offset);
       setNavigatingDir(null);

@@ -89,11 +89,11 @@ function Nav(props) {
 		    </ul>
 		    <span className="active-bar" />
 	    </div>
-    	<div className="menu-button" onClick={menuButtonClicked}>
+    	<button className="menu-button" onClick={menuButtonClicked}>
 	      <MenuIcon className="menu-icon" fontSize='large' />
 	      <CloseIcon className="close-icon" fontSize='large' />
 	      <ArrowBackIcon className="back-icon" fontSize='large' />
-	    </div>
+	    </button>
     </nav>
   );
 }

@@ -124,9 +124,7 @@ function Header(props) {
         <span className="site-title bold"><a href="/">Studio<br/>Riccardo<br/>Lardi</a></span>
         <span className="site-subtitle">{activeSubTitle}</span>
       </div>
-      <div className="scroll-down" onClick={() => moveToBlock(1)}>
-        <span role="img" aria-label="scroll-down" className="assembly">N</span>
-      </div>
+      <button role="img" aria-label="scroll-down" className="scroll-down assembly" onClick={() => moveToBlock(1)}>N</button>
       {/*
       <div className="emoji coming-soon">
         <label>Scroll down</label>
