@@ -1,7 +1,7 @@
 @import './Vars.scss';
 @import 'breakpoint-sass';
 
-#work {
+.block#work {
 
 	article {
 		padding: 0 !important;
@@ -19,6 +19,16 @@
 			@include breakpoint($breakMobile) {
 				display: block;
 				width: 100%;
+			}
+
+			&:hover {
+				perspective: 256px;
+				
+				img.placeholder {
+					transform: translate3d($pad * 0.2, $pad * 0.15, 0) !important;
+					opacity: 1 !important;
+					transition: all 75ms !important;
+				}
 			}
 		}
 
@@ -56,22 +66,20 @@
 					max-height: 33.33vh !important;
 				}
 			}
-		}
 
-		.text {
-
-			@include breakpoint($breakMobile) {
-				margin-bottom: $pad * 2 !important;
+			img.placeholder {
+				opacity: 0;
+				transform: translate3d(0, 0, 0);
+				transition: all 125ms 125ms !important;
 			}
 		}
 	}
 
 	.assembly {
-		position: relative;
-		top: $pad;
+		display: none;
 
 		@include breakpoint($breakMobile) {
-			top: $pad * 4;
+			
 		}
 	}
 }

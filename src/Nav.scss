@@ -57,6 +57,25 @@
     }
   }
 
+  &.project-open {
+
+    .menu-drawer {
+      display: none;
+    }
+
+    svg {
+      transform: rotateZ(0deg);
+
+      &.menu-icon, &.close-icon {
+        opacity: 0;
+      }
+
+      &.back-icon {
+        opacity: 1;
+      }
+    }
+  }
+
   .menu-button {
     display: flex;
     justify-content: center;
@@ -167,6 +186,11 @@
     }
 
     &.close-icon {
+      position: absolute;
+      opacity: 0;
+    }
+
+    &.back-icon {
       position: absolute;
       opacity: 0;
     }

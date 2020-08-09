@@ -4,7 +4,7 @@ import LazyImage from './LazyImage.js';
 import './Work.scss';
 
 const imgs = [
-  require('./img/gmz/gmz3.png'),
+  require('./img/gmz/gmz4.png'),
   require('./img/mplus/iart-mplus1.png'),
   require('./img/hyundai/iart-hyundai3.jpg'),
   require('./img/armory/iart-armory1.jpg'),
@@ -12,12 +12,30 @@ const imgs = [
   require('./img/maersk/kimwendt-maersk1.jpg')
 ];
 
+let articleEls;
+
 function Work(props) {
-  const { index, active: isActive, intersecting: isIntersecting } = props;
+  const { 
+    index, 
+    setOpenProjectId, 
+    active: isActive, 
+    intersecting: isIntersecting 
+  } = props;
+
+  React.useLayoutEffect(() => {
+    articleEls = Array.from(document.querySelectorAll('#work article'));
+  }, []);
 
   function onProjectClicked(index = 0, event) {
     if (event) event.preventDefault();
-    // ...
+    setOpenProjectId(index);
+    const title = articleEls[index].querySelector('h4').textContent;
+    const slug = articleEls[index].querySelector('a').getAttribute('href').replace('/work/', '');
+    window.history.pushState({
+      type: 'project',
+      index: index,
+      slug: slug
+    }, title, `/work/${slug}`);
   }
 
   const classes = Classnames({
@@ -30,7 +48,7 @@ function Work(props) {
     <section id="work" className={classes} data-index={index}>
       <h3 className="bold">Projekte</h3>
       <article className="with-image image-right">
-        <a href="/project/sommernachts-ball" alt="" onClick={onProjectClicked.bind(this, 0)}>
+        <a href="/work/sommernachts-ball" alt="" onClick={onProjectClicked.bind(this, 0)}>
           <div className="text">
             <span className="char divider divider-top divider-right">
               <span />
@@ -40,12 +58,12 @@ function Work(props) {
             <p>Genossenschaftsbund Migros Zürich</p>
           </div>
           <div className="image">
-            <LazyImage src={imgs[0]} alt="" width="537" height="834" />
+            <LazyImage src={imgs[0]} alt="" width="1280" height="687" />
           </div>
         </a>
       </article>
       <article className="with-image image-left">
-        <a href="/project/mplus" alt="" onClick={onProjectClicked.bind(this, 1)}>
+        <a href="/work/mplus" alt="" onClick={onProjectClicked.bind(this, 1)}>
           <div className="text">
             <span className="char divider divider-top divider-left">
               <span />
@@ -60,7 +78,7 @@ function Work(props) {
         </a>
       </article>
       <article className="with-image image-right">
-        <a href="/project/hyundai" alt="" onClick={onProjectClicked.bind(this, 2)}>
+        <a href="/work/hyundai" alt="" onClick={onProjectClicked.bind(this, 2)}>
           <div className="text">
             <span className="char divider divider-top divider-right">
               <span />
@@ -75,7 +93,7 @@ function Work(props) {
         </a>
       </article>
       <article className="with-image image-left">
-        <a href="/project/hanselgretel" alt="" onClick={onProjectClicked.bind(this, 3)}>
+        <a href="/work/hanselgretel" alt="" onClick={onProjectClicked.bind(this, 3)}>
           <div className="text">
             <span className="char divider divider-top divider-left">
               <span />
@@ -90,7 +108,7 @@ function Work(props) {
         </a>
       </article>
       <article className="with-image image-right">
-        <a href="/project/boston" alt="" onClick={onProjectClicked.bind(this, 4)}>
+        <a href="/work/boston" alt="" onClick={onProjectClicked.bind(this, 4)}>
           <div className="text">
             <span className="char divider divider-top divider-right">
               <span />
@@ -105,7 +123,7 @@ function Work(props) {
         </a>
       </article>
       <article className="with-image image-left">
-        <a href="/project/maersk" alt="" onClick={onProjectClicked.bind(this, 5)}>
+        <a href="/work/maersk" alt="" onClick={onProjectClicked.bind(this, 5)}>
           <div className="text">
             <span className="char divider divider-top divider-left">
               <span />

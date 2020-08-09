@@ -125,7 +125,6 @@ function Header(props) {
         <span className="site-subtitle">{activeSubTitle}</span>
       </div>
       <div className="scroll-down" onClick={() => moveToBlock(1)}>
-        <span role="img" aria-label="attention" className="assembly">@</span>
         <span role="img" aria-label="scroll-down" className="assembly">N</span>
       </div>
       {/*

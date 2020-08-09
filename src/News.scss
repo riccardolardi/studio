@@ -1,13 +1,13 @@
 @import './Vars.scss';
 @import 'breakpoint-sass';
 
-#news {
+.block#news {
 	
 	.assembly {
-		position: relative;
+		display: none;
 
 		@include breakpoint($breakMobile) {
-			top: $pad * 4;
+			
 		}
   }
 }

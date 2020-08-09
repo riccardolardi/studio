@@ -6,5 +6,142 @@
   top: 0px;
   left: 0px;
   right: 0px;
-  bottom: 0px;
+  height: 100vh;
+  background-color: $secondaryColor;
+  z-index: 5;
+  overflow-y: scroll;
+  opacity: 0;
+  transition: opacity 125ms 0ms;
+
+  &.is-ready {
+    opacity: 1;
+    transition: opacity 125ms 0ms;
+
+    h4 {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  	position: relative;
+  	top: $pad * 3.7;
+    padding: $pad * 3 $pad * 2 $pad * 2;
+
+    @include breakpoint($breakMobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      top: $pad * 12.8;
+      padding: 0 $pad * 4 $pad * 2;
+    }
+
+    h4 {
+      position: fixed;
+      top: $pad * 3.7;
+      left: $pad * 1.4;
+      font-size: $pad * 1.4;
+      transform: translateX(-2vw);
+      opacity: 0;
+      transition: all 125ms 250ms;
+
+      @include breakpoint($breakMobile) {
+        position: relative;
+        top: auto;
+        left: auto;
+        font-size: $pad * 2.4;
+        margin: 0 0 $pad;
+      }
+    }
+
+    .text {
+      position: relative;
+      width: 42%;
+
+      @include breakpoint($breakMobile) {
+        margin: $pad 0 $pad;
+        width: 100%;
+      }
+
+      ul {
+        margin: $pad 0;
+
+        @include breakpoint($breakMobile) {
+          margin: $pad * 2 0;
+        }
+
+        li {
+          position: relative;
+          padding-left: $pad * 0.7;
+
+          @include breakpoint($breakMobile) {
+            padding-left: $pad * 3;
+            margin-bottom: $pad * 0.5;
+          }
+
+          svg {
+            position: absolute;
+            left: 0px;
+            top: $pad * 0.1;
+            margin-right: $pad * 0.2;
+
+            @include breakpoint($breakMobile) {
+              top: $pad * -0.2;
+            }
+          }
+        }
+      }
+    }
+
+    .images {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      width: 42%;
+
+      @include breakpoint($breakMobile) {
+        width: 100%;
+      }
+
+      .lazy-image {
+        margin-top: $pad;
+
+        @include breakpoint($breakMobile) {
+          margin-top: $pad * 2;
+        }
+
+        &:nth-of-type(1n) {
+          transition: all 125ms 125ms;
+        }
+
+        &:nth-of-type(2n) {
+          transition: all 125ms 250ms;
+        }
+
+        &:nth-of-type(3n) {
+          transition: all 125ms 375ms;
+        }
+
+        &:nth-of-type(4n) {
+          transition: all 125ms 500ms;
+        }
+
+        &:nth-of-type(5n) {
+          transition: all 125ms 625ms;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        img {
+          max-height: 50vh;
+        }
+      }
+    }
+  }
 }

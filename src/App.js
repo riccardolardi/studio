@@ -10,15 +10,7 @@ import {
   usePrevious, 
   useDebounce
  } from 'react-use';
-import { 
-  isSafari, 
-  isMobileSafari, 
-  isMobile as isTouch 
-} from 'react-device-detect';
-import { 
-  scrollTo, 
-  trimSlashes 
-} from './functions.js';
+import { trimSlashes } from './functions.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
 import News from './News.js';
@@ -46,9 +38,6 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(null);
   const [openProjectId, setOpenProjectId] = React.useState(null);
 
-  const MobileSafariFix = React.lazy(() => import('./MobileSafariFix.js'));
-  const SafariFix = React.lazy(() => import('./SafariFix.js'));
-
   const prevBlockIndex = usePrevious(activeBlockIndex);
   const { y: scrollY } = useWindowScroll();
   const isMobile = useBreakpoint() === 'mobile';
@@ -58,11 +47,16 @@ function App() {
       setStatePopped(false);
       return;
     }
-    window.history.pushState({
-      index: activeBlockIndex,
-      slug: slugs[activeBlockIndex]
-    }, slugs[activeBlockIndex], slugs[activeBlockIndex]);
-  }, 500, [activeBlockIndex]);
+    if (trimSlashes(window.location.pathname) !== slugs[activeBlockIndex] && 
+      !window.location.pathname.includes('/work/')) {
+      window.history.pushState({
+        type: 'main',
+        index: activeBlockIndex,
+        slug: slugs[activeBlockIndex]
+      }, slugs[activeBlockIndex], 
+        activeBlockIndex > 0 ? '/' + slugs[activeBlockIndex] : slugs[activeBlockIndex]);
+    }
+  }, 500, [scrollY]);
 
   React.useLayoutEffect(() => {
     blockEls = Array.from(document.querySelectorAll('.block'));
@@ -87,6 +81,13 @@ function App() {
     });
     blockEls.forEach(el => intersectionObserver.observe(el));
     moveToBlock(slugs.indexOf(trimSlashes(window.location.pathname)), true);
+    if (window.location.pathname.includes('/work/')) {
+      const projectSlug = window.location.pathname.replace('/work/', '');
+      const projectIndex = Array.from(document.querySelectorAll('#work article')).findIndex(el => {
+        return el.querySelector('a').getAttribute('href').replace('/work/', '') === projectSlug;
+      });
+      setOpenProjectId(projectIndex);
+    }
     window.addEventListener('popstate', event => onHistoryPopState(event));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -107,7 +108,8 @@ function App() {
 
   function onHistoryPopState(event) {
     setStatePopped(true);
-    moveToBlock(event.state.index, true);
+    moveToBlock(event.state.type === 'main' ? event.state.index : 3, true);
+    setOpenProjectId(event.state.type === 'project' ? event.state.index : null);
   }
 
   function moveToBlock(index, force = false) {
@@ -117,11 +119,9 @@ function App() {
     const elTop = blockEls[index]?.offsetTop;
     const offset = index + 1 < blockEls.length && index > 0 ? window.innerHeight * 0.2 : 0;
     setTimeout(() => {
-      scrollTo(elTop - offset, !force && !isSafari, () => {
-        setNavigatingDir(null);
-        setActiveBlockIndex(index);
-        if (window.innerWidth <= 768) setIsMenuOpen(false);
-      });
+      window.scrollTo(0, elTop - offset);
+      setNavigatingDir(null);
+      if (window.innerWidth <= 768) setTimeout(() => setIsMenuOpen(false), 125);
     }, 125);
   }
 
@@ -129,9 +129,9 @@ function App() {
     'is-intro': activeBlockIndex === 0,
     'past-intro': activeBlockIndex > 0,
     'menu-open': isMenuOpen, 
+    'project-open': openProjectId !== null, 
     'navigating-down': navigatingDir === 'down', 
-    'navigating-up': navigatingDir === 'up',
-    'navigating': navigatingDir !== null
+    'navigating-up': navigatingDir === 'up'
   });
 
   return (
@@ -141,7 +141,6 @@ function App() {
         active={activeBlockIndex === 0} 
         intersecting={intersectingBlockIndexes.includes(0)} 
         activeSubTitle={activeSubTitle} 
-        isTouch={isTouch} 
         scrollY={scrollY} 
         moveToBlock={moveToBlock} 
       />
@@ -161,6 +160,7 @@ function App() {
         index={3} 
         active={activeBlockIndex === 3} 
         intersecting={intersectingBlockIndexes.includes(3)} 
+        setOpenProjectId={setOpenProjectId} 
       />
       <Contact 
         index={4} 
@@ -177,12 +177,10 @@ function App() {
         activeBlockIndex={activeBlockIndex} 
         isMobile={isMobile} 
         moveToBlock={moveToBlock} 
-        isNavigating={navigatingDir !== null} 
+        projectOpen={openProjectId !== null} 
+        setOpenProjectId={setOpenProjectId} 
+        prevBlockIndex={prevBlockIndex} 
       />
-      <React.Suspense fallback={null}>
-        {isMobileSafari && <MobileSafariFix />}
-        {isSafari && <SafariFix />}
-      </React.Suspense>
     </main>
   );
 }

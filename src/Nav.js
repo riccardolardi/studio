@@ -1,40 +1,34 @@
 import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Classnames from 'classnames';
 import './Nav.scss';
 
 let activeBarEl, liEls;
 
 function Nav(props) {
-	const [activeIndex, setActiveIndex] = React.useState(null);
 	const {
 		activeBlockIndex, 
 		isMobile, 
 		show, 
 		isMenuOpen, 
+		projectOpen, 
+		setOpenProjectId, 
 		setIsMenuOpen, 
 		moveToBlock, 
-		isNavigating 
+		prevBlockIndex 
 	} = props;
 
 	React.useLayoutEffect(() => {
 		activeBarEl = document.querySelector('nav .active-bar');
 		liEls = document.querySelectorAll('nav li');
-		setActiveIndex(0);
 	}, []);
-
-	React.useEffect(() => {
-		if (isMenuOpen) setActive(activeIndex);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [isMenuOpen]);
 
 	React.useEffect(() => {
 		if (activeBlockIndex === 0) {
 			setIsMenuOpen(false);
-			return;
 		}
-		if (isNavigating) return;
 		setActive(activeBlockIndex - 1);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeBlockIndex]);
@@ -49,13 +43,12 @@ function Nav(props) {
 			[activeLiEl.offsetTop, activeLiEl.parentElement.parentElement.offsetHeight - 
 				activeLiEl.offsetTop - activeLiEl.offsetHeight];
 		if (isMobile) {
-			setTimeout(() => activeBarEl.style.top = `${liElDimsV[0] - 2}px`, index < activeIndex ? 0 : 125);
-			setTimeout(() => activeBarEl.style.bottom = `${liElDimsV[1]}px`, index < activeIndex ? 125 : 0);
+			setTimeout(() => activeBarEl.style.top = `${liElDimsV[0] - 2}px`, index < prevBlockIndex ? 0 : 125);
+			setTimeout(() => activeBarEl.style.bottom = `${liElDimsV[1]}px`, index < prevBlockIndex ? 125 : 0);
 		} else {
-			setTimeout(() => activeBarEl.style.left = `${liElDimsH[0]}px`, index < activeIndex ? 0 : 125);
-			setTimeout(() => activeBarEl.style.right = `${liElDimsH[1]}px`, index < activeIndex ? 125 : 0);
+			setTimeout(() => activeBarEl.style.left = `${liElDimsH[0]}px`, index < prevBlockIndex ? 0 : 125);
+			setTimeout(() => activeBarEl.style.right = `${liElDimsH[1]}px`, index < prevBlockIndex ? 125 : 0);
 		}
-		setActiveIndex(index);
 		liEls.forEach(el => el.classList.remove('active'));
 		liEls[index].classList.add('active');
 	}
@@ -66,25 +59,40 @@ function Nav(props) {
 		setTimeout(() => moveToBlock(index + 1));
 	}
 
+	function menuButtonClicked() {
+		if (projectOpen) {
+			setOpenProjectId(null);
+	    window.history.pushState({
+	    	type: 'main',
+	      index: activeBlockIndex,
+	      slug: 'work'
+	    }, 'work', '/work');
+		} else {
+			setIsMenuOpen(!isMenuOpen);
+		}
+	}
+
   const classes = Classnames({
     'show': show,
-    'is-open': isMenuOpen
+    'is-open': isMenuOpen || projectOpen,
+    'project-open': projectOpen
   });
 
   return (
     <nav id="nav" className={classes}>
 	    <div className="menu-drawer">
 	    	<ul>
-		    	<li className="menu-item"><a href="#news" onClick={linkClicked.bind(this, 0)}>News</a></li>
-		    	<li className="menu-item"><a href="#profile" onClick={linkClicked.bind(this, 1)}>Profil</a></li>
-		    	<li className="menu-item"><a href="#work" onClick={linkClicked.bind(this, 2)}>Projekte</a></li>
-		    	<li className="menu-item"><a href="#contact" onClick={linkClicked.bind(this, 3)}>Kontakt</a></li>
+		    	<li className="menu-item"><a href="/news" onClick={linkClicked.bind(this, 0)}>News</a></li>
+		    	<li className="menu-item"><a href="/profile" onClick={linkClicked.bind(this, 1)}>Profil</a></li>
+		    	<li className="menu-item"><a href="/work" onClick={linkClicked.bind(this, 2)}>Projekte</a></li>
+		    	<li className="menu-item"><a href="/contact" onClick={linkClicked.bind(this, 3)}>Kontakt</a></li>
 		    </ul>
 		    <span className="active-bar" />
 	    </div>
-    	<div className="menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+    	<div className="menu-button" onClick={menuButtonClicked}>
 	      <MenuIcon className="menu-icon" fontSize='large' />
 	      <CloseIcon className="close-icon" fontSize='large' />
+	      <ArrowBackIcon className="back-icon" fontSize='large' />
 	    </div>
     </nav>
   );

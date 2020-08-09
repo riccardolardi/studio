@@ -53,6 +53,11 @@ table {
     outline: none;
   }
 }
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-color: transparent transparent;
+}
 body {
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;
@@ -60,4 +65,8 @@ body {
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   overscroll-behavior: none;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }

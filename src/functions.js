@@ -18,5 +18,6 @@ export const scrollTo = (offset, smooth, callback) => {
 export const trimSlashes = (pathName) => {
   if (pathName[0] === '/') pathName = pathName.slice(1);
   if (pathName.slice(-1) === '/') pathName = pathName.slice(-1);
+  if (pathName.includes('/')) pathName = pathName.slice(0, pathName.indexOf('/'));
   return pathName;
 }
