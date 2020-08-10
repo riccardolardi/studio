@@ -64,7 +64,7 @@
     }
 
     svg {
-      transform: rotateZ(0deg);
+      transform: rotateZ(90deg);
 
       &.menu-icon, &.close-icon {
         opacity: 0;
@@ -178,7 +178,7 @@
   svg {
     pointer-events: none;
     fill: white;
-    transform: rotateZ(0);
+    transform: rotateZ(0deg);
     transition: all 125ms;
 
     &.menu-icon {

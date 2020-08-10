@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import Classnames from 'classnames';
 import './Nav.scss';
 
@@ -92,7 +92,7 @@ function Nav(props) {
     	<button className="menu-button" onClick={menuButtonClicked}>
 	      <MenuIcon className="menu-icon" fontSize='large' />
 	      <CloseIcon className="close-icon" fontSize='large' />
-	      <ArrowBackIcon className="back-icon" fontSize='large' />
+	      <ArrowDownwardIcon className="back-icon" fontSize='large' />
 	    </button>
     </nav>
   );
