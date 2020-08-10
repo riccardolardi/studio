@@ -23,14 +23,14 @@
 
 			@include breakpoint($breakDesktop) {
 
-				&:hover {
+				// &:hover {
 					
-					img.placeholder {
-						transform: translate3d($pad * 0.2, $pad * 0.15, 0) !important;
-						opacity: 1 !important;
-						transition: all 75ms !important;
-					}
-				}
+				// 	img.placeholder {
+				// 		transform: translate3d($pad * 0.2, $pad * 0.15, 0) !important;
+				// 		opacity: 1 !important;
+				// 		transition: all 75ms !important;
+				// 	}
+				// }
 			}
 		}
 

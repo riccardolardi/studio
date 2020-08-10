@@ -4,7 +4,7 @@ import LazyImage from './LazyImage.js';
 import './News.scss';
 
 const imgs = [
-  require('./img/gmz/gmz1.jpg')
+  require('./img/gmz/gmz1.png')
 ]
 
 function News(props) {
