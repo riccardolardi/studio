@@ -6,6 +6,10 @@
 	article {
 		margin-bottom: $pad !important;
 
+		@include breakpoint($breakMobile) {
+			margin-bottom: $pad * 2 !important;
+		}
+
 		&.with-image {
 
 			.image {

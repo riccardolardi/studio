@@ -44,6 +44,24 @@
     }
   }
 
+  &.menu-open {
+
+    @include breakpoint($breakMobile) {
+
+      .secondary-header {
+
+        .site-title {
+          // font-size: $pad * 2.4;
+          // line-height: calc(1.14em + 0.1vw);
+
+          a {
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+  }
+
   &:not(.is-active) {
 
     .secondary-header {
@@ -59,22 +77,18 @@
     position: fixed;
     top: $pad;
     left: $pad;
-    height: $pad * 2;
-    padding: $pad / 2;
     background-color: transparent;
     color: $primaryColor;
     opacity: 0;
     transform: translateX(-2vw);
     transition: all 0ms 0ms;
-    z-index: 10;
+    z-index: 20;
 
     @include breakpoint($breakMobile) {
-      padding: $pad;
-      left: $pad * 2;
-      top: $pad * 2;
+      display: none;
+      left: $pad * 4;
+      top: $pad * 4;
       height: $pad * 6;
-      background-color: $primaryColor;
-      color: $secondaryColor;
     }
 
     .site-title {
@@ -85,38 +99,6 @@
       @include breakpoint($breakMobile) {
         font-size: $pad;
         line-height: $pad * 1.45;
-
-        a {
-          color: $secondaryColor;
-        }
-      }
-    }
-
-    .site-subtitle {
-      display: none;
-      position: relative;
-      margin-left: $pad;
-      line-height: $pad * 1.4;
-
-      @include breakpoint($breakMobile) {
-        display: block;
-        line-height: $pad * 3.5;
-        margin-left: $pad * 3;
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        left: -$pad * 0.5;
-        width: $pad * 0.065;
-        height: 100%;
-        background-color: $secondaryColor;
-        transform: skew(-24deg);
-
-        @include breakpoint($breakMobile) {
-          width: $pad * 0.18;
-          left: -$pad * 1.5;
-        }
       }
     }
   }
@@ -129,8 +111,8 @@
     pointer-events: none;
 
     @include breakpoint($breakMobile) {
-      top: $pad * 2;
-      left: $pad * 2;
+      top: $pad * 4;
+      left: $pad * 4;
     }
 
     span {
@@ -151,8 +133,8 @@
     pointer-events: none;
 
     @include breakpoint($breakMobile) {
-      bottom: $pad * 2;
-      right: $pad * 2;
+      bottom: $pad * 4;
+      right: $pad * 4;
     }
 
     h2 {
@@ -232,8 +214,8 @@
     @include breakpoint($breakMobile) {
       font-size: $pad * 4 !important;
       line-height: $pad * 4 !important;
-      left: -$pad * 2;
-      bottom: $pad * 2;
+      left: $pad * 2;
+      bottom: $pad * 4;
     }
   }
 }

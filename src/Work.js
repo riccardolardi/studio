@@ -69,7 +69,7 @@ function Work(props) {
               <span />
             </span>
             <h4 className="bold margin-bottom">Simulation M+ Museum</h4>
-            <p>3D-Simulation für bespielbare Fassade, 2019</p>
+            <p>3D-Simulation für bespielbares Fassadensystem, 2019</p>
             <p>M+ Museum, Hong Kong</p>
           </div>
           <div className="image">
@@ -83,7 +83,7 @@ function Work(props) {
             <span className="char divider divider-top divider-right">
               <span />
             </span>
-            <h4 className="bold margin-bottom">Hyundai Pavilion Olympia 2018</h4>
+            <h4 className="bold margin-bottom">Hyundai Olympic Pavilion</h4>
             <p>Interaktive Wasserinstallation, 2018</p>
             <p>Hyundai, Pyeongchang, Südkorea</p>
           </div>

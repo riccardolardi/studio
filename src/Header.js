@@ -8,10 +8,11 @@ let charAnims = [];
 let chars1, chars2, appHeight, rellax;
 
 function Header(props) {
+  const [hasScrolled, setHasScrolled] = React.useState(null);
   const { 
     index, 
     scrollY, 
-    activeSubTitle, 
+    isMenuOpen, 
     moveToBlock, 
     active: isActive, 
     intersecting: isIntersecting 
@@ -39,7 +40,7 @@ function Header(props) {
   }, [isIntersecting]);
 
   React.useEffect(() => {
-    chars2.forEach((el, index) => {
+    if (hasScrolled) chars2.forEach((el, index) => {
       const tweenedVal = tweens.easeOutSine(scrollY, 0, appHeight * 1.5, appHeight * 1.5);
       const newVal = tweenedVal * charAnims[index][2];
       const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal / 2));
@@ -50,6 +51,8 @@ function Header(props) {
       el.querySelector('span').style.transition = 'unset';
       el.querySelector('span').style.transform = newRotateStyle;
     });
+    setHasScrolled(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollY]);
 
   function prepareCharAnim1() {
@@ -90,7 +93,8 @@ function Header(props) {
   const classes = Classnames({
     'block': true,
     'is-active': isActive, 
-    'is-intersecting': isIntersecting
+    'is-intersecting': isIntersecting,
+    'menu-open': isMenuOpen
   });
 
   return (
@@ -122,7 +126,6 @@ function Header(props) {
       </div>
       <div className="secondary-header">
         <span className="site-title bold"><a href="/">Studio<br/>Riccardo<br/>Lardi</a></span>
-        <span className="site-subtitle">{activeSubTitle}</span>
       </div>
       <button role="img" aria-label="scroll-down" className="scroll-down assembly" onClick={() => moveToBlock(1)}>N</button>
       {/*

@@ -2,6 +2,7 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function LazyImage(props) {
+  const { visibleByDefault } = props;
 
   function onLoad(event) {
     event.target.parentElement.classList.add('loaded');
@@ -15,6 +16,7 @@ function LazyImage(props) {
     <LazyLoadImage 
       src={props.src} 
       alt={props.alt} 
+      visibleByDefault={visibleByDefault} 
       onLoad={event => onLoad(event)} 
     />
   </div>);

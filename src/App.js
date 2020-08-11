@@ -32,7 +32,6 @@ function App() {
   const [activeBlockIndex, setActiveBlockIndex] = React.useState(null);
   const [prevIsIntro, setPrevIsIntro] = React.useState(null);
   const [intersectingBlockIndexes, setIntersectingBlockIndexes] = React.useState([]);
-  const [activeSubTitle, setActiveSubTitle] = React.useState(null);
   const [navigatingDir, setNavigatingDir] = React.useState(null);
   const [statePopped, setStatePopped] = React.useState(null);
   const [isMenuOpen, setIsMenuOpen] = React.useState(null);
@@ -71,8 +70,6 @@ function App() {
           return indexes.filter(el => el !== index);
         });
         if (event.intersectionRect.height >= event.rootBounds.height * 0.5) {
-          const newSubtitle = blockEls[index].querySelector('h3')?.textContent;
-          if (newSubtitle) setActiveSubTitle(newSubtitle);
           setActiveBlockIndex(index);
         }
       });
@@ -120,7 +117,7 @@ function App() {
     setNavigatingDir(newNavDir);
     const elTop = blockEls[index]?.offsetTop;
     const offset = index + 1 < blockEls.length && index > 0 ? 
-      window.innerHeight * (isMobile ? 0.3 : 0.2) : 0;
+      window.innerHeight * (isMobile ? 0.075 : 0.2) : 0;
     setTimeout(() => {
       window.scrollTo(0, elTop - offset);
       setNavigatingDir(null);
@@ -143,8 +140,8 @@ function App() {
         index={0} 
         active={activeBlockIndex === 0} 
         intersecting={intersectingBlockIndexes.includes(0)} 
-        activeSubTitle={activeSubTitle} 
         scrollY={scrollY} 
+        isMenuOpen={isMenuOpen} 
         moveToBlock={moveToBlock} 
       />
       <News 

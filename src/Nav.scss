@@ -11,8 +11,8 @@
   z-index: 10;
 
   @include breakpoint($breakMobile) {
-    top: $pad * 2;
-    right: $pad * 2;
+    top: $pad * 4;
+    right: $pad * 4;
     width: $pad * 6;
     height: $pad * 6;
   }
@@ -23,7 +23,7 @@
     .menu-button {
       opacity: 1;
       transform: translateX(0) rotateZ(0deg);
-      transition: all 125ms 125ms;
+      transition: all 125ms 1s;
     }
   }
 
@@ -180,6 +180,10 @@
     fill: white;
     transform: rotateZ(0deg);
     transition: all 125ms;
+
+    @include breakpoint($breakMobile) {
+      font-size: $pad * 4;
+    }
 
     &.menu-icon {
       position: absolute;
