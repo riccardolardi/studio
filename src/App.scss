@@ -366,25 +366,25 @@
       opacity: 1;
       transform: translateX(0) !important;
 
-      img.placeholder {
-        position: absolute;
-        top: 0;
-        left: 0;
+      img {
+        display: block;
+
+        &.placeholder {
+          display: none;
+        }
       }
     }
 
     img {
-      display: block;
+      display: none;
       max-width: 100%;
       max-height: 66.666vh;
 
       &.placeholder {
+        display: block;
         width: auto;
         height: auto;
         opacity: 0;
-        // border-right: $pad * 0.1 solid $primaryColor;
-        // border-bottom: $pad * 0.1 solid $primaryColor;
-        transform: none;
       }
     }
   }

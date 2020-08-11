@@ -44,9 +44,9 @@ function Project(props) {
           <p>Bacon ipsum dolor amet pork belly turkey porchetta shoulder, chuck salami cupim pork loin short ribs sirloin spare ribs turducken. Cupim tongue chislic salami pastrami pork belly pancetta swine bresaola cow. Tri-tip hamburger ham, cow doner sausage filet mignon pork flank. Pork kielbasa jerky landjaeger brisket frankfurter.</p>
         </div>
         <div className="images">
-          <LazyImage src={require('./img/gmz/gmz1.png')} width="1280" height="782" alt="Sommernachts-Ball Mac" />
-          <LazyImage src={require('./img/gmz/gmz2.png')} width="720" height="1464" alt="Sommernachts-Ball iPhone" />
-          <LazyImage src={require('./img/gmz/gmz3.png')} width="1049" height="1369" alt="Sommernachts-Ball iPad" />
+          <LazyImage src={require('./img/gmz/gmz1.png')} width="1024" height="849" alt="Sommernachts-Ball Mac" />
+          <LazyImage src={require('./img/gmz/gmz2.png')} width="827" height="1024" alt="Sommernachts-Ball iPhone" />
+          <LazyImage src={require('./img/gmz/gmz3.png')} width="842" height="1024" alt="Sommernachts-Ball iPad" />
         </div>
       </article>}
 	    {openProjectId === 1 && <article>

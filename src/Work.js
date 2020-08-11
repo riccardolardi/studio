@@ -5,7 +5,7 @@ import './Work.scss';
 
 const imgs = [
   require('./img/gmz/gmz1.png'),
-  require('./img/mplus/mplus0.png'),
+  require('./img/mplus/mplus1.png'),
   require('./img/hyundai/iart-hyundai3.jpg'),
   require('./img/armory/iart-armory1.jpg'),
   require('./img/boston/iart-boston1.jpg'),
@@ -58,7 +58,7 @@ function Work(props) {
             <p>Genossenschaftsbund Migros Zürich</p>
           </div>
           <div className="image">
-            <LazyImage src={imgs[0]} alt="" width="1280" height="782" />
+            <LazyImage src={imgs[0]} alt="" width="1024" height="849" />
           </div>
         </a>
       </article>
@@ -73,7 +73,7 @@ function Work(props) {
             <p>M+ Museum, Hong Kong</p>
           </div>
           <div className="image">
-            <LazyImage src={imgs[1]} alt="" width="1028" height="793" />
+            <LazyImage src={imgs[1]} alt="" width="1024" height="845" />
           </div>
         </a>
       </article>
