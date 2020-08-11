@@ -1,6 +1,7 @@
 import React from 'react';
 import Classnames from 'classnames';
 import LazyImage from './LazyImage.js';
+import {ReactComponent as Icon} from './img/icons/wave-triangle.svg';
 import './Work.scss';
 
 const imgs = [
@@ -47,6 +48,7 @@ function Work(props) {
   return (
     <section id="work" className={classes} data-index={index}>
       <h3 className="bold">Projekte</h3>
+      <Icon className="section-symbol" />
       <article className="with-image image-right">
         <a href="/work/sommernachts-ball" alt="" onClick={onProjectClicked.bind(this, 0)}>
           <div className="text">
@@ -137,9 +139,6 @@ function Work(props) {
           </div>
         </a>
       </article>
-      <div className="assembly-wrap">
-        <span role="img" aria-label="work" className="assembly">&#37;</span>
-      </div>
     </section>
   );
 }

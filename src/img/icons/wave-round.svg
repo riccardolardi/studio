@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000px" height="180px" viewBox="0 0 1000 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>wave-round</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wave-round" transform="translate(-101.000000, -216.000000)" stroke="#0000FF" stroke-width="40">
+            <path d="M101,236 C201,236 201,376 301,376 C401,376 401,236 501,236 C601,236 601,376 701,376 C801,376 801,236 901,236 C1001,236 1001,376 1101,376" id="Path-4" transform="translate(601.000000, 306.000000) scale(1, -1) translate(-601.000000, -306.000000) "></path>
+        </g>
+    </g>
+</svg>

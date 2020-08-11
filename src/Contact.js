@@ -1,5 +1,6 @@
 import React from 'react';
 import Classnames from 'classnames';
+import {ReactComponent as Icon} from './img/icons/wave-loop.svg';
 import './Contact.scss';
 
 function Contact(props) {
@@ -25,9 +26,7 @@ function Contact(props) {
           <p><a href="mailto:hello@riccardolardi.com">hello@riccardolardi.com</a></p>
         </div>
         <div className="image align-left">
-          <div className="assembly-wrap">
-            <span role="img" aria-label="contact" className="assembly">p</span>
-          </div>
+          <Icon className="section-symbol" />
         </div>
       </article>
     </section>

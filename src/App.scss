@@ -45,23 +45,16 @@
         transform: translateX(-2vw) !important;
       }
 
-      article {
+      article, .section-symbol {
         opacity: 0 !important;
         transition: all 125ms 0ms !important;
-      }
-
-      &#header {
-
-        .assembly {
-          opacity: 0 !important;
-        }
       }
     }
   }
 
   &.navigating-up {
 
-    .block article {
+    .block article, .section-symbol {
       transform: translateY(2vh);
     }
 
@@ -72,7 +65,7 @@
 
   &.navigating-down {
 
-    .block article {
+    .block article, .section-symbol {
       transform: translateY(-2vh);
     }
 
@@ -139,23 +132,18 @@
     color: $primaryColor;
   }
 
-  .assembly-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  .section-symbol {
+    display: block;
+    position: relative;
+    margin-top: $pad * 2;
+    left: $pad * 2.8;
+    width: $pad * 4;
+    height: auto;
     opacity: 0;
-    transition: opacity 125ms;
-  }
-
-  .assembly {
-    display: inline-block;
-    font-family: 'AssemblyHumanOne';
-    font-size: $pad * 4;
-    line-height: $pad * 4;
+    transition: all 125ms;
 
     @include breakpoint($breakMobile) {
-      font-size: $pad * 8;
-      line-height: $pad * 8;
+      display: none;
     }
   }
 
@@ -248,7 +236,7 @@
         transition: opacity 125ms 125ms, transform 125ms 125ms;
       }
 
-      .assembly-wrap {
+      .section-symbol {
         opacity: 1;
       }
     }

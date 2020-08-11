@@ -1,6 +1,7 @@
 import React from 'react';
 import Classnames from 'classnames';
 import LazyImage from './LazyImage.js';
+import {ReactComponent as Icon} from './img/icons/wave-square.svg';
 import './News.scss';
 
 const imgs = [
@@ -25,6 +26,7 @@ function News(props) {
   return (
     <section id="news" className={classes} data-index={index}>
       <h3 className="bold">News</h3>
+      <Icon className="section-symbol" />
       <article className="with-image image-right">
         <div className="text">
           <span className="char divider divider-top divider-left">
@@ -64,9 +66,6 @@ function News(props) {
           <LazyImage src={imgs[0]} alt="News item 1" width="1024" height="849" />
         </div>
       </article>
-      <div className="assembly-wrap">
-        <span role="img" aria-label="news" className="assembly">&#162;</span>
-      </div>
     </section>
   );
 }

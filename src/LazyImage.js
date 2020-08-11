@@ -16,6 +16,7 @@ function LazyImage(props) {
     <LazyLoadImage 
       src={props.src} 
       alt={props.alt} 
+      threshold={250} 
       visibleByDefault={visibleByDefault} 
       onLoad={event => onLoad(event)} 
     />

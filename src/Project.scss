@@ -89,7 +89,7 @@
             margin-right: $pad * 0.2;
 
             @include breakpoint($breakMobile) {
-              top: $pad * -0.2;
+              top: $pad * 0.1;
             }
           }
         }

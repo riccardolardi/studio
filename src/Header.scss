@@ -19,8 +19,9 @@
     }
 
     .scroll-down {
+      transform: translateY(0);
       opacity: 1;
-      transition: opacity 125ms 1s;
+      transition: all 125ms 1s;
       pointer-events: auto;
     }
 
@@ -77,6 +78,7 @@
     position: fixed;
     top: $pad;
     left: $pad;
+    height: $pad * 2;
     background-color: transparent;
     color: $primaryColor;
     opacity: 0;
@@ -198,24 +200,36 @@
   }
 
   .scroll-down {
+    display: block;
     position: fixed;
     bottom: $pad;
     left: $pad;
     cursor: pointer;
-    color: $secondaryColor;
-    font-size: $pad * 2 !important;
-    line-height: $pad * 2 !important;
     opacity: 0;
-    transition: opacity 0ms 0ms;
+    transform: translateY(-2vh);
+    transition: all 0ms 0ms;
     pointer-events: none;
-    transform: rotateZ(180deg) rotateY(180deg);
+    margin: 0;
+    padding: 0;
     z-index: 10;
 
     @include breakpoint($breakMobile) {
-      font-size: $pad * 4 !important;
-      line-height: $pad * 4 !important;
-      left: $pad * 2;
+      left: $pad * 4;
       bottom: $pad * 4;
+    }
+
+    svg {
+      display: block;
+      width: $pad;
+      height: auto;
+
+      @include breakpoint($breakMobile) {
+        width: $pad * 3;
+      }
+
+      g {
+        stroke: $secondaryColor;
+      }
     }
   }
 }

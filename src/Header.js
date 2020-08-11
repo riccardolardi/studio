@@ -2,6 +2,7 @@ import React from 'react';
 import Classnames from 'classnames';
 import tweens from 'tween-functions';
 import Rellax from 'rellax';
+import {ReactComponent as ArrowDown} from './img/icons/arrow-down.svg';
 import './Header.scss';
 
 let charAnims = [];
@@ -127,13 +128,9 @@ function Header(props) {
       <div className="secondary-header">
         <span className="site-title bold"><a href="/">Studio<br/>Riccardo<br/>Lardi</a></span>
       </div>
-      <button role="img" aria-label="scroll-down" className="scroll-down assembly" onClick={() => moveToBlock(1)}>N</button>
-      {/*
-      <div className="emoji coming-soon">
-        <label>Scroll down</label>
-        <span role="img" aria-label="scroll-down">🙋‍♂️</span>
-      </div>
-      */}
+      <button role="img" aria-label="scroll-down" className="scroll-down" onClick={() => moveToBlock(1)}>
+        <ArrowDown />
+      </button>
     </header>
   );
 }
