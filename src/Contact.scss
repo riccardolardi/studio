@@ -6,6 +6,11 @@
   flex-direction: column;
   justify-content: center;
 
+  article {
+    position: relative;
+    top: 5vh;
+  }
+
   .image {
 
   	&.align-left {
@@ -16,7 +21,16 @@
   	}
   }
 
-  .assembly {
-    
+  .social-icon {
+    display: inline-block;
+    margin: $pad * 0.2 $pad * 0.2 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      display: block;
+    }
   }
 }
