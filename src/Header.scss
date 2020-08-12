@@ -147,10 +147,9 @@
     transform: translateX(-50%);
 
     @include breakpoint($breakMobile) {
+      top: 17.5vh;
+      width: 7.5vh;
       height: 50vh;
-      width: 10vh;
-      bottom: 25vh;
-      top: auto;
       flex-direction: column;
       justify-content: space-around;
     }

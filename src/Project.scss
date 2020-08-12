@@ -85,7 +85,7 @@
             font-size: $pad * 0.5;
 
             @include breakpoint($breakMobile) {
-              top: $pad * 0.4;
+              top: $pad * 0.35;
               font-size: unset;
             }
           }

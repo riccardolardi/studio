@@ -148,7 +148,7 @@
       position: absolute;
       bottom: $pad * 0.35;
       background-color: $secondaryColor;
-      height: $pad * 0.06;
+      height: $pad * 0.1;
 
       @include breakpoint($breakMobile) {
         height: auto;
