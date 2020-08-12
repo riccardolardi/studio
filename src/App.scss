@@ -45,7 +45,7 @@
         transform: translateX(-2vw) !important;
       }
 
-      article, .section-symbol {
+      article {
         opacity: 0 !important;
         transition: all 125ms 0ms !important;
       }
@@ -54,7 +54,7 @@
 
   &.navigating-up {
 
-    .block article, .section-symbol {
+    .block article {
       transform: translateY(2vh);
     }
 
@@ -65,7 +65,7 @@
 
   &.navigating-down {
 
-    .block article, .section-symbol {
+    .block article {
       transform: translateY(-2vh);
     }
 
@@ -132,18 +132,18 @@
     color: $primaryColor;
   }
 
-  .section-symbol {
-    display: block;
-    position: relative;
-    margin-top: $pad * 2;
-    left: $pad * 2.8;
-    width: $pad * 4;
-    height: auto;
-    opacity: 0;
-    transition: all 125ms;
+  .symbol {
+    display: none;
 
     @include breakpoint($breakMobile) {
-      display: none;
+      display: block;
+      position: relative;
+      width: $pad * 10;
+      height: auto;
+    }
+
+    &.symbol-white g g {
+      stroke: $secondaryColor;
     }
   }
 
@@ -177,6 +177,10 @@
 
   .rotate90 {
     transform: rotateZ(90deg);
+  }
+
+  .drop-shadow {
+    filter: drop-shadow(5px 5px 5px #dbdbdb);
   }
 
   .logo-symbol {
@@ -234,10 +238,6 @@
         opacity: 1;
         transform: translateX(0);
         transition: opacity 125ms 125ms, transform 125ms 125ms;
-      }
-
-      .section-symbol {
-        opacity: 1;
       }
     }
 
@@ -389,7 +389,6 @@
         display: block;
         width: auto;
         height: auto;
-        opacity: 0;
       }
     }
   }

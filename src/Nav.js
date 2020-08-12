@@ -2,6 +2,7 @@ import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import {ReactComponent as Icon} from './img/icons/wave-round.svg';
 import Classnames from 'classnames';
 import './Nav.scss';
 
@@ -36,18 +37,28 @@ function Nav(props) {
 	function setActive(index = 0) {
 		const activeLiEl = liEls[index];
 		if (!activeLiEl) return;
-		const liElDimsH = 
-			[activeLiEl.offsetLeft, activeLiEl.parentElement.parentElement.offsetWidth - 
-				activeLiEl.offsetLeft - activeLiEl.offsetWidth];
-		const liElDimsV = 
-			[activeLiEl.offsetTop, activeLiEl.parentElement.parentElement.offsetHeight - 
-				activeLiEl.offsetTop - activeLiEl.offsetHeight];
+		const liElDimsH = [
+			activeLiEl.offsetLeft, 
+			activeLiEl.parentElement.parentElement.offsetWidth - activeLiEl.offsetLeft - activeLiEl.offsetWidth
+		];
+		const liElDimsV = [
+			activeLiEl.offsetTop, 
+			activeLiEl.parentElement.parentElement.offsetHeight - activeLiEl.offsetTop - activeLiEl.offsetHeight
+		];
+		const percentH = [
+			liElDimsH[0] / activeLiEl.parentElement.parentElement.offsetWidth * 100, 
+			liElDimsH[1] / activeLiEl.parentElement.parentElement.offsetWidth * 100
+		];
+		const percentV = [
+			liElDimsV[0] / activeLiEl.parentElement.parentElement.offsetHeight * 100, 
+			liElDimsV[1] / activeLiEl.parentElement.parentElement.offsetHeight * 100
+		];
 		if (isMobile) {
-			setTimeout(() => activeBarEl.style.top = `${liElDimsV[0] - 2}px`, index < prevBlockIndex ? 0 : 125);
-			setTimeout(() => activeBarEl.style.bottom = `${liElDimsV[1]}px`, index < prevBlockIndex ? 125 : 0);
+			setTimeout(() => activeBarEl.style.top = `${percentV[0] + 0.05}%`, index < prevBlockIndex ? 0 : 125);
+			setTimeout(() => activeBarEl.style.bottom = `${percentV[1]}%`, index < prevBlockIndex ? 125 : 0);
 		} else {
-			setTimeout(() => activeBarEl.style.left = `${liElDimsH[0]}px`, index < prevBlockIndex ? 0 : 125);
-			setTimeout(() => activeBarEl.style.right = `${liElDimsH[1]}px`, index < prevBlockIndex ? 125 : 0);
+			setTimeout(() => activeBarEl.style.left = `${percentH[0]}%`, index < prevBlockIndex ? 0 : 125);
+			setTimeout(() => activeBarEl.style.right = `${percentH[1]}%`, index < prevBlockIndex ? 125 : 0);
 		}
 		liEls.forEach(el => el.classList.remove('active'));
 		liEls[index].classList.add('active');
@@ -88,6 +99,7 @@ function Nav(props) {
 		    	<li className="menu-item"><a href="/contact" onClick={linkClicked.bind(this, 3)}>Kontakt</a></li>
 		    </ul>
 		    <span className="active-bar" />
+		    <Icon className="symbol symbol-white" />
 	    </div>
     	<button className="menu-button" onClick={menuButtonClicked}>
 	      <MenuIcon className="menu-icon" fontSize='large' />

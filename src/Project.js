@@ -45,8 +45,8 @@ function Project(props) {
         </div>
         <div className="images">
           <LazyImage src={require('./img/gmz/gmz1.png')} width="1024" height="849" alt="Sommernachts-Ball Macbook" visibleByDefault />
-          <LazyImage src={require('./img/gmz/gmz2.png')} width="827" height="1024" alt="Sommernachts-Ball iPhone" />
-          <LazyImage src={require('./img/gmz/gmz3.png')} width="842" height="1024" alt="Sommernachts-Ball iPad" />
+          <LazyImage src={require('./img/gmz/gmz2.png')} width="827" height="1024" alt="Sommernachts-Ball iPhone" visibleByDefault />
+          <LazyImage src={require('./img/gmz/gmz3.png')} width="842" height="1024" alt="Sommernachts-Ball iPad" visibleByDefault />
         </div>
       </article>}
 	    {openProjectId === 1 && <article>

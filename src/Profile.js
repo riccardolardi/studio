@@ -1,7 +1,6 @@
 import React from 'react';
 import Classnames from 'classnames';
 import LazyImage from './LazyImage.js';
-import {ReactComponent as Icon} from './img/icons/wave-round.svg';
 import './Profile.scss';
 
 const imgs = [
@@ -20,7 +19,6 @@ function Profile(props) {
   return (
     <section id="profile" className={classes} data-index={index}>
       <h3 className="bold">Profil</h3>
-      <Icon className="section-symbol" />
       <article className="with-image image-right">
         <div className="text">
           <span className="char divider divider-top divider-left">

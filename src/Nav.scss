@@ -5,8 +5,8 @@
   position: fixed;
   top: $pad;
   right: $pad;
-  width: $pad * 2;
-  height: $pad * 2;
+  width: $pad * 1.75;
+  height: $pad * 1.75;
   pointer-events: none;
   z-index: 10;
 
@@ -23,21 +23,24 @@
     .menu-button {
       opacity: 1;
       transform: translateX(0) rotateZ(0deg);
-      transition: all 125ms 1s;
+      transition: all 125ms 250ms;
     }
   }
 
   &.is-open {
 
-    svg {
-      transform: rotateZ(-90deg);
+    .menu-button {
 
-      &.menu-icon {
-        opacity: 0;
-      }
+      svg {
+        transform: rotateZ(-90deg);
 
-      &.close-icon {
-        opacity: 1;
+        &.menu-icon {
+          opacity: 0;
+        }
+
+        &.close-icon {
+          opacity: 1;
+        }
       }
     }
 
@@ -90,16 +93,41 @@
     opacity: 0;
     transform: translateX(2vw) rotateZ(45deg);
     transition: all 125ms 0ms;
+
+    svg {
+      pointer-events: none;
+      fill: white;
+      font-size: $pad * 0.85;
+      transform: rotateZ(0deg);
+      transition: all 125ms;
+
+      @include breakpoint($breakMobile) {
+        font-size: $pad * 4;
+      }
+
+      &.menu-icon {
+        position: absolute;
+      }
+
+      &.close-icon {
+        position: absolute;
+        opacity: 0;
+      }
+
+      &.back-icon {
+        position: absolute;
+        opacity: 0;
+      }
+    }
   }
 
   .menu-drawer {
     display: flex;
     align-items: center;
     position: absolute;
-    right: $pad * 2;
+    right: $pad * 1.85;
     height: 100%;
     background-color: $primaryColor;
-    margin: 0 $pad / 12 0 0;
     padding: 0 $pad / 2;
     opacity: 0;
     transform: translateX(2vw);
@@ -120,7 +148,7 @@
 
     .active-bar {
       position: absolute;
-      bottom: $pad * 0.5;
+      bottom: $pad * 0.35;
       background-color: $secondaryColor;
       height: $pad * 0.06;
 
@@ -173,30 +201,11 @@
         line-height: 8vh;
       }
     }
-  }
 
-  svg {
-    pointer-events: none;
-    fill: white;
-    transform: rotateZ(0deg);
-    transition: all 125ms;
-
-    @include breakpoint($breakMobile) {
-      font-size: $pad * 4;
-    }
-
-    &.menu-icon {
+    .symbol {
       position: absolute;
-    }
-
-    &.close-icon {
-      position: absolute;
-      opacity: 0;
-    }
-
-    &.back-icon {
-      position: absolute;
-      opacity: 0;
+      bottom: $pad * 4;
+      left: $pad * 4;
     }
   }
 }

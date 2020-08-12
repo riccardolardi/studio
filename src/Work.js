@@ -1,7 +1,6 @@
 import React from 'react';
 import Classnames from 'classnames';
 import LazyImage from './LazyImage.js';
-import {ReactComponent as Icon} from './img/icons/wave-triangle.svg';
 import './Work.scss';
 
 const imgs = [
@@ -48,7 +47,6 @@ function Work(props) {
   return (
     <section id="work" className={classes} data-index={index}>
       <h3 className="bold">Projekte</h3>
-      <Icon className="section-symbol" />
       <article className="with-image image-right">
         <a href="/work/sommernachts-ball" alt="" onClick={onProjectClicked.bind(this, 0)}>
           <div className="text">
@@ -60,7 +58,7 @@ function Work(props) {
             <p>Genossenschaftsbund Migros Zürich</p>
           </div>
           <div className="image">
-            <LazyImage src={imgs[0]} alt="" width="1024" height="849" />
+            <LazyImage src={imgs[0]} alt="Sommernachts-Ball" width="1024" height="849" />
           </div>
         </a>
       </article>
@@ -80,7 +78,7 @@ function Work(props) {
         </a>
       </article>
       <article className="with-image image-right">
-        <a href="/work/hyundai" alt="" onClick={onProjectClicked.bind(this, 2)}>
+        <a href="/work/hyundai" alt="Hyundai Olympic Pavilion" onClick={onProjectClicked.bind(this, 2)}>
           <div className="text">
             <span className="char divider divider-top divider-right">
               <span />
@@ -95,7 +93,7 @@ function Work(props) {
         </a>
       </article>
       <article className="with-image image-left">
-        <a href="/work/hanselgretel" alt="" onClick={onProjectClicked.bind(this, 3)}>
+        <a href="/work/hanselgretel" alt="Hansel & Gretel" onClick={onProjectClicked.bind(this, 3)}>
           <div className="text">
             <span className="char divider divider-top divider-left">
               <span />
@@ -110,12 +108,12 @@ function Work(props) {
         </a>
       </article>
       <article className="with-image image-right">
-        <a href="/work/boston" alt="" onClick={onProjectClicked.bind(this, 4)}>
+        <a href="/work/boston" alt="Harvard Square Theatre Facade" onClick={onProjectClicked.bind(this, 4)}>
           <div className="text">
             <span className="char divider divider-top divider-right">
               <span />
             </span>
-            <h4 className="bold margin-bottom">Harvard Street Square Facade</h4>
+            <h4 className="bold margin-bottom">Harvard Square Theatre Facade</h4>
             <p>Mockup für bespielbare Fassade, 2018</p>
             <p>Boston, Cambridge</p>
           </div>
@@ -125,7 +123,7 @@ function Work(props) {
         </a>
       </article>
       <article className="with-image image-left">
-        <a href="/work/maersk" alt="" onClick={onProjectClicked.bind(this, 5)}>
+        <a href="/work/maersk" alt="Maersk Visitor Centre" onClick={onProjectClicked.bind(this, 5)}>
           <div className="text">
             <span className="char divider divider-top divider-left">
               <span />

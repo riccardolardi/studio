@@ -52,8 +52,6 @@
       .secondary-header {
 
         .site-title {
-          // font-size: $pad * 2.4;
-          // line-height: calc(1.14em + 0.1vw);
 
           a {
             color: $secondaryColor;
@@ -78,7 +76,7 @@
     position: fixed;
     top: $pad;
     left: $pad;
-    height: $pad * 2;
+    height: $pad * 1.75;
     background-color: transparent;
     color: $primaryColor;
     opacity: 0;
