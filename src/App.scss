@@ -8,15 +8,10 @@
   font-size: $pad * 0.6;
   font-feature-settings: "dlig", "ss01";
   letter-spacing: calc(-0.015em + 0.14px);
-  line-height: calc(1.14em + 0.1vw);
+  line-height: calc(1.14em + 0.4vmax);
   background-color: $primaryColor;
   color: $secondaryColor;
   transition: color 0ms, background-color 125ms 0ms;
-
-  @include breakpoint($breakMobile) {
-    font-size: $pad * 1.6;
-    line-height: calc(1.14em + 0.4vw);
-  }
 
   &.is-intro {
     background-color: $primaryColor;
@@ -76,34 +71,18 @@
 
   h1 {
     font-size: $pad;
-
-    @include breakpoint($breakMobile) {
-      font-size: $pad * 2.4;
-    }
   }
 
   h2 {
     font-size: $pad * 0.8;
-
-    @include breakpoint($breakMobile) {
-      font-size: $pad * 1.8;
-    }
   }
 
   h3 {
     font-size: $pad * 1.4;
-
-    @include breakpoint($breakMobile) {
-      font-size: $pad * 2.4;
-    }
   }
 
   h4 {
     font-size: $pad * 0.8;
-
-    @include breakpoint($breakMobile) {
-      font-size: $pad * 1.8;
-    }
   }
 
   p {
@@ -111,7 +90,7 @@
     hyphens: auto;
 
     @include breakpoint($breakMobile) {
-      margin-bottom: $pad;
+      margin-bottom: $pad * 0.25;
     }
 
     &:last-child {
@@ -120,10 +99,6 @@
 
     &+h4 {
       margin-top: $pad;
-
-      @include breakpoint($breakMobile) {
-        margin-top: $pad * 2;
-      }
     }
   }
 
@@ -149,12 +124,8 @@
 
   .bold {
     font-family: 'BuenosAiresBold';
-    line-height: calc(1.14em + 0.1vw);
+    line-height: calc(1.14em + 0.4vmax);
     letter-spacing: 0.01em;
-
-    @include breakpoint($breakMobile) {
-      line-height: calc(1.14em + 0.4vw);
-    }
   }
 
   .margin-top {
@@ -165,10 +136,6 @@
   .margin-bottom {
     display: block;
     margin-bottom: $pad / 4;
-
-    @include breakpoint($breakMobile) {
-      margin-bottom: $pad / 2;
-    }
   }
 
   .padding-top {
@@ -208,10 +175,6 @@
     position: relative;
     min-height: 100vh;
     padding: $pad;
-
-    @include breakpoint($breakMobile) {
-      padding: 0 $pad * 4;
-    }
 
     &.is-active {
 
@@ -255,7 +218,7 @@
         top: 0;
         left: -0.3vw;
         padding: 0;
-        margin: 0 0 $pad * 4;
+        margin: 0 0 $pad;
         z-index: 0;
       }
     }
@@ -274,14 +237,14 @@
 
       @include breakpoint($breakMobile) {
         padding: 0;
-        margin-bottom: $pad * 4;
+        margin-bottom: $pad * 2;
       }
 
       ul {
         margin: $pad / 2 0 0 $pad;
 
         @include breakpoint($breakMobile) {
-          margin: $pad 0 $pad * 2 $pad * 2.8;
+          margin: $pad 0 $pad $pad * 2.8;
         }
 
         li {
@@ -406,7 +369,7 @@
       font-size: $pad * 0.9;
 
       @include breakpoint($breakMobile) {
-        font-size: $pad * 1.6;
+        // font-size: $pad * 1.6;
       }
     }
 

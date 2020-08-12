@@ -45,22 +45,6 @@
     }
   }
 
-  &.menu-open {
-
-    @include breakpoint($breakMobile) {
-
-      .secondary-header {
-
-        .site-title {
-
-          a {
-            color: $secondaryColor;
-          }
-        }
-      }
-    }
-  }
-
   &:not(.is-active) {
 
     .secondary-header {
@@ -86,20 +70,12 @@
 
     @include breakpoint($breakMobile) {
       display: none;
-      left: $pad * 4;
-      top: $pad * 4;
-      height: $pad * 6;
     }
 
     .site-title {
       font-size: $pad * 0.4;
       line-height: $pad * 0.5;
       font-weight: bold;
-
-      @include breakpoint($breakMobile) {
-        font-size: $pad;
-        line-height: $pad * 1.45;
-      }
     }
   }
 
@@ -109,11 +85,6 @@
     left: $pad;
     z-index: 10;
     pointer-events: none;
-
-    @include breakpoint($breakMobile) {
-      top: $pad * 4;
-      left: $pad * 4;
-    }
 
     span {
       opacity: 0;
@@ -127,15 +98,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    line-height: calc(1.14em + 1.4vw);
+    line-height: calc(1.14em + 1.4vmax);
     text-align: right;
     z-index: 10;
     pointer-events: none;
-
-    @include breakpoint($breakMobile) {
-      bottom: $pad * 4;
-      right: $pad * 4;
-    }
 
     h2 {
       position: relative;
@@ -181,14 +147,21 @@
     transform: translateX(-50%);
 
     @include breakpoint($breakMobile) {
-      height: auto;
-      width: 80%;
-      bottom: 12vh;
+      height: 50vh;
+      width: 10vh;
+      bottom: 25vh;
+      top: auto;
+      flex-direction: column;
+      justify-content: space-around;
     }
 
     .logo-symbol {
       width: 20%;
       opacity: 0;
+
+      @include breakpoint($breakMobile) {
+        width: 100%;
+      }
 
       svg {
         fill: $secondaryColor;
@@ -212,8 +185,8 @@
     z-index: 10;
 
     @include breakpoint($breakMobile) {
-      left: $pad * 4;
-      bottom: $pad * 4;
+      left: $pad;
+      bottom: $pad;
     }
 
     svg {
@@ -222,7 +195,7 @@
       height: auto;
 
       @include breakpoint($breakMobile) {
-        width: $pad * 3;
+        width: $pad * 1.4;
       }
 
       g {

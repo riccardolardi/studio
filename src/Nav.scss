@@ -11,10 +11,8 @@
   z-index: 10;
 
   @include breakpoint($breakMobile) {
-    top: $pad * 4;
-    right: $pad * 4;
-    width: $pad * 6;
-    height: $pad * 6;
+    width: $pad * 2.4;
+    height: $pad * 2.4;
   }
 
   &.show {
@@ -102,7 +100,7 @@
       transition: all 125ms;
 
       @include breakpoint($breakMobile) {
-        font-size: $pad * 4;
+        font-size: $pad * 1.6;
       }
 
       &.menu-icon {
@@ -157,7 +155,7 @@
         width: $pad * 0.4;
         top: auto;
         bottom: auto;
-        left: $pad * 4;
+        left: $pad * 2;
       }
     }
 
@@ -166,7 +164,7 @@
       height: 100%;
 
       @include breakpoint($breakMobile) {
-        padding: 0 0 0 $pad * 6;
+        padding: 0 0 0 $pad * 4;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
@@ -182,10 +180,6 @@
 
       &:last-child {
         margin: 0;
-      }
-
-      &.active {
-        
       }
     }
 
@@ -205,7 +199,7 @@
     .symbol {
       position: absolute;
       bottom: $pad * 4;
-      left: $pad * 4;
+      left: $pad * 2;
     }
   }
 }

@@ -6,10 +6,6 @@
 	article {
 		padding: 0 !important;
 
-		@include breakpoint($breakMobile) {
-			margin-bottom: $pad * 3 !important;
-		}
-
 		&>a {
 			display: flex;
 			width: 80vw;
@@ -20,12 +16,6 @@
 				flex-direction: column;
 				width: 100%;
 			}
-
-			// @include breakpoint($breakDesktop) {
-
-			// 	&:hover {
-			// 	}
-			// }
 		}
 
 		p {

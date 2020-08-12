@@ -29,13 +29,12 @@
     align-items: center;
   	position: relative;
   	top: $pad * 3.7;
-    padding: $pad * 3 $pad * 2 $pad * 2;
+    padding: $pad * 3 $pad $pad $pad;
 
     @include breakpoint($breakMobile) {
+      top: $pad * 1.3;
       flex-direction: column;
       align-items: flex-start;
-      top: $pad * 5.5;
-      padding: 0 $pad * 4 $pad * 8;
     }
 
     h4 {
@@ -50,10 +49,8 @@
       @include breakpoint($breakMobile) {
         position: absolute;
         top: 0px;
-        left: $pad * 4;
-        font-size: $pad * 2.4;
-        margin: 0 0 $pad;
-        width: 50%;
+        left: $pad;
+        width: 66.666%;
       }
     }
 
@@ -62,7 +59,7 @@
       width: 42%;
 
       @include breakpoint($breakMobile) {
-        margin: $pad * 8 0 $pad;
+        margin: $pad * 2 0 0;
         width: 100%;
       }
 
@@ -70,7 +67,7 @@
         margin: $pad 0;
 
         @include breakpoint($breakMobile) {
-          margin: $pad * 2 0;
+          margin: $pad * 0.5 0 $pad;
         }
 
         li {
@@ -78,13 +75,12 @@
           padding: $pad * 0.25 0 0 $pad * 0.7;
 
           @include breakpoint($breakMobile) {
-            padding-left: $pad * 2.4;
-            margin-bottom: $pad * 0.5;
+            padding-left: $pad;
           }
 
           svg {
             position: absolute;
-            top: $pad * 0.35;
+            top: $pad * 0.4;
             left: 0px;
             font-size: $pad * 0.5;
 

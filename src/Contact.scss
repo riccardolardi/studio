@@ -11,16 +11,6 @@
     top: 5vh;
   }
 
-  .image {
-
-  	&.align-left {
-
-	  	@include breakpoint($breakMobile) {
-	  		margin-top: $pad * 2;
-	  	}
-  	}
-  }
-
   .social-icon {
     display: inline-block;
     margin: $pad * 0.2 $pad * 0.2 0 0;

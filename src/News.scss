@@ -3,18 +3,4 @@
 
 .block#news {
 
-	.image {
-
-		@include breakpoint($breakMobile) {
-			margin-top: $pad * 2;
-		}
-	}
-	
-	.assembly {
-		display: none;
-
-		@include breakpoint($breakMobile) {
-			
-		}
-  }
 }
