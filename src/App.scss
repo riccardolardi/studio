@@ -120,6 +120,23 @@
     color: $primaryColor;
   }
 
+  .link {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      display: inline-table;
+      position: absolute;
+      content: "";
+      left: 0px;
+      bottom: -$pad * 0.1;
+      width: 100%;
+      height: $pad * 0.1;
+      background-color: $primaryColor;
+    }
+  }
+
   .symbol {
     display: none;
 
@@ -371,27 +388,32 @@
 
   .divider {
     display: block !important;
-    margin-bottom: $pad * 0.2;
+    position: relative;
     
     &:before {
-      position: relative;
-      left: $pad * 0.035;
-      content: "––";
-      font-family: sans-serif;
-      font-weight: bold;
-      font-size: $pad * 0.9;
+      display: inline-table;
+      position: absolute;
+      content: "";
+      top: -$pad * 0.5;
+      left: 0px;
+      width: $pad;
+      height: $pad * 0.1;
+      background-color: $primaryColor;
 
-      @include breakpoint($breakMobile) {
-        // font-size: $pad * 1.6;
-      }
     }
 
     &.divider-right {
 
       &:before {
-        left: 0;
+        left: auto;
+        right: 0px;
       }
     }
+  }
+
+  .illustration {
+    font-family: 'AssemblyHumanOne';  
+    font-size: $pad * 2;
   }
 }
 

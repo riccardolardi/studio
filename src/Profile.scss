@@ -17,7 +17,7 @@
 				}
 
 				.icon {
-					width: 8vw;
+					width: 9vw;
 					height: auto;
 					transform: rotateZ(90deg);
 
@@ -32,6 +32,29 @@
 						max-height: 33.333vh;
 					}
 				}
+			}
+		}
+
+		.contact-us {
+			display: flex;
+			align-items: center;
+			margin-top: $pad * 2;
+
+			.contact-us-button {
+				display: inline-flex;
+				align-items: center;
+				padding: $pad * 0.2 $pad * 0.5 $pad * 0.2 $pad * 0.2;
+				background-color: $primaryColor;
+				color: $secondaryColor;
+				cursor: pointer;
+
+				svg {
+					margin-right: $pad * 0.25;
+				}
+			}
+
+			.illustration {
+				margin-left: $pad * 0.75;
 			}
 		}
 	}

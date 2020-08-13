@@ -29,7 +29,7 @@ function Project(props) {
 	    {openProjectId === 0 && <article>
       	<h4 className="bold">Sommernachts-Ball</h4>
 				<div className="text">
-          <span className="char divider divider-top divider-left">
+          <span className="char divider divider-left">
             <span />
           </span>
         	<p>Redesign und Neuentwicklung von Front- und Backend für die Migros Sommernachts-Ball Webseite.</p>
@@ -52,7 +52,7 @@ function Project(props) {
 	    {openProjectId === 1 && <article>
       	<h4 className="bold">Simulation M+ Museum</h4>
 				<div className="text">
-          <span className="char divider divider-top divider-left">
+          <span className="char divider divider-left">
             <span />
           </span>
         	<p>Redesign und Neuentwicklung von Front- und Backend der Migros Sommernachts-Ball Website.</p>

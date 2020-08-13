@@ -27,7 +27,7 @@ function News(props) {
       <h3 className="bold">News</h3>
       <article className="with-image image-right">
         <div className="text">
-          <span className="char divider divider-top divider-left">
+          <span className="char divider divider-left">
             <span />
           </span>
           <h4 className="bold">Samses aper nullat dit</h4>
@@ -40,7 +40,7 @@ function News(props) {
       </article>
       <article className="with-image image-left">
         <div className="text">
-          <span className="char divider divider-top divider-left">
+          <span className="char divider divider-left">
             <span />
           </span>
           <h4 className="bold">Parabet nullat ditet</h4>
@@ -53,7 +53,7 @@ function News(props) {
       </article>
       <article className="with-image image-right">
         <div className="text">
-          <span className="char divider divider-top divider-left">
+          <span className="char divider divider-left">
             <span />
           </span>
           <h4 className="bold">Mensut memem debet dare, gusto</h4>

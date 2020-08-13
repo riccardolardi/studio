@@ -155,6 +155,7 @@ function App() {
         index={2} 
         active={activeBlockIndex === 2} 
         intersecting={intersectingBlockIndexes.includes(2)} 
+        moveToBlock={moveToBlock} 
       />
       <Work 
         index={3} 

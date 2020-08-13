@@ -19,7 +19,7 @@ function Contact(props) {
       <h3 className="bold">Kontakt</h3>
       <article className="with-image image-right">
         <div className="text">
-          <span className="char divider divider-top divider-left">
+          <span className="char divider divider-left">
             <span />
           </span>
           <h4 className="bold margin-bottom">Studio Riccardo Lardi</h4>
