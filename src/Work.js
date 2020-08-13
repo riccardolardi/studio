@@ -58,7 +58,7 @@ function Work(props) {
             <p>Genossenschaftsbund Migros Zürich</p>
           </div>
           <div className="image">
-            <LazyImage src={imgs[0]} alt="Sommernachts-Ball" width="1024" height="849" />
+            <LazyImage src={imgs[0]} alt="Sommernachts-Ball" width="1024" height="956" />
           </div>
         </a>
       </article>
@@ -73,7 +73,7 @@ function Work(props) {
             <p>M+ Museum, Hong Kong</p>
           </div>
           <div className="image">
-            <LazyImage src={imgs[1]} alt="" width="1024" height="845" />
+            <LazyImage src={imgs[1]} alt="" width="1024" height="1010" />
           </div>
         </a>
       </article>

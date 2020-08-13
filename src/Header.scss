@@ -19,9 +19,8 @@
     }
 
     .scroll-down {
-      transform: translateY(0);
       opacity: 1;
-      transition: all 125ms 1s;
+      transition: opacity 125ms 1s;
       pointer-events: auto;
     }
 
@@ -171,13 +170,12 @@
 
   .scroll-down {
     display: block;
-    position: fixed;
+    position: absolute;
     bottom: $pad;
     left: $pad;
     cursor: pointer;
     opacity: 0;
-    transform: translateY(-2vh);
-    transition: all 0ms 0ms;
+    transition: opacity 0ms 0ms;
     pointer-events: none;
     margin: 0;
     padding: 0;

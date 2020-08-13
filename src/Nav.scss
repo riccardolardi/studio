@@ -11,6 +11,8 @@
   z-index: 10;
 
   @include breakpoint($breakMobile) {
+    top: $pad * 1.5;
+    right: $pad * 1.5;
     width: $pad * 2.4;
     height: $pad * 2.4;
   }
@@ -26,6 +28,16 @@
   }
 
   &.is-open {
+
+    &:not(.project-open) {
+
+      .menu-button svg {
+
+        @include breakpoint($breakMobile) {
+          transform: scale(2);
+        }
+      }
+    }
 
     .menu-button {
 
@@ -181,18 +193,18 @@
       &:last-child {
         margin: 0;
       }
-    }
 
-    a {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      color: $secondaryColor;
-      text-decoration: none;
+      a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        color: $secondaryColor;
+        text-decoration: none;
 
-      @include breakpoint($breakMobile) {
-        font-size: 6vh;
-        line-height: 8vh;
+        @include breakpoint($breakMobile) {
+          font-size: 5vh;
+          line-height: 7vh;
+        }
       }
     }
 
@@ -201,5 +213,40 @@
       bottom: $pad * 4;
       left: $pad * 2;
     }
+
+    .email-icon {
+      display: none;
+
+      @include breakpoint($breakMobile) {
+        display: block;
+        position: absolute;
+        top: $pad;
+        left: $pad;
+
+        svg {
+          fill: $secondaryColor;
+          font-size: $pad * 4.2;
+          animation: 12s linear infinite emailAnim;
+        }
+      }
+    }
+  }
+}
+
+@keyframes emailAnim {
+  from {
+    transform: rotate3d(1,1,1,0deg);
+  }
+  25%{
+    transform: rotate3d(1,1,1,-90deg);
+  }
+  50%{
+    transform: rotate3d(1,1,1,-180deg);
+  }
+  75%{
+    transform: rotate3d(1,1,1,-270deg);
+  }
+  to{
+    transform:rotate3d(1,1,1,-360deg);
   }
 }

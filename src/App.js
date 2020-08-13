@@ -117,7 +117,7 @@ function App() {
     setNavigatingDir(newNavDir);
     const elTop = blockEls[index]?.offsetTop;
     const offset = index + 1 < blockEls.length && index > 0 ? 
-      window.innerHeight * 0.2 : 0;
+      (isMobile ? window.innerHeight * 0.1 : window.innerHeight * 0.25) : 0;
     setTimeout(() => {
       window.scrollTo(0, elTop - offset);
       setNavigatingDir(null);

@@ -35,7 +35,7 @@ function News(props) {
           <p>Adipisicing jerky pork chop kevin, esse kielbasa spare ribs ball tip pig dolore duis. Spare ribs consequat consectetur eu voluptate mollit et ullamco pork belly exercitation ut.</p>
         </div>
         <div className="image">
-          <LazyImage src={imgs[0]} alt="News item 1" width="1024" height="849" />
+          <LazyImage src={imgs[0]} alt="News item 1" width="1024" height="956" />
         </div>
       </article>
       <article className="with-image image-left">
@@ -48,7 +48,7 @@ function News(props) {
           <p>Brisket sunt shank burgdoggen drumstick. Ipsum in tongue nisi. Cupidatat magna minim eiusmod kevin. Swine cillum filet mignon, eiusmod minim et ball tip ut elit chicken in voluptate. Ham hock brisket tail, cow aliqua minim bresaola et veniam meatball t-bone sed proident.</p>
         </div>
         <div className="image">
-          <LazyImage src={imgs[0]} alt="News item 1" width="1024" height="849" />
+          <LazyImage src={imgs[0]} alt="News item 1" width="1024" height="956" />
         </div>
       </article>
       <article className="with-image image-right">
@@ -61,7 +61,7 @@ function News(props) {
           <p>Bacon ipsum dolor amet ham hock non ground round andouille dolore meatloaf.</p><p>Ut esse picanha turducken aliqua filet mignon tenderloin. Kielbasa nulla pork landjaeger pig. Turducken tempor jowl tail shank dolore.</p>
         </div>
         <div className="image">
-          <LazyImage src={imgs[0]} alt="News item 1" width="1024" height="849" />
+          <LazyImage src={imgs[0]} alt="News item 1" width="1024" height="956" />
         </div>
       </article>
     </section>

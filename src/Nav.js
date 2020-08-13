@@ -2,6 +2,7 @@ import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import {ReactComponent as Icon} from './img/icons/wave-round.svg';
 import Classnames from 'classnames';
 import './Nav.scss';
@@ -54,7 +55,7 @@ function Nav(props) {
 			liElDimsV[1] / activeLiEl.parentElement.parentElement.offsetHeight * 100
 		];
 		if (isMobile) {
-			setTimeout(() => activeBarEl.style.top = `${percentV[0] + 0.05}%`, index < prevBlockIndex ? 0 : 125);
+			setTimeout(() => activeBarEl.style.top = `${percentV[0]}%`, index < prevBlockIndex ? 0 : 125);
 			setTimeout(() => activeBarEl.style.bottom = `${percentV[1]}%`, index < prevBlockIndex ? 125 : 0);
 		} else {
 			setTimeout(() => activeBarEl.style.left = `${percentH[0]}%`, index < prevBlockIndex ? 0 : 125);
@@ -100,11 +101,14 @@ function Nav(props) {
 		    </ul>
 		    <span className="active-bar" />
 		    <Icon className="symbol symbol-white" />
+		    <a href="mailto:hello@riccardolardi.com" className="email-icon">
+		    	<AlternateEmailIcon fontSize="large" />
+		    </a>
 	    </div>
     	<button className="menu-button" onClick={menuButtonClicked}>
-	      <MenuIcon className="menu-icon" fontSize='large' />
-	      <CloseIcon className="close-icon" fontSize='large' />
-	      <ArrowDownwardIcon className="back-icon" fontSize='large' />
+	      <MenuIcon className="menu-icon" fontSize="large" />
+	      <CloseIcon className="close-icon" fontSize="large" />
+	      <ArrowDownwardIcon className="back-icon" fontSize="large" />
 	    </button>
     </nav>
   );

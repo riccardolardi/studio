@@ -24,7 +24,7 @@ function Profile(props) {
           <span className="char divider divider-top divider-left">
             <span />
           </span>
-          <p>Das Studio spezialisiert sich auf die Planung, Konzeption, Gestaltung und Umsetzung von Projekten zwischen digitalem und physischem Raum.</p>
+          <p>Das Studio aus Basel spezialisiert sich auf die Planung, Konzeption, Design und Entwicklung von Projekten zwischen digitalem und physischem Raum.</p>
           <h4 className="bold">Dienstleistungen</h4>
           <ul>
             <li>Produktdesign und Konzept</li>
