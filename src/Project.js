@@ -39,7 +39,11 @@ function Project(props) {
 	          <li className="tag partner-tags"><PeopleIcon fontSize={'small'} /><a className="link" href="http://www.komun.ch">Komun</a>,&nbsp;<a className="link"  href="http://www.stephanwalter.ch">Stephan Walter</a></li>
 	          <li className="tag service-tags"><CategoryIcon fontSize={'small'} />Interaction Design, Beratung, Programmierung</li>
 	          <li className="tag tech-tags"><BuildIcon fontSize={'small'} />React, Gatsby, GraphQL</li>
-	          <li className="tag product-link"><LinkIcon fontSize={'small'} /><a className="link" href="http://www.sommernachts-ball.ch">http://www.sommernachts-ball.ch</a></li>
+            <li className="tag product-link"><LinkIcon fontSize={'small'} />
+              <a className="link" rel="noopener noreferrer" target="_blank" 
+                href="http://2020-gatsby.sommernachts-ball.ch">http://2020-gatsby.sommernachts-ball.ch
+              </a>
+            </li>
           </ul>
           <p>Bacon ipsum dolor amet pork belly turkey porchetta shoulder, chuck salami cupim pork loin short ribs sirloin spare ribs turducken. Cupim tongue chislic salami pastrami pork belly pancetta swine bresaola cow. Tri-tip hamburger ham, cow doner sausage filet mignon pork flank. Pork kielbasa jerky landjaeger brisket frankfurter.</p>
         </div>
@@ -50,26 +54,27 @@ function Project(props) {
         </div>
       </article>}
 	    {openProjectId === 1 && <article>
-      	<h4 className="bold">Simulation M+ Museum</h4>
+      	<h4 className="bold">Stephan Walter</h4>
 				<div className="text">
           <span className="char divider divider-left">
             <span />
           </span>
-        	<p>Redesign und Neuentwicklung von Front- und Backend der Migros Sommernachts-Ball Website.</p>
+        	<p>Redesign und Neuentwicklung von Front- und Backend für die Webseite vom Zürcher Grafiker und Typografen Stephan Walter.</p>
           <ul>
-	          <li className="tag date"><CalendarTodayIcon fontSize={'small'} />2020</li>
-	          <li className="tag client-tags"><HomeWorkIcon fontSize={'small'} />Migros Kulturprozent</li>
-	          <li className="tag partner-tags"><PeopleIcon fontSize={'small'} /><a className="link" href="http://www.komun.ch">Komun</a>,&nbsp;<a className="link"  href="http://www.stephanwalter.ch">Stephan Walter</a></li>
-	          <li className="tag service-tags"><CategoryIcon fontSize={'small'} />Interaction Design, Beratung, Programmierung</li>
-	          <li className="tag tech-tags"><BuildIcon fontSize={'small'} />React, Gatsby, GraphQL</li>
-	          <li className="tag product-link"><LinkIcon fontSize={'small'} /><a className="link" href="http://www.sommernachts-ball.ch">http://www.sommernachts-ball.ch</a></li>
+	          <li className="tag date"><CalendarTodayIcon fontSize={'small'} />2019</li>
+	          <li className="tag client-tags"><HomeWorkIcon fontSize={'small'} />Stephan Walter</li>
+	          <li className="tag service-tags"><CategoryIcon fontSize={'small'} />Design, Programmierung</li>
+	          <li className="tag tech-tags"><BuildIcon fontSize={'small'} />React, Headless WP</li>
+	          <li className="tag product-link"><LinkIcon fontSize={'small'} />
+              <a className="link" rel="noopener noreferrer" target="_blank" 
+                href="http://dev.stephanwalter.ch">http://dev.stephanwalter.ch
+              </a>
+            </li>
           </ul>
           <p>Bacon ipsum dolor amet pork belly turkey porchetta shoulder, chuck salami cupim pork loin short ribs sirloin spare ribs turducken. Cupim tongue chislic salami pastrami pork belly pancetta swine bresaola cow. Tri-tip hamburger ham, cow doner sausage filet mignon pork flank. Pork kielbasa jerky landjaeger brisket frankfurter.</p>
         </div>
         <div className="images">
-          <LazyImage src={require('./img/gmz/gmz1.png')} alt="Sommernachts-Ball Mac" />
-          <LazyImage src={require('./img/gmz/gmz2.png')} alt="Sommernachts-Ball iPhone" />
-          <LazyImage src={require('./img/gmz/gmz3.png')} alt="Sommernachts-Ball iPad" />
+          <LazyImage src={require('./img/stephanwalter/stephanwalter1.png')} alt="Stephan Walter Macbook" />
         </div>
       </article>}
     </section>

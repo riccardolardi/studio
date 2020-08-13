@@ -6,6 +6,10 @@
 	article {
 		margin-bottom: $pad !important;
 
+    @include breakpoint($breakMobile) {
+      margin-bottom: $pad * 2 !important;
+    }
+
 		&.with-image {
 
 			.image {
@@ -40,6 +44,10 @@
 			align-items: center;
 			margin-top: $pad * 2;
 
+      @include breakpoint($breakMobile) {
+        margin-top: $pad;
+      }
+
 			.contact-us-button {
 				display: inline-flex;
 				align-items: center;
@@ -50,6 +58,10 @@
 
 				svg {
 					margin-right: $pad * 0.25;
+
+		      @include breakpoint($breakMobile) {
+		        font-size: $pad;
+		      }
 				}
 			}
 

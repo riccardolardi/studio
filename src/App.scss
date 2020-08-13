@@ -399,7 +399,6 @@
       width: $pad;
       height: $pad * 0.1;
       background-color: $primaryColor;
-
     }
 
     &.divider-right {
@@ -407,6 +406,11 @@
       &:before {
         left: auto;
         right: 0px;
+
+        @include breakpoint($breakMobile) {
+          left: 0px;
+          right: auto;
+        }
       }
     }
   }
