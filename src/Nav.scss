@@ -76,15 +76,18 @@
       display: none;
     }
 
-    svg {
-      transform: rotateZ(90deg);
+    .menu-button {
+      
+      svg {
+        transform: rotateZ(90deg);
 
-      &.menu-icon, &.close-icon {
-        opacity: 0;
-      }
+        &.menu-icon, &.close-icon {
+          opacity: 0;
+        }
 
-      &.back-icon {
-        opacity: 1;
+        &.back-icon {
+          opacity: 1;
+        }
       }
     }
   }

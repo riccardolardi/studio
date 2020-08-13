@@ -32,7 +32,7 @@ function Project(props) {
           <span className="char divider divider-top divider-left">
             <span />
           </span>
-        	<p>Redesign und Neuentwicklung von Front- und Backend der Migros Sommernachts-Ball Website.</p>
+        	<p>Redesign und Neuentwicklung von Front- und Backend für die Migros Sommernachts-Ball Webseite.</p>
           <ul>
 	          <li className="tag date"><CalendarTodayIcon fontSize={'small'} />2020</li>
 	          <li className="tag client-tags"><HomeWorkIcon fontSize={'small'} />Migros Kulturprozent</li>

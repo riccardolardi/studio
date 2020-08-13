@@ -1,6 +1,7 @@
 import React from 'react';
 import Classnames from 'classnames';
 import LazyImage from './LazyImage.js';
+import {ReactComponent as Icon} from './img/icons/wave-triangle.svg';
 import './Profile.scss';
 
 const imgs = [
@@ -35,6 +36,7 @@ function Profile(props) {
           </ul>
         </div>
         <div className="image">
+          <Icon className="icon" />
           <LazyImage src={imgs[0]} alt="Riccardo Lardi" width="1024" height="1536" />
         </div>
       </article>
