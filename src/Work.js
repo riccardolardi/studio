@@ -6,6 +6,7 @@ import './Work.scss';
 const imgs = [
   require('./img/gmz/gmz1.png'),
   require('./img/stephanwalter/stephanwalter1.png'),
+  require('./img/ioc/ioc1.png'),
   require('./img/mplus/mplus1.png'),
   require('./img/hyundai/iart-hyundai3.jpg'),
   require('./img/armory/iart-armory1.jpg'),
@@ -51,7 +52,7 @@ function Work(props) {
       <article className="with-image image-right">
         <a href="/work/sommernachts-ball" alt="" onClick={onProjectClicked.bind(this, 0)}>
           <div className="text">
-            <span className="char divider divider-top divider-right">
+            <span className="char divider divider-right">
               <span />
             </span>
             <h4 className="bold margin-bottom">Sommernachts-Ball</h4>
@@ -66,22 +67,37 @@ function Work(props) {
       <article className="with-image image-left">
         <a href="/work/stephanwalter" alt="" onClick={onProjectClicked.bind(this, 1)}>
           <div className="text">
-            <span className="char divider divider-top divider-left">
+            <span className="char divider divider-left">
               <span />
             </span>
             <h4 className="bold margin-bottom">Stephan Walter</h4>
             <p>Website, 2019</p>
-            <p>Stephan Walter, Grafiker</p>
+            <p>Stephan Walter, Grafiker, Zürich</p>
           </div>
           <div className="image">
             <LazyImage src={imgs[1]} alt="Stephan Walter" width="1024" height="956" />
           </div>
         </a>
       </article>
-      <article className="with-image image-left">
-        <a href="/work/mplus" alt="" onClick={onProjectClicked.bind(this, 2)}>
+      <article className="with-image image-right">
+        <a href="/work/ioc" alt="" onClick={onProjectClicked.bind(this, 2)}>
           <div className="text">
-            <span className="char divider divider-top divider-left">
+            <span className="char divider divider-right">
+              <span />
+            </span>
+            <h4 className="bold margin-bottom">IOC MapTool</h4>
+            <p>App für Video-Bespielung, 2019</p>
+            <p>Int. Olympic Commitee, Lausanne</p>
+          </div>
+          <div className="image">
+            <LazyImage src={imgs[2]} alt="" width="1024" height="1010" />
+          </div>
+        </a>
+      </article>
+      <article className="with-image image-left">
+        <a href="/work/mplus" alt="" onClick={onProjectClicked.bind(this, 3)}>
+          <div className="text">
+            <span className="char divider divider-left">
               <span />
             </span>
             <h4 className="bold margin-bottom">Simulation M+ Museum</h4>
@@ -89,59 +105,59 @@ function Work(props) {
             <p>M+ Museum, Hong Kong</p>
           </div>
           <div className="image">
-            <LazyImage src={imgs[2]} alt="" width="1024" height="1010" />
+            <LazyImage src={imgs[3]} alt="" width="1024" height="1010" />
           </div>
         </a>
       </article>
       <article className="with-image image-right">
-        <a href="/work/hyundai" alt="Hyundai Olympic Pavilion" onClick={onProjectClicked.bind(this, 3)}>
+        <a href="/work/hyundai" alt="Hyundai Olympic Pavilion" onClick={onProjectClicked.bind(this, 4)}>
           <div className="text">
-            <span className="char divider divider-top divider-right">
+            <span className="char divider divider-right">
               <span />
             </span>
             <h4 className="bold margin-bottom">Hyundai Olympic Pavilion</h4>
             <p>Interaktive Wasserinstallation, 2018</p>
-            <p>Hyundai, Pyeongchang, Südkorea</p>
-          </div>
-          <div className="image">
-            <LazyImage src={imgs[3]} alt="" width="1200" height="675" />
-          </div>
-        </a>
-      </article>
-      <article className="with-image image-left">
-        <a href="/work/hanselgretel" alt="Hansel & Gretel" onClick={onProjectClicked.bind(this, 4)}>
-          <div className="text">
-            <span className="char divider divider-top divider-left">
-              <span />
-            </span>
-            <h4 className="bold margin-bottom">Hansel & Gretel</h4>
-            <p>Immersive Videoinstallation, 2017</p>
-            <p>Armory Park Avenue, New York</p>
+            <p>Hyundai, Südkorea</p>
           </div>
           <div className="image">
             <LazyImage src={imgs[4]} alt="" width="1200" height="675" />
           </div>
         </a>
       </article>
-      <article className="with-image image-right">
-        <a href="/work/boston" alt="Harvard Square Theatre Facade" onClick={onProjectClicked.bind(this, 5)}>
+      <article className="with-image image-left">
+        <a href="/work/hanselgretel" alt="Hansel & Gretel" onClick={onProjectClicked.bind(this, 5)}>
           <div className="text">
-            <span className="char divider divider-top divider-right">
+            <span className="char divider divider-left">
               <span />
             </span>
-            <h4 className="bold margin-bottom">Harvard Square Theatre Facade</h4>
-            <p>Mockup für bespielbare Fassade, 2018</p>
-            <p>Boston, Cambridge</p>
+            <h4 className="bold margin-bottom">Hansel & Gretel</h4>
+            <p>Immersive Videoinstallation, 2017</p>
+            <p>Armory Park Avenue, NY</p>
           </div>
           <div className="image">
             <LazyImage src={imgs[5]} alt="" width="1200" height="675" />
           </div>
         </a>
       </article>
-      <article className="with-image image-left">
-        <a href="/work/maersk" alt="Maersk Visitor Centre" onClick={onProjectClicked.bind(this, 6)}>
+      <article className="with-image image-right">
+        <a href="/work/boston" alt="Harvard Square Theatre Facade" onClick={onProjectClicked.bind(this, 6)}>
           <div className="text">
-            <span className="char divider divider-top divider-left">
+            <span className="char divider divider-right">
+              <span />
+            </span>
+            <h4 className="bold margin-bottom">Harvard Square Theatre Facade</h4>
+            <p>Mockup für bespielbare Fassade, 2018</p>
+            <p>Kirche LLC, Boston, MA</p>
+          </div>
+          <div className="image">
+            <LazyImage src={imgs[6]} alt="" width="1200" height="675" />
+          </div>
+        </a>
+      </article>
+      <article className="with-image image-left">
+        <a href="/work/maersk" alt="Maersk Visitor Centre" onClick={onProjectClicked.bind(this, 7)}>
+          <div className="text">
+            <span className="char divider divider-left">
               <span />
             </span>
             <h4 className="bold margin-bottom">Maersk Visitor Centre</h4>
@@ -149,7 +165,7 @@ function Work(props) {
             <p>Maersk, Copenhagen</p>
           </div>
           <div className="image">
-            <LazyImage src={imgs[6]} alt="" width="1980" height="1320" />
+            <LazyImage src={imgs[7]} alt="" width="1980" height="1320" />
           </div>
         </a>
       </article>

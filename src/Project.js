@@ -74,7 +74,9 @@ function Project(props) {
           <p>Bacon ipsum dolor amet pork belly turkey porchetta shoulder, chuck salami cupim pork loin short ribs sirloin spare ribs turducken. Cupim tongue chislic salami pastrami pork belly pancetta swine bresaola cow. Tri-tip hamburger ham, cow doner sausage filet mignon pork flank. Pork kielbasa jerky landjaeger brisket frankfurter.</p>
         </div>
         <div className="images">
-          <LazyImage src={require('./img/stephanwalter/stephanwalter1.png')} alt="Stephan Walter Macbook" />
+          <LazyImage src={require('./img/stephanwalter/stephanwalter1.png')} width="1024" height="956" alt="Stephan Walter Macbook" />
+          <LazyImage src={require('./img/stephanwalter/stephanwalter2.png')} width="842" height="1024" alt="Stephan Walter iPad" />
+          <LazyImage src={require('./img/stephanwalter/stephanwalter3.png')} width="708" height="1024" alt="Stephan Walter iPhone" />
         </div>
       </article>}
     </section>
