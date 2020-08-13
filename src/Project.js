@@ -41,7 +41,7 @@ function Project(props) {
 	          <li className="tag tech-tags"><BuildIcon fontSize={'small'} />React, Gatsby, GraphQL</li>
             <li className="tag product-link"><LinkIcon fontSize={'small'} />
               <a className="link" rel="noopener noreferrer" target="_blank" 
-                href="http://2020-gatsby.sommernachts-ball.ch">http://2020-gatsby.sommernachts-ball.ch
+                href="http://2020-gatsby.sommernachts-ball.ch">http://www.sommernachts-ball.ch
               </a>
             </li>
           </ul>
