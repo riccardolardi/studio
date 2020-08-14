@@ -6,7 +6,7 @@ import {ReactComponent as Icon} from './img/icons/wave-round.svg';
 import './Profile.scss';
 
 const imgs = [
-  require('./img/riccardolardi.jpg')
+  require('./img/riccardolardi2.jpg')
 ];
 
 function Profile(props) {
