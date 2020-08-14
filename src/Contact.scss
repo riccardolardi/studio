@@ -1,7 +1,7 @@
 @import './Vars.scss';
 @import 'breakpoint-sass';
 
-#contact {
+.block#contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,6 +9,10 @@
   article {
     position: relative;
     top: 12.5vh;
+
+    @include breakpoint($breakMobile) {
+      top: 0;
+    }
   }
 
   .social-icon {

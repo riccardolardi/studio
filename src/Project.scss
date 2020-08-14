@@ -32,6 +32,7 @@
     padding: $pad * 3 $pad $pad $pad;
 
     @include breakpoint($breakMobile) {
+      top: 0;
       flex-direction: column;
       align-items: flex-start;
       padding: $pad $pad $pad * 2 $pad;
@@ -51,6 +52,7 @@
         top: 0px;
         left: 0px;
         font-size: $pad * 1.6;
+        margin-top: $pad * 0.75;
         width: 75%;
       }
     }
@@ -113,28 +115,32 @@
           margin-top: $pad * 2;
         }
 
-        &:nth-of-type(1n) img {
+        &:nth-of-type(1n) {
           transition: all 125ms 125ms;
         }
 
-        &:nth-of-type(2n) img {
+        &:nth-of-type(2n) {
           transition: all 125ms 250ms;
         }
 
-        &:nth-of-type(3n) img {
+        &:nth-of-type(3n) {
           transition: all 125ms 375ms;
         }
 
-        &:nth-of-type(4n) img {
+        &:nth-of-type(4n) {
           transition: all 125ms 500ms;
         }
 
-        &:nth-of-type(5n) img {
+        &:nth-of-type(5n) {
           transition: all 125ms 625ms;
         }
 
         &:first-child {
           margin-top: 0;
+
+          @include breakpoint($breakMobile) {
+            margin-top: $pad * 2;
+          }
         }
 
         img {

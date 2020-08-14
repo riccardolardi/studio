@@ -36,7 +36,10 @@ function Project(props) {
           <ul>
 	          <li className="tag date"><CalendarTodayIcon fontSize={'small'} />2020</li>
 	          <li className="tag client-tags"><HomeWorkIcon fontSize={'small'} />Migros Kulturprozent</li>
-	          <li className="tag partner-tags"><PeopleIcon fontSize={'small'} /><a className="link" href="http://www.komun.ch">Komun</a>,&nbsp;<a className="link"  href="http://www.stephanwalter.ch">Stephan Walter</a></li>
+	          <li className="tag partner-tags"><PeopleIcon fontSize={'small'} />
+              <a className="link" rel="noopener noreferrer" target="_blank" href="http://www.komun.ch">Komun</a>,&nbsp;
+              <a className="link" rel="noopener noreferrer" target="_blank" href="http://www.stephanwalter.ch">Stephan Walter</a>
+            </li>
 	          <li className="tag service-tags"><CategoryIcon fontSize={'small'} />Interaction Design, Beratung, Programmierung</li>
 	          <li className="tag tech-tags"><BuildIcon fontSize={'small'} />React, Gatsby, GraphQL</li>
             <li className="tag product-link"><LinkIcon fontSize={'small'} />
@@ -62,7 +65,9 @@ function Project(props) {
         	<p>Redesign und Neuentwicklung von Front- und Backend für die Webseite vom Zürcher Grafiker und Typografen Stephan Walter.</p>
           <ul>
 	          <li className="tag date"><CalendarTodayIcon fontSize={'small'} />2019</li>
-	          <li className="tag client-tags"><HomeWorkIcon fontSize={'small'} />Stephan Walter</li>
+	          <li className="tag client-tags"><HomeWorkIcon fontSize={'small'} />
+              <a className="link" rel="noopener noreferrer" target="_blank" href="http://www.stephanwalter.ch">Stephan Walter</a>
+            </li>
 	          <li className="tag service-tags"><CategoryIcon fontSize={'small'} />Design, Programmierung</li>
 	          <li className="tag tech-tags"><BuildIcon fontSize={'small'} />React, Headless WP</li>
 	          <li className="tag product-link"><LinkIcon fontSize={'small'} />

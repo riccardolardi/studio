@@ -14,7 +14,7 @@ import { useThrottle } from 'use-throttle';
 import { trimSlashes } from './functions.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
-import News from './News.js';
+// import News from './News.js';
 import Profile from './Profile.js';
 import Work from './Work.js';
 import Contact from './Contact.js';
@@ -27,7 +27,7 @@ const useBreakpoint = createBreakpoint({
 });
 
 let intersectionObserver, blockEls;
-const slugs = ['/', 'news', 'profile', 'work', 'contact'];
+const slugs = ['/', 'profile', 'work', 'contact'];
 
 function App() {
   const [activeBlockIndex, setActiveBlockIndex] = React.useState(null);
@@ -118,7 +118,7 @@ function App() {
     setNavigatingDir(newNavDir);
     const elTop = blockEls[index]?.offsetTop;
     const offset = index + 1 < blockEls.length && index > 0 ? 
-      (isMobile ? window.innerHeight * 0.15 : window.innerHeight * 0.3) : 0;
+      (isMobile ? 0 : window.innerHeight * 0.3) : 0;
     setTimeout(() => {
       window.scrollTo(0, elTop - offset);
       setNavigatingDir(null);
@@ -145,29 +145,29 @@ function App() {
         isMenuOpen={isMenuOpen} 
         moveToBlock={moveToBlock} 
       />
-      <News 
+      {/*<News 
         index={1} 
         active={activeBlockIndex === 1} 
         intersecting={intersectingBlockIndexes.includes(1)} 
-        prevBlockIndex={prevBlockIndex} 
         prevIsIntro={prevIsIntro} 
-      />
+      />*/}
       <Profile 
+        index={1} 
+        active={activeBlockIndex === 1} 
+        intersecting={intersectingBlockIndexes.includes(1)} 
+        moveToBlock={moveToBlock} 
+        prevIsIntro={prevIsIntro}
+      />
+      <Work 
         index={2} 
         active={activeBlockIndex === 2} 
         intersecting={intersectingBlockIndexes.includes(2)} 
-        moveToBlock={moveToBlock} 
-      />
-      <Work 
-        index={3} 
-        active={activeBlockIndex === 3} 
-        intersecting={intersectingBlockIndexes.includes(3)} 
         setOpenProjectId={setOpenProjectId} 
       />
       <Contact 
-        index={4} 
-        active={activeBlockIndex === 4} 
-        intersecting={intersectingBlockIndexes.includes(4)} 
+        index={3} 
+        active={activeBlockIndex === 3} 
+        intersecting={intersectingBlockIndexes.includes(3)} 
       />
       {openProjectId !== null && <Project 
         openProjectId={openProjectId} 

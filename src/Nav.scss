@@ -205,8 +205,8 @@
         text-decoration: none;
 
         @include breakpoint($breakMobile) {
-          font-size: 5vh;
-          line-height: 7vh;
+          font-size: 6vh;
+          line-height: 6vh;
         }
       }
     }

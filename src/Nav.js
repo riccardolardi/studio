@@ -94,10 +94,10 @@ function Nav(props) {
     <nav id="nav" className={classes}>
 	    <div className="menu-drawer">
 	    	<ul>
-		    	<li className="menu-item"><a href="/news" onClick={linkClicked.bind(this, 0)}>News</a></li>
-		    	<li className="menu-item"><a href="/profile" onClick={linkClicked.bind(this, 1)}>Profil</a></li>
-		    	<li className="menu-item"><a href="/work" onClick={linkClicked.bind(this, 2)}>Projekte</a></li>
-		    	<li className="menu-item"><a href="/contact" onClick={linkClicked.bind(this, 3)}>Kontakt</a></li>
+		    	{/*<li className="menu-item"><a href="/news" onClick={linkClicked.bind(this, 0)}>News</a></li>*/}
+		    	<li className="menu-item"><a href="/profile" onClick={linkClicked.bind(this, 0)}>Profil</a></li>
+		    	<li className="menu-item"><a href="/work" onClick={linkClicked.bind(this, 1)}>Projekte</a></li>
+		    	<li className="menu-item"><a href="/contact" onClick={linkClicked.bind(this, 2)}>Kontakt</a></li>
 		    </ul>
 		    <span className="active-bar" />
 		    <Icon className="symbol symbol-white" />

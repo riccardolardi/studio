@@ -71,7 +71,7 @@ function Work(props) {
               <span />
             </span>
             <h4 className="bold margin-bottom">Stephan Walter</h4>
-            <p>Website, 2019</p>
+            <p>Website, 2020</p>
             <p>Stephan Walter, Grafiker, Zürich</p>
           </div>
           <div className="image">
