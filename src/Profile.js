@@ -25,10 +25,6 @@ function Profile(props) {
     'prev-is-intro': prevIsIntro 
   });
 
-  function contactLinkClicked() {
-    moveToBlock(4);
-  }
-
   return (
     <section id="profile" className={classes} data-index={index}>
       <h3 className="bold">Profil</h3>
@@ -63,7 +59,7 @@ function Profile(props) {
           <p>Gemeinsam mit dem Kunden begleitet und verwirklicht das Studio Projekte, von der rohen Idee über deren Verfestigung, über den ersten Prototypen bis hin zum fertigen Produkt und dessen Inbetriebnahme. Der Kunde wird partizipativ am Designprozess miteinbezogen und ist Projektpartner auf Augenhöhe.</p>
           <p>Das Studio bewegt sich in einem dichten Netzwerk von lokal verfügbaren Spezialisten in relevanten Bereichen (Fotografie & Video, Grafik, Elektronik, Fabrikation) und greift wo nötig auf diese zu.</p>
           <div className="contact-us">
-            <span className="contact-us-button" onClick={contactLinkClicked}>
+            <span className="contact-us-button" onClick={() => moveToBlock(3)}>
               <ArrowForwardIcon fontSize="large" />Haben Sie eine Anfrage?
             </span>
             <span className="illustration" role="img" aria-label="Kontaktaufnahme">×</span>
