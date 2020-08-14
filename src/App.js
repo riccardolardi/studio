@@ -10,6 +10,7 @@ import {
   usePrevious, 
   useDebounce
  } from 'react-use';
+import { useThrottle } from 'use-throttle';
 import { trimSlashes } from './functions.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
@@ -36,9 +37,9 @@ function App() {
   const [statePopped, setStatePopped] = React.useState(null);
   const [isMenuOpen, setIsMenuOpen] = React.useState(null);
   const [openProjectId, setOpenProjectId] = React.useState(null);
-
   const prevBlockIndex = usePrevious(activeBlockIndex);
   const { y: scrollY } = useWindowScroll();
+  const throttledScrollY = useThrottle(scrollY, 10);
   const isMobile = useBreakpoint() === 'mobile';
 
   useDebounce(() => {
@@ -55,26 +56,26 @@ function App() {
       }, slugs[activeBlockIndex], 
         activeBlockIndex > 0 ? '/' + slugs[activeBlockIndex] : slugs[activeBlockIndex]);
     }
-  }, 500, [scrollY]);
+  }, 500, [throttledScrollY]);
 
   React.useLayoutEffect(() => {
     blockEls = Array.from(document.querySelectorAll('.block'));
-    intersectionObserver = new IntersectionObserver(events => {
-      events.forEach(event => {
-        const index = parseInt(event.target.getAttribute('data-index'));
+    intersectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const index = parseInt(entry.target.getAttribute('data-index'));
         setIntersectingBlockIndexes(indexes => {
-          if (event.isIntersecting) {
+          if (entry.isIntersecting) {
             if (indexes.includes(index)) return indexes;
             return [...indexes, index];
           }
           return indexes.filter(el => el !== index);
         });
-        if (event.intersectionRect.height >= event.rootBounds.height * 0.5) {
+        if (entry.intersectionRect.height >= entry.rootBounds.height * 0.5) {
           setActiveBlockIndex(index);
         }
       });
     }, {
-      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+      threshold: Array.from({length: 100}, (x, i) => i * 0.01)
     });
     blockEls.forEach(el => intersectionObserver.observe(el));
     moveToBlock(slugs.indexOf(trimSlashes(window.location.pathname)), true);
@@ -140,7 +141,7 @@ function App() {
         index={0} 
         active={activeBlockIndex === 0} 
         intersecting={intersectingBlockIndexes.includes(0)} 
-        scrollY={scrollY} 
+        scrollY={throttledScrollY} 
         isMenuOpen={isMenuOpen} 
         moveToBlock={moveToBlock} 
       />

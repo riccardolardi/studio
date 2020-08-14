@@ -23,7 +23,8 @@
     "react-waypoint": "^9.0.3",
     "rellax": "^1.12.1",
     "smoothscroll-polyfill": "^0.4.4",
-    "tween-functions": "^1.2.0"
+    "tween-functions": "^1.2.0",
+    "use-throttle": "0.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

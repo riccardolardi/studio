@@ -1,7 +1,6 @@
 import React from 'react';
 import Classnames from 'classnames';
 import LazyImage from './LazyImage.js';
-import LazyLoad from 'react-lazyload';
 import './Work.scss';
 
 const imgs = [
@@ -61,7 +60,7 @@ function Work(props) {
             <p>Genossenschaftsbund Migros Zürich</p>
           </div>
           <div className="image">
-            <LazyLoad width={1024} height={956}><LazyImage src={imgs[0]} alt="" /></LazyLoad>
+            <LazyImage width={1024} height={956} src={imgs[0]} alt="" />
           </div>
         </a>
       </article>
@@ -76,7 +75,7 @@ function Work(props) {
             <p>Stephan Walter, Grafiker, Zürich</p>
           </div>
           <div className="image">
-            <LazyLoad width={1024} height={956}><LazyImage src={imgs[1]} alt="" /></LazyLoad>
+            <LazyImage width={1024} height={956} src={imgs[1]} alt="" />
           </div>
         </a>
       </article>
@@ -91,7 +90,7 @@ function Work(props) {
             <p>Int. Olympic Commitee, Lausanne</p>
           </div>
           <div className="image">
-            <LazyLoad width={1024} height={1010}><LazyImage src={imgs[2]} alt="" /></LazyLoad>
+            <LazyImage width={1024} height={1010} src={imgs[2]} alt="" />
           </div>
         </a>
       </article>
@@ -106,7 +105,7 @@ function Work(props) {
             <p>M+ Museum, Hong Kong</p>
           </div>
           <div className="image">
-            <LazyLoad width={1024} height={1010}><LazyImage src={imgs[3]} alt="" /></LazyLoad>
+            <LazyImage width={1024} height={1010} src={imgs[3]} alt="" />
           </div>
         </a>
       </article>
@@ -121,7 +120,7 @@ function Work(props) {
             <p>Hyundai, Südkorea</p>
           </div>
           <div className="image">
-            <LazyLoad width={1200} height={675}><LazyImage src={imgs[4]} alt="" /></LazyLoad>
+            <LazyImage width={1200} height={675} src={imgs[4]} alt="" />
           </div>
         </a>
       </article>
@@ -136,7 +135,7 @@ function Work(props) {
             <p>Armory Park Avenue, NY</p>
           </div>
           <div className="image">
-            <LazyLoad width={1200} height={675}><LazyImage src={imgs[5]} alt="" /></LazyLoad>
+            <LazyImage width={1200} height={675} src={imgs[5]} alt="" />
           </div>
         </a>
       </article>
@@ -151,7 +150,7 @@ function Work(props) {
             <p>Kirche LLC, Boston, MA</p>
           </div>
           <div className="image">
-            <LazyLoad width={1200} height={675}><LazyImage src={imgs[6]} alt="" /></LazyLoad>
+            <LazyImage width={1200} height={675} src={imgs[6]} alt="" />
           </div>
         </a>
       </article>
@@ -166,7 +165,7 @@ function Work(props) {
             <p>Maersk, Copenhagen</p>
           </div>
           <div className="image">
-            <LazyLoad width={1980} height={1320}><LazyImage src={imgs[7]} alt="" /></LazyLoad>
+            <LazyImage width={1980} height={1320} src={imgs[7]} alt="" />
           </div>
         </a>
       </article>

@@ -106,7 +106,7 @@
         width: 100%;
       }
 
-      .lazyload-wrapper {
+      .lazy-image {
         margin-top: $pad;
 
         @include breakpoint($breakMobile) {

@@ -351,19 +351,33 @@
     }
   }
 
-  .lazyload-wrapper {
+  .lazy-image {
+    opacity: 0;
+    transform: translateX(-2vw);
+    transition: all 125ms 125ms;
+
+    &.loaded {
+      opacity: 1;
+      transform: translateX(0);
+
+      img {
+        display: block;
+
+        &.placeholder {
+          display: none;
+        }
+      }
+    }
 
     img {
-      display: block;
+      display: none;
       max-width: 100%;
       max-height: 60vh;
-      opacity: 0;
-      transform: translateX(-2vw);
-      transition: all 125ms 125ms;
 
-      &.loaded {
-        opacity: 1;
-        transform: translateX(0);
+      &.placeholder {
+        display: block;
+        width: auto;
+        height: auto;
       }
     }
   }

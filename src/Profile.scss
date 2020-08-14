@@ -46,6 +46,8 @@
 
       @include breakpoint($breakMobile) {
         margin-top: $pad;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
 			.contact-us-button {
@@ -60,13 +62,19 @@
 					margin-right: $pad * 0.25;
 
 		      @include breakpoint($breakMobile) {
-		        font-size: $pad;
+		        font-size: $pad * 2;
 		      }
 				}
 			}
 
 			.illustration {
 				margin-left: $pad * 0.75;
+
+	      @include breakpoint($breakMobile) {
+	        font-size: $pad * 3;
+	        line-height: $pad * 3;
+	        margin: $pad * 1.75 0 0 0;
+	      }
 			}
 		}
 	}

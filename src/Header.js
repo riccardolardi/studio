@@ -42,7 +42,7 @@ function Header(props) {
 
   React.useEffect(() => {
     if (hasScrolled) chars2.forEach((el, index) => {
-      const tweenedVal = tweens.easeOutSine(scrollY, 0, appHeight * 1.5, appHeight * 1.5);
+      const tweenedVal = tweens.easeInOutSine(scrollY, 0, appHeight, appHeight);
       const newVal = tweenedVal * charAnims[index][2];
       const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal / 2));
       const newRotateStyle = charAnims[index][1].replace('$', newVal / 10);
