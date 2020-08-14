@@ -55,9 +55,10 @@ function Profile(props) {
             <span />
           </span>
           <p>Riccardo Lardi ist dipl. Interaction Designer mit BA ZHdK Zürich und MA Royal College of Art, London und hat langjährige Berufserfahrung in Anstellungen bei Firmen wie <a className="link" rel="noopener noreferrer" target="_blank" href="http://www.takram.com">Takram</a> (London) und <a className="link" rel="noopener noreferrer" target="_blank" href="http://www.iart.ch">iart</a> (Basel) sammeln können.</p>
-          <p>Mit über 10 Jahren Erfahrung im Bereich digitaler Medien im physischen & virtuellen Raum bietet das Studio sämtliche Services zur erfolgreichen Umsetzung Ihrer Produktidee.</p>
-          <p>Gemeinsam mit dem Kunden begleitet und verwirklicht das Studio Projekte, von der rohen Idee über deren Verfestigung, über den ersten Prototypen bis hin zum fertigen Produkt und dessen Inbetriebnahme. Der Kunde wird partizipativ am Designprozess miteinbezogen und ist Projektpartner auf Augenhöhe.</p>
-          <p>Das Studio bewegt sich in einem dichten Netzwerk von lokal verfügbaren Spezialisten in relevanten Bereichen (Fotografie & Video, Grafik, Elektronik, Fabrikation) und greift wo nötig auf diese zu.</p>
+          <p>Mehr Informationen & CV einsehbar unter <a className="link" href="https://www.linkedin.com/in/riccardolardi" rel="noopener noreferrer" 
+            target="_blank" >LinkedIn</a>.</p>
+          <p>Gemeinsam mit dem Kunden begleitet und verwirklicht das Studio Projekte, von der rohen Idee, über den ersten Prototypen bis hin zum fertigen Produkt und dessen Inbetriebnahme. Der Kunde wird partizipativ am Designprozess miteinbezogen und ist Projektpartner auf Augenhöhe.</p>
+          <p>Das Studio bewegt sich in einem dichten Netzwerk von lokal verfügbaren Spezialisten in relevanten Bereichen (Fotografie & Video, Grafik, Elektronik, Fabrikation) und ist dementsprechend agil und anpassungsfähig.</p>
           <div className="contact-us">
             <span className="contact-us-button" onClick={() => moveToBlock(3)}>
               <ArrowForwardIcon fontSize="large" />Haben Sie eine Anfrage?
