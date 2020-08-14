@@ -14,7 +14,6 @@ function Header(props) {
     index, 
     scrollY, 
     isMenuOpen, 
-    moveToBlock, 
     active: isActive, 
     intersecting: isIntersecting 
   } = props;
@@ -128,9 +127,8 @@ function Header(props) {
       <div className="secondary-header">
         <span className="site-title bold"><a href="/">Studio<br/>Riccardo<br/>Lardi</a></span>
       </div>
-      <button role="img" aria-label="scroll-down" className="scroll-down" onClick={() => moveToBlock(1)}>
-        <ArrowDown />
-      </button>
+      <ArrowDown className="scroll-down" />
+      <span className="scroll-down-label">Scroll down!</span>
     </header>
   );
 }

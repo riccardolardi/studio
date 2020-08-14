@@ -24,6 +24,11 @@
       pointer-events: auto;
     }
 
+    .scroll-down-label {
+      visibility: visible;
+      transition: all 125ms, visibility 0ms 1s;
+    }
+
     .logo {
 
       .logo-symbol {
@@ -173,26 +178,41 @@
     position: fixed;
     bottom: $pad * 1.25;
     left: $pad;
-    cursor: pointer;
     opacity: 0;
     transition: opacity 0ms 0ms;
     pointer-events: none;
-    margin: 0;
-    padding: 0;
+    width: $pad;
+    height: auto;
     z-index: 10;
 
-    svg {
-      display: block;
-      width: $pad;
-      height: auto;
+    @include breakpoint($breakDesktop) {
 
-      @include breakpoint($breakMobile) {
-        width: $pad * 1.4;
-      }
-
-      g {
-        stroke: $secondaryColor;
+      &:hover + .scroll-down-label {
+        opacity: 1;
+        transform: rotateZ(-25deg);
       }
     }
+
+    @include breakpoint($breakMobile) {
+      width: $pad * 1.4;
+    }
+
+    g {
+      stroke: $secondaryColor;
+    }
+  }
+
+  .scroll-down-label {
+    display: block;
+    position: fixed;
+    bottom: $pad * 1.25;
+    left: $pad;
+    padding-left: $pad * 2;
+    pointer-events: none;
+    opacity: 0;
+    transform: rotateZ(-30deg);
+    transform-origin: left center;
+    transition: all 125ms;
+    visibility: hidden;
   }
 }

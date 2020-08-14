@@ -143,7 +143,6 @@ function App() {
         intersecting={intersectingBlockIndexes.includes(0)} 
         scrollY={throttledScrollY} 
         isMenuOpen={isMenuOpen} 
-        moveToBlock={moveToBlock} 
       />
       {/*<News 
         index={1} 
