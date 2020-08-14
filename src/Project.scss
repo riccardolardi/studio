@@ -106,30 +106,30 @@
         width: 100%;
       }
 
-      .lazy-image {
+      .lazyload-wrapper {
         margin-top: $pad;
 
         @include breakpoint($breakMobile) {
           margin-top: $pad * 2;
         }
 
-        &:nth-of-type(1n) {
+        &:nth-of-type(1n) img {
           transition: all 125ms 125ms;
         }
 
-        &:nth-of-type(2n) {
+        &:nth-of-type(2n) img {
           transition: all 125ms 250ms;
         }
 
-        &:nth-of-type(3n) {
+        &:nth-of-type(3n) img {
           transition: all 125ms 375ms;
         }
 
-        &:nth-of-type(4n) {
+        &:nth-of-type(4n) img {
           transition: all 125ms 500ms;
         }
 
-        &:nth-of-type(5n) {
+        &:nth-of-type(5n) img {
           transition: all 125ms 625ms;
         }
 

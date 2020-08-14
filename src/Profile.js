@@ -1,6 +1,7 @@
 import React from 'react';
 import Classnames from 'classnames';
 import LazyImage from './LazyImage.js';
+import LazyLoad from 'react-lazyload';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {ReactComponent as Icon} from './img/icons/wave-triangle.svg';
 import './Profile.scss';
@@ -48,7 +49,7 @@ function Profile(props) {
         </div>
         <div className="image">
           <Icon className="icon" />
-          <LazyImage src={imgs[0]} alt="Riccardo Lardi" width="1024" height="1536" />
+          <LazyLoad width={683} height={1024}><LazyImage src={imgs[0]} alt="Studio Riccardo Lardi" /></LazyLoad>
         </div>
       </article>
       <article className="text-center">
@@ -56,7 +57,7 @@ function Profile(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <p>Mit über 10 Jahren Erfahrung im Bereich digitaler Medien und deren Funktion im physischen Raum bietet das Studio sämtliche Services zur erfolgreichen Umsetzung Ihrer Produktidee.</p>
+          <p>Mit über 10 Jahren Erfahrung im Bereich digitaler Medien im physischen & virtuellen Raum bietet das Studio sämtliche Services zur erfolgreichen Umsetzung Ihrer Produktidee.</p>
           <p>Gemeinsam mit dem Kunden begleitet und verwirklicht das Studio Projekte, von der rohen Idee über deren Verfestigung, über den ersten Prototypen bis hin zum fertigen Produkt und dessen Inbetriebnahme. Der Kunde wird partizipativ am Designprozess miteinbezogen und ist Projektpartner auf Augenhöhe.</p>
           <p>Das Studio bewegt sich in einem dichten Netzwerk von Spezialisten in relevanten Bereichen (Fotografie, Grafik, Elektronik, Infrastruktur) und greift wo nötig auf diese zu.</p>
           <div className="contact-us">

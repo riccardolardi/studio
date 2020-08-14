@@ -6,6 +6,7 @@ import CategoryIcon from '@material-ui/icons/Category';
 import BuildIcon from '@material-ui/icons/Build';
 import LinkIcon from '@material-ui/icons/Link';
 import LazyImage from './LazyImage.js';
+import LazyLoad from 'react-lazyload';
 import Classnames from 'classnames';
 import './Project.scss';
 
@@ -48,9 +49,9 @@ function Project(props) {
           <p>Bacon ipsum dolor amet pork belly turkey porchetta shoulder, chuck salami cupim pork loin short ribs sirloin spare ribs turducken. Cupim tongue chislic salami pastrami pork belly pancetta swine bresaola cow. Tri-tip hamburger ham, cow doner sausage filet mignon pork flank. Pork kielbasa jerky landjaeger brisket frankfurter.</p>
         </div>
         <div className="images">
-          <LazyImage src={require('./img/gmz/gmz1.png')} width="1024" height="956" alt="Sommernachts-Ball Macbook" visibleByDefault />
-          <LazyImage src={require('./img/gmz/gmz2.png')} width="827" height="1024" alt="Sommernachts-Ball iPhone" visibleByDefault />
-          <LazyImage src={require('./img/gmz/gmz3.png')} width="842" height="1024" alt="Sommernachts-Ball iPad" visibleByDefault />
+          <LazyLoad width={1024} height={956}><LazyImage src={require('./img/gmz/gmz1.png')} alt="Sommernachts-Ball Macbook" /></LazyLoad>
+          <LazyLoad width={827} height={1024}><LazyImage src={require('./img/gmz/gmz2.png')} alt="Sommernachts-Ball iPhone" /></LazyLoad>
+          <LazyLoad width={842} height={1024}><LazyImage src={require('./img/gmz/gmz3.png')} alt="Sommernachts-Ball iPad" /></LazyLoad>
         </div>
       </article>}
 	    {openProjectId === 1 && <article>
@@ -74,9 +75,9 @@ function Project(props) {
           <p>Bacon ipsum dolor amet pork belly turkey porchetta shoulder, chuck salami cupim pork loin short ribs sirloin spare ribs turducken. Cupim tongue chislic salami pastrami pork belly pancetta swine bresaola cow. Tri-tip hamburger ham, cow doner sausage filet mignon pork flank. Pork kielbasa jerky landjaeger brisket frankfurter.</p>
         </div>
         <div className="images">
-          <LazyImage src={require('./img/stephanwalter/stephanwalter1.png')} width="1024" height="956" alt="Stephan Walter Macbook" />
-          <LazyImage src={require('./img/stephanwalter/stephanwalter2.png')} width="842" height="1024" alt="Stephan Walter iPad" />
-          <LazyImage src={require('./img/stephanwalter/stephanwalter3.png')} width="708" height="1024" alt="Stephan Walter iPhone" />
+          <LazyLoad width={1024} height={956}><LazyImage src={require('./img/stephanwalter/stephanwalter1.png')} alt="Sommernachts-Ball iPad" /></LazyLoad>
+          <LazyLoad width={842} height={1024}><LazyImage src={require('./img/stephanwalter/stephanwalter2.png')} alt="Sommernachts-Ball iPad" /></LazyLoad>
+          <LazyLoad width={708} height={1024}><LazyImage src={require('./img/stephanwalter/stephanwalter3.png')} alt="Sommernachts-Ball iPad" /></LazyLoad>
         </div>
       </article>}
     </section>
