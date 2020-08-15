@@ -38,8 +38,7 @@ function Project(props) {
   	          <li className="tag date"><CalendarTodayIcon fontSize={'small'} />2020</li>
   	          <li className="tag client-tags"><HomeWorkIcon fontSize={'small'} />Migros Kulturprozent</li>
   	          <li className="tag partner-tags"><PeopleIcon fontSize={'small'} />
-                <a className="link" rel="noopener noreferrer" target="_blank" href="http://www.komun.ch">Komun</a>,&nbsp;
-                <a className="link" rel="noopener noreferrer" target="_blank" href="http://www.stephanwalter.ch">Stephan Walter</a>
+                <a className="link" rel="noopener noreferrer" target="_blank" href="http://www.komun.ch">Komun</a>
               </li>
   	          <li className="tag service-tags"><CategoryIcon fontSize={'small'} />Interaction Design, Beratung, Programmierung</li>
   	          <li className="tag tech-tags"><BuildIcon fontSize={'small'} />React, Gatsby, GraphQL</li>
@@ -49,7 +48,8 @@ function Project(props) {
                 </a>
               </li>
             </ul>
-            <p>Bacon ipsum dolor amet pork belly turkey porchetta shoulder, chuck salami cupim pork loin short ribs sirloin spare ribs turducken. Cupim tongue chislic salami pastrami pork belly pancetta swine bresaola cow. Tri-tip hamburger ham, cow doner sausage filet mignon pork flank. Pork kielbasa jerky landjaeger brisket frankfurter.</p>
+            <p>Der Migros-Sommernachtsball findet jeden Juni im Hauptbahnhof Zürich statt und ist zu einer städtischen Attraktion etabliert.</p>
+            <p>Die Webseite wurde komplett neugestaltet und mit frischer Technologie neu entwickelt. Fokus der Umsetzung liegt auf dem raschen Auffinden der gesuchten Information und auf einer intuitiven Navigation unabhängig von Art des Devices, ermöglicht durch ein fluides Design.</p>
           </div>
           <div className="images">
             <LazyImage width={1024} height={956} src={require('./img/gmz/gmz1.png')} alt="Sommernachts-Ball Macbook" />
@@ -79,7 +79,8 @@ function Project(props) {
                 </a>
               </li>
             </ul>
-            <p>Bacon ipsum dolor amet pork belly turkey porchetta shoulder, chuck salami cupim pork loin short ribs sirloin spare ribs turducken. Cupim tongue chislic salami pastrami pork belly pancetta swine bresaola cow. Tri-tip hamburger ham, cow doner sausage filet mignon pork flank. Pork kielbasa jerky landjaeger brisket frankfurter.</p>
+            <p>Stephan Walter ist Grafiker und Typograf aus Zürich und weltweit bekannt für seine Arbeiten in welchen er 3D und Typografie grafisch geschickt zu "Typotektur" vereint.</p>
+            <p>Seinen neuen Webauftritt hat das Studio mit Fokus auf möglichst grossflächige und dominante Darstellung seiner Grafik umgesetzt. Informationstext ist optional zugänglich, soll die grafischen Inhalte jedoch nie konkurrenzieren.</p>
           </div>
           <div className="images">
             <LazyImage width={1024} height={956} src={require('./img/stephanwalter/stephanwalter1.png')} alt="Sommernachts-Ball iPad" />
@@ -113,7 +114,7 @@ function Project(props) {
           </div>
           <div className="images">
             <LazyImage width={1024} height={1010} src={require('./img/ioc/ioc1.png')} alt="IOC MapTool" />
-            <LazyImage width={1024} height={1010} src={require('./img/ioc/ioc2.png')} alt="IOC MapTool" />
+            <LazyImage width={1024} height={810} src={require('./img/ioc/ioc2.png')} alt="IOC MapTool" />
           </div>
         </section>
         <section className="image-left">

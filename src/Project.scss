@@ -34,8 +34,8 @@
     }
 
     h4 {
-      position: fixed;
-      top: $pad * 3.7;
+      position: absolute;
+      top: $pad;
       left: $pad * 1.4;
       font-size: $pad * 1.4;
       transform: translateX(-2vw);
