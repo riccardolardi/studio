@@ -352,6 +352,7 @@
   }
 
   .lazy-image {
+    position: relative;
     opacity: 0;
     transform: translateX(-2vw);
     transition: all 125ms 125ms;
@@ -379,6 +380,17 @@
         width: auto;
         height: auto;
       }
+    }
+
+    figcaption {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      font-size: $pad * 0.35;
+      line-height: $pad * 0.65;
+      padding: 0 $pad * 0.2;
+      background-color: $primaryColor;
+      color: $secondaryColor;
     }
   }
 

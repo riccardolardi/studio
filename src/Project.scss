@@ -24,18 +24,13 @@
   }
 
   article {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  	position: relative;
-  	top: 15vh;
-    padding: $pad * 3 $pad $pad $pad;
+    position: relative;
+    top: 15vh;
+    padding: $pad * 5 $pad $pad * 2 $pad;
 
     @include breakpoint($breakMobile) {
       top: 0;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: $pad $pad $pad * 2 $pad;
+      padding: $pad $pad $pad * 2 $pad; 
     }
 
     h4 {
@@ -56,10 +51,37 @@
         width: 75%;
       }
     }
+  }
+
+  section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: $pad * 2;
+
+    @include breakpoint($breakMobile) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      &:first-of-type {
+        margin-top: $pad * 2;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.image-left {
+      flex-direction: row-reverse;
+
+      @include breakpoint($breakMobile) {
+        flex-direction: column;
+      }
+    }
 
     .text {
       position: relative;
-      margin: $pad * 2 0 0;
       width: 42%;
 
       @include breakpoint($breakMobile) {
@@ -67,7 +89,7 @@
       }
 
       ul {
-        margin: $pad 0;
+        margin: $pad * 0.5 0 $pad;
 
         @include breakpoint($breakMobile) {
           margin: $pad * 0.5 0 $pad;
@@ -115,6 +137,14 @@
           margin-top: $pad * 2;
         }
 
+        &:first-of-type {
+          margin-top: 0;
+
+          @include breakpoint($breakMobile) {
+            margin-top: $pad * 2;
+          }
+        }
+
         &:nth-of-type(1n) {
           transition: all 125ms 125ms;
         }
@@ -133,14 +163,6 @@
 
         &:nth-of-type(5n) {
           transition: all 125ms 625ms;
-        }
-
-        &:first-child {
-          margin-top: 0;
-
-          @include breakpoint($breakMobile) {
-            margin-top: $pad * 2;
-          }
         }
 
         img {
