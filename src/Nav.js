@@ -21,7 +21,8 @@ function Nav(props) {
 		activeLang, 
 		setActiveLang, 
 		moveToBlock, 
-		prevBlockIndex 
+		prevBlockIndex, 
+		strings 
 	} = props;
 
 	React.useLayoutEffect(() => {
@@ -41,6 +42,7 @@ function Nav(props) {
 
 	React.useEffect(() => {
 		setActiveItem(activeLang, langLiEls);
+		setActiveItem(activeBlockIndex - 1, menuLiEls, true);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeLang]);
 
@@ -109,9 +111,9 @@ function Nav(props) {
 	    <div className="menu-drawer">
 	    	<ul>
 		    	{/*<li className="menu-item"><a href="/news" onClick={linkClicked.bind(this, 0)}>News</a></li>*/}
-		    	<li className="menu-item"><a href="/profile" onClick={linkClicked.bind(this, 0)}>Profil</a></li>
-		    	<li className="menu-item"><a href="/work" onClick={linkClicked.bind(this, 1)}>Projekte</a></li>
-		    	<li className="menu-item"><a href="/contact" onClick={linkClicked.bind(this, 2)}>Kontakt</a></li>
+		    	<li className="menu-item"><a href="/profile" onClick={linkClicked.bind(this, 0)}>{strings.nav.Profile[activeLang]}</a></li>
+		    	<li className="menu-item"><a href="/work" onClick={linkClicked.bind(this, 1)}>{strings.nav.Work[activeLang]}</a></li>
+		    	<li className="menu-item"><a href="/contact" onClick={linkClicked.bind(this, 2)}>{strings.nav.Contact[activeLang]}</a></li>
 		    	<li className="lang-item lang-de"><button onClick={() => setActiveLang(0)}>DE</button></li>
 		    	<li className="lang-item lang-en"><button onClick={() => setActiveLang(1)}>EN</button></li>
 		    </ul>

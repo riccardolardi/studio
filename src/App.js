@@ -21,6 +21,7 @@ import Contact from './Contact.js';
 import Project from './Project.js';
 import './App.scss';
 
+const strings = require('./i18n.json');
 const useBreakpoint = createBreakpoint({
   mobile: 768, 
   other: 769
@@ -98,6 +99,11 @@ function App() {
   }, [activeBlockIndex]);
 
   React.useEffect(() => {
+    document.documentElement.lang = activeLang === 0 ? 'de' : 'en';
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeLang]);
+
+  React.useEffect(() => {
     if (isMenuOpen && isMobile) {
       disableBodyScroll(document.querySelector('#nav'));
     } else if (openProjectId !== null) {
@@ -158,7 +164,9 @@ function App() {
         active={activeBlockIndex === 1} 
         intersecting={intersectingBlockIndexes.includes(1)} 
         moveToBlock={moveToBlock} 
-        prevIsIntro={prevIsIntro}
+        prevIsIntro={prevIsIntro} 
+        activeLang={activeLang} 
+        strings={strings} 
       />
       <Work 
         index={2} 
@@ -186,6 +194,7 @@ function App() {
         projectOpen={openProjectId !== null} 
         setOpenProjectId={setOpenProjectId} 
         prevBlockIndex={prevBlockIndex} 
+        strings={strings} 
       />
     </main>
   );

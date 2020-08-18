@@ -1,0 +1,82 @@
+{
+	"header": {
+
+	},
+	"profile": {
+		"Title": [
+			"Profil",
+			"Profile"
+		],
+		"Slogan": [
+			"Das Studio aus Basel spezialisiert sich auf die Planung, Konzeption, Design und Entwicklung von Projekten zwischen digitalem und physischem Raum.",
+			"The Studio is based in Basel and is specialized in planning, conception, design and development of projects in between digital and physical space."
+		],
+		"Services": [
+			"Kompetenzen",
+			"Services"
+		],
+		"Service1": [
+			"Produktdesign und Konzept",
+			"Product design and conception"
+		],
+		"Service2": [
+			"UX/UI, Interaction Design",
+			"UX/UI, Interaction Design"
+		],
+		"Service3": [
+			"Entwickeln von Apps und Websites",
+			"Development of Apps and Websites"
+		],
+		"Service4": [
+			"Prototyping & Testing",
+			"Prototyping & Testing"
+		],
+		"Service5": [
+			"Beratung, Schulung",
+			"Consulting, education"
+		],
+		"Service6": [
+			"Agile & iterative Prozesse",
+			"Agile & iterative processes"
+		],
+		"Info1": [
+			"Riccardo Lardi ist dipl. Interaction Designer mit BA ZHdK Zürich und MA Royal College of Art, London und hat bis zur Gründung des Studios als Designer und Entwickler bei Firmen wie <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.takram.com'>Takram</a> (London) und <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a> (Basel) substanziell zum Erfolg von Projekten beigetragen.",
+			"Riccardo Lardi is an Interaction Designer and holds a BA from Zurich University of the Arts and an MA from Royal College of Arts, London. Prior to opening the Studio he has substancially contributed to numerous projects for companies such as <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.takram.com'>Takram</a> (London) and <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a> (Basel)."
+		],
+		"Info2": [
+			"Mehr Infos & CV unter <a class='link' href='https://www.linkedin.com/in/riccardolardi' rel='noopener noreferrer' target='_blank' >LinkedIn</a>",
+			"Find more info & CV under <a class='link' href='https://www.linkedin.com/in/riccardolardi' rel='noopener noreferrer' target='_blank' >LinkedIn</a>"
+		],
+		"Info3": [
+			"Gemeinsam mit dem Kunden begleitet und verwirklicht das Studio Projekte, von der inizialen Idee über Prototypen bis hin zum finalen Produkt und dessen Inbetriebnahme. Der Kunde wird partizipativ am Designprozess miteinbezogen und ist Projektpartner auf Augenhöhe.",
+			"The Studio accomplishes projects while accompanying the client throughout the entire process, starting from ideation to prototyping to final product and product launch. The client is included into the iteration loops in a participative and transparent way."
+		],
+		"Info4": [
+			"Das Studio bewegt sich in einem dichten Netzwerk von lokal verfügbaren Spezialisten in relevanten Bereichen (Fotografie & Video, Grafik, Elektronik, Fabrikation) und ist dementsprechend agil und anpassungsfähig.",
+			"While the Studio is mainly led by Riccardo it finds itself in a rich network of specialists in relevant fields like photography, graphic design, electronics & fabrication etc. which makes for a high degree of agility and flexibility."
+		]
+	},
+	"work": {
+
+	},
+	"contact": {
+
+	},
+	"nav": {
+		"Profile": [
+			"Profil",
+			"Profile"
+		],
+		"Work": [
+			"Projekte",
+			"Work"
+		],
+		"Contact": [
+			"Kontakt",
+			"Contact"
+		]
+	},
+	"project": {
+
+	}
+}
