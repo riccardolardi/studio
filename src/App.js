@@ -142,6 +142,7 @@ function App() {
         active={activeBlockIndex === 0} 
         intersecting={intersectingBlockIndexes.includes(0)} 
         scrollY={throttledScrollY} 
+        moveToBlock={moveToBlock} 
         isMenuOpen={isMenuOpen} 
       />
       {/*<News 

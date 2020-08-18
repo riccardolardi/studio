@@ -12,6 +12,16 @@
 			justify-content: space-around;
 			align-items: center;
 
+			@include breakpoint($breakDesktop) {
+
+				&:hover {
+
+					img:not(.placeholder) {
+						animation: 1s ease-in-out infinite alternate hoverAnim;
+					}
+				}
+			}
+
 			@include breakpoint($breakMobile) {
 				flex-direction: column;
 				width: 100%;
@@ -19,10 +29,35 @@
 		}
 
 		p {
-			margin-bottom: 0;
+			
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			@include breakpoint($breakMobile) {
+			}
 		}
 
 		&.image-left {
+
+			@include breakpoint($breakMobile) {
+
+				.divider {
+
+					&:before {
+						left: auto;
+						right: 0px;
+					}
+				}
+
+				.text {
+					text-align: right;
+
+					p {
+						padding-left: 20%;
+					}
+				}
+			}
 
 			&>a {	
 				flex-direction: row-reverse;
@@ -55,6 +90,28 @@
 					max-height: 33.33vh !important;
 				}
 			}
+		}
+	}
+
+	.info-button {
+		display: inline-flex;
+		align-items: center;
+		margin-top: $pad * 0.5;
+		padding: $pad * 0.2 $pad * 0.5 $pad * 0.2 $pad * 0.2;
+		background-color: $primaryColor;
+		color: $secondaryColor;
+		cursor: pointer;
+
+		@include breakpoint($breakMobile) {
+			margin-top: $pad * 0.5;
+		}
+
+		svg {
+			margin-right: $pad * 0.25;
+
+      @include breakpoint($breakMobile) {
+        font-size: $pad;
+      }
 		}
 	}
 }

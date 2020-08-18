@@ -3,6 +3,7 @@ import Classnames from 'classnames';
 import tweens from 'tween-functions';
 import Rellax from 'rellax';
 import {ReactComponent as ArrowDown} from './img/icons/arrow-down.svg';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import './Header.scss';
 
 let charAnims = [];
@@ -13,6 +14,7 @@ function Header(props) {
   const { 
     index, 
     scrollY, 
+    moveToBlock, 
     isMenuOpen, 
     active: isActive, 
     intersecting: isIntersecting 
@@ -106,6 +108,11 @@ function Header(props) {
           Media Architecture,
           Software & Web
         </h2>
+      </div>
+      <div className="contact-link">
+        <a href="/contact" onClick={e => {e.preventDefault(); moveToBlock(3);}}>
+          <AlternateEmailIcon fontSize="large" />
+        </a>
       </div>
       <div className="logo">
         <span className={`logo-symbol box rellax`} data-rellax-speed={4}>

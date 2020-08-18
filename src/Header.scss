@@ -58,6 +58,23 @@
     }
   }
 
+  .contact-link {
+    position: fixed;
+    right: $pad;
+    top: $pad;
+    
+    svg {
+      fill: $secondaryColor;
+      font-size: $pad * 1.5;
+      line-height: $pad * 1.5;
+
+      @include breakpoint($breakMobile) {
+        font-size: $pad * 2;
+        line-height: $pad * 2;
+      }
+    }
+  }
+
   .secondary-header {
     display: flex;
     align-items: center;
