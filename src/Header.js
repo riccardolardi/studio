@@ -85,7 +85,7 @@ function Header(props) {
       charAnims.push([
         'translateY($px)', 
         'rotate3d(1,1,1,$deg)', 
-        Math.random() - 0.5
+        Math.random() * (1 - 0.1) + 0.1
       ]);
     }
     charAnimEl.innerHTML = newContent;

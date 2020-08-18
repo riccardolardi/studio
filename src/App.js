@@ -34,6 +34,7 @@ function App() {
   const [prevIsIntro, setPrevIsIntro] = React.useState(null);
   const [intersectingBlockIndexes, setIntersectingBlockIndexes] = React.useState([]);
   const [navigatingDir, setNavigatingDir] = React.useState(null);
+  const [activeLang, setActiveLang] = React.useState(null);
   const [statePopped, setStatePopped] = React.useState(null);
   const [isMenuOpen, setIsMenuOpen] = React.useState(null);
   const [openProjectId, setOpenProjectId] = React.useState(null);
@@ -87,6 +88,7 @@ function App() {
       setOpenProjectId(projectIndex);
     }
     window.addEventListener('popstate', event => onHistoryPopState(event));
+    setActiveLang(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -178,6 +180,8 @@ function App() {
         isMenuOpen={isMenuOpen} 
         activeBlockIndex={activeBlockIndex} 
         isMobile={isMobile} 
+        activeLang={activeLang} 
+        setActiveLang={setActiveLang} 
         moveToBlock={moveToBlock} 
         projectOpen={openProjectId !== null} 
         setOpenProjectId={setOpenProjectId} 

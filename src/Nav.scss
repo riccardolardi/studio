@@ -64,7 +64,8 @@
         transform: scale(1);
       }
 
-      .active-bar {
+      .active-bar-1, 
+      .active-bar-2 {
         transition: all 125ms;
       }
     }
@@ -159,7 +160,8 @@
       transform: scale(0.9);
     }
 
-    .active-bar {
+    .active-bar-1, 
+    .active-bar-2 {
       position: absolute;
       bottom: $pad * 0.35;
       background-color: $secondaryColor;
@@ -197,7 +199,7 @@
         margin: 0;
       }
 
-      a {
+      a, button {
         display: flex;
         align-items: center;
         height: 100%;
@@ -207,6 +209,27 @@
         @include breakpoint($breakMobile) {
           font-size: 6vh;
           line-height: 6vh;
+        }
+      }
+
+      &.lang-item {
+
+        button {
+          cursor: pointer;
+        }
+
+        &.lang-de {
+        
+          button {
+            position: relative;
+
+            &:after {
+              position: absolute;
+              content: "/";
+              cursor: auto;
+              right: $pad * -0.35;
+            }
+          }
         }
       }
     }

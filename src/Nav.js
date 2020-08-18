@@ -7,7 +7,7 @@ import {ReactComponent as Icon} from './img/icons/wave-round.svg';
 import Classnames from 'classnames';
 import './Nav.scss';
 
-let activeBarEl, liEls;
+let activeBar1El, activeBar2El, menuLiEls, langLiEls;
 
 function Nav(props) {
 	const {
@@ -18,25 +18,39 @@ function Nav(props) {
 		projectOpen, 
 		setOpenProjectId, 
 		setIsMenuOpen, 
+		activeLang, 
+		setActiveLang, 
 		moveToBlock, 
 		prevBlockIndex 
 	} = props;
 
 	React.useLayoutEffect(() => {
-		activeBarEl = document.querySelector('nav .active-bar');
-		liEls = document.querySelectorAll('nav li');
+		activeBar1El = document.querySelector('nav .active-bar-1');
+		activeBar2El = document.querySelector('nav .active-bar-2');
+		menuLiEls = document.querySelectorAll('nav li.menu-item');
+		langLiEls = document.querySelectorAll('nav li.lang-item');
 	}, []);
 
 	React.useEffect(() => {
 		if (activeBlockIndex === 0) {
 			setIsMenuOpen(false);
 		}
-		setActive(activeBlockIndex - 1);
+		setActiveItem(activeBlockIndex - 1, menuLiEls);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeBlockIndex]);
 
-	function setActive(index = 0) {
+	React.useEffect(() => {
+		setActiveItem(activeLang, langLiEls);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [activeLang]);
+
+	function setActiveItem(index = 0, liEls, force = false) {
 		const activeLiEl = liEls[index];
+		const activeBar = liEls === menuLiEls ? activeBar1El : activeBar2El;
+		const delay = force ? 0 : 125;
+		let dir;
+		if (liEls === menuLiEls) dir = index < prevBlockIndex ? 'left' : 'right';
+		if (liEls === langLiEls) dir = index === 0 ? 'left' : 'right';
 		if (!activeLiEl) return;
 		const liElDimsH = [
 			activeLiEl.offsetLeft, 
@@ -55,23 +69,23 @@ function Nav(props) {
 			liElDimsV[1] / activeLiEl.parentElement.parentElement.offsetHeight * 100
 		];
 		if (isMobile) {
-			setTimeout(() => activeBarEl.style.top = `${percentV[0]}%`, index < prevBlockIndex ? 0 : 125);
-			setTimeout(() => activeBarEl.style.bottom = `${percentV[1]}%`, index < prevBlockIndex ? 125 : 0);
+			setTimeout(() => activeBar.style.top = `${percentV[0]}%`, dir === 'left' ? 0 : delay);
+			setTimeout(() => activeBar.style.bottom = `${percentV[1]}%`, dir === 'left' ? delay : 0);
 		} else {
-			setTimeout(() => activeBarEl.style.left = `${percentH[0]}%`, index < prevBlockIndex ? 0 : 125);
-			setTimeout(() => activeBarEl.style.right = `${percentH[1]}%`, index < prevBlockIndex ? 125 : 0);
+			setTimeout(() => activeBar.style.left = `${percentH[0]}%`, dir === 'left' ? 0 : delay);
+			setTimeout(() => activeBar.style.right = `${percentH[1]}%`, dir === 'left' ? delay : 0);
 		}
-		liEls.forEach(el => el.classList.remove('active'));
-		liEls[index].classList.add('active');
 	}
 
 	function linkClicked(index = 0, event) {
 		if (event) event.preventDefault();
-		setActive(index);
+		setActiveItem(index, menuLiEls);
 		setTimeout(() => moveToBlock(index + 1));
 	}
 
 	function menuButtonClicked() {
+		setActiveItem(activeLang, langLiEls, true); // why tho
+		setActiveItem(activeBlockIndex - 1, menuLiEls, true); // why tho
 		if (projectOpen) {
 			setOpenProjectId(null);
 	    window.history.pushState({
@@ -98,8 +112,11 @@ function Nav(props) {
 		    	<li className="menu-item"><a href="/profile" onClick={linkClicked.bind(this, 0)}>Profil</a></li>
 		    	<li className="menu-item"><a href="/work" onClick={linkClicked.bind(this, 1)}>Projekte</a></li>
 		    	<li className="menu-item"><a href="/contact" onClick={linkClicked.bind(this, 2)}>Kontakt</a></li>
+		    	<li className="lang-item lang-de"><button onClick={() => setActiveLang(0)}>DE</button></li>
+		    	<li className="lang-item lang-en"><button onClick={() => setActiveLang(1)}>EN</button></li>
 		    </ul>
-		    <span className="active-bar" />
+		    <span className="active-bar-1" />
+		    <span className="active-bar-2" />
 		    <Icon className="symbol symbol-white" />
 		    <a href="mailto:hello@riccardolardi.com" className="email-icon">
 		    	<AlternateEmailIcon fontSize="large" />
