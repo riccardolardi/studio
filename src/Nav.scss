@@ -221,13 +221,16 @@
         &.lang-de {
         
           button {
-            position: relative;
 
-            &:after {
-              position: absolute;
-              content: "/";
-              cursor: auto;
-              right: $pad * -0.35;
+            @include breakpoint($breakDesktop) {
+              position: relative;
+
+              &:after {
+                position: absolute;
+                content: "/";
+                cursor: auto;
+                right: $pad * -0.35;
+              }
             }
           }
         }
