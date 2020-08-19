@@ -24,12 +24,12 @@
 			"UX/UI, Interaction Design"
 		],
 		"Service3": [
-			"Entwickeln von Apps und Websites",
-			"Development of Apps and Websites"
+			"Entwickeln von Apps & Websites",
+			"Development of apps & websites"
 		],
 		"Service4": [
 			"Prototyping & Testing",
-			"Prototyping & Testing"
+			"Prototyping & testing"
 		],
 		"Service5": [
 			"Beratung, Schulung",
@@ -45,7 +45,7 @@
 		],
 		"Info2": [
 			"Mehr Infos & CV unter <a class='link' href='https://www.linkedin.com/in/riccardolardi' rel='noopener noreferrer' target='_blank' >LinkedIn</a>.",
-			"Find more info & CV on <a class='link' href='https://www.linkedin.com/in/riccardolardi' rel='noopener noreferrer' target='_blank' >LinkedIn</a>."
+			"Find more CV infos on <a class='link' href='https://www.linkedin.com/in/riccardolardi' rel='noopener noreferrer' target='_blank' >LinkedIn</a>."
 		],
 		"Info3": [
 			"Gemeinsam mit dem Kunden begleitet und verwirklicht das Studio Projekte, von der inizialen Idee über Prototypen bis hin zum finalen Produkt und dessen Inbetriebnahme. Der Kunde wird partizipativ am Designprozess miteinbezogen und ist Projektpartner auf Augenhöhe.",
@@ -86,8 +86,8 @@
 	"project": [
 		{
 			"Title": [
-				"Sommernachts-Ball",
-				"Sommernachts-Ball"
+				"Migros Sommernachts-Ball",
+				"Migros Sommernachts-Ball"
 			],
 			"Subtitle": [
 				"Webseite, 2020",
@@ -102,8 +102,8 @@
 				"Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence."
 			],
 			"Client": [
-				"Migros Genossenschaftsbund Zürich",
-				"Migros Genossenschaftsbund Zurich"
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='https://www.migros.ch/de/genossenschaften/migros-zuerich/genossenschaft.html'>Migros Genossenschaftsbund Zürich</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='https://www.migros.ch/de/genossenschaften/migros-zuerich/genossenschaft.html'>Migros Genossenschaftsbund Zürich</a>"
 			],
 			"Partner": [
 				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.komun.ch'>Komun</a>",
@@ -118,11 +118,11 @@
 				"React, Gatsby, GraphQL"
 			],
 			"Description2": [
-				"Der Migros Sommernachts-Ball findet jeden Juni im Hauptbahnhof Zürich statt und ist zu einer städtischen Attraktion etabliert.",
+				"Der Migros Sommernachts-Ball findet jeden Juni im Hauptbahnhof Zürich statt und hat sich zu einer städtischen Attraktion etabliert.",
 				"Migros Sommernachts-Ball is a dance and music event that takes place annually in the halls of Zurich main station. It has become a city spectacle and attracts thousands of visitors every year."
 			],
 			"Description3": [
-				"Die Webseite wurde komplett neugestaltet und mit frischer Technologie neu entwickelt. Fokus der Umsetzung liegt auf dem raschen Auffinden der gesuchten Information und auf einer intuitiven Navigation unabhängig von Art des Devices, ermöglicht durch ein fluides Design.",
+				"Die Webseite wurde komplett neugestaltet und mit frischer Technologie neu entwickelt. Fokus der Umsetzung liegt auf dem fluiden Design und auf einer intuitiven Navigation - unabhängig von der Art des Devices.",
 				"The website has been completely redesigned and rebuilt from scratch using fresh technology. Focusing on an easy to navigate interface the user should find the information she/he seeks in an instant, facilitated by the scroll navigation concept. The website layout design is entirely fluid and therefore suited for any kind of device."
 			]
 		},
@@ -164,7 +164,7 @@
 				"Stephan Walter is a graphic designer and typographer from Zurich and is known worldwide for his work in which he skillfully combines 3D and typography into 'typotecture'."
 			],
 			"Description3": [
-				"Seinen neuen Webauftritt hat das Studio mit Fokus auf möglichst grossflächige und dominante Darstellung seiner Grafik umgesetzt. Informationstext ist optional zugänglich, soll die grafischen Inhalte jedoch nie konkurrenzieren.",
+				"Seinen neuen Webauftritt hat das Studio mit Fokus auf möglichst grossflächige und dominante Darstellung seiner Grafik umgesetzt. Informationstext ist optional zugänglich, soll zu den grafischenn Inhalten jedoch nie in Konkurrenz stehen.",
 				"The Studio has implemented his new web presence with a focus on the largest possible and dominant presentation of his graphical work. Information text is optionally accessible, but should never compete with the actual content."
 			]
 		},
@@ -178,11 +178,11 @@
 				"Application for video installation"
 			],
 			"Subsubtitle": [
-				"iart, Int. Olympisches Kommittee, Lausanne",
+				"iart, Int. Olympisches Komitee, Lausanne",
 				"iart, Int. Olympic Commitee, Lausanne"
 			],
 			"Description1": [
-				"Desktop Applikation (Win/Mac/Linux) zur Bewirtschaftung und Verwaltung des Datenpools für eine Video-Bespielung im Neubau vom IOC in Lausanne.",
+				"Desktop Applikation (Win/Mac/Linux) zur Bewirtschaftung und Verwaltung des Datenpools für eine Video-Bespielung im Neubau des IOC in Lausanne.",
 				"Desktop application (Win/Mac/Linux) for administration of the data pool for an artistic video wall in the new building of the IOC in Lausanne."
 			],
 			"Client": [
@@ -232,7 +232,7 @@
 				"iart, M+ Museum, Hong Kong"
 			],
 			"Description1": [
-				"Eine 3D-Simulation in Echtzeit zur Visualisierung der spezifischen Charakteristika eines neuartigen bespielbaren Fassadensystems.",
+				"Eine 3D-Simulation in Echtzeit zur Visualisierung der spezifischen Charakteristika eines neuartigen, bespielbaren Fassadensystems.",
 				"A 3D simulation that enables to visualize the specific characteristics of a new type of facade display system in real time."
 			],
 			"Client": [
@@ -252,15 +252,15 @@
 				"Unity 3D, Blender, C#"
 			],
 			"Description2": [
-				"In Hong Kong Kowloon Bay entsteht ein neues Kunstmuseum für Visuelle Medien. Das Museum beherbergt einen Grossteil der privaten Sammlung vom Schweizer Kunstsammler Uli Sigg. Zusammen mit den Architekten Herzog & De Meuron hat iart ein innovatives Fassadensystem entwickelt, das dank des einzigartigen Designs auf verschiedenste Weisen interaktiv bespielt werden kann.",
+				"In der Hong Kong Kowloon Bay entsteht ein neues Kunstmuseum für Visuelle Medien. Das Museum beherbergt einen Grossteil der privaten Sammlung des Schweizer Kunstsammlers Uli Sigg. Zusammen mit dem Architekturbüro Herzog & De Meuron hat iart ein innovatives Fassadensystem entwickelt, das dank des einzigartigen Designs auf verschiedenste Weise interaktiv bespielt werden kann.",
 				"In Hong Kong Kowloon Bay a new art museum for visual culture is being built. The museum houses a large part of the private collection of the Swiss art collector Uli Sigg. Together with the architects Herzog & De Meuron, iart has developed an innovative façade system that, thanks to it's unique design, can be used interactively in a variety of ways."
 			],
 			"Description3": [
-				"Die einzelnen Fassadenelemente bestehen aus sogenannten 'Louvres', in welche zwei verschiedene Typen von LED Lichtquellen eingelassen sind. Diese unterscheiden sich in Streuwinkel und Lichtintensität und schaffen somit ein neuartiges Medium: Inhalte können so gestalten werden, dass sie je nach Blickwinkel und Distanz in der Erscheinung varieren.",
+				"Die einzelnen Fassadenelemente bestehen aus sogenannten 'Louvres', in welche zwei Typen von LED-Lichtquellen eingelassen sind. Diese unterscheiden sich in Streuwinkel und Lichtintensität voneinander und schaffen somit ein neuartiges Medium: Inhalte können so gestalten werden, dass sie je nach Blickwinkel und Distanz in der Erscheinung varieren.",
 				"The individual facade elements consist of so-called 'Louvres', in which two different types of LED light sources are embedded. These differ in scattering angle and light intensity and thus create a new medium: contents can be designed in such a way that they vary in appearance depending on the viewing angle and distance."
 			],
 			"Description4": [
-				"Die Simulation ermöglicht es den Betreibern in Zusammenarbeit mit beauftragten Künstlern Inhalte zu testen und zu erschaffen, welche diese spezifischen Eigenschaften nutzen. Inhalte können von ausserhalb in die Simulation eingespielt werden während Parameter verändert werden können um die Inhalte möglichst für das Medium zu optimieren.",
+				"Die Simulation ermöglicht es den Betreibern in Zusammenarbeit mit beauftragten Künstlern Inhalte zu testen und zu erschaffen, welche diese spezifischen Eigenschaften nutzen. Inhalte können von ausserhalb in die Simulation eingespielt werden. Währenddessen können Parameter verändert und die Inhalte für das Medium optimiert werden.",
 				"In collaboration with commissioned artists, the simulation enables operators to test and create content that makes use of these specific features. Content can be brought into the simulation from outside the system while parameters can be changed to optimize the content for the medium."
 			]
 		},
@@ -278,7 +278,7 @@
 				"iart, Hyundai, South Korea"
 			],
 			"Description1": [
-				"Interaktive Wasserinstallation innerhalb des Pavilions von Hyundai an den Olympischen Winterspielen 2018 in Pyeongchang, Südkorea.",
+				"Interaktive Wasserinstallation innerhalb des Pavilions von Hyundai zu den Olympischen Winterspielen 2018 in Pyeongchang, Südkorea.",
 				"Interactive water installation within the pavilion of Hyundai at the 2018 Winter Olympics in Pyeongchang, South Korea."
 			],
 			"Client": [
@@ -298,7 +298,7 @@
 				"In the context of the 2018 Winter Olympics in South Korea, iart was commissioned as a partner by London architect Asif Khan to plan and implement the technical execution of the pavilion by the Korean car manufacturer Hyundai."
 			],
 			"Description3": [
-				"Der Pavilion soll auf fantastische Weise Wasserstoff als nachhaltigen und effizienten Brennstoff der Zukunft präsentieren. Aussen komplett in 'Vantablack' (absorbiert 99% Licht) gekleidet erstrahlt im Inneren eine Kunstinstallation aus hydrophobem Corian, in dessen eingefrästen Bahnen sich tausende Wassertropfen in einer Choreografie bewegen.",
+				"Der Pavilion sollte auf fantastische Weise Wasserstoff als nachhaltigen und effizienten Brennstoff der Zukunft präsentieren. Aussen komplett in 'Vantablack' (absorbiert 99% Licht) gekleidet erstrahlt im Inneren eine Kunstinstallation aus hydrophobem Corian, in dessen eingefrästen Bahnen sich tausende Wassertropfen in einer Choreografie bewegen.",
 				"The pavilion presents hydrogen as a sustainable and efficient fuel of the future in a awe-inspiring way. On the outside, completely coated in 'Vantablack' (absorbs 99% light), an art installation made of hydrophobic Corian awaits inside, with thousands of water droplets moving in a choreography through its milled paths."
 			],
 			"Description4": [
@@ -306,7 +306,7 @@
 				"For this project I was responsible for the technical conception and development of the water installation as well as for the evaluation and coordination of the assigned partners."
 			],
 			"Description5": [
-				"Dies beinhaltete eine enge Zusammenarbeit mit den Projektpartnern, Kommunikation mit Subunternehmern, Qualitätssicherung in Produktionsstätten und Begleitung des Aufbaus vor Ort in Pyeongchang.",
+				"Dies beinhaltete eine enge Zusammenarbeit mit den Projektpartnern, die Kommunikation mit Subunternehmern, die Qualitätssicherung in Produktionsstätten und die Begleitung des Aufbaus vor Ort in Pyeongchang.",
 				"This included close cooperation with the project partners, communication with subcontractors, quality assurance in production facilities and on-site support during construction and commissioning in Pyeongchang."
 			]
 		},
@@ -324,8 +324,8 @@
 				"iart, Kirche LLC, Boston, MA"
 			],
 			"Description1": [
-				"",
-				""
+				"Optimierung und Entwicklung eines Terracotta-Profils für eine bespielbare Fassade in Boston.",
+				"Optimization and development of a terracotta profile for an interactive facade display in Boston."
 			],
 			"Client": [
 				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, Kirche LLC</a>",
@@ -340,11 +340,11 @@
 				"Project lead, technical coordination, development of facade elements"
 			],
 			"Description2": [
-				"Prominent, direkt am Harvard Square in Cambridge, soll ein Neubau entstehen indem Kultur, Kino, sowie aber auch Retail- und Office-Räume beherbergt werden. Über die Lissabonner Architekten von Promontorio wurde iart die Beauftragung zur Entwicklung einer medial bespielbaren Fassade für den Bauherr in Boston, herantgetragen.",
+				"Prominent, direkt am Harvard Square in Cambridge, soll ein Neubau entstehen, in dem Kultur, Kino, sowie aber auch Retail- und Office-Räume beherbergt werden. Über die Lissabonner Architekten von Promontorio wurde iart mit der Entwicklung einer medial bespielbaren Fassade für den Bauherrn in Boston beauftragt.",
 				"Prominently, directly at Harvard Square in Cambridge, a new building is to be erected to house culture, cinema, as well as retail and office space. The Lisbon architects of Promontorio commissioned iart to develop a media facade for the client in Boston."
 			],
 			"Description3": [
-				"In enger Zusammenarbeit mit den Architekten soll eine Lösung gefunden werden, die aus Terracotta zu fertigenden Fassadenelemente so zu gestalten und mit Technologie zu versehen um eine subtile, integrative und innovative Bespielung zu schaffen.",
+				"In enger Zusammenarbeit mit den Architekten soll eine Lösung gefunden werden, die aus Terracotta gefertigten Fassadenelemente so zu gestalten und mit Technologie zu versehen, dass eine subtile, integrative und innovative Bespielung geschaffen werden kann.",
 				"In close cooperation with the architects, a solution had to be found to equip and design the façade elements made out of terracotta with technology, to create a subtle, integrative and innovative display."
 			],
 			"Description4": [
@@ -352,11 +352,11 @@
 				"The architects suggested a variety of permutations for possible façade element profiles, which were then examined by iart for their suitability. After selecting a smaller selection, these were further optimised for better performance in terms of light and contrast."
 			],
 			"Description5": [
-				"Ungefähr zwanzig verschiedene Profile wurden insgesamt evaluiert. Ein Zyklus bestehend aus der Herstellung und Testen physischer Mockups, deren Evaluation und entsprechender Optimisierung über Lichtsimulationen am Computer, führte schliesslich zu zwei 'Sieger-Profilen' welche dem Kunden unterbreitet wurden.",
+				"Ungefähr zwanzig verschiedene Profile wurden insgesamt evaluiert. Ein Zyklus bestehend aus der Herstellung und dem Testen physischer Mockups, deren Evaluation und entsprechender Optimierung über Lichtsimulationen am Computer, führte schliesslich zu zwei 'Sieger-Profilen' welche dem Kunden unterbreitet wurden.",
 				"About twenty different profiles were evaluated in total. A cycle consisting of the production and testing of physical mockups, their evaluation and corresponding optimization via computer light simulations finally resulted in two 'winning profiles' which were presented to the client."
 			],
 			"Description6": [
-				"Zu Beginn zeichnete ich mich verantwortlich für die Gestaltung und zweckgerichteten Optimierung der Fassadenelemente. Später übernahm ich die Position des Projektleiters. Im Zuge dessen übernahm ich Verantwortung für Kundenkontakt, Anforderungsmanagement, Meetings vor Ort in Boston und schlussendlich die Planung und Koordination für die Entwicklung des ersten Prototyps der Fassade vor Ort.",
+				"Zu Beginn war ich verantwortlich für die Gestaltung und zweckgerichtete Optimierung der Fassadenelemente. Später wurde ich Projektleiter. Im Zuge dessen übernahm ich Verantwortung für Kundenkontakt, Anforderungsmanagement, Meetings vor Ort in Boston und schlussendlich die Planung und Koordination für die Entwicklung des ersten Prototyps der Fassade vor Ort.",
 				"First I was responsible for the design and optimization of the facade elements. Later I took over the position of project lead. In the course of this I took responsibility for client contact, requirements management, meetings on site in Boston and finally the planning and coordination for the development of the first prototype of the facade on site."
 			]
 		},

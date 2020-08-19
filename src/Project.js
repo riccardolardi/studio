@@ -63,7 +63,7 @@ function Project(props) {
             <p dangerouslySetInnerHTML={{__html: strings.project[0].Description2[activeLang]}} />
             <p dangerouslySetInnerHTML={{__html: strings.project[0].Description3[activeLang]}} />
           </div>
-          <div className="images">
+          <div className="images short-height">
             <LazyImage width={1024} height={956} src={require('./img/gmz/gmz1.png')} alt="Sommernachts-Ball Macbook" />
             <LazyImage width={827} height={1024} src={require('./img/gmz/gmz2.png')} alt="Sommernachts-Ball iPhone" />
             <LazyImage width={842} height={1024} src={require('./img/gmz/gmz3.png')} alt="Sommernachts-Ball iPad" />
@@ -99,7 +99,7 @@ function Project(props) {
             <p dangerouslySetInnerHTML={{__html: strings.project[1].Description2[activeLang]}} />
             <p dangerouslySetInnerHTML={{__html: strings.project[1].Description3[activeLang]}} />
           </div>
-          <div className="images">
+          <div className="images short-height">
             <LazyImage width={1024} height={956} src={require('./img/stephanwalter/stephanwalter1.png')} alt="Sommernachts-Ball iPad" />
             <LazyImage width={842} height={1024} src={require('./img/stephanwalter/stephanwalter2.png')} alt="Sommernachts-Ball iPad" />
             <LazyImage width={708} height={1024} src={require('./img/stephanwalter/stephanwalter3.png')} alt="Sommernachts-Ball iPad" />

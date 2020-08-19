@@ -55,7 +55,7 @@
 
     .logo {
       display: flex;
-      flex-direction: column;
+      width: 100%;
       align-items: flex-start;
       pointer-events: none;
 
@@ -64,10 +64,18 @@
       }
 
       .logo-symbol {
-        width: 10vh;
-        margin: $pad * 0.5 0;
+        width: 10vw;
+        margin: 0 $pad * 0.5;
         transform: translateX(10vh);
         opacity: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
 
         svg {
           fill: $primaryColor;

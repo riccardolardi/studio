@@ -351,6 +351,10 @@
     }
   }
 
+  .short-height img {
+    max-height: 45vh !important;
+  }
+
   .lazy-image {
     position: relative;
     opacity: 0;
