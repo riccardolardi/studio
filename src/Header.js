@@ -43,11 +43,10 @@ function Header(props) {
 
   React.useEffect(() => {
     if (hasScrolled) chars2.forEach((el, index) => {
-      const tweenedVal = tweens.easeOutSine(scrollY, 0, appHeight, appHeight);
-      const newVal = tweenedVal * charAnims[index][2];
-      const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(newVal / 2));
-      const newRotateStyle = charAnims[index][1].replace('$', newVal / 10);
-      const newOpacityStyle = 1 - Math.abs(newVal / 1000);
+      const tweenedVal = tweens.easeOutSine(scrollY  * charAnims[index][2], 0, appHeight, appHeight);
+      const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(tweenedVal / 3));
+      const newRotateStyle = charAnims[index][1].replace('$', tweenedVal / 20);
+      const newOpacityStyle = 1 - Math.abs(tweenedVal / 1000);
       el.style.transform = newTranslateStyle;
       el.querySelector('span').style.opacity = newOpacityStyle;
       el.querySelector('span').style.transition = 'unset';

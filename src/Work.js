@@ -9,8 +9,8 @@ const imgs = [
   require('./img/stephanwalter/stephanwalter1.png'),
   require('./img/ioc/ioc1.png'),
   require('./img/mplus/mplus1.png'),
-  require('./img/hyundai/iart-hyundai3.jpg'),
-  require('./img/boston/iart-boston1.jpg'),
+  require('./img/hyundai/hyundai1.jpg'),
+  require('./img/boston/boston1.jpg'),
   require('./img/armory/iart-armory1.jpg'),
   require('./img/maersk/kimwendt-maersk1.jpg')
 ];
