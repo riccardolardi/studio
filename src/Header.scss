@@ -1,7 +1,7 @@
 @import './Vars.scss';
 @import 'breakpoint-sass';
 
-#header {
+.block#header {
   display: flex;
   justify-content: space-between;
   transition: all 125ms;
@@ -18,7 +18,7 @@
       opacity: 1;
     }
 
-    .scroll-down {
+    .scroll-down, .contact-link {
       opacity: 1;
       transition: opacity 125ms 1s;
       pointer-events: auto;
@@ -34,15 +34,15 @@
         opacity: 1;
 
         &:nth-of-type(1n) {
-          transition: opacity 250ms 0ms;
+          transition: opacity 125ms 125ms;
         }
 
         &:nth-of-type(2n) {
-          transition: opacity 250ms 125ms;
+          transition: opacity 125ms 250ms;
         }
 
         &:nth-of-type(3n) {
-          transition: opacity 250ms 250ms;
+          transition: opacity 125ms 375ms;
         }
       }
     }
@@ -61,6 +61,9 @@
     position: fixed;
     right: $pad;
     top: $pad;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0ms 0ms;
     
     svg {
       fill: $secondaryColor;

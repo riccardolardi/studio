@@ -6,29 +6,74 @@
   flex-direction: column;
   justify-content: center;
 
-  article {
-    position: relative;
-    top: 12.5vh;
+  &.is-active {
 
-    @include breakpoint($breakMobile) {
-      top: 0;
+    .logo {
+
+      .logo-symbol {
+        transform: translateX(0);
+        opacity: 1;
+
+        &:nth-of-type(1n) {
+          transition: all 125ms 125ms;
+        }
+
+        &:nth-of-type(2n) {
+          transition: all 125ms 250ms;
+        }
+
+        &:nth-of-type(3n) {
+          transition: all 125ms 375ms;
+        }
+      }
     }
   }
 
-  .social-icon {
-    display: inline-block;
-    margin: $pad * 0.2 $pad * 0.2 0 0;
+  article {
+    padding-top: 25vh !important;
 
-    @include breakpoint($breakMobile) {
-      margin: $pad * 0.4 $pad * 0.2 0 0;
+    .social-icon {
+      display: inline-block;
+      margin: $pad * 0.2 $pad * 0.2 0 0;
+
+      @include breakpoint($breakMobile) {
+        margin: $pad * 0.4 $pad * 0.2 0 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      svg {
+        display: block;
+      }
     }
 
-    &:last-child {
-      margin-right: 0;
+    .text, .image {
+      margin: 0; 
     }
 
-    svg {
-      display: block;
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      pointer-events: none;
+
+      @include breakpoint($breakMobile) {
+        display: none;
+      }
+
+      .logo-symbol {
+        width: 10vh;
+        margin: $pad * 0.5 0;
+        transform: translateX(10vh);
+        opacity: 0;
+
+        svg {
+          fill: $primaryColor;
+          width: 100%;
+        }
+      }
     }
   }
 }

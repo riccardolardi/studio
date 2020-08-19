@@ -11,7 +11,10 @@ import {
   useDebounce
  } from 'react-use';
 import { useThrottle } from 'use-throttle';
-import { trimSlashes } from './functions.js';
+import { 
+  trimSlashes, 
+  getBrowserLocales 
+} from './functions.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
 // import News from './News.js';
@@ -89,7 +92,7 @@ function App() {
       setOpenProjectId(projectIndex);
     }
     window.addEventListener('popstate', event => onHistoryPopState(event));
-    setActiveLang(0);
+    setActiveLang(getBrowserLocales()[0] === 'de' ? 0 : 1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
