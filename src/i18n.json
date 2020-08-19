@@ -9,7 +9,7 @@
 		],
 		"Slogan": [
 			"Das Studio aus Basel spezialisiert sich auf die Planung, Konzeption, Design und Entwicklung von Projekten zwischen digitalem und physischem Raum.",
-			"The Studio is based in Basel and is specialized in planning, conception, design and development of projects in between digital and physical space."
+			"The Studio is based in Basel and specializes in planning, conception, design and development of projects in between digital and physical space."
 		],
 		"Services": [
 			"Kompetenzen",
@@ -57,7 +57,14 @@
 		]
 	},
 	"work": {
-
+		"Title": [
+			"Projekte",
+			"Work"
+		],
+		"More": [
+			"Details",
+			"Details"
+		]
 	},
 	"contact": {
 
@@ -76,7 +83,242 @@
 			"Contact"
 		]
 	},
-	"project": {
-
-	}
+	"project": [
+		{
+			"Title": [
+				"Sommernachts-Ball",
+				"Sommernachts-Ball"
+			],
+			"Subtitle": [
+				"Webseite, 2020",
+				"Website, 2020"
+			],
+			"Subsubtitle": [
+				"Genossenschaftsbund Migros Zürich",
+				"Genossenschaftsbund Migros Zürich"
+			],
+			"Description1": [
+				"Redesign und Neuentwicklung von Front- und Backend für die Migros Sommernachts-Ball Webseite.",
+				"Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence."
+			],
+			"Client": [
+				"Migros Genossenschaftsbund Zürich",
+				"Migros Genossenschaftsbund Zurich"
+			],
+			"Partner": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.komun.ch'>Komun</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.komun.ch'>Komun</a>"
+			],
+			"Services": [
+				"Interaction Design, Beratung, Programmierung",
+				"Interaction Design, Consulting, Code"
+			],
+			"Tech": [
+				"React, Gatsby, GraphQL",
+				"React, Gatsby, GraphQL"
+			],
+			"Description2": [
+				"Der Migros Sommernachts-Ball findet jeden Juni im Hauptbahnhof Zürich statt und ist zu einer städtischen Attraktion etabliert.",
+				"Migros Sommernachts-Ball is a dance and music event that takes place annually in the halls of Zurich main station. It has become a city spectacle and attracts thousands of visitors every year."
+			],
+			"Description3": [
+				"Die Webseite wurde komplett neugestaltet und mit frischer Technologie neu entwickelt. Fokus der Umsetzung liegt auf dem raschen Auffinden der gesuchten Information und auf einer intuitiven Navigation unabhängig von Art des Devices, ermöglicht durch ein fluides Design.",
+				"The website has been completely redesigned and rebuilt from scratch using fresh technology. Focusing on an easy to navigate interface the user should find the information she/he seeks in an instant, facilitated by the scroll navigation concept. The website layout design is entirely fluid and therefore suited for any kind of device."
+			]
+		},
+		{
+			"Title": [
+				"Stephan Walter",
+				"Stephan Walter"
+			],
+			"Subtitle": [
+				"Webseite, 2020",
+				"Website, 2020"
+			],
+			"Subsubtitle": [
+				"Stephan Walter, Grafiker, Zürich",
+				"Stephan Walter, Graphic Designer, Zurich"
+			],
+			"Description1": [
+				"Redesign und Neuentwicklung von Front- und Backend für die Webseite vom Zürcher Grafiker und Typografen Stephan Walter.",
+				"Design and programming for front and backend of Zurich based Graphic Designer and Illustrator Stephan Walter."
+			],
+			"Client": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.stephanwalter.ch'>Stephan Walter</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.stephanwalter.ch'>Stephan Walter</a>"
+			],
+			"Partner": [
+				"",
+				""
+			],
+			"Services": [
+				"Design, Beratung, Programmierung",
+				"Design, Consulting, Code"
+			],
+			"Tech": [
+				"React, Headless WP",
+				"React, Headless WP"
+			],
+			"Description2": [
+				"Stephan Walter ist Grafiker und Typograf aus Zürich und weltweit bekannt für seine Arbeiten in welchen er 3D und Typografie grafisch geschickt zu 'Typotektur' vereint.",
+				"Stephan Walter is a graphic designer and typographer from Zurich and is known worldwide for his work in which he skillfully combines 3D and typography into 'typotecture'."
+			],
+			"Description3": [
+				"Seinen neuen Webauftritt hat das Studio mit Fokus auf möglichst grossflächige und dominante Darstellung seiner Grafik umgesetzt. Informationstext ist optional zugänglich, soll die grafischen Inhalte jedoch nie konkurrenzieren.",
+				"The Studio has implemented his new web presence with a focus on the largest possible and dominant presentation of his graphical work. Information text is optionally accessible, but should never compete with the actual content."
+			]
+		},
+		{
+			"Title": [
+				"IOC Map Tool",
+				"IOC Map Tool"
+			],
+			"Subtitle": [
+				"Applikation für Video-Installation",
+				"Application for video installation"
+			],
+			"Subsubtitle": [
+				"iart, Int. Olympisches Kommittee, Lausanne",
+				"iart, Int. Olympic Commitee, Lausanne"
+			],
+			"Description1": [
+				"Desktop Applikation (Win/Mac/Linux) zur Bewirtschaftung und Verwaltung des Datenpools für eine Video-Bespielung im Neubau vom IOC in Lausanne.",
+				"Desktop application (Win/Mac/Linux) for administration of the data pool for an artistic video wall in the new building of the IOC in Lausanne."
+			],
+			"Client": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.studiobanana.com'>Studio Banana</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.studiobanana.com'>Studio Banana</a>"
+			],
+			"Partner": [
+				"",
+				""
+			],
+			"Services": [
+				"Design, Programmierung",
+				"Design, Code"
+			],
+			"Tech": [
+				"React, Electron, Material UI",
+				"React, Electron, Material UI"
+			],
+			"Description2": [
+				"Für den Unterhalt der 'Universality' Video-Bespielung im neugestalteten Foyer 'Agora' des International Olympic Committees in Lausanne wurde die massgeschneiderte Software konzipiert und entwickelt.",
+				"The tailor-made software was designed and developed for the maintenance of the 'Universality' video wall in the newly designed 'Agora' foyer of the International Olympic Committee in Lausanne."
+			],
+			"Description3": [
+				"Der Kunde kann durch das Tool die Inhalte der Bespielung leicht und intuitiv ändern und erweitern.",
+				"The customer can easily and intuitively change and expand the contents of the display."
+			],
+			"Description4": [
+				"Der neue Hauptsitz des Internationalen Olympischen Komitees in Lausanne: [...] Auf drei riesigen, in die Wände eingelassenen, ebenfalls gebogenen OLED-Screens erwarten sie massgeschneiderte Inhalte. Denn je nachdem, welche Delegation vor Ort ist, können sie live aufbereitet werden.",
+				"The new headquarters of the International Olympic Committee in Lausanne: [...] On three huge, curved OLED screens embedded in the walls, tailor-made content is awaiting you. Depending on which delegation is on site, the contents can be prepared in realtime."
+			],
+			"Description5": [
+				"Quelle: <a class='link' rel='noopener noreferrer' target='_blank' href='https://iart.ch/work/ioc-agora'>iart IOC Agora</a>",
+				"Source: <a class='link' rel='noopener noreferrer' target='_blank' href='https://iart.ch/work/ioc-agora'>iart IOC Agora</a>"
+			]
+		},
+		{
+			"Title": [
+				"Simulation M+ Museum",
+				"Simulation M+ Museum"
+			],
+			"Subtitle": [
+				"3D Simulation für Fassadensystem, 2019",
+				"3D simulation for facade display, 2019"
+			],
+			"Subsubtitle": [
+				"iart, M+ Museum, Hong Kong",
+				"iart, M+ Museum, Hong Kong"
+			],
+			"Description1": [
+				"Eine 3D-Simulation in Echtzeit zur Visualisierung der spezifischen Charakteristika eines neuartigen bespielbaren Fassadensystems.",
+				"A 3D simulation that enables to visualize the specific characteristics of a new type of facade display system in real time."
+			],
+			"Client": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, <a class='link' rel='noopener noreferrer' target='_blank' href='https://mplus.org.hk'>M+</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, <a class='link' rel='noopener noreferrer' target='_blank' href='https://mplus.org.hk'>M+</a>"
+			],
+			"Partner": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='https://www.herzogdemeuron.com/'>Herzog & De Meuron</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='https://www.herzogdemeuron.com/'>Herzog & De Meuron</a>"
+			],
+			"Services": [
+				"Projektleitung, Design, Code",
+				"Project lead, Design, Code"
+			],
+			"Tech": [
+				"Unity 3D, Blender, C#",
+				"Unity 3D, Blender, C#"
+			],
+			"Description2": [
+				"In Hong Kong Kowloon Bay entsteht ein neues Kunstmuseum für Visuelle Medien. Das Museum beherbergt einen Grossteil der privaten Sammlung vom Schweizer Kunstsammler Uli Sigg. Zusammen mit den Architekten Herzog & De Meuron hat iart ein innovatives Fassadensystem entwickelt, das dank des einzigartigen Designs auf verschiedenste Weisen interaktiv bespielt werden kann.",
+				"In Hong Kong Kowloon Bay a new art museum for visual culture is being built. The museum houses a large part of the private collection of the Swiss art collector Uli Sigg. Together with the architects Herzog & De Meuron, iart has developed an innovative façade system that, thanks to it's unique design, can be used interactively in a variety of ways."
+			],
+			"Description3": [
+				"Die einzelnen Fassadenelemente bestehen aus sogenannten 'Louvres', in welche zwei verschiedene Typen von LED Lichtquellen eingelassen sind. Diese unterscheiden sich in Streuwinkel und Lichtintensität und schaffen somit ein neuartiges Medium: Inhalte können so gestalten werden, dass sie je nach Blickwinkel und Distanz in der Erscheinung varieren.",
+				"The individual facade elements consist of so-called 'Louvres', in which two different types of LED light sources are embedded. These differ in scattering angle and light intensity and thus create a new medium: contents can be designed in such a way that they vary in appearance depending on the viewing angle and distance."
+			],
+			"Description4": [
+				"Die Simulation ermöglicht es den Betreibern in Zusammenarbeit mit beauftragten Künstlern Inhalte zu testen und zu erschaffen, welche diese spezifischen Eigenschaften nutzen. Inhalte können von ausserhalb in die Simulation eingespielt werden während Parameter verändert werden können um die Inhalte möglichst für das Medium zu optimieren.",
+				"In collaboration with commissioned artists, the simulation enables operators to test and create content that makes use of these specific features. Content can be brought into the simulation from outside the system while parameters can be changed to optimize the content for the medium."
+			]
+		},
+		{
+			"Title": [
+				"Hyundai Olympic Pavilion",
+				"Hyundai Olympic Pavilion"
+			],
+			"Subtitle": [
+				"Interaktive Wasserinstallation, 2018",
+				"Interactive water art installation, 2018"
+			],
+			"Subsubtitle": [
+				"iart, Hyundai, Südkorea",
+				"iart, Hyundai, South Korea"
+			]
+		},
+		{
+			"Title": [
+				"Harvard Square Theatre Fassade",
+				"Harvard Square Theatre Facade"
+			],
+			"Subtitle": [
+				"Prototyp für bespielbare Fassade, 2018",
+				"Prototype for facade display, 2018"
+			],
+			"Subsubtitle": [
+				"iart, Kirche LLC, Boston, MA",
+				"iart, Kirche LLC, Boston, MA"
+			]
+		},
+		{
+			"Title": [
+				"Hansel & Gretel",
+				"Hansel & Gretel"
+			],
+			"Subtitle": [
+				"Immersive Videoinstallation, 2017",
+				"Immersive video art installation, 2017"
+			],
+			"Subsubtitle": [
+				"iart, Herzog & de Meuron, Armory Park Av. NYC",
+				"iart, Herzog & de Meuron, Armory Park Av. NYC"
+			]
+		},
+		{
+			"Title": [
+				"Maersk Besucherzentrum",
+				"Maersk Visitor Centre"
+			],
+			"Subtitle": [
+				"Interaktiver Medientisch, 2017",
+				"Interactive media table, 2017"
+			],
+			"Subsubtitle": [
+				"iart, Maersk, Copenhagen",
+				"iart, Maersk, Copenhagen"
+			]
+		}
+	]
 }

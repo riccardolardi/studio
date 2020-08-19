@@ -44,7 +44,7 @@ function App() {
   const [openProjectId, setOpenProjectId] = React.useState(null);
   const prevBlockIndex = usePrevious(activeBlockIndex);
   const { y: scrollY } = useWindowScroll();
-  const throttledScrollY = useThrottle(scrollY, 10);
+  const throttledScrollY = useThrottle(scrollY, 5);
   const isMobile = useBreakpoint() === 'mobile';
 
   useDebounce(() => {
@@ -176,6 +176,8 @@ function App() {
         active={activeBlockIndex === 2} 
         intersecting={intersectingBlockIndexes.includes(2)} 
         setOpenProjectId={setOpenProjectId} 
+        activeLang={activeLang} 
+        strings={strings} 
       />
       <Contact 
         index={3} 
@@ -184,6 +186,8 @@ function App() {
       />
       {openProjectId !== null && <Project 
         openProjectId={openProjectId} 
+        activeLang={activeLang} 
+        strings={strings} 
       />}
       <Nav 
         show={activeBlockIndex > 0} 

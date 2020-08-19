@@ -18,9 +18,15 @@
       opacity: 1;
     }
 
-    .scroll-down, .contact-link {
+    .scroll-down {
       opacity: 1;
       transition: opacity 125ms 1s;
+      pointer-events: auto;
+    }
+
+    .contact-link {
+      opacity: 1;
+      transition: opacity 125ms 1.25s;
       pointer-events: auto;
     }
 

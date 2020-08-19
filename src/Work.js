@@ -21,6 +21,8 @@ function Work(props) {
   const { 
     index, 
     setOpenProjectId, 
+    activeLang, 
+    strings, 
     active: isActive, 
     intersecting: isIntersecting 
   } = props;
@@ -49,18 +51,18 @@ function Work(props) {
 
   return (
     <section id="work" className={classes} data-index={index}>
-      <h3 className="bold">Projekte</h3>
+      <h3 className="bold">{strings.work.Title[activeLang]}</h3>
       <article className="with-image image-right">
         <div className="text">
           <span className="char divider divider-right">
             <span />
           </span>
-          <h4 className="bold margin-bottom">Sommernachts-Ball</h4>
-          <p>Website, 2020</p>
-          <p>Genossenschaftsbund Migros Zürich</p>
+          <h4 className="bold margin-bottom">{strings.project[0].Title[activeLang]}</h4>
+          <p>{strings.project[0].Subtitle[activeLang]}</p>
+          <p>{strings.project[0].Subsubtitle[activeLang]}</p>
           <a href="/work/sommernachts-ball" 
             className="info-button" onClick={onProjectClicked.bind(this, 0)}>
-            <ArrowForwardIcon fontSize="large" />Mehr Info
+            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -72,12 +74,12 @@ function Work(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <h4 className="bold margin-bottom">Stephan Walter</h4>
-          <p>Website, 2020</p>
-          <p>Stephan Walter, Grafiker, Zürich</p>
-          <a href="/work/sommernachts-ball" 
+          <h4 className="bold margin-bottom">{strings.project[1].Title[activeLang]}</h4>
+          <p>{strings.project[1].Subtitle[activeLang]}</p>
+          <p>{strings.project[1].Subsubtitle[activeLang]}</p>
+          <a href="/work/stephanwalter" 
             className="info-button" onClick={onProjectClicked.bind(this, 1)}>
-            <ArrowForwardIcon fontSize="large" />Mehr Info
+            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -89,12 +91,12 @@ function Work(props) {
           <span className="char divider divider-right">
             <span />
           </span>
-          <h4 className="bold margin-bottom">IOC MapTool</h4>
-          <p>App für Video-Bespielung, 2019</p>
-          <p>Int. Olympic Commitee, Lausanne</p>
-          <a href="/work/sommernachts-ball" 
+          <h4 className="bold margin-bottom">{strings.project[2].Title[activeLang]}</h4>
+          <p>{strings.project[2].Subtitle[activeLang]}</p>
+          <p>{strings.project[2].Subsubtitle[activeLang]}</p>
+          <a href="/work/ioc-maptool" 
             className="info-button" onClick={onProjectClicked.bind(this, 2)}>
-            <ArrowForwardIcon fontSize="large" />Mehr Info
+            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -106,12 +108,12 @@ function Work(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <h4 className="bold margin-bottom">Simulation M+ Museum</h4>
-          <p>3D-Simulation für bespielbares Fassadensystem, 2019</p>
-          <p>M+ Museum, Hong Kong</p>
-          <a href="/work/sommernachts-ball" 
+          <h4 className="bold margin-bottom">{strings.project[3].Title[activeLang]}</h4>
+          <p>{strings.project[3].Subtitle[activeLang]}</p>
+          <p>{strings.project[3].Subsubtitle[activeLang]}</p>
+          <a href="/work/mplus" 
             className="info-button" onClick={onProjectClicked.bind(this, 3)}>
-            <ArrowForwardIcon fontSize="large" />Mehr Info
+            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -123,12 +125,12 @@ function Work(props) {
           <span className="char divider divider-right">
             <span />
           </span>
-          <h4 className="bold margin-bottom">Hyundai Olympic Pavilion</h4>
-          <p>Interaktive Wasserinstallation, 2018</p>
-          <p>Hyundai, Südkorea</p>
-          <a href="/work/sommernachts-ball" 
+          <h4 className="bold margin-bottom">{strings.project[4].Title[activeLang]}</h4>
+          <p>{strings.project[4].Subtitle[activeLang]}</p>
+          <p>{strings.project[4].Subsubtitle[activeLang]}</p>
+          <a href="/work/hyundai" 
             className="info-button" onClick={onProjectClicked.bind(this, 4)}>
-            <ArrowForwardIcon fontSize="large" />Mehr Info
+            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -140,12 +142,12 @@ function Work(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <h4 className="bold margin-bottom">Harvard Square Theatre Facade</h4>
-          <p>Mockup für bespielbare Fassade, 2018</p>
-          <p>Kirche LLC, Boston, MA</p>
-          <a href="/work/sommernachts-ball" 
+          <h4 className="bold margin-bottom">{strings.project[5].Title[activeLang]}</h4>
+          <p>{strings.project[5].Subtitle[activeLang]}</p>
+          <p>{strings.project[5].Subsubtitle[activeLang]}</p>
+          <a href="/work/armory" 
             className="info-button" onClick={onProjectClicked.bind(this, 5)}>
-            <ArrowForwardIcon fontSize="large" />Mehr Info
+            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -157,12 +159,12 @@ function Work(props) {
           <span className="char divider divider-right">
             <span />
           </span>
-          <h4 className="bold margin-bottom">Hansel & Gretel</h4>
-          <p>Immersive Videoinstallation, 2017</p>
-          <p>Armory Park Avenue, NY</p>
-          <a href="/work/sommernachts-ball" 
+          <h4 className="bold margin-bottom">{strings.project[6].Title[activeLang]}</h4>
+          <p>{strings.project[6].Subtitle[activeLang]}</p>
+          <p>{strings.project[6].Subsubtitle[activeLang]}</p>
+          <a href="/work/boston" 
             className="info-button" onClick={onProjectClicked.bind(this, 6)}>
-            <ArrowForwardIcon fontSize="large" />Mehr Info
+            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -174,12 +176,12 @@ function Work(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <h4 className="bold margin-bottom">Maersk Visitor Centre</h4>
-          <p>Interaktiver Medientisch, 2017</p>
-          <p>Maersk, Copenhagen</p>
-          <a href="/work/sommernachts-ball" 
+          <h4 className="bold margin-bottom">{strings.project[7].Title[activeLang]}</h4>
+          <p>{strings.project[7].Subtitle[activeLang]}</p>
+          <p>{strings.project[7].Subsubtitle[activeLang]}</p>
+          <a href="/work/maersk" 
             className="info-button" onClick={onProjectClicked.bind(this, 7)}>
-            <ArrowForwardIcon fontSize="large" />Mehr Info
+            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
