@@ -60,12 +60,24 @@ function Project(props) {
                 </a>
               </li>
             </ul>
-            <p dangerouslySetInnerHTML={{__html: data.project[0].Description2[activeLang]}} />
-            <p dangerouslySetInnerHTML={{__html: data.project[0].Description3[activeLang]}} />
           </div>
           <div className="images short-height">
             <LazyImage width={1024} height={956} src={require('./img/gmz/gmz1.png')} alt="Sommernachts-Ball Macbook" />
+          </div>
+        </section>
+        <section className="image-left">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[0].Description2[activeLang]}} />
+          </div>
+          <div className="images">  
             <LazyImage width={827} height={1024} src={require('./img/gmz/gmz2.png')} alt="Sommernachts-Ball iPhone" />
+          </div>
+        </section>
+        <section className="image-right">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[0].Description3[activeLang]}} />
+          </div>
+          <div className="images">  
             <LazyImage width={842} height={1024} src={require('./img/gmz/gmz3.png')} alt="Sommernachts-Ball iPad" />
           </div>
         </section>
@@ -96,12 +108,24 @@ function Project(props) {
                 </a>
               </li>
             </ul>
-            <p dangerouslySetInnerHTML={{__html: data.project[1].Description2[activeLang]}} />
-            <p dangerouslySetInnerHTML={{__html: data.project[1].Description3[activeLang]}} />
           </div>
           <div className="images short-height">
             <LazyImage width={1024} height={956} src={require('./img/stephanwalter/stephanwalter1.png')} alt="Sommernachts-Ball iPad" />
+          </div>
+        </section>
+        <section className="image-left">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[1].Description2[activeLang]}} />
+          </div>
+          <div className="images">  
             <LazyImage width={842} height={1024} src={require('./img/stephanwalter/stephanwalter2.png')} alt="Sommernachts-Ball iPad" />
+          </div>
+        </section>
+        <section className="image-right">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[1].Description3[activeLang]}} />
+          </div>
+          <div className="images">  
             <LazyImage width={708} height={1024} src={require('./img/stephanwalter/stephanwalter3.png')} alt="Sommernachts-Ball iPad" />
           </div>
         </section>
