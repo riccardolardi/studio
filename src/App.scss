@@ -394,6 +394,11 @@
       padding: 0 $pad * 0.2;
       background-color: $primaryColor;
       color: $secondaryColor;
+
+      @include breakpoint($breakMobile) {
+        font-size: $pad * 0.5;
+        line-height: $pad * 0.85;
+      }
     }
   }
 
