@@ -9,7 +9,7 @@
 		],
 		"Slogan": [
 			"Das Studio aus Basel spezialisiert sich auf die Planung, Konzeption, Design und Entwicklung von Projekten zwischen digitalem und physischem Raum.",
-			"The Studio is based in Basel and specializes in planning, conception, design and development of projects in between digital and physical space."
+			"A Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space."
 		],
 		"Services": [
 			"Kompetenzen",
@@ -85,6 +85,7 @@
 	},
 	"project": [
 		{
+			"slug": "sommernachts-ball",
 			"Title": [
 				"Migros Sommernachts-Ball",
 				"Migros Sommernachts-Ball"
@@ -127,6 +128,7 @@
 			]
 		},
 		{
+			"slug": "stephanwalter",
 			"Title": [
 				"Stephan Walter",
 				"Stephan Walter"
@@ -169,6 +171,7 @@
 			]
 		},
 		{
+			"slug": "ioc",
 			"Title": [
 				"IOC Map Tool",
 				"IOC Map Tool"
@@ -219,6 +222,7 @@
 			]
 		},
 		{
+			"slug": "mplus",
 			"Title": [
 				"Simulation M+ Museum",
 				"Simulation M+ Museum"
@@ -265,6 +269,7 @@
 			]
 		},
 		{
+			"slug": "hyundai",
 			"Title": [
 				"Hyundai Olympic Pavilion",
 				"Hyundai Olympic Pavilion"
@@ -311,6 +316,7 @@
 			]
 		},
 		{
+			"slug": "boston",
 			"Title": [
 				"Harvard Square Theatre Fassade",
 				"Harvard Square Theatre Facade"
@@ -328,8 +334,8 @@
 				"Optimization and development of a terracotta profile for an interactive facade display in Boston."
 			],
 			"Client": [
-				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, Kirche LLC</a>",
-				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, Kirche LLC</a>"
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, Kirche LLC",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, Kirche LLC"
 			],
 			"Partner": [
 				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.promontorio.net'>Promontorio, Lissabon</a>",
@@ -361,6 +367,7 @@
 			]
 		},
 		{
+			"slug": "armory",
 			"Title": [
 				"Hansel & Gretel",
 				"Hansel & Gretel"
@@ -370,11 +377,56 @@
 				"Immersive video art installation, 2017"
 			],
 			"Subsubtitle": [
-				"iart, Herzog & de Meuron, Armory Park Av. NYC",
-				"iart, Herzog & de Meuron, Armory Park Av. NYC"
+				"iart, Herzog & de Meuron, Park Av. Armory, NYC",
+				"iart, Herzog & de Meuron, Park Av. Armory, NYC"
+			],
+			"Description1": [
+				"Eine raumgreifende, interaktive und immersive Videoinstallation in einer alten Militäranlage in Manhattan, NY - als Kritik von Überwachung im öffentlichen Raum und vom 'digitalen Fussabdruck' der jede/jeder unwissentlich hinterlässt.",
+				"An interactive and highly immersive video art installation that filled the entire ex-military drill hall Armory on Park Avenue in Manhattan NY - critizising public space surveillance and referring to the 'digital footprint' that everyone leaves behind even if she/he doesn't know."
+			],
+			"Client": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.armoryonpark.org'>Park Av. Armory</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.armoryonpark.org'>Park Av. Armory</a>"
+			],
+			"Partner": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='https://www.herzogdemeuron.com'>Herzog & De Meuron</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='https://www.herzogdemeuron.com'>Herzog & De Meuron</a>"
+			],
+			"Services": [
+				"Konzeption, Medienplanung, Programmierung, Inbetriebnahme",
+				"Conception, media planning, programming, supervision of commissioning"
+			],
+			"Tech": [
+				"OpenFrameworks, OpenCV, C++",
+				"OpenFrameworks, OpenCV, C++"
+			],
+			"Link": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='https://iart.ch/work/hansel-gretel-in-der-park-avenue-armory'>iart Projektdokumentation</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='https://iart.ch/en/work/hansel-gretel-in-der-park-avenue-armory'>iart project documentation</a>"
+			],
+			"Description2": [
+				"Das Künstlerkollektiv Jaques Herzog, Pierre De Meuron und Ai Wei Wei arbeitete schon seit längerem an einer interaktiven Raum-Installation rund um das Thema Überwachung und digitaler Spuren im Zeitalter von Computer-Vision und autonomen Systemen.",
+				"The artists' collective Jaques Herzog, Pierre De Meuron and Ai Wei Wei has been working for some time on an interactive space installation about surveillance and digital traces in the age of computer vision and autonomous systems."
+			],
+			"Description3": [
+				"Ergebnis war ein über 5000qm begehbares, dystopisches Erlebnis in einer ehemaligen US Military Drillhall in Manhattan, NYC.",
+				"The result was a more than 5000sqm walkable, dystopian experience in a former US Military Drillhall in Manhattan, NYC."
+			],
+			"Description4": [
+				"56 Infrarot-Kameras zeichneten die ahnungslosen Besucher von oben auf, während über Projektoren in Echtzeit deren insgeheim gefilmte Silhouetten abgebildet wurden. Jeder Projektor bildete mit einem Kleincomputer ein in sich geschlossenes, unabhängiges Glied, das jedoch mit allen anderen kommunizierte und somit ein dezentrales, flexbiles System gebildet wurde.",
+				"56 infrared cameras recorded the unsuspecting visitors from above, while projectors displayed their secretly filmed silhouettes in real time. Each projector used a small computer to form a self-contained, independent link, but communicated with all the others to form a decentralized, flexible system."
+			],
+			"Description5": [
+				"Im 2016 beauftragte Armory On Park iart für das Projekt und ich übernahm die technische Beratung, Medienplanung sowie Entwicklung von Hard- und Software, inkl. Supervision des Aufbaus und Inbetriebnahme vor Ort.",
+				"In 2016 Armory On Park contracted iart for the project and I took over the technical consulting, media planning and development of hardware and software, including supervision of the installation and commissioning on site."
+			],
+			"Description6": [
+				"",
+				""
 			]
 		},
 		{
+			"slug": "maersk",
 			"Title": [
 				"Maersk Besucherzentrum",
 				"Maersk Visitor Centre"
@@ -386,6 +438,42 @@
 			"Subsubtitle": [
 				"iart, Maersk, Copenhagen",
 				"iart, Maersk, Copenhagen"
+			],
+			"Description1": [
+				"Ein interaktiver Medientisch an welchem mehrere Benutzer gleichzeitig auf spielerische Art Informationen über den traditionsreichen Familienbetrieb von Maersk erfahren können.",
+				"An interactive media table where several users can simultaneously learn about the traditional Maersk family business in an engaging and fun way."
+			],
+			"Client": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.maersk.com'>Maersk</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.iart.ch'>iart</a>, <a class='link' rel='noopener noreferrer' target='_blank' href='http://www.maersk.com'>Maersk</a>"
+			],
+			"Partner": [
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.rosanbosch.com'>Studio Rosan Bosch</a>",
+				"<a class='link' rel='noopener noreferrer' target='_blank' href='http://www.rosanbosch.com'>Studio Rosan Bosch</a>"
+			],
+			"Services": [
+				"Design, Programmierung, Inbetriebnahme",
+				"Design, programming, commissioning"
+			],
+			"Tech": [
+				"React, Electron, kapazitive Sensoren, iart Open Media Controller",
+				"React, Electron, capacitive sensors, iart Open Media Controller"
+			],
+			"Link": [
+				"",
+				""
+			],
+			"Description2": [
+				"Für die Neueröffnung vom Visitor Center des dänischen Frachtunternehmen Maersk in Kopenhagen realisierte iart diverse mediale Installationen. Zentral ist dabei ein interaktiver Medientisch, in der Mitte vom Ausstellungsraum.",
+				"For the new opening of the Visitor Center of the Danish freight company Maersk in Copenhagen iart realized various media installations. The central element is an interactive media table in the middle of the exhibition space."
+			],
+			"Description3": [
+				"Über den Medientisch lassen sich durch physische Interaktion an vier Stationen diverse Informationen, Bilder und Filme zu Geschichte, Zahlen & Fakten, etc. über das Unternehmen einsehen.",
+				"Through physical interaction at four stations, various information, pictures and films on history, facts and figures, etc. about the company can be viewed."
+			],
+			"Description4": [
+				"Bis und mit Inbetriebnahme vor Ort zeichnete ich mich dabei verantwortlich für Konzeption, Grafik- und UX-Design, sowie der finalen Software-Implementation des Medientischs.",
+				"I was responsible for conception, graphic and UX design as well as the final software implementation and construction supervision of the media table on site."
 			]
 		}
 	]

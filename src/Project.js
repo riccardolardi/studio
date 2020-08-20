@@ -302,6 +302,110 @@ function Project(props) {
           </div>
         </section>
       </article>}
+      {openProjectId === 6 && <article>
+        <h4 className="bold">{data.project[6].Title[activeLang]}</h4>
+        <section>
+          <div className="text">
+            <span className="char divider divider-left" />
+            <p dangerouslySetInnerHTML={{__html: data.project[6].Description1[activeLang]}} />
+            <ul>
+              <li className="tag date"><CalendarTodayIcon fontSize={'small'} /><span>2017</span></li>
+              <li className="tag client-tags">
+                <HomeWorkIcon fontSize={'small'} />
+                <span dangerouslySetInnerHTML={{__html: data.project[6].Client[activeLang]}} />
+              </li>
+              <li className="tag partner-tags">
+                <PeopleIcon fontSize={'small'} />
+                <span dangerouslySetInnerHTML={{__html: data.project[6].Partner[activeLang]}} />
+              </li>
+              <li className="tag service-tags">
+                <CategoryIcon fontSize={'small'} />
+                <span dangerouslySetInnerHTML={{__html: data.project[6].Services[activeLang]}} />
+              </li>
+              <li className="tag tech-tags">
+                <BuildIcon fontSize={'small'} />
+                <span dangerouslySetInnerHTML={{__html: data.project[6].Tech[activeLang]}} />
+              </li>
+              <li className="tag product-link">
+                <LinkIcon fontSize={'small'} />
+                <span dangerouslySetInnerHTML={{__html: data.project[6].Link[activeLang]}} />
+              </li>
+            </ul>
+          </div>
+          <div className="images">
+            <LazyImage width={1200} height={675} src={require('./img/armory/armory1.jpg')} alt="armory" label="Via iart AG" />
+            <LazyImage width={1200} height={675} src={require('./img/armory/armory2.jpg')} alt="armory" label="Via iart AG" />
+          </div>
+        </section>
+        <section className="image-left">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[6].Description2[activeLang]}} />
+            <p dangerouslySetInnerHTML={{__html: data.project[6].Description3[activeLang]}} />
+          </div>
+          <div className="images">
+            <LazyImage width={1200} height={675} src={require('./img/armory/armory3.jpg')} alt="armory" label="Via iart AG" />
+          </div>
+        </section>
+        <section>
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[6].Description4[activeLang]}} />
+          </div>
+          <div className="images">  
+            <LazyImage width={1200} height={675} src={require('./img/armory/armory4.jpg')} alt="armory" label="Via iart AG" />
+          </div>
+        </section>
+        <section className="image-left">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[6].Description5[activeLang]}} />
+            <p dangerouslySetInnerHTML={{__html: data.project[6].Description6[activeLang]}} />
+          </div>
+          <div className="images">
+            <LazyImage width={1024} height={768} src={require('./img/armory/armory6.jpg')} alt="armory" label="Via iart AG" />
+          </div>
+        </section>
+      </article>}
+      {openProjectId === 7 && <article>
+        <h4 className="bold">{data.project[7].Title[activeLang]}</h4>
+        <section>
+          <div className="text">
+            <span className="char divider divider-left" />
+            <p dangerouslySetInnerHTML={{__html: data.project[7].Description1[activeLang]}} />
+            <ul>
+              <li className="tag date"><CalendarTodayIcon fontSize={'small'} /><span>2017</span></li>
+              <li className="tag client-tags">
+                <HomeWorkIcon fontSize={'small'} />
+                <span dangerouslySetInnerHTML={{__html: data.project[7].Client[activeLang]}} />
+              </li>
+              <li className="tag partner-tags">
+                <PeopleIcon fontSize={'small'} />
+                <span dangerouslySetInnerHTML={{__html: data.project[7].Partner[activeLang]}} />
+              </li>
+              <li className="tag service-tags">
+                <CategoryIcon fontSize={'small'} />
+                <span dangerouslySetInnerHTML={{__html: data.project[7].Services[activeLang]}} />
+              </li>
+              <li className="tag tech-tags">
+                <BuildIcon fontSize={'small'} />
+                <span dangerouslySetInnerHTML={{__html: data.project[7].Tech[activeLang]}} />
+              </li>
+            </ul>
+            <p dangerouslySetInnerHTML={{__html: data.project[7].Description2[activeLang]}} />
+          </div>
+          <div className="images">
+            <LazyImage width={1200} height={675} src={require('./img/maersk/maersk1.jpg')} alt="maersk" label="Via iart AG" />
+            <LazyImage width={1200} height={675} src={require('./img/maersk/maersk2.jpg')} alt="maersk" label="Via iart AG" />
+          </div>
+        </section>
+        <section className="image-left">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[7].Description3[activeLang]}} />
+            <p dangerouslySetInnerHTML={{__html: data.project[7].Description4[activeLang]}} />
+          </div>
+          <div className="images">
+            <LazyImage width={1200} height={675} src={require('./img/maersk/maersk5.jpg')} alt="maersk" label="Via iart AG" />
+          </div>
+        </section>
+      </article>}
     </section>
   );
 }

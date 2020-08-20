@@ -11,8 +11,8 @@ const imgs = [
   require('./img/mplus/mplus1.png'),
   require('./img/hyundai/hyundai1.jpg'),
   require('./img/boston/boston1.jpg'),
-  require('./img/armory/iart-armory1.jpg'),
-  require('./img/maersk/kimwendt-maersk1.jpg')
+  require('./img/armory/armory1.jpg'),
+  require('./img/maersk/maersk1.jpg')
 ];
 
 let articleEls;
@@ -60,7 +60,7 @@ function Work(props) {
           <h4 className="bold margin-bottom">{data.project[0].Title[activeLang]}</h4>
           <p>{data.project[0].Subtitle[activeLang]}</p>
           <p>{data.project[0].Subsubtitle[activeLang]}</p>
-          <a href="/work/sommernachts-ball" 
+          <a href={`/work/${data.project[0].slug}`} 
             className="info-button" onClick={onProjectClicked.bind(this, 0)}>
             <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
@@ -71,13 +71,13 @@ function Work(props) {
       </article>
       <article className="with-image image-left">
         <div className="text">
-          <span className="char divider divider-left">
+          <span className="char divider">
             <span />
           </span>
           <h4 className="bold margin-bottom">{data.project[1].Title[activeLang]}</h4>
           <p>{data.project[1].Subtitle[activeLang]}</p>
           <p>{data.project[1].Subsubtitle[activeLang]}</p>
-          <a href="/work/stephanwalter" 
+          <a href={`/work/${data.project[1].slug}`} 
             className="info-button" onClick={onProjectClicked.bind(this, 1)}>
             <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
@@ -94,7 +94,7 @@ function Work(props) {
           <h4 className="bold margin-bottom">{data.project[2].Title[activeLang]}</h4>
           <p>{data.project[2].Subtitle[activeLang]}</p>
           <p>{data.project[2].Subsubtitle[activeLang]}</p>
-          <a href="/work/ioc-maptool" 
+          <a href={`/work/${data.project[2].slug}`} 
             className="info-button" onClick={onProjectClicked.bind(this, 2)}>
             <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
@@ -105,13 +105,13 @@ function Work(props) {
       </article>
       <article className="with-image image-left">
         <div className="text">
-          <span className="char divider divider-left">
+          <span className="char divider">
             <span />
           </span>
           <h4 className="bold margin-bottom">{data.project[3].Title[activeLang]}</h4>
           <p>{data.project[3].Subtitle[activeLang]}</p>
           <p>{data.project[3].Subsubtitle[activeLang]}</p>
-          <a href="/work/mplus" 
+          <a href={`/work/${data.project[3].slug}`} 
             className="info-button" onClick={onProjectClicked.bind(this, 3)}>
             <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
@@ -128,7 +128,7 @@ function Work(props) {
           <h4 className="bold margin-bottom">{data.project[4].Title[activeLang]}</h4>
           <p>{data.project[4].Subtitle[activeLang]}</p>
           <p>{data.project[4].Subsubtitle[activeLang]}</p>
-          <a href="/work/hyundai" 
+          <a href={`/work/${data.project[4].slug}`} 
             className="info-button" onClick={onProjectClicked.bind(this, 4)}>
             <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
@@ -139,13 +139,13 @@ function Work(props) {
       </article>
       <article className="with-image image-left">
         <div className="text">
-          <span className="char divider divider-left">
+          <span className="char divider">
             <span />
           </span>
           <h4 className="bold margin-bottom">{data.project[5].Title[activeLang]}</h4>
           <p>{data.project[5].Subtitle[activeLang]}</p>
           <p>{data.project[5].Subsubtitle[activeLang]}</p>
-          <a href="/work/armory" 
+          <a href={`/work/${data.project[5].slug}`} 
             className="info-button" onClick={onProjectClicked.bind(this, 5)}>
             <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
@@ -162,7 +162,7 @@ function Work(props) {
           <h4 className="bold margin-bottom">{data.project[6].Title[activeLang]}</h4>
           <p>{data.project[6].Subtitle[activeLang]}</p>
           <p>{data.project[6].Subsubtitle[activeLang]}</p>
-          <a href="/work/boston" 
+          <a href={`/work/${data.project[6].slug}`} 
             className="info-button" onClick={onProjectClicked.bind(this, 6)}>
             <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
@@ -173,13 +173,13 @@ function Work(props) {
       </article>
       <article className="with-image image-left">
         <div className="text">
-          <span className="char divider divider-left">
+          <span className="char divider">
             <span />
           </span>
           <h4 className="bold margin-bottom">{data.project[7].Title[activeLang]}</h4>
           <p>{data.project[7].Subtitle[activeLang]}</p>
           <p>{data.project[7].Subsubtitle[activeLang]}</p>
-          <a href="/work/maersk" 
+          <a href={`/work/${data.project[7].slug}`} 
             className="info-button" onClick={onProjectClicked.bind(this, 7)}>
             <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
