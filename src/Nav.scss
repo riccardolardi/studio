@@ -241,6 +241,7 @@
       position: absolute;
       bottom: $pad * 4;
       left: $pad * 2;
+      width: $pad * 6;
     }
 
     .email-icon {
@@ -254,7 +255,7 @@
 
         svg {
           fill: $secondaryColor;
-          font-size: $pad * 4.2;
+          font-size: $pad * 3.2;
           animation: 12s linear infinite emailAnim;
         }
       }

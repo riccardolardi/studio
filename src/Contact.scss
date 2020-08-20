@@ -32,6 +32,10 @@
   article {
     padding-top: 25vh !important;
 
+    @include breakpoint($breakMobile) {
+      padding-top: 0vh !important;
+    }
+
     .social-icon {
       display: inline-block;
       margin: $pad * 0.2 $pad * 0.2 0 0;

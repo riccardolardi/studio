@@ -99,8 +99,7 @@
   }
 
   p {
-    margin-bottom: $pad / 4;
-    hyphens: auto;
+    margin-bottom: $pad / 3;
 
     @include breakpoint($breakMobile) {
       margin-bottom: $pad * 0.25;
