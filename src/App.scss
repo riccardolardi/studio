@@ -153,7 +153,7 @@
   }
 
   .bold {
-    font-family: 'BuenosAiresBold';
+    font-family: 'BuenosAiresBold', sans-serif;
     line-height: calc(1.14em + 0.4vmax);
     letter-spacing: 0.01em;
   }
@@ -432,7 +432,7 @@
   }
 
   .illustration {
-    font-family: 'AssemblyHumanOne';  
+    font-family: 'AssemblyHumanOne';
     font-size: $pad * 2;
   }
 }
