@@ -124,7 +124,7 @@ function Nav(props) {
 		    	<AlternateEmailIcon fontSize="large" />
 		    </a>
 	    </div>
-    	<button className="menu-button" onClick={menuButtonClicked}>
+    	<button className="menu-button" aria-label="menu-button" onClick={menuButtonClicked}>
 	      <MenuIcon className="menu-icon" fontSize="large" />
 	      <CloseIcon className="close-icon" fontSize="large" />
 	      <ArrowDownwardIcon className="back-icon" fontSize="large" />

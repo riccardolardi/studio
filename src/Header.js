@@ -109,7 +109,7 @@ function Header(props) {
         </h2>
       </div>
       <div className="contact-link">
-        <a href="/contact" onClick={e => {e.preventDefault(); moveToBlock(3);}}>
+        <a href="/contact" aria-label="contact-link" onClick={e => {e.preventDefault(); moveToBlock(3);}}>
           <AlternateEmailIcon fontSize="large" />
         </a>
       </div>

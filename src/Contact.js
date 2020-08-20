@@ -31,15 +31,15 @@ function Contact(props) {
           <p><a href="tel:0041793396538">0041 79 339 65 38</a></p>
           <p><a href="mailto:hello@riccardolardi.com">hello@riccardolardi.com</a></p>
           <a href="https://www.linkedin.com/in/riccardolardi" rel="noopener noreferrer" 
-            target="_blank" className="social-icon" alt="LinkedIn">
+            target="_blank" aria-label="LinkedIn" className="social-icon" alt="LinkedIn">
             <LinkedInIcon fontSize={'large'} />
           </a>
           <a href="https://github.com/riccardolardi" rel="noopener noreferrer" 
-            target="_blank" className="social-icon" alt="GitHub">
+            target="_blank" aria-label="GitHub" className="social-icon" alt="GitHub">
             <GitHubIcon fontSize={'large'} />
           </a>
           <a href="https://stackoverflow.com/users/1515187/riccardolardi" rel="noopener noreferrer" 
-            target="_blank" className="social-icon" alt="StackOverflow">
+            target="_blank" aria-label="StackOverflow" className="social-icon" alt="StackOverflow">
             <ReorderIcon fontSize={'large'} />
           </a>
         </div>
