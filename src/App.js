@@ -92,7 +92,7 @@ function App() {
       setOpenProjectId(projectIndex);
     }
     window.addEventListener('popstate', event => onHistoryPopState(event));
-    setActiveLang(getBrowserLocales()[0] === 'de' ? 0 : 1);
+    setActiveLang(getBrowserLocales({languageCodeOnly: true})[0] === 'de' ? 0 : 1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
