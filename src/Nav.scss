@@ -169,7 +169,7 @@
 
       @include breakpoint($breakMobile) {
         height: auto;
-        width: $pad * 0.4;
+        width: $pad * 0.3;
         top: auto;
         bottom: auto;
         left: $pad * 2;
@@ -241,7 +241,7 @@
       position: absolute;
       bottom: $pad * 4;
       left: $pad * 2;
-      width: $pad * 6;
+      width: $pad * 7;
     }
 
     .email-icon {

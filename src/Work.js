@@ -22,7 +22,7 @@ function Work(props) {
     index, 
     setOpenProjectId, 
     activeLang, 
-    strings, 
+    data, 
     active: isActive, 
     intersecting: isIntersecting 
   } = props;
@@ -51,18 +51,18 @@ function Work(props) {
 
   return (
     <section id="work" className={classes} data-index={index}>
-      <h3 className="bold">{strings.work.Title[activeLang]}</h3>
+      <h3 className="bold">{data.work.Title[activeLang]}</h3>
       <article className="with-image image-right">
         <div className="text">
           <span className="char divider divider-right">
             <span />
           </span>
-          <h4 className="bold margin-bottom">{strings.project[0].Title[activeLang]}</h4>
-          <p>{strings.project[0].Subtitle[activeLang]}</p>
-          <p>{strings.project[0].Subsubtitle[activeLang]}</p>
+          <h4 className="bold margin-bottom">{data.project[0].Title[activeLang]}</h4>
+          <p>{data.project[0].Subtitle[activeLang]}</p>
+          <p>{data.project[0].Subsubtitle[activeLang]}</p>
           <a href="/work/sommernachts-ball" 
             className="info-button" onClick={onProjectClicked.bind(this, 0)}>
-            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
+            <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -74,12 +74,12 @@ function Work(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <h4 className="bold margin-bottom">{strings.project[1].Title[activeLang]}</h4>
-          <p>{strings.project[1].Subtitle[activeLang]}</p>
-          <p>{strings.project[1].Subsubtitle[activeLang]}</p>
+          <h4 className="bold margin-bottom">{data.project[1].Title[activeLang]}</h4>
+          <p>{data.project[1].Subtitle[activeLang]}</p>
+          <p>{data.project[1].Subsubtitle[activeLang]}</p>
           <a href="/work/stephanwalter" 
             className="info-button" onClick={onProjectClicked.bind(this, 1)}>
-            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
+            <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -91,12 +91,12 @@ function Work(props) {
           <span className="char divider divider-right">
             <span />
           </span>
-          <h4 className="bold margin-bottom">{strings.project[2].Title[activeLang]}</h4>
-          <p>{strings.project[2].Subtitle[activeLang]}</p>
-          <p>{strings.project[2].Subsubtitle[activeLang]}</p>
+          <h4 className="bold margin-bottom">{data.project[2].Title[activeLang]}</h4>
+          <p>{data.project[2].Subtitle[activeLang]}</p>
+          <p>{data.project[2].Subsubtitle[activeLang]}</p>
           <a href="/work/ioc-maptool" 
             className="info-button" onClick={onProjectClicked.bind(this, 2)}>
-            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
+            <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -108,12 +108,12 @@ function Work(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <h4 className="bold margin-bottom">{strings.project[3].Title[activeLang]}</h4>
-          <p>{strings.project[3].Subtitle[activeLang]}</p>
-          <p>{strings.project[3].Subsubtitle[activeLang]}</p>
+          <h4 className="bold margin-bottom">{data.project[3].Title[activeLang]}</h4>
+          <p>{data.project[3].Subtitle[activeLang]}</p>
+          <p>{data.project[3].Subsubtitle[activeLang]}</p>
           <a href="/work/mplus" 
             className="info-button" onClick={onProjectClicked.bind(this, 3)}>
-            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
+            <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -125,12 +125,12 @@ function Work(props) {
           <span className="char divider divider-right">
             <span />
           </span>
-          <h4 className="bold margin-bottom">{strings.project[4].Title[activeLang]}</h4>
-          <p>{strings.project[4].Subtitle[activeLang]}</p>
-          <p>{strings.project[4].Subsubtitle[activeLang]}</p>
+          <h4 className="bold margin-bottom">{data.project[4].Title[activeLang]}</h4>
+          <p>{data.project[4].Subtitle[activeLang]}</p>
+          <p>{data.project[4].Subsubtitle[activeLang]}</p>
           <a href="/work/hyundai" 
             className="info-button" onClick={onProjectClicked.bind(this, 4)}>
-            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
+            <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -142,12 +142,12 @@ function Work(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <h4 className="bold margin-bottom">{strings.project[5].Title[activeLang]}</h4>
-          <p>{strings.project[5].Subtitle[activeLang]}</p>
-          <p>{strings.project[5].Subsubtitle[activeLang]}</p>
+          <h4 className="bold margin-bottom">{data.project[5].Title[activeLang]}</h4>
+          <p>{data.project[5].Subtitle[activeLang]}</p>
+          <p>{data.project[5].Subsubtitle[activeLang]}</p>
           <a href="/work/armory" 
             className="info-button" onClick={onProjectClicked.bind(this, 5)}>
-            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
+            <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -159,12 +159,12 @@ function Work(props) {
           <span className="char divider divider-right">
             <span />
           </span>
-          <h4 className="bold margin-bottom">{strings.project[6].Title[activeLang]}</h4>
-          <p>{strings.project[6].Subtitle[activeLang]}</p>
-          <p>{strings.project[6].Subsubtitle[activeLang]}</p>
+          <h4 className="bold margin-bottom">{data.project[6].Title[activeLang]}</h4>
+          <p>{data.project[6].Subtitle[activeLang]}</p>
+          <p>{data.project[6].Subsubtitle[activeLang]}</p>
           <a href="/work/boston" 
             className="info-button" onClick={onProjectClicked.bind(this, 6)}>
-            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
+            <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
         </div>
         <div className="image">
@@ -176,12 +176,12 @@ function Work(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <h4 className="bold margin-bottom">{strings.project[7].Title[activeLang]}</h4>
-          <p>{strings.project[7].Subtitle[activeLang]}</p>
-          <p>{strings.project[7].Subsubtitle[activeLang]}</p>
+          <h4 className="bold margin-bottom">{data.project[7].Title[activeLang]}</h4>
+          <p>{data.project[7].Subtitle[activeLang]}</p>
+          <p>{data.project[7].Subsubtitle[activeLang]}</p>
           <a href="/work/maersk" 
             className="info-button" onClick={onProjectClicked.bind(this, 7)}>
-            <ArrowForwardIcon fontSize="large" />{strings.work.More[activeLang]}
+            <ArrowForwardIcon fontSize="large" />{data.work.More[activeLang]}
           </a>
         </div>
         <div className="image">

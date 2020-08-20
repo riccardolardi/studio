@@ -6,7 +6,11 @@ import Classnames from 'classnames';
 import './Contact.scss';
 
 function Contact(props) {
-  const { index, active: isActive, intersecting: isIntersecting } = props;
+  const { 
+    index, 
+    active: isActive, 
+    intersecting: isIntersecting 
+  } = props;
 
   const classes = Classnames({
     'block': true,

@@ -102,7 +102,7 @@
     margin-bottom: $pad / 3;
 
     @include breakpoint($breakMobile) {
-      margin-bottom: $pad * 0.25;
+      margin-bottom: $pad * 0.5;
     }
 
     &:last-child {

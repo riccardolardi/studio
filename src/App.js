@@ -24,7 +24,7 @@ import Contact from './Contact.js';
 import Project from './Project.js';
 import './App.scss';
 
-const strings = require('./i18n.json');
+const data = require('./data.json');
 const useBreakpoint = createBreakpoint({
   mobile: 768, 
   other: 769
@@ -169,7 +169,7 @@ function App() {
         moveToBlock={moveToBlock} 
         prevIsIntro={prevIsIntro} 
         activeLang={activeLang} 
-        strings={strings} 
+        data={data} 
       />
       <Work 
         index={2} 
@@ -177,7 +177,7 @@ function App() {
         intersecting={intersectingBlockIndexes.includes(2)} 
         setOpenProjectId={setOpenProjectId} 
         activeLang={activeLang} 
-        strings={strings} 
+        data={data} 
       />
       <Contact 
         index={3} 
@@ -187,7 +187,7 @@ function App() {
       {openProjectId !== null && <Project 
         openProjectId={openProjectId} 
         activeLang={activeLang} 
-        strings={strings} 
+        data={data} 
       />}
       <Nav 
         show={activeBlockIndex > 0} 
@@ -201,7 +201,7 @@ function App() {
         projectOpen={openProjectId !== null} 
         setOpenProjectId={setOpenProjectId} 
         prevBlockIndex={prevBlockIndex} 
-        strings={strings} 
+        data={data} 
       />
     </main>
   );

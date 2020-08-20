@@ -17,7 +17,7 @@ function Profile(props) {
     prevIsIntro, 
     moveToBlock, 
     activeLang, 
-    strings 
+    data 
   } = props;
 
   const classes = Classnames({
@@ -29,21 +29,21 @@ function Profile(props) {
 
   return (
     <section id="profile" className={classes} data-index={index}>
-      <h3 className="bold">{strings.profile.Title[activeLang]}</h3>
+      <h3 className="bold">{data.profile.Title[activeLang]}</h3>
       <article className="with-image image-right">
         <div className="text">
           <span className="char divider divider-left">
             <span />
           </span>
-          <p>{strings.profile.Slogan[activeLang]}</p>
-          <h4 className="bold">{strings.profile.Services[activeLang]}</h4>
+          <p>{data.profile.Slogan[activeLang]}</p>
+          <h4 className="bold">{data.profile.Services[activeLang]}</h4>
           <ul>
-            <li>{strings.profile.Service1[activeLang]}</li>
-            <li>{strings.profile.Service2[activeLang]}</li>
-            <li>{strings.profile.Service3[activeLang]}</li>
-            <li>{strings.profile.Service4[activeLang]}</li>
-            <li>{strings.profile.Service5[activeLang]}</li>
-            <li>{strings.profile.Service6[activeLang]}</li>
+            <li>{data.profile.Service1[activeLang]}</li>
+            <li>{data.profile.Service2[activeLang]}</li>
+            <li>{data.profile.Service3[activeLang]}</li>
+            <li>{data.profile.Service4[activeLang]}</li>
+            <li>{data.profile.Service5[activeLang]}</li>
+            <li>{data.profile.Service6[activeLang]}</li>
           </ul>
         </div>
         <div className="image">
@@ -56,10 +56,10 @@ function Profile(props) {
           <span className="char divider divider-left">
             <span />
           </span>
-          <p dangerouslySetInnerHTML={{__html: strings.profile.Info1[activeLang]}} />
-          <p dangerouslySetInnerHTML={{__html: strings.profile.Info2[activeLang]}} />
-          <p dangerouslySetInnerHTML={{__html: strings.profile.Info3[activeLang]}} />
-          <p dangerouslySetInnerHTML={{__html: strings.profile.Info4[activeLang]}} />
+          <p dangerouslySetInnerHTML={{__html: data.profile.Info1[activeLang]}} />
+          <p dangerouslySetInnerHTML={{__html: data.profile.Info2[activeLang]}} />
+          <p dangerouslySetInnerHTML={{__html: data.profile.Info3[activeLang]}} />
+          <p dangerouslySetInnerHTML={{__html: data.profile.Info4[activeLang]}} />
           <div className="contact-us">
             <span className="contact-us-button" onClick={() => moveToBlock(3)}>
               <ArrowForwardIcon fontSize="large" />Get in touch!

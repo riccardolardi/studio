@@ -22,7 +22,7 @@ function Nav(props) {
 		setActiveLang, 
 		moveToBlock, 
 		prevBlockIndex, 
-		strings 
+		data 
 	} = props;
 
 	React.useLayoutEffect(() => {
@@ -111,9 +111,9 @@ function Nav(props) {
 	    <div className="menu-drawer">
 	    	<ul>
 		    	{/*<li className="menu-item"><a href="/news" onClick={linkClicked.bind(this, 0)}>News</a></li>*/}
-		    	<li className="menu-item"><a href="/profile" onClick={linkClicked.bind(this, 0)}>{strings.nav.Profile[activeLang]}</a></li>
-		    	<li className="menu-item"><a href="/work" onClick={linkClicked.bind(this, 1)}>{strings.nav.Work[activeLang]}</a></li>
-		    	<li className="menu-item"><a href="/contact" onClick={linkClicked.bind(this, 2)}>{strings.nav.Contact[activeLang]}</a></li>
+		    	<li className="menu-item"><a href="/profile" onClick={linkClicked.bind(this, 0)}>{data.nav.Profile[activeLang]}</a></li>
+		    	<li className="menu-item"><a href="/work" onClick={linkClicked.bind(this, 1)}>{data.nav.Work[activeLang]}</a></li>
+		    	<li className="menu-item"><a href="/contact" onClick={linkClicked.bind(this, 2)}>{data.nav.Contact[activeLang]}</a></li>
 		    	<li className="lang-item lang-de"><button onClick={() => setActiveLang(0)}>DE</button></li>
 		    	<li className="lang-item lang-en"><button onClick={() => setActiveLang(1)}>EN</button></li>
 		    </ul>
