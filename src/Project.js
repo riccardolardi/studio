@@ -156,15 +156,21 @@ function Project(props) {
                 </a>
               </li>
             </ul>
-            <p dangerouslySetInnerHTML={{__html: data.project[2].Description2[activeLang]}} />
-            <p dangerouslySetInnerHTML={{__html: data.project[2].Description3[activeLang]}} />
           </div>
           <div className="images">
             <LazyImage width={1024} height={1010} src={require('./img/ioc/ioc1.png')} alt="IOC MapTool" />
-            <LazyImage width={1024} height={810} src={require('./img/ioc/ioc2.png')} alt="IOC MapTool" />
           </div>
         </section>
         <section className="image-left">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[2].Description2[activeLang]}} />
+            <p dangerouslySetInnerHTML={{__html: data.project[2].Description3[activeLang]}} />
+          </div>
+          <div className="images">  
+            <LazyImage width={1024} height={810} src={require('./img/ioc/ioc2.png')} alt="IOC MapTool" />
+          </div>
+        </section>
+        <section className="image-right">
           <div className="text">
             <p dangerouslySetInnerHTML={{__html: '"' + data.project[2].Description4[activeLang] + '"'}} />
             <p dangerouslySetInnerHTML={{__html: data.project[2].Description5[activeLang]}} />
@@ -199,14 +205,20 @@ function Project(props) {
                 <span dangerouslySetInnerHTML={{__html: data.project[3].Tech[activeLang]}} />
               </li>
             </ul>
-            <p dangerouslySetInnerHTML={{__html: data.project[3].Description2[activeLang]}} />
           </div>
           <div className="images">
             <LazyImage width={1024} height={1010} src={require('./img/mplus/mplus1.png')} alt="mplus" />
-            <LazyImage width={1024} height={810} src={require('./img/mplus/mplus2.png')} alt="mplus" />
           </div>
         </section>
         <section className="image-left">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[3].Description2[activeLang]}} />
+          </div>
+          <div className="images">  
+            <LazyImage width={1024} height={810} src={require('./img/mplus/mplus2.png')} alt="mplus" />
+          </div>
+        </section>
+        <section className="image-right">
           <div className="text">
             <p dangerouslySetInnerHTML={{__html: data.project[3].Description3[activeLang]}} />
           </div>
@@ -214,7 +226,7 @@ function Project(props) {
             <LazyImage width={1024} height={810} src={require('./img/mplus/mplus3.png')} alt="mplus" />
           </div>
         </section>
-        <section>
+        <section className="image-left">
           <div className="text">
             <p dangerouslySetInnerHTML={{__html: data.project[3].Description4[activeLang]}} />
           </div>
