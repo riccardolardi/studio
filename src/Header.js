@@ -73,11 +73,19 @@ function Header(props) {
     const charAnimEl = document.querySelector('header .char-anim2 h2');
     const chars = charAnimEl.textContent;
     let newContent = '';
+    let ftCombined = false;
     for (let i = 0; i < chars.length; i++) {
+      if (ftCombined) {
+        ftCombined = false;
+        continue;
+      }
       const style = `transition: opacity 125ms ${250 + Math.random() * 500}ms`;
       if (i === 0) newContent += `<span class="char divider divider-right">
         <span style="${style}"></span></span>`;
-      let nextChar = `<span class="char"><span style="${style}">${chars[i]}</span></span>`;
+      ftCombined = chars[i] === 'f' && chars[i + 1] === 't';
+      let nextChar = `<span class="char"><span style="${style}">${
+        ftCombined ? 'ft' : chars[i]
+      }</span></span>`;
       if (chars[i] === ',') nextChar = '<br/>';
       if (chars[i] === ' ') nextChar = ' ';
       newContent += nextChar;
