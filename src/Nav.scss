@@ -34,7 +34,7 @@
       .menu-button svg {
 
         @include breakpoint($breakMobile) {
-          transform: scale(2);
+          transform: scale(1.5);
         }
       }
     }
@@ -116,7 +116,7 @@
       transition: all 125ms;
 
       @include breakpoint($breakMobile) {
-        font-size: $pad * 1.6;
+        font-size: $pad * 2;
       }
 
       &.menu-icon {
@@ -192,7 +192,7 @@
       margin-right: $pad / 2;
 
       @include breakpoint($breakMobile) {
-        margin: 0 0 $pad 0;
+        margin: 0 0 3vh 0;
       }
 
       &:last-child {
@@ -238,24 +238,34 @@
     }
 
     .symbol {
-      position: absolute;
-      bottom: $pad * 4;
-      left: $pad * 2;
-      width: $pad * 7;
+
+      @include breakpoint($breakMobile) {
+        display: block;
+        position: absolute;
+        bottom: 10vh;
+        left: 10vh;
+        width: auto;
+        height: 3vh;
+        max-width: 50%;
+      }
     }
 
     .email-icon {
       display: none;
 
       @include breakpoint($breakMobile) {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        top: $pad;
-        left: $pad;
+        top: $pad * 1.5;
+        left: $pad * 1.5;
+        width: $pad * 2.4;
+        height: $pad * 2.4;
 
         svg {
           fill: $secondaryColor;
-          font-size: $pad * 3.2;
+          font-size: 7.5vh;
           animation: 12s linear infinite emailAnim;
         }
       }
