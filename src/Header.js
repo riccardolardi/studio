@@ -8,6 +8,7 @@ import './Header.scss';
 
 let charAnims = [];
 let chars1, chars2, appHeight, rellax;
+const isBot = /bot|crawler|spider|crawling/i.test(navigator.userAgent);
 
 function Header(props) {
   const [hasScrolled, setHasScrolled] = React.useState(null);
@@ -22,8 +23,8 @@ function Header(props) {
 
   React.useLayoutEffect(() => {
     appHeight = document.querySelector('#app').offsetHeight;
-    prepareCharAnim1();
-    prepareCharAnim2();
+    if (!isBot) prepareCharAnim1();
+    if (!isBot) prepareCharAnim2();
   }, []);
 
   React.useEffect(() => {
@@ -42,7 +43,7 @@ function Header(props) {
   }, [isIntersecting]);
 
   React.useEffect(() => {
-    if (hasScrolled) chars2.forEach((el, index) => {
+    if (hasScrolled && !isBot) chars2.forEach((el, index) => {
       const tweenedVal = tweens.easeOutSine(scrollY  * charAnims[index][2], 0, appHeight, appHeight);
       const newTranslateStyle = charAnims[index][0].replace('$', - Math.abs(tweenedVal / 3));
       const newRotateStyle = charAnims[index][1].replace('$', tweenedVal / 20);

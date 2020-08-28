@@ -1,5 +1,6 @@
 import React from 'react';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import TwitterIcon from '@material-ui/icons/Twitter';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import ReorderIcon from '@material-ui/icons/Reorder';
 import Classnames from 'classnames';
@@ -34,6 +35,10 @@ function Contact(props) {
             target="_blank" aria-label="LinkedIn" className="social-icon" alt="LinkedIn">
             <LinkedInIcon fontSize={'large'} />
           </a>
+          <a href="https://twitter.com/riccardolardi" rel="noopener noreferrer" 
+            target="_blank" aria-label="Twitter" className="social-icon" alt="Twitter">
+            <TwitterIcon fontSize={'large'} />
+          </a>
           <a href="https://github.com/riccardolardi" rel="noopener noreferrer" 
             target="_blank" aria-label="GitHub" className="social-icon" alt="GitHub">
             <GitHubIcon fontSize={'large'} />
@@ -45,17 +50,17 @@ function Contact(props) {
         </div>
         <div className="image">
           <div className="logo">
-            <span className={`logo-symbol box rellax`} data-rellax-speed={4}>
+            <span className={`logo-symbol box`}>
               <svg height="256" width="256" viewBox="0 0 256 256">
                 <rect width="256" height="256" />
               </svg>
             </span>
-            <span className={`logo-symbol triangle rellax`} data-rellax-speed={1}>
+            <span className={`logo-symbol triangle`}>
               <svg height="256" width="256" viewBox="0 0 256 256">
                 <polygon points="128,0 0,256 256,256" />
               </svg>
             </span>
-            <span className={`logo-symbol circle rellax`} data-rellax-speed={-2}>
+            <span className={`logo-symbol circle`}>
               <svg height="256" width="256" viewBox="0 0 256 256">
                 <circle cx="128" cy="128" r="128" />
               </svg>
