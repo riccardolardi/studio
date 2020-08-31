@@ -56,7 +56,7 @@ function Project(props) {
               </li>
               <li className="tag product-link"><LinkIcon fontSize={'small'} />
                 <a className="link" rel="noopener noreferrer" target="_blank" 
-                  href="http://2020-gatsby.sommernachts-ball.ch">http://www.sommernachts-ball.ch
+                  href="http://www.sommernachts-ball.ch">http://www.sommernachts-ball.ch
                 </a>
               </li>
             </ul>
