@@ -6,7 +6,6 @@ import {
 } from 'body-scroll-lock';
 import { 
   useWindowScroll, 
-  createBreakpoint, 
   usePrevious, 
   useDebounce
  } from 'react-use';
@@ -25,10 +24,6 @@ import Project from './Project.js';
 import './App.scss';
 
 const data = require('./data.json');
-const useBreakpoint = createBreakpoint({
-  mobile: 768, 
-  other: 769
-});
 
 let intersectionObserver, blockEls;
 const slugs = ['/', 'profile', 'work', 'contact'];
@@ -45,7 +40,6 @@ function App() {
   const prevBlockIndex = usePrevious(activeBlockIndex);
   const { y: scrollY } = useWindowScroll();
   const throttledScrollY = useThrottle(scrollY, 5);
-  const isMobile = useBreakpoint() === 'mobile';
 
   useDebounce(() => {
     if (statePopped) {
@@ -83,13 +77,11 @@ function App() {
       threshold: Array.from({length: 100}, (x, i) => i * 0.01)
     });
     blockEls.forEach(el => intersectionObserver.observe(el));
-    moveToBlock(slugs.indexOf(trimSlashes(window.location.pathname)), true);
+    moveToBlock(slugs.indexOf(trimSlashes(window.location.pathname)));
     if (window.location.pathname.includes('/work/')) {
       const projectSlug = window.location.pathname.replace('/work/', '');
-      const projectIndex = Array.from(document.querySelectorAll('#work article')).findIndex(el => {
-        return el.querySelector('a').getAttribute('href').replace('/work/', '') === projectSlug;
-      });
-      setOpenProjectId(projectIndex);
+      const projectIndex = document.querySelector('#work article[data-slug="'+projectSlug+'"]').getAttribute('data-index');
+      setOpenProjectId(parseInt(projectIndex));
     }
     window.addEventListener('popstate', event => onHistoryPopState(event));
     setActiveLang(getBrowserLocales({languageCodeOnly: true})[0] === 'de' ? 0 : 1);
@@ -107,7 +99,7 @@ function App() {
   }, [activeLang]);
 
   React.useEffect(() => {
-    if (isMenuOpen && isMobile) {
+    if (isMenuOpen && window.innerWidth <= 768) {
       disableBodyScroll(document.querySelector('#nav'));
     } else if (openProjectId !== null) {
       disableBodyScroll(document.querySelector('#project'));
@@ -119,18 +111,19 @@ function App() {
 
   function onHistoryPopState(event) {
     setStatePopped(true);
-    moveToBlock(event.state.type === 'main' ? event.state.index : 3, true);
+    moveToBlock(event.state.type === 'main' ? event.state.index : 3);
     setOpenProjectId(event.state.type === 'project' ? event.state.index : null);
   }
 
-  function moveToBlock(index, force = false) {
+  function moveToBlock(index) {
     if (index < 0) return;
     const newNavDir = index > activeBlockIndex ? 'down' : 'up';
     setNavigatingDir(newNavDir);
     const elTop = blockEls[index]?.offsetTop;
     const offset = index + 1 < blockEls.length && index > 0 ? 
-      (isMobile ? 0 : window.innerHeight * 0.3) : 0;
+      (window.innerWidth <= 768 ? 0 : window.innerHeight * 0.3) : 0;
     setTimeout(() => {
+      console.log(window.innerWidth <= 768)
       window.scrollTo(0, elTop - offset);
       setNavigatingDir(null);
       if (window.innerWidth <= 768) setTimeout(() => setIsMenuOpen(false), 125);
@@ -194,7 +187,6 @@ function App() {
         setIsMenuOpen={setIsMenuOpen} 
         isMenuOpen={isMenuOpen} 
         activeBlockIndex={activeBlockIndex} 
-        isMobile={isMobile} 
         activeLang={activeLang} 
         setActiveLang={setActiveLang} 
         moveToBlock={moveToBlock} 

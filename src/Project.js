@@ -265,8 +265,8 @@ function Project(props) {
             <p dangerouslySetInnerHTML={{__html: data.project[4].Description3[activeLang]}} />
           </div>
           <div className="images">
-            <LazyImage width={1200} height={675} src={require('./img/hyundai/hyundai1.jpg')} alt="hyundai" label="Via iart AG" />
-            <LazyImage width={1200} height={675} src={require('./img/hyundai/hyundai2.jpg')} alt="hyundai" label="Via iart AG" />
+            <LazyImage width={1200} height={675} src={require('./img/hyundai/hyundai1.jpg')} alt="hyundai" label="Via Luke Hayes, Asif Khan" />
+            <LazyImage width={1200} height={675} src={require('./img/hyundai/hyundai2.jpg')} alt="hyundai" label="Via Luke Hayes, Asif Khan" />
           </div>
         </section>
         <section className="image-left">
@@ -274,7 +274,7 @@ function Project(props) {
             <p dangerouslySetInnerHTML={{__html: data.project[4].Description4[activeLang]}} />
           </div>
           <div className="images">  
-            <LazyImage width={1200} height={675} src={require('./img/hyundai/hyundai3.jpg')} alt="hyundai" label="Via iart AG" />
+            <LazyImage width={1200} height={675} src={require('./img/hyundai/hyundai3.jpg')} alt="hyundai" label="Via Luke Hayes, Asif Khan" />
           </div>
         </section>
         <section>
@@ -312,30 +312,33 @@ function Project(props) {
                 </a>
               </li>
             </ul>
-            <p dangerouslySetInnerHTML={{__html: data.project[5].Description2[activeLang]}} />
-            <p dangerouslySetInnerHTML={{__html: data.project[5].Description3[activeLang]}} />
           </div>
           <div className="images">
             <LazyImage width={1200} height={675} src={require('./img/boston/boston1.jpg')} alt="boston" label="Via iart AG" />
-            <LazyImage width={1200} height={675} src={require('./img/boston/boston7.jpg')} alt="boston" label="Via iart AG" />
           </div>
         </section>
-        <section className="image-left">
+        <section className="text-center">
+          <div className="text">
+            <p dangerouslySetInnerHTML={{__html: data.project[5].Description2[activeLang]}} />
+            <p dangerouslySetInnerHTML={{__html: data.project[5].Description3[activeLang]}} />
+          </div>
+        </section>
+        <section className="text-center">
           <div className="text">
             <p dangerouslySetInnerHTML={{__html: data.project[5].Description4[activeLang]}} />
             <p dangerouslySetInnerHTML={{__html: data.project[5].Description5[activeLang]}} />
           </div>
-          <div className="images">  
+          {/*<div className="images">  
             <LazyImage width={683} height={1024} src={require('./img/boston/boston2.jpg')} alt="boston" label="Via iart AG" />
-          </div>
+          </div>*/}
         </section>
-        <section>
+        <section className="text-center">
           <div className="text">
             <p dangerouslySetInnerHTML={{__html: data.project[5].Description6[activeLang]}} />
           </div>
-          <div className="images">  
+          {/*<div className="images">  
             <LazyImage width={683} height={1024} src={require('./img/boston/boston5.jpg')} alt="boston" label="Via iart AG" />
-          </div>
+          </div>*/}
         </section>
       </article>}
       {openProjectId === 6 && <article>
@@ -396,7 +399,7 @@ function Project(props) {
             <p dangerouslySetInnerHTML={{__html: data.project[6].Description6[activeLang]}} />
           </div>
           <div className="images">
-            <LazyImage width={1024} height={768} src={require('./img/armory/armory6.jpg')} alt="armory" label="Via iart AG" />
+            <LazyImage width={1024} height={768} src={require('./img/armory/armory6.jpg')} alt="armory" label="" />
           </div>
         </section>
       </article>}

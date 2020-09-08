@@ -15,8 +15,6 @@ const imgs = [
   require('./img/maersk/maersk1.jpg')
 ];
 
-let articleEls;
-
 function Work(props) {
   const { 
     index, 
@@ -27,15 +25,11 @@ function Work(props) {
     intersecting: isIntersecting 
   } = props;
 
-  React.useLayoutEffect(() => {
-    articleEls = Array.from(document.querySelectorAll('#work article'));
-  }, []);
-
   function onProjectClicked(index = 0, event) {
     if (event) event.preventDefault();
     setOpenProjectId(index);
-    const title = articleEls[index].querySelector('h4').textContent;
-    const slug = articleEls[index].querySelector('a').getAttribute('href').replace('/work/', '');
+    const title = data.project[index].title;
+    const slug = data.project[index].slug;
     window.history.pushState({
       type: 'project',
       index: index,
@@ -52,7 +46,7 @@ function Work(props) {
   return (
     <section id="work" className={classes} data-index={index}>
       <h3 className="bold">{data.work.Title[activeLang]}</h3>
-      <article className="with-image image-right">
+      <article className="with-image image-right" data-slug="sommernachts-ball" data-index="0">
         <div className="text">
           <span className="char divider divider-right">
             <span />
@@ -69,7 +63,7 @@ function Work(props) {
           <LazyImage width={1024} height={956} src={imgs[0]} alt="Sommernachts-Ball" />
         </div>
       </article>
-      <article className="with-image image-left">
+      <article className="with-image image-left" data-slug="stephanwalter" data-index="1">
         <div className="text">
           <span className="char divider">
             <span />
@@ -86,7 +80,7 @@ function Work(props) {
           <LazyImage width={1024} height={956} src={imgs[1]} alt="Stephan Walter" />
         </div>
       </article>
-      <article className="with-image image-right">
+      {/*<article className="with-image image-right" data-slug="ioc" data-index="2">
         <div className="text">
           <span className="char divider divider-right">
             <span />
@@ -102,8 +96,8 @@ function Work(props) {
         <div className="image">
           <LazyImage width={1024} height={1010} src={imgs[2]} alt="IOC MapTool" />
         </div>
-      </article>
-      <article className="with-image image-left">
+      </article>*/}
+      {/*<article className="with-image image-left" data-slug="mplus" data-index="3">
         <div className="text">
           <span className="char divider">
             <span />
@@ -119,8 +113,8 @@ function Work(props) {
         <div className="image">
           <LazyImage width={1024} height={1010} src={imgs[3]} alt="Simulation M+ Museum" />
         </div>
-      </article>
-      <article className="with-image image-right">
+      </article>*/}
+      <article className="with-image image-right" data-slug="hyundai" data-index="4">
         <div className="text">
           <span className="char divider divider-right">
             <span />
@@ -137,7 +131,7 @@ function Work(props) {
           <LazyImage width={1200} height={675} src={imgs[4]} alt="Hyundai Olympic Pavilion" />
         </div>
       </article>
-      <article className="with-image image-left">
+      <article className="with-image image-left" data-slug="boston" data-index="5">
         <div className="text">
           <span className="char divider">
             <span />
@@ -154,7 +148,7 @@ function Work(props) {
           <LazyImage width={1200} height={675} src={imgs[5]} alt="Harvard Square Theatre Facade" />
         </div>
       </article>
-      <article className="with-image image-right">
+      <article className="with-image image-right" data-slug="armory" data-index="6">
         <div className="text">
           <span className="char divider divider-right">
             <span />
@@ -171,7 +165,7 @@ function Work(props) {
           <LazyImage width={1200} height={675} src={imgs[6]} alt="Hansel & Gretel" />
         </div>
       </article>
-      <article className="with-image image-left">
+      {/*<article className="with-image image-left" data-slug="maersk" data-index="7">
         <div className="text">
           <span className="char divider">
             <span />
@@ -187,7 +181,7 @@ function Work(props) {
         <div className="image">
           <LazyImage width={1980} height={1320} src={imgs[7]} alt="Maersk Visitor Centre" />
         </div>
-      </article>
+      </article>*/}
     </section>
   );
 }

@@ -80,6 +80,14 @@
       }
     }
 
+    &.text-center {
+      margin-bottom: $pad * 0.5;
+
+      .text {
+        width: 66.666%;
+      }
+    }
+
     .text {
       position: relative;
       width: 42%;

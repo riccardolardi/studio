@@ -12,7 +12,6 @@ let activeBar1El, activeBar2El, menuLiEls, langLiEls;
 function Nav(props) {
 	const {
 		activeBlockIndex, 
-		isMobile, 
 		show, 
 		isMenuOpen, 
 		projectOpen, 
@@ -70,7 +69,7 @@ function Nav(props) {
 			liElDimsV[0] / activeLiEl.parentElement.parentElement.offsetHeight * 100, 
 			liElDimsV[1] / activeLiEl.parentElement.parentElement.offsetHeight * 100
 		];
-		if (isMobile) {
+		if (window.innerWidth <= 768) {
 			setTimeout(() => activeBar.style.top = `${percentV[0]}%`, dir === 'left' ? 0 : delay);
 			setTimeout(() => activeBar.style.bottom = `${percentV[1]}%`, dir === 'left' ? delay : 0);
 		} else {
