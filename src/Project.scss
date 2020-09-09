@@ -85,6 +85,10 @@
 
       .text {
         width: 66.666%;
+
+        @include breakpoint($breakMobile) {
+          width: 100%;
+        }
       }
     }
 

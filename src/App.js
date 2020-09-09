@@ -1,10 +1,6 @@
 import React from 'react';
 import Classnames from 'classnames';
 import { 
-  clearAllBodyScrollLocks, 
-  disableBodyScroll 
-} from 'body-scroll-lock';
-import { 
   useWindowScroll, 
   usePrevious, 
   useDebounce
@@ -80,8 +76,8 @@ function App() {
     moveToBlock(slugs.indexOf(trimSlashes(window.location.pathname)));
     if (window.location.pathname.includes('/work/')) {
       const projectSlug = window.location.pathname.replace('/work/', '');
-      const projectIndex = document.querySelector('#work article[data-slug="'+projectSlug+'"]').getAttribute('data-index');
-      setOpenProjectId(parseInt(projectIndex));
+      const projectIndex = document.querySelector('#work article[data-slug="'+projectSlug+'"]')?.getAttribute('data-index');
+      if (projectIndex) setOpenProjectId(parseInt(projectIndex));
     }
     window.addEventListener('popstate', event => onHistoryPopState(event));
     setActiveLang(getBrowserLocales({languageCodeOnly: true})[0] === 'de' ? 0 : 1);
@@ -99,12 +95,10 @@ function App() {
   }, [activeLang]);
 
   React.useEffect(() => {
-    if (isMenuOpen && window.innerWidth <= 768) {
-      disableBodyScroll(document.querySelector('#nav'));
-    } else if (openProjectId !== null) {
-      disableBodyScroll(document.querySelector('#project'));
+    if ((isMenuOpen && window.innerWidth <= 768) || openProjectId !== null) {
+      document.querySelector('body').classList.add('locked');
     } else {
-      clearAllBodyScrollLocks();
+      document.querySelector('body').classList.remove('locked');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMenuOpen, openProjectId]);
@@ -123,7 +117,6 @@ function App() {
     const offset = index + 1 < blockEls.length && index > 0 ? 
       (window.innerWidth <= 768 ? 0 : window.innerHeight * 0.3) : 0;
     setTimeout(() => {
-      console.log(window.innerWidth <= 768)
       window.scrollTo(0, elTop - offset);
       setNavigatingDir(null);
       if (window.innerWidth <= 768) setTimeout(() => setIsMenuOpen(false), 125);

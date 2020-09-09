@@ -74,6 +74,9 @@ body {
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   overscroll-behavior: none;
+  &.locked {
+  	overflow: hidden;
+  }
 }
 ::-webkit-scrollbar {
   width: 0px;
