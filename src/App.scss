@@ -237,7 +237,7 @@
     h3 {
       position: fixed;
       top: $pad * 3.7;
-      left: $pad * 1.4;
+      left: $pad;
       opacity: 0;
       transform: translateX(-2vw);
       transition: opacity 125ms 0ms, transform 0ms 125ms;
