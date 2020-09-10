@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'BuenosAiresRegular';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/BuenosAiresWeb-Regular.eot');
+  src: url('/fonts/BuenosAiresWeb-Regular.woff2') format('woff2'),
+       url('/fonts/BuenosAiresWeb-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BuenosAiresBold';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/BuenosAiresWeb-Bold.eot');
+  src: url('/fonts/BuenosAiresWeb-Bold.woff2') format('woff2'),
+       url('/fonts/BuenosAiresWeb-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'AssemblyHumanOne';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/AssemblyHumanOneWeb-Regular.eot');
+  src: url('/fonts/AssemblyHumanOneWeb-Regular.woff2') format('woff2'),
+       url('/fonts/AssemblyHumanOneWeb-Regular.woff') format('woff');
+}
+
+body {
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(1.14em + 0.4vmax);
+  line-height: calc(1.14em + 0.4vmax);
+  font-feature-settings: "dlig", "ss01";
+  letter-spacing: calc(-0.015em + 0.14px);
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  font-kerning: normal;
+  font-variant-ligatures: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-main {
+  font-family: 'BuenosAiresRegular', sans-serif;
+}
+
+.font-bold {
+  font-family: 'BuenosAiresBold', sans-serif;
+}
+
+.font-symbol {
+  font-family: 'AssemblyHumanOne';
+}
+
+.font-large {
+  font-size: calc(2.14em + 0.4vmax);
+  line-height: 132%;
+}
+
+.font-tight {
+  line-height: calc(1.14em + 0.4vmax);
+}
+
+.font-cite {
+  font-feature-settings: normal;
+}

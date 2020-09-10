@@ -1,0 +1,10 @@
+.block {
+	min-height: 100vh;
+	padding: $pad * 2;
+
+	&.block-centered {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
