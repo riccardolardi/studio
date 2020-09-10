@@ -67,7 +67,10 @@
 		]
 	},
 	"contact": {
-
+		"Title": [
+			"Kontakt",
+			"Contact"
+		],
 	},
 	"nav": {
 		"Profile": [

@@ -10,7 +10,9 @@ function Contact(props) {
   const { 
     index, 
     active: isActive, 
-    intersecting: isIntersecting 
+    intersecting: isIntersecting, 
+    activeLang, 
+    data 
   } = props;
 
   const classes = Classnames({
@@ -21,7 +23,7 @@ function Contact(props) {
 
   return (
     <section id="contact" className={classes} data-index={index}>
-      <h3 className="bold">Kontakt</h3>
+      <h3 className="bold">{data.contact.Title[activeLang]}</h3>
       <article className="with-image image-right">
         <div className="text">
           <span className="char divider divider-left">

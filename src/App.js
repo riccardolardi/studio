@@ -169,6 +169,8 @@ function App() {
         index={3} 
         active={activeBlockIndex === 3} 
         intersecting={intersectingBlockIndexes.includes(3)} 
+        activeLang={activeLang} 
+        data={data} 
       />
       {openProjectId !== null && <Project 
         openProjectId={openProjectId} 
