@@ -1,17 +1,15 @@
 <script>
+	import Block from '../components/Block.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
 		const observeIntersectionEls = Array.from(document.querySelectorAll('.observe-intersection'));
     const intersectionObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-      	if (entry.isIntersecting) {
-      		entry.target.classList.add('intersecting');
-      	} else {
-      		entry.target.classList.remove('intersecting');
-      	}
-        if (entry.intersectionRect.height >= entry.rootBounds.height * 0.5) {
-          // ...
+        if (entry.isIntersecting && entry.intersectionRect.top <= entry.rootBounds.height * 0.75) {
+          entry.target.classList.add('intersecting');
+        } else {
+        	entry.target.classList.remove('intersecting');
         }
       });
     }, {
@@ -23,18 +21,6 @@
 
 <style type="text/scss">
 	@import "../styles/var.scss";
-
-	#home {
-		
-	}
-
-	#services {
-
-	}
-
-	.blend {
-		mix-blend-mode: overlay;
-	}
 
 	.roll-in {
 		transform: translateX(-$pad);
@@ -53,12 +39,12 @@
 </svelte:head>
 
 <article id="home">
-	<div class="block block-centered">
-		<h1 class="font-bold font-large font-tight blend observe-intersection">Studio <br/>Riccardo <br/>Lardi</h1>
-	</div>
-	<div class="block block-centered">
-		<h2 class="font-large font-cite blend observe-intersection roll-in">A Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space.</h2>
-	</div>
+	<Block centered={true}>
+		<h1 class="font-bold font-large font-tight blend">Studio <br/>Riccardo <br/>Lardi</h1>
+	</Block>
+	<Block centered={true}>
+		<h2 class="font-large font-cite observe-intersection roll-in blend">A Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space.</h2>
+	</Block>
 </article>
 
 <article id="services">

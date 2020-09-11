@@ -81,7 +81,7 @@
 	}
 </style>
 
-<nav class="font-main {segment ? 'show' : undefined}">
+<nav class="font-main blend{segment ? ' show' : ''}">
 	<ul class="nav-items">
 		<li><a aria-current="{segment === 'services' ? 'page' : undefined}" href="services">Services</a></li>
 		<li><a aria-current="{segment === 'work' ? 'page' : undefined}" href="work">Work</a></li>
