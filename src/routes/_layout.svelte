@@ -62,6 +62,10 @@
 		opacity: 0;
 		transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 
+		&.align-right {
+			transform: translateX($pad);
+		}
+
 		:global(&.triggered) {
 			transform: translateX(0);
 			opacity: 1;

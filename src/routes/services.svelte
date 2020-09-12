@@ -39,7 +39,7 @@
 </svelte:head>
 
 <ClientModule indexRequest={indexRequest}>
-	<article id="services" class="observe-intersection roll-in" data-index="1">
+	<article id="services" class="observe-intersection fade-in" data-index="1">
 		<Block>
 			<h1 class="font-large font-bold">Services</h1>
 			<h2 class="font-large font-cite">We create, simplify and make things work.</h2>

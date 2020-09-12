@@ -21,8 +21,8 @@
           	entries.filter(el => el.isIntersecting && el.target.nodeName === 'ARTICLE' && 
           		el.intersectionRect.top <= el.rootBounds.height * 0.75)
           			.map(el => el.target);
-          if (entry.target.classList.contains('roll-in') && 
-          	entry.intersectionRect.top <= entry.rootBounds.height * 0.75) {
+          if ((entry.target.classList.contains('fade-in') && entry.intersectionRatio > 0.25) || 
+          	(entry.target.classList.contains('roll-in') && entry.intersectionRatio > 0.5)) {
           	entry.target.classList.add('triggered');
           } else {
           	entry.target.classList.remove('triggered');
