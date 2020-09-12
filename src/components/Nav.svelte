@@ -1,5 +1,10 @@
 <script>
-	export let segment;
+	export let slug;
+
+	function handleClick(event) {
+		const url = event.target.getAttribute('href');
+		document.querySelector(`article#${url}`).scrollIntoView();
+	}
 </script>
 
 <style type="text/scss">
@@ -12,6 +17,7 @@
 		top: $pad;
 		right: $pad;
 		opacity: 0;
+		transition: all 250ms;
 
 		&.show {
 			opacity: 1;
@@ -81,12 +87,20 @@
 	}
 </style>
 
-<nav class="font-main blend{segment ? ' show' : ''}">
+<nav class="font-main{$slug ? ' show' : ''}">
 	<ul class="nav-items">
-		<li><a aria-current="{segment === 'services' ? 'page' : undefined}" href="services">Services</a></li>
-		<li><a aria-current="{segment === 'work' ? 'page' : undefined}" href="work">Work</a></li>
-		<li><a aria-current="{segment === 'profile' ? 'page' : undefined}" href="profile">Profile</a></li>
-		<li><a aria-current="{segment === 'contact' ? 'page' : undefined}" href="contact">Contact</a></li>
+		<li class="{$slug === 'services' ? 'active' : ''}">
+			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'services' ? 'page' : undefined}" href="services">Services</a>
+		</li>
+		<li class="{$slug === 'work' ? 'active' : ''}">
+			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'work' ? 'page' : undefined}" href="work">Work</a>
+		</li>
+		<li class="{$slug === 'profile' ? 'active' : ''}">
+			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'profile' ? 'page' : undefined}" href="profile">Profile</a>
+		</li>
+		<li class="{$slug === 'contact' ? 'active' : ''}">
+			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'contact' ? 'page' : undefined}" href="contact">Contact</a>
+		</li>
 	</ul>
 	<ul class="lang-select">
 		<li><button>DE</button></li>
