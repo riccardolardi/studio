@@ -19,7 +19,7 @@
           entry.target.classList.add('intersecting');
           intersectingArticles = 
           	entries.filter(el => el.isIntersecting && el.target.nodeName === 'ARTICLE' && 
-          		el.intersectionRect.top <= el.rootBounds.height * 0.5)
+          		el.intersectionRect.top <= el.rootBounds.height * 0.75)
           			.map(el => el.target);
           if (entry.target.classList.contains('roll-in') && 
           	entry.intersectionRect.top <= entry.rootBounds.height * 0.75) {
@@ -61,7 +61,7 @@
 		<h1 class="font-bold font-large font-tight">Studio <br/>Riccardo <br/>Lardi</h1>
 	</Block>
 	<Block centered={true}>
-		<h2 class="font-large font-cite observe-intersection roll-in">A Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space.</h2>
+		<h2 class="font-large font-cite observe-intersection roll-in"><span class="font-bold">Hoi!</span> <br/>This is a Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space.</h2>
 	</Block>
 </article>
 

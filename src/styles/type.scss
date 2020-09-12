@@ -52,10 +52,17 @@ body {
 
 .font-symbol {
   font-family: 'AssemblyHumanOne';
+  font-size: calc(4.14em + 0.4vmax);
+  line-height: 100%;
 }
 
 .font-large {
   font-size: calc(2.14em + 0.4vmax);
+  line-height: 132%;
+}
+
+.font-small {
+  font-size: calc(0.55em + 0.4vmax);
   line-height: 132%;
 }
 
@@ -65,4 +72,9 @@ body {
 
 .font-cite {
   font-feature-settings: normal;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
 }

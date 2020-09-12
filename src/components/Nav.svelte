@@ -17,7 +17,7 @@
 		top: $pad;
 		right: $pad;
 		opacity: 0;
-		transition: all 250ms;
+		transition: opacity 250ms;
 
 		&.show {
 			opacity: 1;
@@ -87,7 +87,7 @@
 	}
 </style>
 
-<nav class="font-main{$slug ? ' show' : ''}">
+<nav class="font-main {$slug ? ' show' : ''}">
 	<ul class="nav-items">
 		<li class="{$slug === 'services' ? 'active' : ''}">
 			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'services' ? 'page' : undefined}" href="services">Services</a>

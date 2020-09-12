@@ -29,11 +29,24 @@
 
 	 	&.past-intro {
 		 	background-color: $white;
+
+		 	header {
+		 		opacity: 1;
+		 	}
 	 	}
 	}
 
 	main {
 		position: relative;
+	}
+
+	header {
+		position: fixed;
+		top: $pad;
+		left: $pad;
+		opacity: 0;
+		transition: opacity 250ms;
+		z-index: 10;
 	}
 
 	.blend {
@@ -47,10 +60,19 @@
 	.roll-in {
 		transform: translateX(-$pad);
 		opacity: 0;
-		transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+		transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 
 		:global(&.triggered) {
 			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	.fade-in {
+		opacity: 0;
+		transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+		:global(&.triggered) {
 			opacity: 1;
 		}
 	}
@@ -58,6 +80,7 @@
 
 <BG {slug} />
 <main class="font-main{$slug ? '' : ' blend'}">
+	<header class="font-small font-bold"><a href="/">Studio <br/>Riccardo <br/>Lardi</a></header>
 	<slot></slot>
 </main>
 <Nav {slug} />

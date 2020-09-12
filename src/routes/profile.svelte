@@ -8,6 +8,10 @@
 	@import "../styles/var.scss";
 </style>
 
+<svelte:head>
+	<title>Profile - Studio Riccardo Lardi</title>
+</svelte:head>
+
 <ClientModule indexRequest={indexRequest}>
 	<article id="profile" class="observe-intersection" data-index="3">
 		<Block centered={true}>
