@@ -14,23 +14,25 @@
 	onMount(() => {
 		const observeIntersectionEls = Array.from(document.querySelectorAll('.observe-intersection'));
     const intersectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('intersecting');
-          intersectingArticles = 
-          	entries.filter(el => el.isIntersecting && el.target.nodeName === 'ARTICLE' && 
-          		el.intersectionRect.top <= el.rootBounds.height * 0.75)
-          			.map(el => el.target);
-          if ((entry.target.classList.contains('fade-in') && entry.intersectionRatio > 0.25) || 
-          	(entry.target.classList.contains('roll-in') && entry.intersectionRatio > 0.5)) {
-          	entry.target.classList.add('triggered');
-          } else {
-          	entry.target.classList.remove('triggered');
-          }
-        } else {
-        	entry.target.classList.remove('intersecting');
-        }
-      });
+    	entries.forEach(entry => {
+    		entry.isIntersecting ? entry.target.classList.add('intersecting') : 
+    			entry.target.classList.remove('intersecting');
+    		intersectingArticles = 
+        	entries.filter(el => el.isIntersecting && el.target.nodeName === 'ARTICLE' && 
+        		el.intersectionRect.top <= el.rootBounds.height * 0.75)
+        			.map(el => el.target);
+				(entry.isIntersecting && 
+					entry.target.classList.contains('fade-in') && 
+					entry.intersectionRatio > 0.25) || 
+				(entry.isIntersecting && 
+					entry.target.classList.contains('roll-in') && 
+					entry.intersectionRatio > 0.5) ? 
+				entry.target.classList.add('triggered') : 
+				entry.target.classList.remove('triggered');
+				if (entry.target.classList.contains('triggered') && 
+					entry.target.classList.contains('trigger-once')) 
+					intersectionObserver.unobserve(entry.target);
+    	});
     }, {
       threshold: Array.from({length: 1000}, (x, i) => i * 0.001)
     });
@@ -61,7 +63,7 @@
 		<h1 class="font-bold font-large font-tight">Studio <br/>Riccardo <br/>Lardi</h1>
 	</Block>
 	<Block centered={true}>
-		<h2 class="font-large font-cite observe-intersection roll-in"><span class="font-bold">Hoi!</span> <br/>This is a Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space.</h2>
+		<h2 class="font-large font-cite observe-intersection roll-in trigger-once hyphens">This is a Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space.</h2>
 	</Block>
 </article>
 

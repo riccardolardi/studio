@@ -1,5 +1,5 @@
 <script>
-	export let centered;
+	export let centered = false;
 </script>
 
 <style type="text/scss">

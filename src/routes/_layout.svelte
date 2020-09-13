@@ -11,7 +11,8 @@
 	onMount(() => {
 		if (segment) {
 			setTimeout(() => {
-				document.querySelector(`article#${segment}`).scrollIntoView();
+				const el = document.querySelector(`article#${segment}`);
+				window.scrollTo(0, el.offsetTop - window.innerHeight * 0.1);
 			}, 1000); // super hacky 🤷‍♂️
 		}
 	});
@@ -51,6 +52,10 @@
 
 	.blend {
 		mix-blend-mode: overlay;
+	}
+
+	.hyphens {
+		hyphens: auto;
 	}
 
 	#home {

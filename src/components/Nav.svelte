@@ -3,7 +3,8 @@
 
 	function handleClick(event) {
 		const url = event.target.getAttribute('href');
-		document.querySelector(`article#${url}`).scrollIntoView();
+		const el = document.querySelector(`article#${url}`);
+		window.scrollTo(0, el.offsetTop - window.innerHeight * 0.15);
 	}
 </script>
 
@@ -87,7 +88,7 @@
 	}
 </style>
 
-<nav class="font-main {$slug ? ' show' : ''}">
+<nav class="font-main font-small font-bold {$slug ? ' show' : ''}">
 	<ul class="nav-items">
 		<li class="{$slug === 'services' ? 'active' : ''}">
 			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'services' ? 'page' : undefined}" href="services">Services</a>
