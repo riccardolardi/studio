@@ -4,68 +4,6 @@
 	export let indexRequest = false;
 </script>
 
-<style type="text/scss" global>
-	@import "../styles/var.scss";
-
-	#services {
-
-		h2 {
-			padding-right: $pad * 8;
-		}
-	}
-
-	.services-list {
-		padding: $pad * 2 0;
-
-		.single-service {
-			display: flex;
-			align-items: center;
-			margin-bottom: $pad * 2;
-			padding: 0 $pad * 3 0 0;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-
-			&.align-right {
-				flex-direction: row-reverse;
-				padding: 0 0 0 $pad * 3;
-
-				.service-text {
-					text-align: right;
-					margin: 0 $pad 0 0;
-				}
-
-				ul {
-					justify-content: flex-end;
-				}
-			}
-
-			.service-text {
-				margin: 0 0 0 $pad;
-			}
-
-			ul.tags {
-				display: flex;
-				color: $blue;
-				margin-top: $pad * 0.2;
-
-				li {
-					margin-right: $pad * 0.25;
-
-					&:last-child {
-						margin-right: 0;
-					}
-
-					&:before {
-						content: "#";
-					}
-				}
-			}
-		}
-	}
-</style>
-
 <svelte:head>
 	<title>Services - Studio Riccardo Lardi</title>
 </svelte:head>
@@ -76,7 +14,7 @@
 			<h1 class="font-large font-bold">Services</h1>
 			<h2 class="font-large font-cite">We create, simplify and make things work.</h2>
 			<div class="services-list">
-				<div class="single-service observe-intersection roll-in trigger-once">
+				<section class="single-service observe-intersection roll-in">
 					<span role="img" aria-label="Concept & Design" class="icon font-symbol">Z</span>
 					<div class="service-text">
 						<h3 class="font-bold">Concept & Design</h3>
@@ -89,8 +27,8 @@
 							<li>interfaces</li>
 						</ul>
 					</div>
-				</div>
-				<div class="single-service align-right observe-intersection roll-in trigger-once">
+				</section>
+				<section class="single-service align-right observe-intersection roll-in">
 					<span role="img" aria-label="Code & Development" class="icon font-symbol">%</span>
 					<div class="service-text">
 						<h3 class="font-bold">Code & Development</h3>
@@ -103,8 +41,8 @@
 							<li>native</li>
 						</ul>
 					</div>
-				</div>
-				<div class="single-service observe-intersection roll-in trigger-once">
+				</section>
+				<section class="single-service observe-intersection roll-in">
 					<span role="img" aria-label="Consulting & Education" class="icon font-symbol">ù</span>
 					<div class="service-text">
 						<h3 class="font-bold">Consulting & Education</h3>
@@ -117,7 +55,7 @@
 							<li>prototyping</li>
 						</ul>
 					</div>
-				</div>
+				</section>
 			</div>
 		</Block>
 	</article>

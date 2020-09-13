@@ -74,6 +74,10 @@ body {
   font-feature-settings: normal;
 }
 
+.link {
+  border-bottom: $pad * 0.1 solid $black;
+}
+
 a {
   text-decoration: none;
   color: unset;
