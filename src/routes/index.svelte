@@ -15,18 +15,13 @@
 		const observeIntersectionEls = Array.from(document.querySelectorAll('.observe-intersection'));
     const intersectionObserver = new IntersectionObserver(entries => {
     	entries.forEach(entry => {
+    		intersectingArticles = recalcIntersectingArticles(entry);
     		entry.isIntersecting ? entry.target.classList.add('intersecting') : 
     			entry.target.classList.remove('intersecting');
-    		intersectingArticles = 
-        	entries.filter(el => el.isIntersecting && el.target.nodeName === 'ARTICLE' && 
-        		el.intersectionRect.top <= el.rootBounds.height * 0.75)
-        			.map(el => el.target);
 				(entry.isIntersecting && 
-					entry.target.classList.contains('fade-in') && 
-					entry.intersectionRatio > 0.25) || 
+					entry.target.classList.contains('fade-in')) || 
 				(entry.isIntersecting && 
-					entry.target.classList.contains('roll-in') && 
-					entry.intersectionRatio > 0.5) ? 
+					entry.target.classList.contains('roll-in')) ? 
 				entry.target.classList.add('triggered') : 
 				entry.target.classList.remove('triggered');
 				if (entry.target.classList.contains('triggered') && 
@@ -39,9 +34,21 @@
     observeIntersectionEls.forEach(el => intersectionObserver.observe(el));
 	});
 
+	function recalcIntersectingArticles(entry) {
+		if (entry.target.nodeName !== 'ARTICLE') return intersectingArticles;
+    if (entry.isIntersecting) {
+      if (intersectingArticles.includes(entry.target)) return intersectingArticles;
+      return [...intersectingArticles, entry.target];
+    }
+    return intersectingArticles.filter(el => el !== entry.target);
+	}
+
 	function intersectingArticlesChanged() {
 		if (!intersectingArticles.length || !slug) return;
-		const latestEl = intersectingArticles[intersectingArticles.length - 1];
+		const latestEl = intersectingArticles.reduce((a, b) => {
+			return parseInt(a.getAttribute('data-index')) > parseInt(b.getAttribute('data-index')) ? 
+				a : b;
+		});
 		if ($slug === latestEl.id || $slug === undefined && latestEl.id === 'home') return;
 		history.pushState({url: latestEl.id}, `${latestEl.id.toUpperCase()} - Studio Riccardo Lardi`, latestEl.id === 'home' ? '/' : latestEl.id);
 		if (latestEl.id !== 'home') {

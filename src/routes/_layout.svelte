@@ -60,6 +60,10 @@
 
 	#home {
 		color: $white;
+
+		h2 {
+			padding-bottom: $pad * 4;
+		}
 	}
 
 	.roll-in {

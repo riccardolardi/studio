@@ -10,17 +10,18 @@
 	#services {
 
 		h2 {
-			padding-right: $pad * 6;
+			padding-right: $pad * 8;
 		}
 	}
 
 	.services-list {
-		padding: $pad * 2 $pad * 4 0 $pad * 2;
+		padding: $pad * 2 0;
 
 		.single-service {
 			display: flex;
 			align-items: center;
 			margin-bottom: $pad * 2;
+			padding: 0 $pad * 3 0 0;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -28,7 +29,7 @@
 
 			&.align-right {
 				flex-direction: row-reverse;
-				margin-right: -$pad * 3;
+				padding: 0 0 0 $pad * 3;
 
 				.service-text {
 					text-align: right;
