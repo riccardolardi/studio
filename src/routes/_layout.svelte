@@ -1,3 +1,11 @@
+<script context="module">
+  export async function preload(page, session) {
+    const r = await this.fetch('data.json');
+    const data = await r.json();
+    return {data: data};
+  }
+</script>
+
 <script>
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
@@ -5,8 +13,10 @@
 	import BG from '../components/BG.svelte';
 	import Nav from '../components/Nav.svelte';
 	export let segment;
+	export let data;
 	let slug = writable(undefined);
 	setContext('slug', slug);
+	setContext('data', data);
 	
 	onMount(() => {
 		if (segment) {
@@ -15,6 +25,9 @@
 				window.scrollTo(0, el.offsetTop - window.innerHeight * 0.15);
 			}, 1000); // super hacky 🤷‍♂️
 		}
+		window.onpopstate = function(event) {
+			console.log(event);
+		};
 	});
 </script>
 

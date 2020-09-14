@@ -1,0 +1,52 @@
+{
+	"slugs": [
+		{
+			"index": 0,
+			"url": "/",
+			"title": "Design & Code - Studio Riccardo Lardi"
+		},
+		{
+			"index": 1,
+			"url": "services",
+			"title": "Services - Studio Riccardo Lardi"
+		},
+		{
+			"index": 2,
+			"url": "work",
+			"title": "Work - Studio Riccardo Lardi"
+		},
+		{
+			"index": 3,
+			"url": "profile",
+			"title": "Profile - Studio Riccardo Lardi"
+		},
+		{
+			"index": 4,
+			"url": "contact",
+			"title": "Contact - Studio Riccardo Lardi"
+		}
+	],
+	"header": "Studio <br/>Riccardo <br/>Lardi",
+	"slogan": "A Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space.",
+	"articles": [
+		{
+			"index": 0
+		},
+		{
+			"index": 1,
+			"title": "Services"
+		},
+		{
+			"index": 2,
+			"title": "Work"
+		},
+		{
+			"index": 3,
+			"title": "Profile"
+		},
+		{
+			"index": 4,
+			"title": "Contact"
+		}
+	]
+}

@@ -1,11 +1,15 @@
 <script>
+	import { getContext } from 'svelte';
 	import ClientModule from '../components/ClientModule.svelte';
 	import Block from '../components/Block.svelte';
 	export let indexRequest = false;
+	let data = getContext('data');
 </script>
 
 <svelte:head>
-	<title>Services - Studio Riccardo Lardi</title>
+	{#if !indexRequest}
+	<title>{data.slugs[1].title}</title>
+	{/if}
 </svelte:head>
 
 <ClientModule indexRequest={indexRequest}>

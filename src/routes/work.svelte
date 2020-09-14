@@ -1,12 +1,16 @@
 <script>
+	import { getContext } from 'svelte';
 	import ClientModule from '../components/ClientModule.svelte';
 	import Block from '../components/Block.svelte';
 	import LazyImage from '../components/LazyImage.svelte';
 	export let indexRequest = false;
+	let data = getContext('data');
 </script>
 
 <svelte:head>
-	<title>Websites, Apps, Media Architecture - Studio Riccardo Lardi</title>
+	{#if !indexRequest}
+	<title>{data.slugs[2].title}</title>
+	{/if}
 </svelte:head>
 
 <ClientModule indexRequest={indexRequest}>
@@ -18,8 +22,8 @@
 				<section class="single-work observe-intersection roll-in">
 					<LazyImage src="img/gmz1.jpg" width="1024" height="544" alt="This is a label" />
 					<div class="work-text">
+						<span class="font-small work-year">2020</span>
 						<h3 class="font-bold">Migros Sommernachts-Ball</h3>
-						<span class="font-small work-year">2020</span>, 
 						<span class="font-small work-link"><a href="http://www.sommernachts-ball.ch" class="link">www.sommernachts-ball.ch</a></span>
 						<p>Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.</p>
 						<ul class="tags font-small">
@@ -32,8 +36,8 @@
 				<section class="single-work observe-intersection roll-in align-right">
 					<LazyImage src="img/gmz1.jpg" width="1024" height="544" alt="This is a label" />
 					<div class="work-text">
+						<span class="font-small work-year">2020</span>
 						<h3 class="font-bold">Migros Sommernachts-Ball</h3>
-						<span class="font-small work-year">2020</span>, 
 						<span class="font-small work-link"><a href="http://www.sommernachts-ball.ch" class="link">www.sommernachts-ball.ch</a></span>
 						<p>Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.</p>
 						<ul class="tags font-small">

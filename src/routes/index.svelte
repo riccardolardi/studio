@@ -9,6 +9,7 @@
 
 	let intersectingArticles = [];
 	let slug = getContext('slug');
+	let data = getContext('data');
 	$: intersectingArticles, intersectingArticlesChanged();
 
 	onMount(() => {
@@ -41,10 +42,16 @@
 				a : b;
 		});
 		if ($slug === latestEl.id || $slug === undefined && latestEl.id === 'home') return;
-		history.pushState({url: latestEl.id}, `${latestEl.id.toUpperCase()} - Studio Riccardo Lardi`, latestEl.id === 'home' ? '/' : latestEl.id);
-		if (latestEl.id !== 'home') {
+		const url = latestEl.id
+		const index = latestEl.getAttribute('data-index');
+		changeRoute(url, index);
+	}
+
+	function changeRoute(url, index) {
+		history.pushState({index, url}, data.slugs[index].title, data.slugs[index].url);
+		if (url !== 'home') {
 			document.querySelector('body').classList.add('past-intro');
-			slug.set(latestEl.id);
+			slug.set(url);
 		} else {
 			document.querySelector('body').classList.remove('past-intro');
 			slug.set(undefined);
@@ -53,15 +60,19 @@
 </script>
 
 <svelte:head>
-	<title>Design & Code - Studio Riccardo Lardi</title>
+	<title>{data.slugs[0].title}</title>
 </svelte:head>
 
 <article id="home" class="observe-intersection" data-index="0">
 	<Block centered={true}>
-		<h1 class="font-bold font-large font-tight">Studio <br/>Riccardo <br/>Lardi</h1>
+		<h1 class="font-bold font-large font-tight">
+			{@html data.header}
+		</h1>
 	</Block>
 	<Block centered={true}>
-		<h2 class="font-large font-cite observe-intersection roll-in trigger-once hyphens">This is a Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space.</h2>
+		<h2 class="font-large font-cite observe-intersection roll-in trigger-once hyphens">
+			{data.slogan}
+		</h2>
 	</Block>
 </article>
 
