@@ -1,11 +1,10 @@
 .block {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	min-height: 100vh;
 	padding: 0 $pad * 6;
 
 	&.block-centered {
+		display: flex;
+		justify-content: center;
 		align-items: center;
 	}
 }

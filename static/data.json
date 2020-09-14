@@ -34,19 +34,130 @@
 		},
 		{
 			"index": 1,
-			"title": "Services"
+			"title": "Services",
+			"subtitle": "We create, simplify and make things work.",
+			"services": [
+				{
+					"title": "Concept & Design",
+					"icon": "Z",
+					"text": "We think Design is not just about the looks of something but much more how something is built to fulfil a purpose. We use Design to create things that do not only function but also can be loved.",
+					"tags": [
+						"ux/ui",
+						"interactiondesign",
+						"web",
+						"apps",
+						"interfaces"
+					]
+				},
+				{
+					"title": "Code & Development",
+					"icon": "%",
+					"text": "Code is a tool and tools are cool! We build mobile apps, websites, web-apps, desktop applications but also products that are being used in physical space such as interactive media tables or terminals.",
+					"tags": [
+						"react",
+						"vue",
+						"craftcms",
+						"wordpress",
+						"native"
+					]
+				},
+				{
+					"title": "Consulting & Education",
+					"icon": "ù",
+					"text": "Offering consultation, teaching or helping you brainstorm your new business idea, we like to share our expertise and help bringing products to life or to the next level.",
+					"tags": [
+						"designthinking",
+						"agile",
+						"methodology",
+						"spiking",
+						"prototyping"
+					]
+				}
+			]
 		},
 		{
 			"index": 2,
-			"title": "Work"
+			"title": "Work",
+			"subtitle": "Websites, Apps, Media Architecture.",
+			"projects": [
+				{
+					"image": {
+						"src": "img/gmz1.jpg",
+						"width": 1024,
+						"height": 544,
+						"alt": "Migros Sommernachts-Ball"
+					},
+					"year": 2020,
+					"title": "Migros Sommernachts-Ball",
+					"link": {
+						"title": "http://www.sommernachts-ball.ch",
+						"url": "http://www.sommernachts-ball.ch"
+					},
+					"text": "Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.",
+					"client": "Genossenschaftsbund Migros Zürich",
+					"partner": "<a href='http://www.komun.ch' class='link'>Komun</a>",
+					"services": "Code, Consulting, Interaction Design"
+				},
+				{
+					"image": {
+						"src": "img/hyundai1.jpg",
+						"width": 1024,
+						"height": 576,
+						"alt": "Hyundai Pavilion Water Installation",
+						"label": "Image Copyright Luke Hayes"
+					},
+					"year": 2019,
+					"title": "Hyundai Pavilion Water Installation",
+					"link": {
+						"title": "iart project documentation",
+						"url": "https://iart.ch/en/work/hyundai"
+					},
+					"text": "Interactive water installation within the pavilion of Hyundai at the 2018 Winter Olympics in Pyeongchang, South Korea.",
+					"employer": "Under employment at <a href='http://www.iart.ch' class='link'>iart AG</a>",
+					"services": "Concept, Project Planning, Project Management, Commissioning"
+				},
+				{
+					"image": {
+						"src": "img/armory1.jpg",
+						"width": 1024,
+						"height": 576,
+						"alt": "Hansel & Gretel, Armory On Park",
+						"label": "Image Copyright iart AG"
+					},
+					"year": 2018,
+					"title": "Hansel & Gretel, Armory On Park",
+					"link": {
+						"title": "iart project documentation",
+						"url": "https://iart.ch/en/work/hansel-gretel-in-der-park-avenue-armory"
+					},
+					"text": "An interactive and immersive video art installation filling an entire ex-military drill hall in Manhattan NY - referring to the 'digital footprint' that everyone leaves behind, willingly or not.",
+					"employer": "Under employment at <a href='http://www.iart.ch' class='link'>iart AG</a>",
+					"services": "Conception, Media Planning, Code, Commissioning"
+				}
+			]
 		},
 		{
 			"index": 3,
-			"title": "Profile"
+			"title": "Profile",
+			"subtitle": "Who we are.",
+			"paragraphs": [
+				{
+					"text": "Riccardo is an Interaction Designer and holds a BA from Zurich University of the Arts and an MA from Royal College of Art, London. Prior to opening the Studio he has substantially contributed to numerous projects for companies such as <a href='https://www.takram.com' class='link'>Takram</a> (London) and <a href='https://www.iart.ch' class='link'>iart</a> (Basel)."
+				},
+				{
+					"title": "The Process",
+					"text": "The Studio accomplishes projects while accompanying the client throughout the entire process, starting from ideation to prototyping to final product and subsequent launch. The client is included into the iteration loops in a participative and transparent way."
+				},
+				{
+					"title": "The Studio",
+					"text": "While the Studio is mainly led by Riccardo himself, it is part of a varied network of specialists in relevant fields like photography, graphic design, electronics & fabrication etc. which makes for a high degree of agility and flexibility."
+				}
+			]
 		},
 		{
 			"index": 4,
-			"title": "Contact"
+			"title": "Contact",
+			"subtitle": "Get in touch."
 		}
 	]
 }

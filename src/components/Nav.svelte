@@ -3,8 +3,7 @@
 
 	function handleClick(event) {
 		const url = event.target.getAttribute('href');
-		const el = document.querySelector(`article#${url}`);
-		window.scrollTo(0, el.offsetTop - window.innerHeight * 0.15);
+		document.querySelector(`article#${url}`).scrollIntoView();
 	}
 </script>
 

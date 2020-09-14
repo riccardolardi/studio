@@ -5,48 +5,46 @@
 	import LazyImage from '../components/LazyImage.svelte';
 	export let indexRequest = false;
 	let data = getContext('data');
+	let index = 2;
 </script>
 
 <svelte:head>
 	{#if !indexRequest}
-	<title>{data.slugs[2].title}</title>
+	<title>{data.slugs[index].title}</title>
 	{/if}
 </svelte:head>
 
 <ClientModule indexRequest={indexRequest}>
-	<article id="work" class="observe-intersection fade-in" data-index="2">
+	<article id="work" class="observe-intersection fade-in" data-index={index}>
 		<Block>
-			<h1 class="font-large font-bold">Work</h1>
-			<h2 class="font-large font-cite">Websites, Apps, Media Architecture</h2>
+			<h1 class="font-large font-bold">{data.articles[index].title}</h1>
+			<h2 class="font-large font-cite">{data.articles[index].subtitle}</h2>
 			<div class="work-list">
-				<section class="single-work observe-intersection roll-in">
-					<LazyImage src="img/gmz1.jpg" width="1024" height="544" alt="This is a label" />
+				{#each data.articles[index].projects as project, i}
+				<section class="single-work observe-intersection roll-in{i % 2 === 1 ? ' align-right' : ''}">
+					<LazyImage src={project.image.src} width={project.image.width} height={project.image.height} alt={project.image.alt} label={project.image.label} />
 					<div class="work-text">
-						<span class="font-small work-year">2020</span>
-						<h3 class="font-bold">Migros Sommernachts-Ball</h3>
-						<span class="font-small work-link"><a href="http://www.sommernachts-ball.ch" class="link">www.sommernachts-ball.ch</a></span>
-						<p>Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.</p>
+						<span class="font-small work-year">{project.year}</span>
+						<h3 class="font-bold">{project.title}</h3>
+						<span class="font-small work-link"><a href={project.link.url} class="link">{project.link.title}</a></span>
+						<p>{project.text}</p>
 						<ul class="tags font-small">
-							<li><span class="font-bold">Client: </span>Genossenschaftsbund Migros Zürich</li>
-							<li><span class="font-bold">Partner: </span><a href="http://www.komun.ch" class="link">Komun</a></li>
-							<li><span class="font-bold">Services: </span>Code, Consulting, Interaction Design</li>
+							{#if project.employer}
+								<li><span class="font-bold">Employer: </span>{@html project.employer}</li>
+							{/if}
+							{#if project.client}
+								<li><span class="font-bold">Client: </span>{@html project.client}</li>
+							{/if}
+							{#if project.services}
+								<li><span class="font-bold">Services: </span>{project.services}</li>
+							{/if}
+							{#if project.partner}
+								<li><span class="font-bold">Partner: </span>{@html project.partner}</li>
+							{/if}
 						</ul>
 					</div>
 				</section>
-				<section class="single-work observe-intersection roll-in align-right">
-					<LazyImage src="img/gmz1.jpg" width="1024" height="544" alt="This is a label" />
-					<div class="work-text">
-						<span class="font-small work-year">2020</span>
-						<h3 class="font-bold">Migros Sommernachts-Ball</h3>
-						<span class="font-small work-link"><a href="http://www.sommernachts-ball.ch" class="link">www.sommernachts-ball.ch</a></span>
-						<p>Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.</p>
-						<ul class="tags font-small">
-							<li><span class="font-bold">Client: </span>Genossenschaftsbund Migros Zürich</li>
-							<li><span class="font-bold">Partner: </span><a href="http://www.komun.ch" class="link">Komun</a></li>
-							<li><span class="font-bold">Services: </span>Code, Consulting, Interaction Design</li>
-						</ul>
-					</div>
-				</section>
+				{/each}
 			</div>
 		</Block>
 	</article>

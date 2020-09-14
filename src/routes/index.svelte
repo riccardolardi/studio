@@ -17,8 +17,13 @@
     const intersectionObserver = new IntersectionObserver(entries => {
     	entries.forEach(entry => {
     		intersectingArticles = recalcIntersectingArticles(entry);
-    		if (entry.isIntersecting && entry.intersectionRatio > 0.25) 
+    		if (isIntersecting(entry)) {
     			entry.target.classList.add('intersected');
+    		} else if (!entry.isIntersecting && 
+    			entry.target.classList.contains('intersected') && 
+    			entry.boundingClientRect.top > entry.rootBounds.height) {
+    			entry.target.classList.remove('intersected');
+    		}
     	});
     }, {
       threshold: Array.from({length: 1000}, (x, i) => i * 0.001)
@@ -26,9 +31,15 @@
     observeIntersectionEls.forEach(el => intersectionObserver.observe(el));
 	});
 
+	function isIntersecting(entry) {
+		return entry.isIntersecting && 
+			(entry.intersectionRatio >= 0.25 || 
+				entry.intersectionRect.top <= entry.rootBounds.height * 0.75);
+	}
+
 	function recalcIntersectingArticles(entry) {
 		if (entry.target.nodeName !== 'ARTICLE') return intersectingArticles;
-    if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+    if (isIntersecting(entry)) {
       if (intersectingArticles.includes(entry.target)) return intersectingArticles;
       return [...intersectingArticles, entry.target];
     }
@@ -70,7 +81,7 @@
 		</h1>
 	</Block>
 	<Block centered={true}>
-		<h2 class="font-large font-cite observe-intersection roll-in trigger-once hyphens">
+		<h2 class="font-large font-cite observe-intersection roll-in">
 			{data.slogan}
 		</h2>
 	</Block>

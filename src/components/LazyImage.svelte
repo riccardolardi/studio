@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	export let width, height, src, alt;
-	export let label = false;
+	export let label = undefined;
 	let isIntersecting = false;
 	let figure;
 
@@ -16,7 +16,7 @@
 <figure bind:this={figure}>
 	{#if isIntersecting}
 		<img src={src} alt={alt} width={width} height={height} />
-		{#if label}<figcaption>{alt}</figcaption>{/if}
+		{#if label}<figcaption class="font-small font-bold">{label}</figcaption>{/if}
 	{:else}
 		<img className="placeholder" 
 			src={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='${width}' 

@@ -56,7 +56,8 @@
 
 			const material = new MeshLambertMaterial({
 				color: 0xffffff,
-				depthWrite: true
+				depthWrite: true,
+				flatShading: false
 			});
 
 			data.paths.forEach((path, i) => {
@@ -66,6 +67,7 @@
 			      depth: 100,
 			      bevelEnabled: false
 			    });
+			    geometry.mergeVertices();
 			    geometry.center();
 			    const mesh = new Mesh(geometry, material);
 			    group.add(mesh);

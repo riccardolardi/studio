@@ -21,8 +21,7 @@
 	onMount(() => {
 		if (segment) {
 			setTimeout(() => {
-				const el = document.querySelector(`article#${segment}`);
-				window.scrollTo(0, el.offsetTop - window.innerHeight * 0.15);
+				document.querySelector(`article#${segment}`).scrollIntoView();
 			}, 1000); // super hacky 🤷‍♂️
 		}
 		window.onpopstate = function(event) {
@@ -95,10 +94,13 @@
 	article {
 
 		&:not(#home) {
-			padding-bottom: $pad * 4;
 
 			h2 {
 				padding-right: $pad * 8;
+			}
+
+			.block {
+				padding-top: $pad * 4;
 			}
 		}
 	}
@@ -119,13 +121,13 @@
 	#services {
 
 		.services-list {
-			padding: $pad * 2 0;
+			padding: $pad * 2 $pad * 2 0 0;
 
 			.single-service {
 				display: flex;
-				align-items: center;
+				place-items: center;
+				gap: 2em;
 				margin-bottom: $pad * 2;
-				padding: 0 $pad * 3 0 0;
 
 				&:last-child {
 					margin-bottom: 0;
@@ -133,11 +135,9 @@
 
 				&.align-right {
 					flex-direction: row-reverse;
-					padding: 0 0 0 $pad * 3;
 
 					.service-text {
 						text-align: right;
-						margin: 0 $pad 0 0;
 					}
 
 					ul {
@@ -145,8 +145,29 @@
 					}
 				}
 
-				.service-text {
-					margin: 0 0 0 $pad;
+				.icon {
+					width: 7.2vw;
+				}
+
+				&:nth-of-type(1) {
+					
+					.icon {
+						margin-top: -0.2em;
+					}
+				}
+
+				&:nth-of-type(2) {
+					
+					.icon {
+						margin-top: -0.1em;
+					}
+				}
+
+				&:nth-of-type(3) {
+					
+					.icon {
+						margin-top: 0.3em;
+					}
 				}
 
 				ul.tags {
@@ -177,8 +198,8 @@
 
 			.single-work {
 				display: flex;
-				align-items: center;
-				margin-bottom: $pad * 4;
+				place-items: center;
+				margin-bottom: $pad * 3;
 
 				&:last-child {
 					margin-bottom: 0;
@@ -192,7 +213,7 @@
 					}
 
 					figure {
-						transform: skew(0, 10deg);
+						transform: skew(0, 5deg);
 					}
 				}
 
@@ -216,8 +237,47 @@
 
 		figure {
 			width: 33.333vw;
-			transform: skew(0, -10deg);
+			transform: skew(0, -5deg);
 			flex-shrink: 0;
+
+			figcaption {
+				display: inline-flex;
+				font-size: 0.5em;
+			}
+		}
+	}
+
+	#profile {
+
+		.profile-paragraphs {
+			padding: $pad * 2 $pad * 2 0 0;
+
+			.single-paragraph {
+				margin-bottom: $pad;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	#contact {
+
+		.contact-info {
+			padding: $pad * 2 $pad * 2 0 0;
+
+			span {
+				display: block;
+
+				&.link {
+					display: inline-block;
+				}
+
+				&.phone {
+					margin: $pad * 0.2 0;
+				}
+			}
 		}
 	}
 </style>

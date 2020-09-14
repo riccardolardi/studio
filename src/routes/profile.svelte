@@ -4,19 +4,28 @@
 	import Block from '../components/Block.svelte';
 	export let indexRequest = false;
 	let data = getContext('data');
+	let index = 3;
 </script>
 
 <svelte:head>
 	{#if !indexRequest}
-	<title>{data.slugs[3].title}</title>
+	<title>{data.slugs[index].title}</title>
 	{/if}
 </svelte:head>
 
 <ClientModule indexRequest={indexRequest}>
-	<article id="profile" class="observe-intersection" data-index="3">
-		<Block centered={true}>
-			<h1>Profile</h1>
-			<h2>This is us.</h2>
+	<article id="profile" class="observe-intersection fade-in" data-index={index}>
+		<Block>
+			<h1 class="font-large font-bold">{data.articles[index].title}</h1>
+			<h2 class="font-large font-cite">{data.articles[index].subtitle}</h2>
+			<div class="profile-paragraphs">
+				{#each data.articles[index].paragraphs as paragraph, i}
+				<section class="single-paragraph observe-intersection roll-in">
+					{#if paragraph.title}<h3 class="font-bold">{paragraph.title}</h3>{/if}
+					{#if paragraph.text}<h3>{@html paragraph.text}</h3>{/if}
+				</section>
+				{/each}
+			</div>
 		</Block>
 	</article>
 </ClientModule>
