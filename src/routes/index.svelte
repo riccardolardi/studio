@@ -20,7 +20,7 @@
     		if (isIntersecting(entry)) {
     			entry.target.classList.add('intersected');
     		} else if (!entry.isIntersecting && 
-    			entry.target.classList.contains('intersected') && 
+    			entry.target.classList.contains('intersected') && entry.rootBounds && 
     			entry.boundingClientRect.top > entry.rootBounds.height) {
     			entry.target.classList.remove('intersected');
     		}
@@ -55,11 +55,12 @@
 		if ($slug === latestEl.id || $slug === undefined && latestEl.id === 'home') return;
 		const url = latestEl.id
 		const index = latestEl.getAttribute('data-index');
-		changeRoute(url, index);
+		changeRoute(index, url);
 	}
 
-	function changeRoute(url, index) {
+	function changeRoute(index, url) {
 		history.pushState({index, url}, data.slugs[index].title, data.slugs[index].url);
+		document.title = data.slugs[index].title;
 		if (url !== 'home') {
 			document.querySelector('body').classList.add('past-intro');
 			slug.set(url);

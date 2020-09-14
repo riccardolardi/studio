@@ -24,9 +24,13 @@
 				document.querySelector(`article#${segment}`).scrollIntoView();
 			}, 1000); // super hacky 🤷‍♂️
 		}
-		window.onpopstate = function(event) {
-			console.log(event);
-		};
+		// window.onpopstate = function(event) {
+		// 	setTimeout(() => {
+		// 		const { index, url } = event.state;
+		// 		history.pushState({index, url}, data.slugs[index].title, data.slugs[index].url);
+		// 		document.querySelector(`article#${url}`).scrollIntoView();
+		// 	}, 0);
+		// };
 	});
 </script>
 
