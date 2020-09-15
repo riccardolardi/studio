@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://riccardolardi.com</loc>
+		<lastmod>2020-08-08</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://riccardolardi.com/services</loc>
+		<lastmod>2020-08-08</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://riccardolardi.com/work</loc>
+		<lastmod>2020-08-08</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://riccardolardi.com/profile</loc>
+		<lastmod>2020-08-08</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://riccardolardi.com/contact</loc>
+		<lastmod>2020-08-08</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+</urlset>
