@@ -1,9 +1,9 @@
 <script>
-	export let slug;
+	export let activeIndex;
 
 	function handleClick(event) {
-		const url = event.target.getAttribute('href');
-		document.querySelector(`article#${url}`).scrollIntoView();
+		const url = event.target.getAttribute('href').replace('/', '');
+		// document.querySelector(`article#${url}`).scrollIntoView();
 	}
 </script>
 
@@ -37,21 +37,12 @@
 				}
 			}
 
-			&.lang-select {
-
-				li:first-child {
-					&:after {
-						content: "\00a0/";
-					}
-				}
-			}
-
 			li {
 				display: inline-block;
 
 				&.active {
 
-					a, button {
+					a {
 						
 						&:after {
 							transform: scale(1);
@@ -60,7 +51,7 @@
 					}
 				}
 
-				a, button {
+				a {
 					position: relative;
 					text-decoration: none;
 					color: inherit;
@@ -80,30 +71,22 @@
 				}
 			}
 		}
-
-		button {
-			cursor: pointer;
-		}
 	}
 </style>
 
-<nav class="font-main font-small font-bold {$slug ? ' show' : ''}">
+<nav class="font-main font-small font-bold{$activeIndex !== 0 ? ' show' : ''}">
 	<ul class="nav-items">
-		<li class="{$slug === 'services' ? 'active' : ''}">
-			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'services' ? 'page' : undefined}" href="services">Services</a>
+		<li class="{$activeIndex === 1 ? 'active' : ''}">
+			<a on:click={handleClick} aria-current="{$activeIndex === 1 ? 'page' : undefined}" href="/services">Services</a>
 		</li>
-		<li class="{$slug === 'work' ? 'active' : ''}">
-			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'work' ? 'page' : undefined}" href="work">Work</a>
+		<li class="{$activeIndex === 2 ? 'active' : ''}">
+			<a on:click={handleClick} aria-current="{$activeIndex === 2 ? 'page' : undefined}" href="/work">Work</a>
 		</li>
-		<li class="{$slug === 'profile' ? 'active' : ''}">
-			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'profile' ? 'page' : undefined}" href="profile">Profile</a>
+		<li class="{$activeIndex === 3 ? 'active' : ''}">
+			<a on:click={handleClick} aria-current="{$activeIndex === 3 ? 'page' : undefined}" href="/profile">Profile</a>
 		</li>
-		<li class="{$slug === 'contact' ? 'active' : ''}">
-			<a on:click|preventDefault={handleClick} aria-current="{$slug === 'contact' ? 'page' : undefined}" href="contact">Contact</a>
+		<li class="{$activeIndex === 4 ? 'active' : ''}">
+			<a on:click={handleClick} aria-current="{$activeIndex === 4 ? 'page' : undefined}" href="/contact">Contact</a>
 		</li>
-	</ul>
-	<ul class="lang-select">
-		<li><button>DE</button></li>
-		<li><button>EN</button></li>
 	</ul>
 </nav>

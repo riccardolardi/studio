@@ -9,7 +9,7 @@
 
 <svelte:head>
 	{#if !indexRequest}
-	<title>{data.slugs[index].title}</title>
+	<title>{data.slugs[index].title} - {data.title}</title>
 	{/if}
 </svelte:head>
 

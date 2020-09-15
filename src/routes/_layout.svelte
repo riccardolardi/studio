@@ -9,30 +9,31 @@
 <script>
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { onMount } from 'svelte';
 	import BG from '../components/BG.svelte';
 	import Nav from '../components/Nav.svelte';
 	export let segment;
 	export let data;
-	let slug = writable(undefined);
-	setContext('slug', slug);
+	let activeIndex = writable(0);
+	let segment$ = writable(0);
+	$: $segment$ = segment;
+	setContext('segment', segment$);
 	setContext('data', data);
-	
-	onMount(() => {
-		if (segment) {
-			setTimeout(() => {
-				document.querySelector(`article#${segment}`).scrollIntoView();
-			}, 1000); // super hacky 🤷‍♂️
-		}
-		// window.onpopstate = function(event) {
-		// 	setTimeout(() => {
-		// 		const { index, url } = event.state;
-		// 		history.pushState({index, url}, data.slugs[index].title, data.slugs[index].url);
-		// 		document.querySelector(`article#${url}`).scrollIntoView();
-		// 	}, 0);
-		// };
-	});
+	setContext('activeIndex', activeIndex);
 </script>
+
+<svelte:head>
+	{#if $activeIndex !== 0}
+	  <style>
+			body {
+				background-color: #fff;
+				color: #0c0c0c;
+			}
+			header {
+				opacity: 1;
+			}
+	  </style>
+	{/if}
+</svelte:head>	
 
 <style type="text/scss" global>
 	@import "../styles/var.scss";
@@ -43,15 +44,6 @@
 	 	background-color: $blue;
 	 	isolation: isolate;
 	 	transition: all 250ms;
-
-	 	&.past-intro {
-		 	background-color: $white;
-		 	color: $black;
-
-		 	header {
-		 		opacity: 1;
-		 	}
-	 	}
 	}
 
 	main {
@@ -147,10 +139,6 @@
 					ul {
 						justify-content: flex-end;
 					}
-				}
-
-				.icon {
-					width: 7.2vw;
 				}
 
 				&:nth-of-type(1) {
@@ -259,6 +247,16 @@
 			.single-paragraph {
 				margin-bottom: $pad;
 
+				&.with-icon {
+					display: flex;
+					place-items: center;
+					gap: 2em;
+
+					.icon {
+						margin-top: 0.2em;
+					}
+				}
+
 				&:last-child {
 					margin-bottom: 0;
 				}
@@ -282,13 +280,34 @@
 					margin: $pad * 0.2 0;
 				}
 			}
+
+			ul.social-links {
+				margin-top: $pad * 0.7;
+				display: flex;
+
+				li {
+					margin-right: $pad * 0.5;
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					img {
+						display: block;
+						width: $pad * 0.75;
+						height: auto;
+					}
+				}
+			}
 		}
 	}
 </style>
 
-<BG {slug} />
-<main class="font-main{$slug ? '' : ' blend'}">
-	<header class="font-small font-bold"><a href="/">Studio <br/>Riccardo <br/>Lardi</a></header>
+<BG {activeIndex} />
+<main class="font-main{$activeIndex === 0 ? ' blend' : ''}">
+	<header class="font-small font-bold">
+		<a href="/" on:click={() => window.scrollTo(0, 0)}>Studio <br/>Riccardo <br/>Lardi</a>
+	</header>
 	<slot></slot>
 </main>
-<Nav {slug} />
+<Nav {activeIndex} />

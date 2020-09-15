@@ -8,7 +8,8 @@
 	import { onMount } from 'svelte';
 
 	let intersectingArticles = [];
-	let slug = getContext('slug');
+	let segment = getContext('segment');
+	let activeIndex = getContext('activeIndex');
 	let data = getContext('data');
 	$: intersectingArticles, intersectingArticlesChanged();
 
@@ -29,6 +30,8 @@
       threshold: Array.from({length: 1000}, (x, i) => i * 0.001)
     });
     observeIntersectionEls.forEach(el => intersectionObserver.observe(el));
+    const activeEl = document.querySelector(`#${!$segment ? 'home' : $segment}`);
+    setTimeout(() => window.scrollTo(0, activeEl.offsetTop), $segment ? 0 : 1); // why tho
 	});
 
 	function isIntersecting(entry) {
@@ -47,33 +50,27 @@
 	}
 
 	function intersectingArticlesChanged() {
-		if (!intersectingArticles.length || !slug) return;
+		if (!intersectingArticles.length) return;
 		const latestEl = intersectingArticles.reduce((a, b) => {
 			return parseInt(a.getAttribute('data-index')) > parseInt(b.getAttribute('data-index')) ? 
 				a : b;
 		});
-		if ($slug === latestEl.id || $slug === undefined && latestEl.id === 'home') return;
 		const url = latestEl.id
-		const index = latestEl.getAttribute('data-index');
-		changeRoute(index, url);
+		const index = parseInt(latestEl.getAttribute('data-index'));
+		changeRoute(index, url, latestEl);
 	}
 
-	function changeRoute(index, url) {
-		history.pushState({index, url}, data.slugs[index].title, data.slugs[index].url);
-		document.title = data.slugs[index].title;
-		if (url !== 'home') {
-			document.querySelector('body').classList.add('past-intro');
-			slug.set(url);
-		} else {
-			document.querySelector('body').classList.remove('past-intro');
-			slug.set(undefined);
+	function changeRoute(index, url, el) {
+		if (!el.classList.contains('active')) {
+			const lastActiveEl = document.querySelector('article.active');
+			if (lastActiveEl) lastActiveEl.classList.remove('active');
+			const titlePrefix = data.slugs[index].title ? `${data.slugs[index].title} - ` : '';
+			document.title = titlePrefix + data.title;
+			el.classList.add('active');
+			activeIndex.set(index);
 		}
 	}
 </script>
-
-<svelte:head>
-	<title>{data.slugs[0].title}</title>
-</svelte:head>
 
 <article id="home" class="observe-intersection" data-index="0">
 	<Block centered={true}>

@@ -10,7 +10,7 @@
 
 <svelte:head>
 	{#if !indexRequest}
-	<title>{data.slugs[index].title}</title>
+	<title>{data.slugs[index].title} - {data.title}</title>
 	{/if}
 </svelte:head>
 
@@ -26,7 +26,8 @@
 					<div class="work-text">
 						<span class="font-small work-year">{project.year}</span>
 						<h3 class="font-bold">{project.title}</h3>
-						<span class="font-small work-link"><a href={project.link.url} class="link">{project.link.title}</a></span>
+						<span class="font-small work-link"><a href={project.link.url} rel="noopener noreferrer" 
+            target="_blank" aria-label={project.link.title} class="link">{project.link.title}</a></span>
 						<p>{project.text}</p>
 						<ul class="tags font-small">
 							{#if project.employer}

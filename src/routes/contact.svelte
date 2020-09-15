@@ -9,7 +9,7 @@
 
 <svelte:head>
 	{#if !indexRequest}
-	<title>{data.slugs[index].title}</title>
+	<title>{data.slugs[index].title} - {data.title}</title>
 	{/if}
 </svelte:head>
 
@@ -25,6 +25,24 @@
 				<span>Switzerland</span>
 				<span class="phone"><a href="tel:0041 79 339 65 38">0041 79 339 65 38</span>
 				<span class="email link"><a href="mailto:hello@riccardolardi.com">hello@riccardolardi.com</span>
+				<ul class="social-links">
+          <li><a href="https://www.linkedin.com/in/riccardolardi" rel="noopener noreferrer" 
+            target="_blank" aria-label="LinkedIn" className="social-icon" alt="LinkedIn">
+            <img src="/icons/linkedin.svg" alt="LinkedIn" />
+          </a></li>
+          <li><a href="https://twitter.com/riccardolardi" rel="noopener noreferrer" 
+            target="_blank" aria-label="Twitter" className="social-icon" alt="Twitter">
+            <img src="/icons/twitter.svg" alt="Twitter" />
+          </a></li>
+          <li><a href="https://github.com/riccardolardi" rel="noopener noreferrer" 
+            target="_blank" aria-label="GitHub" className="social-icon" alt="GitHub">
+            <img src="/icons/github.svg" alt="GitHub" />
+          </a></li>
+          <li><a href="https://stackoverflow.com/users/1515187/riccardolardi" rel="noopener noreferrer" 
+            target="_blank" aria-label="StackOverflow" className="social-icon" alt="StackOverflow">
+            <img src="/icons/stackoverflow.svg" alt="StackOverflow" />
+          </a></li>
+				</ul>
 			</div>
 		</Block>
 	</article>

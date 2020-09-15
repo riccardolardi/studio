@@ -2,30 +2,30 @@
 	"slugs": [
 		{
 			"index": 0,
-			"url": "/",
-			"title": "Design & Code - Studio Riccardo Lardi"
+			"url": "/"
 		},
 		{
 			"index": 1,
 			"url": "services",
-			"title": "Services - Studio Riccardo Lardi"
+			"title": "Services"
 		},
 		{
 			"index": 2,
 			"url": "work",
-			"title": "Work - Studio Riccardo Lardi"
+			"title": "Work"
 		},
 		{
 			"index": 3,
 			"url": "profile",
-			"title": "Profile - Studio Riccardo Lardi"
+			"title": "Profile"
 		},
 		{
 			"index": 4,
 			"url": "contact",
-			"title": "Contact - Studio Riccardo Lardi"
+			"title": "Contact"
 		}
 	],
+	"title": "Studio Riccardo Lardi | Web, Apps, Interfaces | Design & Code",
 	"header": "Studio <br/>Riccardo <br/>Lardi",
 	"slogan": "A Basel based Design Studio specializing in planning, conception, design and development of projects in between digital and physical space.",
 	"articles": [
@@ -63,8 +63,8 @@
 				},
 				{
 					"title": "Consulting & Education",
-					"icon": "ù",
-					"text": "Offering consultation, teaching or helping you brainstorm your new business idea, we like to share our expertise and help bringing products to life or to the next level.",
+					"icon": "×",
+					"text": "Offering consultation, teaching or helping to brainstorm your new business idea, we like to share our expertise and help bringing products to life or to the next level.",
 					"tags": [
 						"designthinking",
 						"agile",
@@ -95,7 +95,7 @@
 					},
 					"text": "Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.",
 					"client": "Genossenschaftsbund Migros Zürich",
-					"partner": "<a href='http://www.komun.ch' class='link'>Komun</a>",
+					"partner": "<a href='http://www.komun.ch' rel='noopener noreferrer' target='_blank' aria-label='Komun' class='link'>Komun</a>",
 					"services": "Code, Consulting, Interaction Design"
 				},
 				{
@@ -113,7 +113,7 @@
 						"url": "https://iart.ch/en/work/hyundai"
 					},
 					"text": "Interactive water installation within the pavilion of Hyundai at the 2018 Winter Olympics in Pyeongchang, South Korea.",
-					"employer": "Under employment at <a href='http://www.iart.ch' class='link'>iart AG</a>",
+					"employer": "Under employment at <a href='http://www.iart.ch' rel='noopener noreferrer' target='_blank' aria-label='iart AG' class='link'>iart AG</a>",
 					"services": "Concept, Project Planning, Project Management, Commissioning"
 				},
 				{
@@ -131,7 +131,7 @@
 						"url": "https://iart.ch/en/work/hansel-gretel-in-der-park-avenue-armory"
 					},
 					"text": "An interactive and immersive video art installation filling an entire ex-military drill hall in Manhattan NY - referring to the 'digital footprint' that everyone leaves behind, willingly or not.",
-					"employer": "Under employment at <a href='http://www.iart.ch' class='link'>iart AG</a>",
+					"employer": "Under employment at <a href='http://www.iart.ch' rel='noopener noreferrer' target='_blank' aria-label='iart AG' class='link'>iart AG</a>",
 					"services": "Conception, Media Planning, Code, Commissioning"
 				}
 			]
@@ -142,7 +142,8 @@
 			"subtitle": "Who we are.",
 			"paragraphs": [
 				{
-					"text": "Riccardo is an Interaction Designer and holds a BA from Zurich University of the Arts and an MA from Royal College of Art, London. Prior to opening the Studio he has substantially contributed to numerous projects for companies such as <a href='https://www.takram.com' class='link'>Takram</a> (London) and <a href='https://www.iart.ch' class='link'>iart</a> (Basel)."
+					"icon": "@",
+					"text": "Riccardo is an Interaction Designer and holds a BA from Zurich University of the Arts and an MA from Royal College of Art, London. Prior to opening the Studio he has substantially contributed to numerous projects for companies such as <a href='https://www.takram.com' rel='noopener noreferrer' target='_blank' aria-label='Takram' class='link'>Takram</a> (London) and <a href='https://www.iart.ch' rel='noopener noreferrer' target='_blank' aria-label='iart AG' class='link'>iart</a> (Basel)."
 				},
 				{
 					"title": "The Process",

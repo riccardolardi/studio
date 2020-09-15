@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	export let slug;
+	export let activeIndex;
 
 	onMount(async () => {
 		const {
@@ -118,7 +118,7 @@
 	      requestAnimationFrame(animate);
 	    }, 1000 / 30);
 
-		  if (!group || $slug) return;
+		  if (!group || $activeIndex !== 0) return;
 		  
 		  group.rotation.x -= 0.0008;
 		  group.rotation.y -= 0.0011;
@@ -146,4 +146,4 @@
 	}
 </style>
 
-<aside id="BG" class="{$slug ? 'hide' : ''}" />
+<aside id="BG" class="{$activeIndex !== 0 ? 'hide' : ''}" />
