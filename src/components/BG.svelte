@@ -1,23 +1,20 @@
 <script>
 	import { onMount } from 'svelte';
+	import { OrthographicCamera } from 'three/src/cameras/OrthographicCamera.js';
+	import { Scene } from 'three/src/scenes/Scene.js';
+	import { AmbientLight } from 'three/src/lights/AmbientLight.js';
+	import { HemisphereLight } from 'three/src/lights/HemisphereLight.js';
+	import { Group } from 'three/src/objects/Group.js';
+	import { MeshLambertMaterial } from 'three/src/materials/MeshLambertMaterial.js';
+	import { ExtrudeGeometry } from 'three/src/geometries/ExtrudeGeometry.js';
+	import { Mesh } from 'three/src/objects/Mesh.js';
+	import { Box3 } from 'three/src/math/Box3.js';
+	import { Vector3 } from 'three/src/math/Vector3.js';
+	import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer.js';
+	import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
 	export let activeIndex;
 
 	onMount(async () => {
-		const {
-			OrthographicCamera,
-			Scene,
-			AmbientLight,
-			HemisphereLight,
-			Group,
-			MeshLambertMaterial,
-			ExtrudeGeometry,
-			Mesh,
-			Box3,
-			Vector3,
-			WebGLRenderer
-		} = await import('three');
-		const { SVGLoader } = await import('three/examples/jsm/loaders/SVGLoader.js');
-
 		let camera, scene, renderer, controls, group;
 		let pixelRatio, winW, winH, aspect, bgEl, frustumSize;
 
