@@ -24,7 +24,7 @@
 				<span>4054 Basel</span>
 				<span>Switzerland</span>
 				<span class="phone"><a href="tel:0041 79 339 65 38">0041 79 339 65 38</span>
-				<span class="email link"><a href="mailto:hello@riccardolardi.com">hello@riccardolardi.com</span>
+				<span class="email"><a href="mailto:hello@riccardolardi.com" class="link">hello@riccardolardi.com</span>
 				<ul class="social-links">
           <li><a href="https://www.linkedin.com/in/riccardolardi" rel="noopener noreferrer" 
             target="_blank" aria-label="LinkedIn" className="social-icon" alt="LinkedIn">

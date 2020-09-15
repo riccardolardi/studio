@@ -35,7 +35,7 @@
 		{
 			"index": 1,
 			"title": "Services",
-			"subtitle": "We create, simplify and make things work.",
+			"subtitle": "Creating, simplifying and making things work.",
 			"services": [
 				{
 					"title": "Concept & Design",
@@ -52,7 +52,7 @@
 				{
 					"title": "Code & Development",
 					"icon": "%",
-					"text": "Code is a tool and tools are cool! We build mobile apps, websites, web-apps, desktop applications but also products that are being used in physical space such as interactive media tables.",
+					"text": "Code is a tool and tools are cool! The Studio builds mobile apps, websites, web-apps, desktop applications but also products that live in physical space such as interactive media tables.",
 					"tags": [
 						"react",
 						"vue",
