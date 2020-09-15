@@ -76,7 +76,6 @@
 	}
 
 	function checkScroll(newScrollY) {
-		if (window.innerWidth > 768) return;
 	  const dy = lastScrollY - newScrollY;
 	  lastScrollY = newScrollY;
 	  mobileHideNav.set(dy < 0);

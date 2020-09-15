@@ -65,11 +65,11 @@
 		@include breakpoint($breakMobile) {
 			top: $pad * 2;
 			left: $pad * 2;
-		}
 
-		&.mobile-hide {
-			transform: translateY(-$pad);
-			opacity: 0;
+			&.mobile-hide {
+				transform: translateY(-$pad);
+				opacity: 0;
+			}
 		}
 	}
 

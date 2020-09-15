@@ -26,15 +26,15 @@
 		@include breakpoint($breakMobile) {
 			top: $pad * 2;
 			right: $pad * 2;
+
+			&.mobile-hide {
+				transform: translateY(-$pad);
+				opacity: 0;
+			}
 		}
 
 		&.show {
 			opacity: 1;
-		}
-
-		&.mobile-hide {
-			transform: translateY(-$pad);
-			opacity: 0;
 		}
 
 		ul {
