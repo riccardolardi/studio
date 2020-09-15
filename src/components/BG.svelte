@@ -131,14 +131,17 @@
 		position: fixed;
 		top: 0px;
 		left: 0px;
-		display: block;
-		width: 100%;
-		height: 100vh;
 		overflow: hidden;
 		transition: opacity 250ms;
 
 		&.hide {
 			opacity: 0;
+		}
+
+		canvas {
+			display: block;
+			width: 100vw;
+			height: 100vh;
 		}
 	}
 </style>

@@ -20,10 +20,9 @@
 			<h2 class="font-large font-cite">{data.articles[index].subtitle}</h2>
 			<div class="profile-paragraphs">
 				{#each data.articles[index].paragraphs as paragraph, i}
-				<section class="single-paragraph observe-intersection roll-in{paragraph.icon ? ' with-icon' : ''}">
+				<section class="single-paragraph observe-intersection roll-in">
 					{#if paragraph.title}<h3 class="font-bold">{paragraph.title}</h3>{/if}
 					{#if paragraph.text}<h3>{@html paragraph.text}</h3>{/if}
-					{#if paragraph.icon}<span role="img" aria-label=service.title class="icon font-symbol">{paragraph.icon}</span>{/if}
 				</section>
 				{/each}
 			</div>

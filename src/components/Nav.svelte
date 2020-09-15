@@ -1,5 +1,6 @@
 <script>
 	export let activeIndex;
+	export let mobileHideNav;
 
 	function handleClick(event) {
 		const url = event.target.getAttribute('href').replace('/', '');
@@ -8,7 +9,9 @@
 </script>
 
 <style type="text/scss">
+	@import 'breakpoint-sass/stylesheets/_breakpoint.scss';
 	@import "../styles/var.scss";
+
 	nav {
 		display: flex;
 		flex-direction: column;
@@ -17,10 +20,21 @@
 		top: $pad;
 		right: $pad;
 		opacity: 0;
-		transition: opacity 250ms;
+		transform: translateY(0);
+		transition: opacity 250ms, transform 250ms;
+
+		@include breakpoint($breakMobile) {
+			top: $pad * 2;
+			right: $pad * 2;
+		}
 
 		&.show {
 			opacity: 1;
+		}
+
+		&.mobile-hide {
+			transform: translateY(-$pad);
+			opacity: 0;
 		}
 
 		ul {
@@ -74,7 +88,7 @@
 	}
 </style>
 
-<nav class="font-main font-small font-bold{$activeIndex !== 0 ? ' show' : ''}">
+<nav class="font-main font-small font-bold{$activeIndex !== 0 ? ' show' : ''}{$mobileHideNav ? ' mobile-hide' : ''}">
 	<ul class="nav-items">
 		<li class="{$activeIndex === 1 ? 'active' : ''}">
 			<a on:click={handleClick} aria-current="{$activeIndex === 1 ? 'page' : undefined}" href="/services">Services</a>

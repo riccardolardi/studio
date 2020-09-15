@@ -10,8 +10,12 @@
 	let intersectingArticles = [];
 	let segment = getContext('segment');
 	let activeIndex = getContext('activeIndex');
+	let mobileHideNav = getContext('mobileHideNav');
 	let data = getContext('data');
+	let scrollY = 0;
+	let lastScrollY = 0;
 	$: intersectingArticles, intersectingArticlesChanged();
+	$: checkScroll(scrollY);
 
 	onMount(() => {
 		const observeIntersectionEls = Array.from(document.querySelectorAll('.observe-intersection'));
@@ -31,7 +35,7 @@
     });
     observeIntersectionEls.forEach(el => intersectionObserver.observe(el));
     const activeEl = document.querySelector(`#${!$segment ? 'home' : $segment}`);
-    setTimeout(() => window.scrollTo(0, activeEl.offsetTop), $segment ? 0 : 1); // why tho
+    setTimeout(() => window.scrollTo(0, activeEl.offsetTop), $segment ? 0 : 1); // why threshold
 	});
 
 	function isIntersecting(entry) {
@@ -70,7 +74,16 @@
 			activeIndex.set(index);
 		}
 	}
+
+	function checkScroll(newScrollY) {
+		if (window.innerWidth > 768) return;
+	  const dy = lastScrollY - newScrollY;
+	  lastScrollY = newScrollY;
+	  mobileHideNav.set(dy < 0);
+	}
 </script>
+
+<svelte:window bind:scrollY={scrollY} />
 
 <article id="home" class="observe-intersection" data-index="0">
 	<Block centered={true}>

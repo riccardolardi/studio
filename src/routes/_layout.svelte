@@ -14,11 +14,13 @@
 	export let segment;
 	export let data;
 	let activeIndex = writable(0);
-	let segment$ = writable(0);
+	let mobileHideNav = writable(false);
+	let segment$ = writable(undefined);
 	$: $segment$ = segment;
 	setContext('segment', segment$);
 	setContext('data', data);
 	setContext('activeIndex', activeIndex);
+	setContext('mobileHideNav', mobileHideNav);
 </script>
 
 <svelte:head>
@@ -36,6 +38,7 @@
 </svelte:head>	
 
 <style type="text/scss" global>
+	@import 'breakpoint-sass/stylesheets/_breakpoint.scss';
 	@import "../styles/var.scss";
 	@import "../styles/type.scss";
 
@@ -54,9 +57,20 @@
 		position: fixed;
 		top: $pad;
 		left: $pad;
+		transform: translateY(0);
 		opacity: 0;
-		transition: opacity 250ms;
+		transition: opacity 250ms, transform 250ms;
 		z-index: 10;
+
+		@include breakpoint($breakMobile) {
+			top: $pad * 2;
+			left: $pad * 2;
+		}
+
+		&.mobile-hide {
+			transform: translateY(-$pad);
+			opacity: 0;
+		}
 	}
 
 	.blend {
@@ -68,12 +82,12 @@
 	}
 
 	.roll-in {
-		transform: translateX(-$pad);
+		transform: translateX(-$pad * 0.5);
 		opacity: 0;
 		transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 
 		&.align-right {
-			transform: translateX($pad);
+			transform: translateX($pad * 0.5);
 		}
 	}
 
@@ -93,6 +107,10 @@
 
 			h2 {
 				padding-right: $pad * 8;
+
+				@include breakpoint($breakMobile) {
+					padding-right: 0;
+				}
 			}
 
 			.block {
@@ -119,11 +137,33 @@
 		.services-list {
 			padding: $pad * 2 $pad * 2 0 0;
 
+			@include breakpoint($breakMobile) {
+				padding: $pad * 2 0 0;
+			}
+
 			.single-service {
 				display: flex;
 				place-items: center;
 				gap: 2em;
 				margin-bottom: $pad * 2;
+
+				@include breakpoint($breakMobile) {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 1em;
+
+					&.align-right {
+						flex-direction: column !important;
+
+						.service-text {
+							text-align: unset !important;
+						}
+
+						ul {
+							justify-content: unset !important;
+						}
+					}
+				}
 
 				&:last-child {
 					margin-bottom: 0;
@@ -164,6 +204,7 @@
 
 				ul.tags {
 					display: flex;
+					flex-wrap: wrap;
 					color: $blue;
 					margin-top: $pad * 0.2;
 
@@ -186,12 +227,22 @@
 	#work {
 
 		.work-list {
-			padding: $pad * 2 0;
+			padding: $pad * 2 0 0;
+
+			@include breakpoint($breakMobile) {
+				padding: $pad * 4 0 0;
+			}
 
 			.single-work {
 				display: flex;
 				place-items: center;
 				margin-bottom: $pad * 3;
+
+				@include breakpoint($breakMobile) {
+					flex-direction: column;
+					align-items: flex-start;
+					margin-bottom: $pad * 5;
+				}
 
 				&:last-child {
 					margin-bottom: 0;
@@ -200,12 +251,24 @@
 				&.align-right {
 					flex-direction: row-reverse;
 
+					@include breakpoint($breakMobile) {
+						flex-direction: column;
+					}
+
 					.work-text {
 						padding: 0 $pad * 2 0 0;
+
+						@include breakpoint($breakMobile) {
+							padding: 0;
+						}
 					}
 
 					figure {
 						transform: skew(0, 5deg);
+
+						@include breakpoint($breakMobile) {
+							transform: skew(0, 10deg);
+						}
 					}
 				}
 
@@ -215,6 +278,10 @@
 
 				.work-text {
 					padding: 0 0 0 $pad * 2;
+
+					@include breakpoint($breakMobile) {
+						padding: 0;
+					}
 
 					p {
 						padding: $pad * 0.5 0;
@@ -232,9 +299,18 @@
 			transform: skew(0, -5deg);
 			flex-shrink: 0;
 
+			@include breakpoint($breakMobile) {
+				width: 100%;
+				transform: skew(0, 10deg);
+			}
+
 			figcaption {
 				display: inline-flex;
 				font-size: 0.5em;
+
+				@include breakpoint($breakMobile) {
+					text-align: right;
+				}
 			}
 		}
 	}
@@ -243,6 +319,10 @@
 
 		.profile-paragraphs {
 			padding: $pad * 2 $pad * 2 0 0;
+
+			@include breakpoint($breakMobile) {
+				padding: $pad * 2 0 0;
+			}
 
 			.single-paragraph {
 				margin-bottom: $pad;
@@ -285,6 +365,10 @@
 				margin-top: $pad * 0.7;
 				display: flex;
 
+				@include breakpoint($breakMobile) {
+					margin-top: $pad;
+				}
+
 				li {
 					margin-right: $pad * 0.5;
 
@@ -296,6 +380,10 @@
 						display: block;
 						width: $pad * 0.75;
 						height: auto;
+
+						@include breakpoint($breakMobile) {
+							width: $pad * 1.25;
+						}
 					}
 				}
 			}
@@ -305,9 +393,9 @@
 
 <BG {activeIndex} />
 <main class="font-main{$activeIndex === 0 ? ' blend' : ''}">
-	<header class="font-small font-bold">
+	<header class="font-small font-bold{$mobileHideNav ? ' mobile-hide' : ''}">
 		<a href="/" on:click={() => window.scrollTo(0, 0)}>Studio <br/>Riccardo <br/>Lardi</a>
 	</header>
 	<slot></slot>
 </main>
-<Nav {activeIndex} />
+<Nav {activeIndex} {mobileHideNav} />

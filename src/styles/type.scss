@@ -31,8 +31,8 @@
 body {
   font-weight: 400;
   font-style: normal;
-  font-size: calc(1.14em + 0.4vmax);
-  line-height: calc(1.14em + 0.4vmax);
+  font-size: $pad * 0.75;
+  line-height: 150%;
   font-feature-settings: "dlig", "ss01";
   letter-spacing: calc(-0.015em + 0.14px);
   text-rendering: optimizeLegibility;
@@ -40,6 +40,11 @@ body {
   font-kerning: normal;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
+
+  @include breakpoint($breakMobile) {
+    font-size: $pad;
+    line-height: $pad * 1.5;
+  }
 }
 
 .font-main {
@@ -52,22 +57,26 @@ body {
 
 .font-symbol {
   font-family: 'AssemblyHumanOne';
-  font-size: calc(4.14em + 0.4vmax);
+  font-size: $pad * 3;
   line-height: 100%;
 }
 
 .font-large {
-  font-size: calc(2.14em + 0.4vmax);
-  line-height: 132%;
+  font-size: $pad * 1.5;
+  line-height: 135%;
 }
 
 .font-small {
-  font-size: calc(0.55em + 0.4vmax);
+  font-size: $pad * 0.5;
   line-height: 150%;
+
+  @include breakpoint($breakMobile) {
+    font-size: $pad * 0.75;
+  }
 }
 
 .font-tight {
-  line-height: calc(1.14em + 0.4vmax);
+  line-height: 125%;
 }
 
 .font-cite {

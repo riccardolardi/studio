@@ -52,7 +52,7 @@
 				{
 					"title": "Code & Development",
 					"icon": "%",
-					"text": "Code is a tool and tools are cool! We build mobile apps, websites, web-apps, desktop applications but also products that are being used in physical space such as interactive media tables or terminals.",
+					"text": "Code is a tool and tools are cool! We build mobile apps, websites, web-apps, desktop applications but also products that are being used in physical space such as interactive media tables.",
 					"tags": [
 						"react",
 						"vue",
@@ -142,7 +142,6 @@
 			"subtitle": "Who we are.",
 			"paragraphs": [
 				{
-					"icon": "@",
 					"text": "Riccardo is an Interaction Designer and holds a BA from Zurich University of the Arts and an MA from Royal College of Art, London. Prior to opening the Studio he has substantially contributed to numerous projects for companies such as <a href='https://www.takram.com' rel='noopener noreferrer' target='_blank' aria-label='Takram' class='link'>Takram</a> (London) and <a href='https://www.iart.ch' rel='noopener noreferrer' target='_blank' aria-label='iart AG' class='link'>iart</a> (Basel)."
 				},
 				{
