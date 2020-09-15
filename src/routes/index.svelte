@@ -1,10 +1,10 @@
 <script>
 	import { getContext } from 'svelte';
 	import Block from '../components/Block.svelte';
-	import Services from '../routes/Services.svelte';
-	import Work from '../routes/Work.svelte';
-	import Profile from '../routes/Profile.svelte';
-	import Contact from '../routes/Contact.svelte';
+	import Services from '../routes/services.svelte';
+	import Work from '../routes/work.svelte';
+	import Profile from '../routes/profile.svelte';
+	import Contact from '../routes/contact.svelte';
 	import { onMount } from 'svelte';
 
 	let intersectingArticles = [];
