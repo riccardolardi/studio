@@ -87,12 +87,12 @@
 <svelte:window bind:scrollY={scrollY} />
 
 <article id="home" class="observe-intersection" data-index="0">
-	<Block centered={true} webkitFix={true}>
+	<Block centered={true} webkitFix={true} fill={true}>
 		<h1 class="font-bold font-large font-tight">
 			{@html data.header}
 		</h1>
 	</Block>
-	<Block centered={true}>
+	<Block centered={true} fill={true}>
 		<h2 class="font-large font-cite observe-intersection roll-in">
 			{data.slogan}
 		</h2>

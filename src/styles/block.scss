@@ -1,13 +1,24 @@
 @import 'breakpoint-sass/stylesheets/_breakpoint.scss';
 
 .block {
-	min-height: 100vh;
 	padding: 0 $pad * 6;
 
-	&.webkit-fix {
-		@supports(-webkit-touch-callout: none) {
-			min-height: -webkit-fill-available;
+	&.block-fill {
+		min-height: 100vh;
+
+		&.webkit-fix {
+			@supports(-webkit-touch-callout: none) {
+				min-height: -webkit-fill-available;
+			}
 		}
+	}
+
+	&.block-fill-75 {
+		min-height: 75vh;
+	}
+
+	&.block-fill-50 {
+		min-height: 75vh;
 	}
 
 	@include breakpoint($breakMobile) {

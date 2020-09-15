@@ -15,7 +15,7 @@
 
 <ClientModule indexRequest={indexRequest}>
 	<article id="contact" class="observe-intersection fade-in" data-index={index}>
-		<Block>
+		<Block fill={true}>
 			<h1 class="font-large font-bold">{data.articles[index].title}</h1>
 			<h2 class="font-large font-cite">{data.articles[index].subtitle}</h2>
 			<div class="contact-info observe-intersection roll-in">

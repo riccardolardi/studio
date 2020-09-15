@@ -62,6 +62,7 @@
 				  shapes.forEach((shape, j) => {
 				    const geometry = new ExtrudeGeometry(shape, {
 				      depth: 100,
+				      curveSegments: 32,
 				      bevelEnabled: false
 				    });
 				    geometry.mergeVertices();

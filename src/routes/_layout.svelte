@@ -21,7 +21,6 @@
 	setContext('data', data);
 	setContext('activeIndex', activeIndex);
 	setContext('mobileHideNav', mobileHideNav);
-	$: console.log($activeIndex);
 </script>
 
 <svelte:head>
