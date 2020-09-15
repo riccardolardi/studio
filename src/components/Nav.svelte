@@ -1,11 +1,6 @@
 <script>
 	export let activeIndex;
 	export let mobileHideNav;
-
-	function handleClick(event) {
-		const url = event.target.getAttribute('href').replace('/', '');
-		// document.querySelector(`article#${url}`).scrollIntoView();
-	}
 </script>
 
 <style type="text/scss">
@@ -91,16 +86,16 @@
 <nav class="font-main font-small font-bold{$activeIndex !== 0 ? ' show' : ''}{$mobileHideNav ? ' mobile-hide' : ''}">
 	<ul class="nav-items">
 		<li class="{$activeIndex === 1 ? 'active' : ''}">
-			<a on:click={handleClick} aria-current="{$activeIndex === 1 ? 'page' : undefined}" href="/services">Services</a>
+			<a aria-current="{$activeIndex === 1 ? 'page' : undefined}" href="/services">Services</a>
 		</li>
 		<li class="{$activeIndex === 2 ? 'active' : ''}">
-			<a on:click={handleClick} aria-current="{$activeIndex === 2 ? 'page' : undefined}" href="/work">Work</a>
+			<a aria-current="{$activeIndex === 2 ? 'page' : undefined}" href="/work">Work</a>
 		</li>
 		<li class="{$activeIndex === 3 ? 'active' : ''}">
-			<a on:click={handleClick} aria-current="{$activeIndex === 3 ? 'page' : undefined}" href="/profile">Profile</a>
+			<a aria-current="{$activeIndex === 3 ? 'page' : undefined}" href="/profile">Profile</a>
 		</li>
 		<li class="{$activeIndex === 4 ? 'active' : ''}">
-			<a on:click={handleClick} aria-current="{$activeIndex === 4 ? 'page' : undefined}" href="/contact">Contact</a>
+			<a aria-current="{$activeIndex === 4 ? 'page' : undefined}" href="/contact">Contact</a>
 		</li>
 	</ul>
 </nav>

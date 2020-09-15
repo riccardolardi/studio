@@ -4,6 +4,12 @@
 	min-height: 100vh;
 	padding: 0 $pad * 6;
 
+	&.webkit-fix {
+		@supports(-webkit-touch-callout: none) {
+			min-height: -webkit-fill-available;
+		}
+	}
+
 	@include breakpoint($breakMobile) {
 		padding: 0 $pad * 2;
 	}

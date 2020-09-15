@@ -5,6 +5,7 @@
 	import Work from '../routes/work.svelte';
 	import Profile from '../routes/profile.svelte';
 	import Contact from '../routes/contact.svelte';
+	import debounce from 'lodash.debounce';
 	import { onMount } from 'svelte';
 
 	let intersectingArticles = [];
@@ -14,6 +15,7 @@
 	let data = getContext('data');
 	let scrollY = 0;
 	let lastScrollY = 0;
+	let debouncedSetIndexActive = debounce(index => activeIndex.set(index), 50);
 	$: intersectingArticles, intersectingArticlesChanged();
 	$: checkScroll(scrollY);
 
@@ -35,7 +37,7 @@
     });
     observeIntersectionEls.forEach(el => intersectionObserver.observe(el));
     const activeEl = document.querySelector(`#${!$segment ? 'home' : $segment}`);
-    setTimeout(() => window.scrollTo(0, activeEl.offsetTop), $segment ? 0 : 1); // why threshold
+    setTimeout(() => window.scrollTo(0, activeEl.offsetTop), $segment ? 0 : 1); // why tho
 	});
 
 	function isIntersecting(entry) {
@@ -71,7 +73,7 @@
 			const titlePrefix = data.slugs[index].title ? `${data.slugs[index].title} - ` : '';
 			document.title = titlePrefix + data.title;
 			el.classList.add('active');
-			activeIndex.set(index);
+			debouncedSetIndexActive(index);
 		}
 	}
 
@@ -85,7 +87,7 @@
 <svelte:window bind:scrollY={scrollY} />
 
 <article id="home" class="observe-intersection" data-index="0">
-	<Block centered={true}>
+	<Block centered={true} webkitFix={true}>
 		<h1 class="font-bold font-large font-tight">
 			{@html data.header}
 		</h1>

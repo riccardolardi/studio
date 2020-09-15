@@ -21,6 +21,7 @@
 	setContext('data', data);
 	setContext('activeIndex', activeIndex);
 	setContext('mobileHideNav', mobileHideNav);
+	$: console.log($activeIndex);
 </script>
 
 <svelte:head>
@@ -144,13 +145,11 @@
 			.single-service {
 				display: flex;
 				place-items: center;
-				gap: 2em;
 				margin-bottom: $pad * 2;
 
 				@include breakpoint($breakMobile) {
 					flex-direction: column;
 					align-items: flex-start;
-					gap: 1em;
 
 					&.align-right {
 						flex-direction: column !important;
@@ -159,9 +158,17 @@
 							text-align: unset !important;
 						}
 
+						.icon {
+							margin: 0 0 $pad 0 !important;
+						}
+
 						ul {
 							justify-content: unset !important;
 						}
+					}
+
+					.icon {
+						margin: 0 0 $pad 0 !important;
 					}
 				}
 
@@ -174,6 +181,10 @@
 
 					.service-text {
 						text-align: right;
+					}
+
+					.icon {
+						margin: 0 0 0 $pad;
 					}
 
 					ul {
@@ -200,6 +211,10 @@
 					.icon {
 						margin-top: 0.3em;
 					}
+				}
+
+				.icon {
+					margin: 0 $pad 0 0;
 				}
 
 				ul.tags {
