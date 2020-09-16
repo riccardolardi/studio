@@ -1,6 +1,11 @@
 <script>
 	export let activeIndex;
 	export let mobileHideNav;
+
+	function navigate(index) {
+    const activeEl = document.querySelector(`article[data-index="${index}"]`);
+    window.scrollTo(0, activeEl.offsetTop);
+	}
 </script>
 
 <style type="text/scss">
@@ -76,6 +81,7 @@
 						transform: scale(0.75);
 						opacity: 0;
 						transition: all 125ms;
+						pointer-events: none;
 					}
 				}
 			}
@@ -85,16 +91,16 @@
 
 <nav class="font-main font-small font-bold{$activeIndex !== 0 ? ' show' : ''}{$mobileHideNav ? ' mobile-hide' : ''}">
 	<ul class="nav-items">
-		<li class="{$activeIndex === 1 ? 'active' : ''}">
+		<li on:click|preventDefault={() => navigate(1)} class="{$activeIndex === 1 ? 'active' : ''}">
 			<a aria-current="{$activeIndex === 1 ? 'page' : undefined}" href="/services">Services</a>
 		</li>
-		<li class="{$activeIndex === 2 ? 'active' : ''}">
+		<li on:click|preventDefault={() => navigate(2)}  class="{$activeIndex === 2 ? 'active' : ''}">
 			<a aria-current="{$activeIndex === 2 ? 'page' : undefined}" href="/work">Work</a>
 		</li>
-		<li class="{$activeIndex === 3 ? 'active' : ''}">
+		<li on:click|preventDefault={() => navigate(3)}  class="{$activeIndex === 3 ? 'active' : ''}">
 			<a aria-current="{$activeIndex === 3 ? 'page' : undefined}" href="/profile">Profile</a>
 		</li>
-		<li class="{$activeIndex === 4 ? 'active' : ''}">
+		<li on:click|preventDefault={() => navigate(4)}  class="{$activeIndex === 4 ? 'active' : ''}">
 			<a aria-current="{$activeIndex === 4 ? 'page' : undefined}" href="/contact">Contact</a>
 		</li>
 	</ul>

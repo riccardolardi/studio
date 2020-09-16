@@ -93,7 +93,10 @@
 						"title": "http://www.sommernachts-ball.ch",
 						"url": "http://www.sommernachts-ball.ch"
 					},
-					"text": "Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.",
+					"text": [
+						"Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.",
+						"Built with Gatsby/React the website featues a scrolling navigation and monochrome color concept."
+					],
 					"client": "Genossenschaftsbund Migros Zürich",
 					"partner": "<a href='http://www.komun.ch' rel='noopener noreferrer' target='_blank' aria-label='Komun' class='link'>Komun</a>",
 					"services": "Code, Consulting, Interaction Design"
@@ -112,7 +115,10 @@
 						"title": "iart project documentation",
 						"url": "https://iart.ch/en/work/hyundai"
 					},
-					"text": "Interactive water installation within the pavilion of Hyundai at the 2018 Winter Olympics in Pyeongchang, South Korea.",
+					"text": [
+						"Interactive water installation within the pavilion of Hyundai at the 2018 Winter Olympics in Pyeongchang, South Korea.",
+						"The pavilion presented hydrogen as a sustainable and efficient fuel of the future. An art installation made of hydrophobic waited on the inside, with thousands of water droplets moving in a choreography through its milled paths."
+					],
 					"employer": "Under employment at <a href='http://www.iart.ch' rel='noopener noreferrer' target='_blank' aria-label='iart AG' class='link'>iart AG</a>",
 					"services": "Concept, Project Planning, Project Management, Commissioning"
 				},
@@ -130,7 +136,10 @@
 						"title": "iart project documentation",
 						"url": "https://iart.ch/en/work/hansel-gretel-in-der-park-avenue-armory"
 					},
-					"text": "An interactive and immersive video art installation filling an entire ex-military drill hall in Manhattan NY - referring to the 'digital footprint' that everyone leaves behind, willingly or not.",
+					"text": [
+						"An interactive and immersive video art installation filling an entire ex-military drill hall in Manhattan NY - referring to the topic of 'digital footprints'.",
+						"56 infrared cameras recorded the visitors while projectors displayed their secretly filmed silhouettes in real time. Each projector used a small computer to form a self-contained, independent link, but communicated with all the others to form a decentralized, flexible system."
+					],
 					"employer": "Under employment at <a href='http://www.iart.ch' rel='noopener noreferrer' target='_blank' aria-label='iart AG' class='link'>iart AG</a>",
 					"services": "Conception, Media Planning, Code, Commissioning"
 				}

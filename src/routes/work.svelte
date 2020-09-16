@@ -28,7 +28,9 @@
 						<h3 class="font-bold">{project.title}</h3>
 						<span class="font-small work-link"><a href={project.link.url} rel="noopener noreferrer" 
             target="_blank" aria-label={project.link.title} class="link">{project.link.title}</a></span>
-						<p>{project.text}</p>
+						{#each project.text as paragraph}
+							<p class="font-small">{paragraph}</p>
+						{/each}
 						<ul class="tags font-small">
 							{#if project.employer}
 								<li><span class="font-bold">Employer: </span>{@html project.employer}</li>

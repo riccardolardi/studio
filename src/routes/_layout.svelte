@@ -26,12 +26,12 @@
 <svelte:head>
 	{#if $activeIndex !== 0}
 	  <style>
-			body {
-				background-color: #fff;
-				color: #0c0c0c;
-			}
 			header {
 				opacity: 1;
+			}
+			main {
+				background-color: #fff;
+				color: #0c0c0c;
 			}
 	  </style>
 	{/if}
@@ -43,14 +43,14 @@
 	@import "../styles/type.scss";
 
 	body {
-		color: transparent;
 	 	background-color: $blue;
 	 	isolation: isolate;
-	 	transition: all 250ms;
 	}
 
 	main {
 		position: relative;
+		color: transparent;
+		transition: background-color 250ms, color 250ms;
 	}
 
 	header {
@@ -287,7 +287,7 @@
 				}
 
 				.work-year, .work-link {
-
+					display: block;
 				}
 
 				.work-text {
@@ -298,7 +298,11 @@
 					}
 
 					p {
-						padding: $pad * 0.5 0;
+						padding-top: $pad * 0.5;
+
+						&:last-of-type {
+							padding-bottom: $pad * 0.5;
+						}
 					}
 				}
 
@@ -407,7 +411,7 @@
 
 <BG {activeIndex} />
 <main class="font-main{$activeIndex === 0 ? ' blend' : ''}">
-	<header class="font-small font-bold{$mobileHideNav ? ' mobile-hide' : ''}">
+	<header class="font-small font-tight font-bold{$mobileHideNav ? ' mobile-hide' : ''}">
 		<a href="/" on:click={() => window.scrollTo(0, 0)}>Studio <br/>Riccardo <br/>Lardi</a>
 	</header>
 	<slot></slot>

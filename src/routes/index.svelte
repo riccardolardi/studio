@@ -42,8 +42,8 @@
 
 	function isIntersecting(entry) {
 		return entry.isIntersecting && 
-			(entry.intersectionRatio >= 0.25 || 
-				entry.intersectionRect.top <= entry.rootBounds.height * 0.75);
+			(entry.intersectionRatio >= 0.4 || 
+				entry.intersectionRect.top <= entry.rootBounds.height * 0.6);
 	}
 
 	function recalcIntersectingArticles(entry) {
@@ -70,8 +70,6 @@
 		if (!el.classList.contains('active')) {
 			const lastActiveEl = document.querySelector('article.active');
 			if (lastActiveEl) lastActiveEl.classList.remove('active');
-			const titlePrefix = data.slugs[index].title ? `${data.slugs[index].title} - ` : '';
-			document.title = titlePrefix + data.title;
 			el.classList.add('active');
 			debouncedSetIndexActive(index);
 		}
@@ -85,6 +83,10 @@
 </script>
 
 <svelte:window bind:scrollY={scrollY} />
+
+<svelte:head>
+	<title>{data.title}</title>
+</svelte:head>
 
 <article id="home" class="observe-intersection" data-index="0">
 	<Block centered={true} webkitFix={true} fill={true}>
