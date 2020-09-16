@@ -1,5 +1,6 @@
 import sveltePreprocess from 'svelte-preprocess';
 import { threeMinifier } from '@yushijinhun/three-minifier-rollup';
+import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
@@ -48,6 +49,7 @@ export default {
 				dedupe: ['svelte']
 			}),
 			commonjs(),
+			json(),
 
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -93,7 +95,8 @@ export default {
 			resolve({
 				dedupe: ['svelte']
 			}),
-			commonjs()
+			commonjs(),
+			json()
 		],
 		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 
@@ -112,6 +115,7 @@ export default {
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			commonjs(),
+			json(),
 			!dev && terser()
 		],
 
