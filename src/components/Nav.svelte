@@ -5,6 +5,7 @@
 	function navigate(index) {
     const activeEl = document.querySelector(`article[data-index="${index}"]`);
     window.scrollTo(0, activeEl.offsetTop);
+    setTimeout(() => mobileHideNav.set(true), 125);
 	}
 </script>
 
@@ -20,15 +21,17 @@
 		top: $pad;
 		right: $pad;
 		opacity: 0;
-		transform: translateY(0);
+		// transform: translateY(0);
 		transition: opacity 250ms, transform 250ms;
+		z-index: 2;
 
 		@include breakpoint($breakMobile) {
 			top: $pad * 2;
 			right: $pad * 2;
+			color: white;
 
 			&.mobile-hide {
-				transform: translateY(-$pad);
+				// transform: translateY(-$pad);
 				opacity: 0 !important;
 			}
 		}
@@ -82,6 +85,10 @@
 						opacity: 0;
 						transition: all 125ms;
 						pointer-events: none;
+
+						@include breakpoint($breakMobile) {
+							background-color: $white;
+						}
 					}
 				}
 			}

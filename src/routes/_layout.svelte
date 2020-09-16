@@ -57,7 +57,7 @@
 		position: fixed;
 		top: $pad;
 		left: $pad;
-		transform: translateY(0);
+		// transform: translateY(0);
 		opacity: 0;
 		transition: opacity 250ms, transform 250ms;
 		z-index: 10;
@@ -65,12 +65,32 @@
 		@include breakpoint($breakMobile) {
 			top: $pad * 2;
 			left: $pad * 2;
+			color: $white;
 
 			&.mobile-hide {
-				transform: translateY(-$pad);
+				// transform: translateY(-$pad);
 				opacity: 0;
 			}
 		}
+	}
+
+	#mobile-backdrop {
+		position: fixed;
+		top: -4vh;
+		left: 0px;
+		width: 100%;
+		height: 16vh;
+		backdrop-filter: blur(4px);
+    z-index: 1;
+    background-color: rgba(0, 0, 255, 0.85);
+    transform: skewY(-5deg);
+    opacity: 1;
+    transition: opacity 250ms, transform 250ms;
+
+    &.hide {
+    	transform: skewY(-10deg);
+    	opacity: 0;
+    }
 	}
 
 	.blend {
@@ -281,7 +301,7 @@
 						transform: skew(0, 5deg);
 
 						@include breakpoint($breakMobile) {
-							transform: skew(0, 10deg);
+							transform: skew(0, 5deg);
 						}
 					}
 				}
@@ -319,7 +339,7 @@
 
 			@include breakpoint($breakMobile) {
 				width: 100%;
-				transform: skew(0, 10deg);
+				transform: skew(0, 5deg);
 			}
 
 			figcaption {
@@ -411,6 +431,7 @@
 
 <BG {activeIndex} />
 <main class="font-main{$activeIndex === 0 ? ' blend' : ''}">
+	<div id="mobile-backdrop" class="{$mobileHideNav || $activeIndex === 0 ? 'hide' : ''}"></div>
 	<header class="font-small font-tight font-bold{$mobileHideNav ? ' mobile-hide' : ''}">
 		<a href="/" on:click={() => window.scrollTo(0, 0)}>Studio <br/>Riccardo <br/>Lardi</a>
 	</header>
