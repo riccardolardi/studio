@@ -136,7 +136,14 @@
 		top: 0px;
 		left: 0px;
 		overflow: hidden;
+		opacity: 1;
+		transition: opacity 250ms 250ms;
+
+		&.hide {
+			opacity: 0;
+			transition: opacity 250ms 0ms;
+		}
 	}
 </style>
 
-<aside id="BG" />
+<aside id="BG" class="{$activeIndex !== 0 ? 'hide' : ''}"/>

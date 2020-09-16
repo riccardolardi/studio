@@ -21,16 +21,20 @@
 	setContext('data', data);
 	setContext('activeIndex', activeIndex);
 	setContext('mobileHideNav', mobileHideNav);
+
+	$: console.log($activeIndex);
 </script>
 
 <svelte:head>
 	{#if $activeIndex !== 0}
 	  <style>
+	  	body {
+	  		background-color: #fff;
+	  	}
 			header {
 				opacity: 1;
 			}
 			main {
-				background-color: #fff;
 				color: #0c0c0c;
 			}
 	  </style>
@@ -45,19 +49,19 @@
 	body {
 	 	background-color: $blue;
 	 	isolation: isolate;
+	 	transition: background-color 250ms;
 	}
 
 	main {
 		position: relative;
 		color: transparent;
-		transition: background-color 250ms, color 250ms;
+		transition: color 250ms;
 	}
 
 	header {
 		position: fixed;
 		top: $pad;
 		left: $pad;
-		// transform: translateY(0);
 		opacity: 0;
 		transition: opacity 250ms, transform 250ms;
 		z-index: 10;
@@ -68,18 +72,18 @@
 			color: $white;
 
 			&.mobile-hide {
-				// transform: translateY(-$pad);
 				opacity: 0;
 			}
 		}
 	}
 
 	#mobile-backdrop {
+		display: none;
 		position: fixed;
-		top: -4vh;
+		top: -12vh;
 		left: 0px;
 		width: 100%;
-		height: 16vh;
+		height: 25vh;
 		backdrop-filter: blur(4px);
     z-index: 1;
     background-color: rgba(0, 0, 255, 0.85);
@@ -87,8 +91,12 @@
     opacity: 1;
     transition: opacity 250ms, transform 250ms;
 
+    @include breakpoint($breakMobile) {
+    	display: block;
+    }
+
     &.hide {
-    	transform: skewY(-10deg);
+    	transform: skewY(-7.5deg);
     	opacity: 0;
     }
 	}

@@ -21,7 +21,6 @@
 		top: $pad;
 		right: $pad;
 		opacity: 0;
-		// transform: translateY(0);
 		transition: opacity 250ms, transform 250ms;
 		z-index: 2;
 
@@ -31,7 +30,6 @@
 			color: white;
 
 			&.mobile-hide {
-				// transform: translateY(-$pad);
 				opacity: 0 !important;
 			}
 		}
