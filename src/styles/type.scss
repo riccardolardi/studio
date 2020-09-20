@@ -68,6 +68,7 @@ body {
 
 .font-small {
   font-size: $pad * 0.5;
+  line-height: 175%;
 
   @include breakpoint($breakMobile) {
     font-size: $pad;
