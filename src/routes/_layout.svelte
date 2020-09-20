@@ -15,14 +15,14 @@
 	export let data;
 	let activeIndex = writable(0);
 	let mobileHideNav = writable(false);
+	let isMobile = writable(undefined);
 	let segment$ = writable(undefined);
 	$: $segment$ = segment;
 	setContext('segment', segment$);
 	setContext('data', data);
 	setContext('activeIndex', activeIndex);
 	setContext('mobileHideNav', mobileHideNav);
-
-	$: console.log($activeIndex);
+	setContext('isMobile', isMobile);
 </script>
 
 <svelte:head>
@@ -80,7 +80,7 @@
 	#mobile-backdrop {
 		display: none;
 		position: fixed;
-		top: -12vh;
+		top: -10vh;
 		left: 0px;
 		width: 100%;
 		height: 25vh;
@@ -352,10 +352,10 @@
 
 			figcaption {
 				display: inline-flex;
-				font-size: 0.5em;
 
 				@include breakpoint($breakMobile) {
 					text-align: right;
+					margin-bottom: $pad * 0.5;
 				}
 			}
 		}
@@ -445,4 +445,4 @@
 	</header>
 	<slot></slot>
 </main>
-<Nav {activeIndex} {mobileHideNav} />
+<Nav {activeIndex} {mobileHideNav} {isMobile} />

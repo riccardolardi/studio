@@ -12,6 +12,7 @@
 	let segment = getContext('segment');
 	let activeIndex = getContext('activeIndex');
 	let mobileHideNav = getContext('mobileHideNav');
+	let isMobile = getContext('isMobile');
 	let data = getContext('data');
 	let scrollY = 0;
 	let lastScrollY = 0;
@@ -38,6 +39,7 @@
     observeIntersectionEls.forEach(el => intersectionObserver.observe(el));
     const activeEl = document.querySelector(`#${!$segment ? 'home' : $segment}`);
     setTimeout(() => window.scrollTo(0, activeEl.offsetTop), $segment ? 0 : 1); // why tho
+    windowResized(); // trigger initially to set isMobile
 	});
 
 	function isIntersecting(entry) {
@@ -80,9 +82,13 @@
 	  lastScrollY = newScrollY;
 	  mobileHideNav.set(dy < 0);
 	}
+
+	function windowResized(event) {
+		isMobile.set(window.innerWidth <= 768);
+	}
 </script>
 
-<svelte:window bind:scrollY={scrollY} />
+<svelte:window bind:scrollY={scrollY} on:resize={windowResized} />
 
 <svelte:head>
 	<title>{data.title}</title>

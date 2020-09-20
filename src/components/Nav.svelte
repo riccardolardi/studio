@@ -1,6 +1,7 @@
 <script>
 	export let activeIndex;
 	export let mobileHideNav;
+	export let isMobile;
 
 	function navigate(index) {
     const activeEl = document.querySelector(`article[data-index="${index}"]`);
@@ -39,21 +40,19 @@
 		}
 
 		ul {
-
-			&.nav-items {
-				margin-bottom: $pad * 0.2;
-
-				li {
-					margin-right: $pad / 2;
-
-					&:last-child {
-						margin-right: 0;
-					}
-				}
-			}
+			margin-bottom: $pad * 0.2;
 
 			li {
 				display: inline-block;
+				margin-right: $pad / 2;
+
+				@include breakpoint($breakMobile) {
+					margin-right: $pad * 0.2;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
 
 				&.active {
 
@@ -94,7 +93,7 @@
 	}
 </style>
 
-<nav class="font-main font-small font-bold{$activeIndex !== 0 ? ' show' : ''}{$mobileHideNav ? ' mobile-hide' : ''}">
+<nav class="font-main font-small{$isMobile ? '' : ' font-bold'}{$activeIndex !== 0 ? ' show' : ''}{$mobileHideNav && $isMobile ? ' mobile-hide' : ''}">
 	<ul class="nav-items">
 		<li on:click|preventDefault={() => navigate(1)} class="{$activeIndex === 1 ? 'active' : ''}">
 			<a aria-current="{$activeIndex === 1 ? 'page' : undefined}" href="/services">Services</a>
