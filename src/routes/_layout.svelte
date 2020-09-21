@@ -403,7 +403,14 @@
 				}
 
 				&.phone {
-					margin: $pad * 0.2 0;
+
+					a {
+						display: block;
+
+						@include breakpoint($breakMobile) {
+							padding: $pad * 0.3 0 $pad * 0.2;
+						}
+					}
 				}
 			}
 
