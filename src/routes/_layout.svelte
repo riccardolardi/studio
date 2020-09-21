@@ -418,8 +418,16 @@
 				li {
 					margin-right: $pad * 0.5;
 
+					@include breakpoint($breakMobile) {
+						margin-right: $pad;
+					}
+
 					&:last-child {
 						margin-right: 0;
+					}
+
+					a {
+						display: block;
 					}
 
 					img {
@@ -428,7 +436,7 @@
 						height: auto;
 
 						@include breakpoint($breakMobile) {
-							width: $pad * 1.25;
+							width: $pad * 1.75;
 						}
 					}
 				}
