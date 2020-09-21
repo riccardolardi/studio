@@ -93,7 +93,7 @@
 	}
 </style>
 
-<nav class="font-main font-small{$isMobile ? '' : ' font-bold'}{$activeIndex !== 0 ? ' show' : ''}{$mobileHideNav && $isMobile ? ' mobile-hide' : ''}">
+<nav class="font-main font-small font-tight{$isMobile ? '' : ' font-bold'}{$activeIndex !== 0 ? ' show' : ''}{$mobileHideNav && $isMobile ? ' mobile-hide' : ''}">
 	<ul class="nav-items">
 		<li on:click|preventDefault={() => navigate(1)} class="{$activeIndex === 1 ? 'active' : ''}">
 			<a aria-current="{$activeIndex === 1 ? 'page' : undefined}" href="/services">Services</a>
