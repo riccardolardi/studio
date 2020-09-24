@@ -66,6 +66,11 @@ body {
   line-height: 135%;
 }
 
+.font-huge {
+  font-size: $pad * 2;
+  line-height: 150%;
+}
+
 .font-small {
   font-size: $pad * 0.5;
   line-height: 175%;
