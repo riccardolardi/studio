@@ -37,8 +37,8 @@
 		z-index: 2;
 
 		@include breakpoint($breakMobile) {
-			top: $pad * 1.5;
-			right: $pad * 1.5;
+			top: $pad * 2;
+			right: $pad * 2;
 
 			header {
 				opacity: 0;
@@ -55,12 +55,15 @@
 				opacity: 1;
 			}
 
-			button.button-nav-mobile {
+			.button-nav-mobile {
+				transform: translateY(0) rotateZ(90deg);
 
-				&:after {
-					content: "✕";
-					color: $white;
-					transform: rotateZ(90deg);
+				.menu-burger {
+					opacity: 0;
+				}
+
+				.menu-close {
+					opacity: 1;
 				}
 			}
 
@@ -72,28 +75,66 @@
 			}
 		}
 
-		button.button-nav-mobile {
+		.button-nav-mobile {
 			position: relative;
-			color: $blue;
-			padding: 0 $pad * 0.5;
-			transform: translateY(0);
+			width: $pad * 2;
+			height: $pad * 2;
+			transform: translateY(0) rotateZ(0);
 			visibility: visible;
 			opacity: 1;
 			transition: opacity 250ms, transform 250ms, visibility 0ms 0ms;
 			z-index: 2;
-
-			&:after {
-				display: block;
-				content: "☰";
-				transform: rotateZ(0);
-				transition: transform 250ms;
-			}
 
 			&.hide {
 				transform: translateY(-2vh);
 				visibility: hidden;
 				opacity: 0;
 				transition: opacity 250ms, transform 250ms, visibility 0ms 250ms;
+			}
+
+			.menu-burger {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 1;
+				transition: opacity 250ms;
+				height: 100%;
+
+				span {
+					display: block;
+					background-color: $blue;
+					height: $pad * 0.3;
+					width: 100%;
+				}
+			}
+
+			.menu-close {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: opacity 250ms;
+
+				span {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					display: block;
+					background-color: $white;
+					height: $pad * 0.25;
+					width: 100%;
+
+					&:first-child {
+						transform: rotateZ(45deg);
+					}
+
+					&:last-child {
+						transform: rotateZ(-45deg);
+					}
+				}
 			}
 		}
 
@@ -107,8 +148,8 @@
 				position: fixed;
 				top: 0px;
 				left: 0px;
-				right: 0px;
-				bottom: 0px;
+				height: 100vh;
+				width: 100vw;
 				padding-left: $pad * 2;
 				backdrop-filter: blur(0);
 				background-color: rgba(0, 0, 255, 0.85);
@@ -117,6 +158,10 @@
 				visibility: hidden;
 				z-index: 1;
 				transition: opacity 250ms, visibility 0ms 250ms;
+
+				@supports(-webkit-touch-callout: none) {
+					min-height: -webkit-fill-available;
+				}
 			}
 
 			li {
@@ -162,7 +207,7 @@
 
 						@include breakpoint($breakMobile) {
 							background-color: $white;
-							height: $pad * 0.25;
+							height: $pad * 0.2;
 						}
 					}
 				}
@@ -172,11 +217,18 @@
 </style>
 
 <nav class="font-main font-small font-tight{$isMobile ? '' : ' font-bold'}{$activeIndex !== 0 ? ' show' : ''}{mobileNavOpen ? ' mobile-nav-open' : ''}">
-	{#if $isMobile}<button class="button-nav-mobile font-huge{$mobileHideNav && !mobileNavOpen ? ' hide' : ''}{mobileNavOpen ? ' font-bold' : ''}" on:click={toggleMobileNav}/>{/if}
+	{#if $isMobile}<div class="button-nav-mobile{$mobileHideNav && !mobileNavOpen ? ' hide' : ''}" on:click={toggleMobileNav}>
+		<div class="menu-burger">
+			<span /><span /><span />
+		</div>
+		<div class="menu-close">
+			<span /><span />
+		</div>
+	</div>{/if}
 	<header class="font-small font-tight font-bold">
 		<a href="/" on:click={() => window.scrollTo(0, 0)}>Studio <br/>Riccardo <br/>Lardi</a>
 	</header>
-	<ul class="nav-items {$isMobile ? 'font-huge' : ''}">
+	<ul class="nav-items {$isMobile ? 'font-huge font-bold' : ''}">
 		<li on:click|preventDefault={() => navigate(1)} class="{$activeIndex === 1 ? 'active' : ''}">
 			<a aria-current="{$activeIndex === 1 ? 'page' : undefined}" href="/services">Services</a>
 		</li>
