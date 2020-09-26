@@ -112,7 +112,7 @@
 		&:not(#home) {
 
 			h2 {
-				padding-right: $pad * 8;
+				padding-right: $pad * 10;
 
 				@include breakpoint($breakMobile) {
 					padding-right: 0;

@@ -121,6 +121,8 @@
 			}
 
 			.menu-close {
+				display: flex;
+				align-items: center;
 				position: absolute;
 				width: 100%;
 				height: 100%;
@@ -129,8 +131,6 @@
 
 				span {
 					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
 					display: block;
 					background-color: $white;
 					height: $pad * 0.25;
@@ -220,7 +220,7 @@
 
 						@include breakpoint($breakMobile) {
 							background-color: $white;
-							height: $pad * 0.5;
+							height: $pad * 0.35;
 						}
 					}
 				}
@@ -241,7 +241,7 @@
 	<header class="font-small font-tight font-bold">
 		<a href="/" on:click={() => window.scrollTo(0, 0)}>Studio <br/>Riccardo <br/>Lardi</a>
 	</header>
-	<ul class="nav-items {$isMobile ? 'font-huge font-bold' : ''}">
+	<ul class="nav-items {$isMobile ? 'font-huge' : ''}">
 		<li on:click|preventDefault={() => navigate(1)} class="{$activeIndex === 1 ? 'active' : ''}">
 			<a aria-current="{$activeIndex === 1 ? 'page' : undefined}" href="/services">Services</a>
 		</li>
