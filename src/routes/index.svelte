@@ -13,6 +13,7 @@
 	let activeIndex = getContext('activeIndex');
 	let mobileHideNav = getContext('mobileHideNav');
 	let isMobile = getContext('isMobile');
+  let isTablet = getContext('isTablet');
 	let data = getContext('data');
 	let scrollY = 0;
 	let lastScrollY = 0;
@@ -85,6 +86,7 @@
 
 	function windowResized(event) {
 		isMobile.set(window.innerWidth <= 768);
+    isTablet.set(window.innerWidth <= 1024);
 	}
 </script>
 

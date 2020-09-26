@@ -42,8 +42,8 @@ body {
   -webkit-font-smoothing: antialiased;
 
   @include breakpoint($breakMobile) {
-    font-size: $pad;
-    line-height: $pad * 1.5;
+    font-size: $pad * 1.75;
+    line-height: $pad * 2.5;
   }
 }
 
@@ -59,16 +59,31 @@ body {
   font-family: 'AssemblyHumanOne';
   font-size: $pad * 3;
   line-height: 100%;
+
+  @include breakpoint($breakMobile) {
+    font-size: $pad * 5;
+    line-height: 100%;
+  }
 }
 
 .font-large {
   font-size: $pad * 1.5;
   line-height: 135%;
+
+  @include breakpoint($breakMobile) {
+    font-size: $pad * 2.5;
+    line-height: 135%;
+  }
 }
 
 .font-huge {
   font-size: $pad * 2;
   line-height: 150%;
+
+  @include breakpoint($breakMobile) {
+    font-size: $pad * 4;
+    line-height: 150%;
+  }
 }
 
 .font-small {
@@ -76,7 +91,8 @@ body {
   line-height: 175%;
 
   @include breakpoint($breakMobile) {
-    font-size: $pad;
+    font-size: $pad * 1.75;
+    line-height: $pad * 2.5;
   }
 }
 

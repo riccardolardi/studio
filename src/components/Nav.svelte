@@ -85,6 +85,11 @@
 			transition: opacity 250ms, transform 250ms, visibility 0ms 0ms;
 			z-index: 2;
 
+			@include breakpoint($breakMobile) {
+				width: $pad * 4;
+				height: $pad * 4;
+			}
+
 			&.hide {
 				transform: translateY(-2vh);
 				visibility: hidden;
@@ -108,6 +113,10 @@
 					background-color: $blue;
 					height: $pad * 0.3;
 					width: 100%;
+
+					@include breakpoint($breakMobile) {
+						height: $pad * 0.5;
+					}
 				}
 			}
 
@@ -126,6 +135,10 @@
 					background-color: $white;
 					height: $pad * 0.25;
 					width: 100%;
+
+					@include breakpoint($breakMobile) {
+						height: $pad * 0.35;
+					}
 
 					&:first-child {
 						transform: rotateZ(45deg);
@@ -207,7 +220,7 @@
 
 						@include breakpoint($breakMobile) {
 							background-color: $white;
-							height: $pad * 0.2;
+							height: $pad * 0.5;
 						}
 					}
 				}

@@ -6,6 +6,7 @@
 	export let indexRequest = false;
 	let data = getContext('data');
 	let isMobile = getContext('isMobile');
+	let isTablet = getContext('isTablet');
 	let index = 2;
 </script>
 
@@ -30,7 +31,7 @@
 						<span class="font-small work-link"><a href={project.link.url} rel="noopener noreferrer" 
             target="_blank" aria-label={project.link.title} class="link">{project.link.title}</a></span>
 						{#each project.text as paragraph}
-							<p class="{!$isMobile ? 'font-small' : ''}">{paragraph}</p>
+							<p class="{!$isMobile && !isTablet ? 'font-small' : ''}">{paragraph}</p>
 						{/each}
 						<ul class="tags font-small">
 							{#if project.employer}

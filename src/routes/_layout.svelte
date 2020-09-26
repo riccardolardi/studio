@@ -16,6 +16,7 @@
 	let activeIndex = writable(0);
 	let mobileHideNav = writable(false);
 	let isMobile = writable(undefined);
+	let isTablet = writable(undefined);
 	let segment$ = writable(undefined);
 	$: $segment$ = segment;
 	setContext('segment', segment$);
@@ -23,6 +24,7 @@
 	setContext('activeIndex', activeIndex);
 	setContext('mobileHideNav', mobileHideNav);
 	setContext('isMobile', isMobile);
+	setContext('isTablet', isTablet);
 </script>
 
 <svelte:head>
@@ -119,6 +121,10 @@
 
 			.block {
 				padding-top: $pad * 4;
+
+				@include breakpoint($breakMobile) {
+					padding-top: $pad * 8;
+				}
 			}
 		}
 	}
@@ -250,14 +256,16 @@
 
 						&:last-child {
 							position: absolute;
-							bottom: -$pad * 1.275;
+							bottom: -$pad * 1.35;
 							margin: 0;
 						  font-size: $pad * 0.75;
 						  line-height: 150%;
 
 						  @include breakpoint($breakMobile) {
-								font-size: $pad;
-								line-height: $pad * 1.5;
+						  	position: static;
+						  	bottom: auto;
+						    font-size: $pad * 1.75;
+						    line-height: unset;
 							}
 						}
 
@@ -287,7 +295,7 @@
 				@include breakpoint($breakMobile) {
 					flex-direction: column;
 					align-items: flex-start;
-					margin-bottom: $pad * 5;
+					margin-bottom: $pad * 6;
 				}
 
 				&:last-child {
