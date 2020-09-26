@@ -25,7 +25,7 @@
 					<div class="service-text">
 						<h3 class="font-bold">{service.title}</h3>
 						<p>{service.text}</p>
-						<ul class="tags font-bold font-small">
+						<ul class="tags font-bold font-small font-tight">
 							{#each service.tags as tag}
 							<li>{tag}</li>
 							{/each}

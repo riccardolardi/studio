@@ -40,13 +40,14 @@
 				{
 					"title": "Concept & Design",
 					"icon": "Z",
-					"text": "Design is not just the looks of something, it's about how something is built to fulfil a purpose. We use Design to create things that do not only function but can also be loved.",
+					"text": "Design is not primarily about the looks of something, it's about how something is built to fulfil a purpose. We use Design to create things that do not only function but can also be loved.",
 					"tags": [
 						"ux/ui",
 						"interactiondesign",
 						"web",
 						"apps",
-						"interfaces"
+						"interfaces",
+						"experiences"
 					]
 				},
 				{
@@ -57,8 +58,9 @@
 						"react",
 						"vue",
 						"craftcms",
-						"wordpress",
-						"native"
+						"jamstack",
+						"native",
+						"technology"
 					]
 				},
 				{
@@ -68,9 +70,10 @@
 					"tags": [
 						"designthinking",
 						"agile",
-						"methodology",
+						"research",
 						"spiking",
-						"prototyping"
+						"prototyping",
+						"knowledge"
 					]
 				}
 			]

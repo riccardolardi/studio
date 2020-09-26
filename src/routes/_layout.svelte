@@ -148,11 +148,13 @@
 			.single-service {
 				display: flex;
 				place-items: center;
-				margin-bottom: $pad * 2;
+				margin-bottom: $pad * 3;
+				padding: 0 $pad * 4 0 0;
 
 				@include breakpoint($breakMobile) {
 					flex-direction: column;
 					align-items: flex-start;
+					padding: 0 !important;
 
 					&.align-right {
 						flex-direction: column !important;
@@ -181,6 +183,7 @@
 
 				&.align-right {
 					flex-direction: row-reverse;
+					padding: 0 0 0 $pad * 4;
 
 					.service-text {
 						text-align: right;
@@ -192,6 +195,18 @@
 
 					ul {
 						justify-content: flex-end;
+
+						li {
+							margin: 0 0 0 $pad * 0.25 !important;
+
+							@include breakpoint($breakMobile) {
+								margin: 0 $pad * 0.25 0 0 !important;
+							}
+
+							&:last-child {
+								margin: 0 !important;
+							}
+						}
 					}
 				}
 
@@ -226,11 +241,24 @@
 					color: $blue;
 					margin-top: $pad * 0.2;
 
+					@include breakpoint($breakMobile) {
+						padding-right: $pad * 3;
+					}
+
 					li {
-						margin-right: $pad * 0.25;
+						margin: 0 $pad * 0.25 0 0;
 
 						&:last-child {
-							margin-right: 0;
+							position: absolute;
+							bottom: -$pad * 1.275;
+							margin: 0;
+						  font-size: $pad * 0.75;
+						  line-height: 150%;
+
+						  @include breakpoint($breakMobile) {
+								font-size: $pad;
+								line-height: $pad * 1.5;
+							}
 						}
 
 						&:before {
@@ -327,7 +355,11 @@
 			}
 
 			figcaption {
-				display: inline-flex;
+				display: table-cell;
+				transform: translateX(-$pad * 0.25) translateY(-50%);
+				background-color: $blue;
+				color: $white;
+				padding: 0 $pad * 0.25;
 
 				@include breakpoint($breakMobile) {
 					text-align: right;
@@ -340,7 +372,7 @@
 	#profile {
 
 		.profile-paragraphs {
-			padding: $pad * 2 $pad * 2 0 0;
+			padding: $pad * 2 $pad * 4 0 0;
 
 			@include breakpoint($breakMobile) {
 				padding: $pad * 2 0 0;
