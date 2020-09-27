@@ -32,6 +32,7 @@
 
 		init();
 		animate();
+		handleResize();
 
 		function init() {
 		  camera = new OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / -2, 1, 1000);
@@ -99,19 +100,20 @@
 
 		  if (winW > 1024) window.addEventListener('resize', handleResize, false);
 
-			function handleResize() {
-				winW = window.innerWidth;
-				winH = window.innerHeight;
-				aspect = winW / winH;
-				camera.aspect = aspect;
-				camera.fov = winH / window.screen.height;
-				camera.left = frustumSize * aspect / - 2;
-				camera.right = frustumSize * aspect / 2;
-				camera.top = frustumSize / 2;
-				camera.bottom = - frustumSize / 2;
-				camera.updateProjectionMatrix();
-				renderer.setSize(winW, winH);
-			}
+		}
+
+		function handleResize() {
+			winW = window.innerWidth;
+			winH = window.innerHeight;
+			aspect = winW / winH;
+			camera.aspect = aspect;
+			camera.fov = winH / window.screen.height;
+			camera.left = frustumSize * aspect / - 2;
+			camera.right = frustumSize * aspect / 2;
+			camera.top = frustumSize / 2;
+			camera.bottom = - frustumSize / 2;
+			camera.updateProjectionMatrix();
+			renderer.setSize(winW, winH);
 		}
 
 		function animate() {
