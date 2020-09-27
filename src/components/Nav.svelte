@@ -161,7 +161,7 @@
 				position: fixed;
 				top: 0px;
 				left: 0px;
-				// height: 100vh;
+				height: 100vh;
 				width: 100vw;
 				padding-left: $pad * 2;
 				backdrop-filter: blur(0);
@@ -172,9 +172,9 @@
 				z-index: 1;
 				transition: opacity 250ms, visibility 0ms 250ms;
 
-				// @supports(-webkit-touch-callout: none) {
-				// 	height: -webkit-fill-available;
-				// }
+				@supports(-webkit-touch-callout: none) {
+					height: -webkit-fill-available;
+				}
 			}
 
 			li {
@@ -229,7 +229,7 @@
 	}
 </style>
 
-<nav class="font-main font-small font-tight{$isMobile ? ' block-fill' : ' font-bold'}{$activeIndex !== 0 ? ' show' : ''}{mobileNavOpen ? ' mobile-nav-open' : ''}">
+<nav class="font-main font-small font-tight{$isMobile ? '' : ' font-bold'}{$activeIndex !== 0 ? ' show' : ''}{mobileNavOpen ? ' mobile-nav-open' : ''}">
 	{#if $isMobile}<div class="button-nav-mobile{$mobileHideNav && !mobileNavOpen ? ' hide' : ''}" on:click={toggleMobileNav}>
 		<div class="menu-burger">
 			<span /><span /><span />
