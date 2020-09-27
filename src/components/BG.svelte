@@ -24,8 +24,8 @@
 		let pixelRatio, winW, winH, aspect, bgEl, frustumSize;
 
 		pixelRatio = window.devicePixelRatio;
-		winW = window.innerWidth;
-		winH = window.innerHeight;
+		winW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+		winH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 		aspect = winW / winH;
 		frustumSize = 5;
 		bgEl = document.querySelector('#BG');
@@ -103,11 +103,10 @@
 		}
 
 		function handleResize() {
-			winW = window.innerWidth;
-			winH = window.innerHeight;
+			winW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+			winH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 			aspect = winW / winH;
 			camera.aspect = aspect;
-			camera.fov = winH / window.screen.height;
 			camera.left = frustumSize * aspect / - 2;
 			camera.right = frustumSize * aspect / 2;
 			camera.top = frustumSize / 2;
