@@ -17,6 +17,7 @@
 	let mobileHideNav = writable(false);
 	let isMobile = writable(undefined);
 	let isTablet = writable(undefined);
+	let isInAppBrowser = writable(undefined);
 	let segment$ = writable(undefined);
 	$: $segment$ = segment;
 	setContext('segment', segment$);
@@ -25,6 +26,9 @@
 	setContext('mobileHideNav', mobileHideNav);
 	setContext('isMobile', isMobile);
 	setContext('isTablet', isTablet);
+	setContext('isInAppBrowser', isInAppBrowser);
+	if (typeof navigator !== 'undefined') 
+		isInAppBrowser.set(navigator.userAgent.includes('Instagram'));
 </script>
 
 <svelte:head>
@@ -40,6 +44,15 @@
 				color: #0c0c0c;
 			}
 	  </style>
+	{/if}
+	{#if $isInAppBrowser}
+		<style>
+			.block-fill {
+				min-height: auto !important;
+				padding-top: 128px;
+				padding-bottom: 128px;
+			}
+		</style>
 	{/if}
 </svelte:head>	
 
