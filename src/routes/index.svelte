@@ -87,6 +87,9 @@
 	function windowResized(event) {
 		isMobile.set(window.innerWidth <= 768);
     isTablet.set(window.innerWidth <= 1024);
+    const fillBlocks = Array.from(document.querySelectorAll('.block-fill'));
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    fillBlocks.forEach(el => {el.style.height = `${vh}px`});
 	}
 </script>
 
@@ -97,7 +100,7 @@
 </svelte:head>
 
 <article id="home" class="observe-intersection" data-index="0">
-	<Block centered={true} fill={true}>
+	<Block centered={true} webkitFix={true} fill={true}>
 		<h1 class="font-bold font-large font-tight">
 			{@html data.header}
 		</h1>

@@ -20,7 +20,7 @@ const preprocess = sveltePreprocess({
   },
   postcss: {
     plugins: [
-    	require('postcss-100vh-fix'),
+    	// require('postcss-100vh-fix'),
     	require('autoprefixer')
     ]
   }
