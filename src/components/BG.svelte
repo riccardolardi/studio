@@ -135,6 +135,7 @@
 		position: fixed;
 		top: 0px;
 		left: 0px;
+		height: 100vh;
 		overflow: hidden;
 		opacity: 1;
 		transition: opacity 250ms 250ms;
