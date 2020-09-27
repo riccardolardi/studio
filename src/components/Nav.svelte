@@ -172,9 +172,9 @@
 				z-index: 1;
 				transition: opacity 250ms, visibility 0ms 250ms;
 
-				// @supports(-webkit-touch-callout: none) {
-				// 	min-height: -webkit-fill-available;
-				// }
+				@supports(-webkit-touch-callout: none) {
+					min-height: -webkit-fill-available;
+				}
 			}
 
 			li {

@@ -97,7 +97,7 @@
 
 		  bgEl.appendChild(renderer.domElement);
 
-		  if (winW > 768) window.addEventListener('resize', handleResize, false);
+		  if (winW > 1024) window.addEventListener('resize', handleResize, false);
 
 			function handleResize() {
 				winW = window.innerWidth;
