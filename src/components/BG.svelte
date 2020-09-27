@@ -135,7 +135,7 @@
 		position: fixed;
 		top: 0px;
 		left: 0px;
-		// height: 100vh;
+		height: 100vh;
 		overflow: hidden;
 		opacity: 1;
 		transition: opacity 250ms 250ms;
@@ -147,4 +147,4 @@
 	}
 </style>
 
-<aside id="BG" class="block-fill{$activeIndex !== 0 ? ' hide' : ''}"/>
+<aside id="BG" class="{$activeIndex !== 0 ? 'hide' : ''}"/>

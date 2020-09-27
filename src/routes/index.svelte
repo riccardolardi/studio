@@ -87,9 +87,6 @@
 	function windowResized(event) {
 		isMobile.set(window.innerWidth <= 768);
     isTablet.set(window.innerWidth <= 1024);
-    const fillBlocks = Array.from(document.querySelectorAll('.block-fill'));
-    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-    fillBlocks.forEach(el => {el.style.height = `${vh}px`});
 	}
 </script>
 

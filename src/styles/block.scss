@@ -4,13 +4,13 @@
 	padding: 0 $pad * 6;
 
 	&.block-fill {
-		// min-height: 100vh;
+		min-height: 100vh;
 
-		// &.webkit-fix {
-		// 	@supports(-webkit-touch-callout: none) {
-		// 		min-height: -webkit-fill-available;
-		// 	}
-		// }
+		&.webkit-fix {
+			@supports(-webkit-touch-callout: none) {
+				min-height: -webkit-fill-available;
+			}
+		}
 	}
 
 	@include breakpoint($breakMobile) {
