@@ -3,17 +3,17 @@
 .block {
 	padding: 0 $pad * 6;
 
-	&.block-fill {
-		min-height: 100vh;
-	}
+	// &.block-fill {
+	// 	min-height: 100vh;
+	// }
 
-	&.block-fill-75 {
-		min-height: 75vh;
-	}
+	// &.block-fill-75 {
+	// 	min-height: 75vh;
+	// }
 
-	&.block-fill-50 {
-		min-height: 50vh;
-	}
+	// &.block-fill-50 {
+	// 	min-height: 50vh;
+	// }
 
 	@include breakpoint($breakMobile) {
 		padding: 0 $pad * 2;
