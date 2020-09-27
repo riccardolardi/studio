@@ -98,7 +98,7 @@
 
 		  bgEl.appendChild(renderer.domElement);
 
-		  if (winW > 1024) window.addEventListener('resize', handleResize, false);
+		  window.addEventListener('resize', handleResize, false);
 
 		}
 
