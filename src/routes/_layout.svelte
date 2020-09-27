@@ -184,7 +184,6 @@
 				}
 
 				&:last-child {
-					margin-bottom: 0;
 
 					@include breakpoint($breakMobile) {
 						margin-top: $pad * 4;
@@ -303,7 +302,7 @@
 				}
 
 				&:last-child {
-					margin-bottom: 0;
+					margin-bottom: $pad;
 				}
 
 				&.align-right {
