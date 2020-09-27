@@ -17,6 +17,7 @@
 	let mobileHideNav = writable(false);
 	let isMobile = writable(undefined);
 	let isTablet = writable(undefined);
+	let isInsta = writable(undefined);
 	let segment$ = writable(undefined);
 	$: $segment$ = segment;
 	setContext('segment', segment$);
@@ -25,6 +26,7 @@
 	setContext('mobileHideNav', mobileHideNav);
 	setContext('isMobile', isMobile);
 	setContext('isTablet', isTablet);
+	setContext('isInsta', isInsta);
 </script>
 
 <svelte:head>

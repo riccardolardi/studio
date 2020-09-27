@@ -14,6 +14,7 @@
 	let mobileHideNav = getContext('mobileHideNav');
 	let isMobile = getContext('isMobile');
   let isTablet = getContext('isTablet');
+  let isInsta = getContext('isInsta');
 	let data = getContext('data');
 	let scrollY = 0;
 	let lastScrollY = 0;
@@ -41,6 +42,7 @@
     const activeEl = document.querySelector(`#${!$segment ? 'home' : $segment}`);
     setTimeout(() => window.scrollTo(0, activeEl.offsetTop), $segment ? 0 : 1); // why tho
     windowResized(); // trigger initially to set isMobile
+    isInsta.set(navigator.userAgent.indexOf('Instagram'));
 	});
 
 	function isIntersecting(entry) {
