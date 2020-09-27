@@ -48,7 +48,7 @@
 	{#if $isInAppBrowser}
 		<style>
 			.block-fill {
-				min-height: 667px !important;
+				min-height: 624px !important;
 			}
 		</style>
 	{/if}

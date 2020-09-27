@@ -28,7 +28,7 @@
 
 		pixelRatio = window.devicePixelRatio;
 		winW = $isInAppBrowser ? 375 : Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-		winH = $isInAppBrowser ? 667 : Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+		winH = $isInAppBrowser ? 624 : Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 		aspect = winW / winH;
 		frustumSize = 5;
 		bgEl = document.querySelector('#BG');
@@ -138,7 +138,6 @@
 		position: fixed;
 		top: 0px;
 		left: 0px;
-		height: 100vh;
 		overflow: hidden;
 		opacity: 1;
 		transition: opacity 250ms 250ms;
