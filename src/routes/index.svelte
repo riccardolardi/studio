@@ -97,7 +97,7 @@
 </svelte:head>
 
 <article id="home" class="observe-intersection" data-index="0">
-	<Block centered={true} webkitFix={true} fill={true}>
+	<Block centered={true} fill={true}>
 		<h1 class="font-bold font-large font-tight">
 			{@html data.header}
 		</h1>

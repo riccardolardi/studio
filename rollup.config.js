@@ -19,8 +19,11 @@ const preprocess = sveltePreprocess({
     includePaths: ['src'],
   },
   postcss: {
-    plugins: [require('autoprefixer')],
-  },
+    plugins: [
+    	require('postcss-100vh-fix'),
+    	require('autoprefixer')
+    ]
+  }
 });
 
 const onwarn = (warning, onwarn) =>

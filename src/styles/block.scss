@@ -5,12 +5,6 @@
 
 	&.block-fill {
 		min-height: 100vh;
-
-		&.webkit-fix {
-			@supports(-webkit-touch-callout: none) {
-				min-height: -webkit-fill-available;
-			}
-		}
 	}
 
 	&.block-fill-75 {
