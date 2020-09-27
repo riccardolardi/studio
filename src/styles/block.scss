@@ -7,9 +7,9 @@
 		min-height: 100vh;
 
 		&.webkit-fix {
-			@supports(-webkit-touch-callout: none) {
-				min-height: -webkit-fill-available;
-			}
+			// @supports(-webkit-touch-callout: none) {
+			// 	min-height: -webkit-fill-available;
+			// }
 		}
 	}
 
@@ -18,7 +18,7 @@
 	}
 
 	&.block-fill-50 {
-		min-height: 75vh;
+		min-height: 50vh;
 	}
 
 	@include breakpoint($breakMobile) {

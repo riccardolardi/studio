@@ -185,6 +185,10 @@
 
 				&:last-child {
 					margin-bottom: 0;
+
+					@include breakpoint($breakMobile) {
+						margin-top: $pad * 4;
+					}
 				}
 
 				&.align-right {
@@ -342,6 +346,17 @@
 
 						&:last-of-type {
 							padding-bottom: $pad * 0.5;
+						}
+
+						@include breakpoint($breakMobile) {
+
+							&:first-of-type {
+								margin-top: $pad;
+							}
+
+							&:last-of-type {
+								margin-bottom: $pad;
+							}
 						}
 					}
 				}

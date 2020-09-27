@@ -115,6 +115,10 @@ body {
 
 .link {
   border-bottom: $pad * 0.1 solid $black;
+
+  @include breakpoint($breakMobile) {
+    border-bottom: $pad * 0.25 solid $black;
+  }
 }
 
 a {
