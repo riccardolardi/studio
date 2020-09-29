@@ -34,12 +34,15 @@
             target="_blank" aria-label="Twitter" className="social-icon" alt="Twitter">
             <img src="/icons/twitter.svg" alt="Twitter" />
           </a></li>
+          <li><a href="https://www.instagram.com/studioriccardolardi" rel="noopener noreferrer" 
+            target="_blank" aria-label="Instagram" className="social-icon" alt="Instagram">
+            <img src="/icons/instagram.svg" alt="Instagram" />
+          </a></li>
           <li><a href="https://github.com/riccardolardi" rel="noopener noreferrer" 
             target="_blank" aria-label="GitHub" className="social-icon" alt="GitHub">
             <img src="/icons/github.svg" alt="GitHub" />
           </a></li>
-          <li><a href="https://stackoverflow.com/users/1515187/riccardolardi" rel="noopener noreferrer" 
-            target="_blank" aria-label="StackOverflow" className="social-icon" alt="StackOverflow">
+          <li><a href="https://stackoverflow.com/users/1515187/riccardolardi" rel="noopener noreferrer" target="_blank" aria-label="StackOverflow" className="social-icon" alt="StackOverflow">
             <img src="/icons/stackoverflow.svg" alt="StackOverflow" />
           </a></li>
 				</ul>
