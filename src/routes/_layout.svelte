@@ -27,11 +27,10 @@
 	setContext('isMobile', isMobile);
 	setContext('isTablet', isTablet);
 	setContext('isInAppBrowser', isInAppBrowser);
-	isInAppBrowser.set(true);
-	// if (typeof navigator !== 'undefined') 
-	// 	isInAppBrowser.set(navigator.userAgent.includes('Instagram') || 
-	// 		navigator.userAgent.includes('FBAN') || 
-	// 			navigator.userAgent.includes('FBAV'));
+	if (typeof navigator !== 'undefined') 
+		isInAppBrowser.set(navigator.userAgent.includes('Instagram') || 
+			navigator.userAgent.includes('FBAN') || 
+				navigator.userAgent.includes('FBAV'));
 </script>
 
 <svelte:head>
