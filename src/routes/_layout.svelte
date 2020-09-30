@@ -27,8 +27,11 @@
 	setContext('isMobile', isMobile);
 	setContext('isTablet', isTablet);
 	setContext('isInAppBrowser', isInAppBrowser);
-	if (typeof navigator !== 'undefined') 
-		isInAppBrowser.set(navigator.userAgent.includes('Instagram'));
+	isInAppBrowser.set(true);
+	// if (typeof navigator !== 'undefined') 
+	// 	isInAppBrowser.set(navigator.userAgent.includes('Instagram') || 
+	// 		navigator.userAgent.includes('FBAN') || 
+	// 			navigator.userAgent.includes('FBAV'));
 </script>
 
 <svelte:head>
@@ -259,7 +262,7 @@
 					display: flex;
 					flex-wrap: wrap;
 					color: $blue;
-					margin-top: $pad * 0.2;
+					margin-top: $pad * 0.35;
 
 					@include breakpoint($breakMobile) {
 						padding-right: $pad * 3;

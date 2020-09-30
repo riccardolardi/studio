@@ -27,7 +27,7 @@
 		let pixelRatio, winW, winH, aspect, bgEl, frustumSize;
 
 		pixelRatio = window.devicePixelRatio;
-		winW = $isInAppBrowser ? 375 : Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+		winW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 		winH = $isInAppBrowser ? 624 : Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 		aspect = winW / winH;
 		frustumSize = 5;
@@ -145,6 +145,10 @@
 		&.hide {
 			opacity: 0;
 			transition: opacity 250ms 0ms;
+		}
+
+		canvas {
+			display: block;
 		}
 	}
 </style>
