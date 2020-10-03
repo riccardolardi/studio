@@ -28,7 +28,7 @@
 
 		pixelRatio = window.devicePixelRatio;
 		winW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-		winH = $isInAppBrowser ? 624 : Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+		winH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 		aspect = winW / winH;
 		frustumSize = 5;
 		bgEl = document.querySelector('#BG');
