@@ -1,10 +1,10 @@
 <script>
 	import { getContext } from 'svelte';
 	import Block from '../components/Block.svelte';
-	import Services from '../routes/services.svelte';
-	import Work from '../routes/work.svelte';
-	import Profile from '../routes/profile.svelte';
-	import Contact from '../routes/contact.svelte';
+	import Services from '../components/services.svelte';
+	import Work from '../components/work.svelte';
+	import Profile from '../components/profile.svelte';
+	import Contact from '../components/contact.svelte';
 	import debounce from 'lodash.debounce';
 	import { onMount } from 'svelte';
 
@@ -96,6 +96,15 @@
 	<title>{data.title}</title>
 </svelte:head>
 
+<style type="text/scss">
+  @import 'breakpoint-sass/stylesheets/_breakpoint.scss';
+  @import "../styles/var.scss";
+
+  #home {
+    color: $white;
+  }
+</style>
+
 <article id="home" class="observe-intersection" data-index="0">
 	<Block centered={true} webkitFix={true} fill={true}>
 		<h1 class="font-bold font-large font-tight">
@@ -109,7 +118,7 @@
 	</Block>
 </article>
 
-<Services indexRequest={true} />
-<Work indexRequest={true} />
-<Profile indexRequest={true} />
-<Contact indexRequest={true} />
+<Services />
+<Work />
+<Profile />
+<Contact />

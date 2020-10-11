@@ -22,8 +22,9 @@
 
 	const loader = new SVGLoader();
 
+	let camera, scene, renderer, controls, group;
+
 	onMount(() => {
-		let camera, scene, renderer, controls, group;
 		let pixelRatio, winW, winH, aspect, bgEl, frustumSize;
 
 		pixelRatio = window.devicePixelRatio;
@@ -53,7 +54,7 @@
 			group = new Group();
 			group.scale.multiplyScalar(0.005);
 			group.scale.y *= -1;
-		  group.rotation.x = Math.random();
+		  group.rotation.x = -Math.random();
 		  group.rotation.y = Math.random();
 		  group.rotation.z = Math.random();
 
@@ -145,10 +146,6 @@
 		&.hide {
 			opacity: 0;
 			transition: opacity 250ms 0ms;
-		}
-
-		canvas {
-			display: block;
 		}
 	}
 </style>
