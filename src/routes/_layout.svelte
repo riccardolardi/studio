@@ -47,6 +47,13 @@
 			}
 	  </style>
 	{/if}
+	{#if $isInAppBrowser}
+		<style>
+			.block-fill {
+				min-height: 624px !important;
+			}
+		</style>
+	{/if}
 </svelte:head>	
 
 <style type="text/scss" global>
