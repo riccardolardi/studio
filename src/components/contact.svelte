@@ -17,7 +17,7 @@
       span {
         display: block;
 
-        &.link {
+        a.link {
           display: inline-block;
         }
 
@@ -38,14 +38,14 @@
         display: flex;
 
         @include breakpoint($breakMobile) {
-          margin-top: $pad;
+          margin-top: $pad * 3;
         }
 
         li {
           margin-right: $pad * 0.5;
 
           @include breakpoint($breakMobile) {
-            margin-right: $pad;
+            margin-right: $pad * 2;
           }
 
           &:last-child {
@@ -62,7 +62,7 @@
             height: auto;
 
             @include breakpoint($breakMobile) {
-              width: $pad * 1.75;
+              width: $pad * 3;
             }
           }
         }

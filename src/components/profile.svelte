@@ -21,16 +21,6 @@
 			.single-paragraph {
 				margin-bottom: $pad;
 
-				&.with-icon {
-					display: flex;
-					place-items: center;
-					gap: 2em;
-
-					.icon {
-						margin-top: 0.2em;
-					}
-				}
-
 				&:last-child {
 					margin-bottom: 0;
 				}
