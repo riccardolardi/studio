@@ -33,11 +33,7 @@
 	<!-- This contains the contents of the <svelte:head> component, if
 	     the current page has one -->
 	%sapper.head%
-</head>
-<body>
-	<!-- The application will be rendered inside this element,
-	     because `src/client.js` references it -->
-	<div id="sapper">%sapper.html%</div>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16856648-5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -45,5 +41,10 @@
     gtag('js', new Date());
     gtag('config', 'UA-16856648-5');
   </script>
+</head>
+<body>
+	<!-- The application will be rendered inside this element,
+	     because `src/client.js` references it -->
+	<div id="sapper">%sapper.html%</div>
 </body>
 </html>
