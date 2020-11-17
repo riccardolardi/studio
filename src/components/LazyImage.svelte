@@ -59,12 +59,6 @@
 </style>
 
 <figure bind:this={figure} class={`align-${align}`}>
-	{#if isIntersecting}
-		<img src={src} alt={alt} width={width} height={height} />
-		{#if label}<figcaption class="font-tiny">{label}</figcaption>{/if}
-	{:else}
-		<img className="placeholder" 
-			src={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='${width}' 
-		  	height='${height}' %3E%3C/svg%3E`} alt="placeholder" />
-	{/if}
+	<img src={src} loading="lazy" alt={alt} width={width} height={height} />
+	{#if label}<figcaption class="font-tiny">{label}</figcaption>{/if}
 </figure>
