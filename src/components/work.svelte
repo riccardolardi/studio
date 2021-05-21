@@ -104,8 +104,8 @@
 					align={i % 2 === 1 ? 'right' : 'left'}
 				/>
 				<div class="work-text">
-					<span class="font-small work-year">{project.year}</span>
-					<h3 class="font-bold">{project.title}</h3>
+					<!-- <span class="font-small work-year">{project.year}</span> -->
+					<h3 class="font-bold">{@html project.title}</h3>
 					<span class="font-small work-link"><a href={project.link.url} rel="noopener noreferrer" 
           target="_blank" aria-label={project.link.title} class="link">{project.link.title}</a></span>
 					{#each project.text as paragraph}

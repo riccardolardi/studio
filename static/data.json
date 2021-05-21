@@ -91,7 +91,7 @@
 						"alt": "Blumline"
 					},
 					"year": 2021,
-					"title": "Blumline",
+					"title": "Blumline, Design Agency Website",
 					"link": {
 						"title": "https://www.blumline.com",
 						"url": "https://www.blumline.com"
@@ -113,14 +113,14 @@
 						"alt": "Gleichstellungsbehörde Kanton Basel-Stadt"
 					},
 					"year": 2021,
-					"title": "gleichgestellt.ch",
+					"title": "Leitfaden für Gender-gerechte Sprache",
 					"link": {
 						"title": "https://www.gleichstellung.bs.ch/gleichgestellt",
 						"url": "https://www.gleichstellung.bs.ch/gleichgestellt"
 					},
 					"text": [
-						"Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.",
-						"Built with Gatsby/React the website featues a scrolling navigation and monochrome color concept."
+						"The Studio developed this guidelines website on how to use gender-aware language in various situations, for the Canton of Basel-Stadt.",
+						"In close collaboration with Graphic Design bureau Gian Besset."
 					],
 					"client": "<a href='https://www.bs.ch' rel='noopener noreferrer' target='_blank' aria-label='Kanton Basel-Stadt' class='link'>Kanton Basel-Stadt</a>",
 					"partner": "<a href='https://gianbesset.ch' rel='noopener noreferrer' target='_blank' aria-label='Gian Besset' class='link'>Gian Besset</a>",
@@ -135,7 +135,7 @@
 						"alt": "Papiermuseum Basel"
 					},
 					"year": 2021,
-					"title": "Typografisches Raster",
+					"title": "Typografisches Raster,<br/>interactive Media Station",
 					"link": {
 						"title": "https://www.papiermuseum.ch",
 						"url": "https://www.papiermuseum.ch"
@@ -165,7 +165,7 @@
 						"Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.",
 						"Built with Gatsby/React the website featues a scrolling navigation and monochrome color concept."
 					],
-					"client": "Genossenschaft Migros Zürich",
+					"client": "<a href='https://www.migros-engagement.ch' rel='noopener noreferrer' target='_blank' aria-label='Migros Zürich' class='link'>Kulturprozent Migros Zürich</a>",
 					"partner": "<a href='http://www.komun.ch' rel='noopener noreferrer' target='_blank' aria-label='Komun' class='link'>Komun</a>",
 					"services": "Development, Consulting, Interaction Design"
 				},
