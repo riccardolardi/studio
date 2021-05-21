@@ -84,22 +84,22 @@
 			<span class="email"><a href="mailto:hello@riccardolardi.com" class="link">hello@riccardolardi.com</span>
 			<ul class="social-links">
         <li><a href="https://www.linkedin.com/in/riccardolardi" rel="noopener noreferrer" 
-          target="_blank" aria-label="LinkedIn" className="social-icon" alt="LinkedIn">
+          target="_blank" aria-label="LinkedIn" class="social-icon" alt="LinkedIn">
           <img src="/icons/linkedin.svg" alt="LinkedIn" />
         </a></li>
         <li><a href="https://twitter.com/riccardolardi" rel="noopener noreferrer" 
-          target="_blank" aria-label="Twitter" className="social-icon" alt="Twitter">
+          target="_blank" aria-label="Twitter" class="social-icon" alt="Twitter">
           <img src="/icons/twitter.svg" alt="Twitter" />
         </a></li>
         <li><a href="https://www.instagram.com/studioriccardolardi" rel="noopener noreferrer" 
-          target="_blank" aria-label="Instagram" className="social-icon" alt="Instagram">
+          target="_blank" aria-label="Instagram" class="social-icon" alt="Instagram">
           <img src="/icons/instagram.svg" alt="Instagram" />
         </a></li>
         <li><a href="https://github.com/riccardolardi" rel="noopener noreferrer" 
-          target="_blank" aria-label="GitHub" className="social-icon" alt="GitHub">
+          target="_blank" aria-label="GitHub" class="social-icon" alt="GitHub">
           <img src="/icons/github.svg" alt="GitHub" />
         </a></li>
-        <li><a href="https://stackoverflow.com/users/1515187/riccardolardi" rel="noopener noreferrer" target="_blank" aria-label="StackOverflow" className="social-icon" alt="StackOverflow">
+        <li><a href="https://stackoverflow.com/users/1515187/riccardolardi" rel="noopener noreferrer" target="_blank" aria-label="StackOverflow" class="social-icon" alt="StackOverflow">
           <img src="/icons/stackoverflow.svg" alt="StackOverflow" />
         </a></li>
 			</ul>

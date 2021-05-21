@@ -94,7 +94,15 @@
 		<div class="work-list">
 			{#each data.articles[index].projects as project, i}
 			<section class="single-work observe-intersection roll-in{i % 2 === 1 ? ' align-right' : ''}">
-				<LazyImage src={project.image.src} width={project.image.width} height={project.image.height} alt={project.image.alt} label={project.image.label} align={i % 2 === 1 ? 'right' : 'left'} />
+				<LazyImage
+					src={project.image.src}
+					width={project.image.width}
+					height={project.image.height}
+					alt={project.image.alt}
+					label={project.image.label}
+					kind={project.image.kind}
+					align={i % 2 === 1 ? 'right' : 'left'}
+				/>
 				<div class="work-text">
 					<span class="font-small work-year">{project.year}</span>
 					<h3 class="font-bold">{project.title}</h3>

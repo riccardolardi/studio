@@ -40,27 +40,27 @@
 				{
 					"title": "Concept & Design",
 					"icon": "Z",
-					"text": "Design isn't about the looks of something, it's about how something is built to fulfil a purpose. We use Design to create things that do not only function but can also be loved.",
+					"text": "Design isn't primarily about the looks of something, it's about how something is built to fulfil a certain purpose. We use Design to create things that do not only function but can also be loved.",
 					"tags": [
 						"ux/ui",
 						"interactiondesign",
 						"web",
 						"apps",
-						"interfaces",
-						"experiences"
+						"interfaces"
 					]
 				},
 				{
 					"title": "Code & Development",
 					"icon": "%",
-					"text": "Code is a tool and tools are cool! The Studio builds mobile apps, websites, web-apps, desktop applications but also products that live in physical space such as interactive media tables.",
+					"text": "The Studio builds mobile apps, websites, web-apps, desktop applications, interactive media stations for museums and exhibitions – all according to latest modern standards, using latest technologies.",
 					"tags": [
 						"react",
 						"vue",
+						"svelte",
+						"static",
+						"ssr",
 						"craftcms",
-						"jamstack",
-						"native",
-						"technology"
+						"native"
 					]
 				},
 				{
@@ -68,12 +68,11 @@
 					"icon": "×",
 					"text": "Offering consultation, teaching or helping to brainstorm your new business idea, we like to share our expertise and help bringing products to life or to the next level.",
 					"tags": [
+						"teaching",
 						"designthinking",
 						"agile",
 						"research",
-						"spiking",
-						"prototyping",
-						"informaton"
+						"prototyping"
 					]
 				}
 			]
@@ -85,8 +84,74 @@
 			"projects": [
 				{
 					"image": {
+						"src": "videos/blumline.mp4",
+						"width": 1268,
+						"height": 680,
+						"kind": "video",
+						"alt": "Blumline"
+					},
+					"year": 2021,
+					"title": "Blumline",
+					"link": {
+						"title": "https://www.blumline.com",
+						"url": "https://www.blumline.com"
+					},
+					"text": [
+						"Agency website for San Francisco based Design Innovation firm Blumline.",
+						"In close collaboration with the clients own Design team we developed the website using Nuxt.js static build and CraftCMS as a backend."
+					],
+					"client": "<a href='https://www.blumline.com' rel='noopener noreferrer' target='_blank' aria-label='Blumline' class='link'>Blumline</a>",
+					"partner": "<a href='https://wearesuperworks.com' rel='noopener noreferrer' target='_blank' aria-label='Superworks' class='link'>Superworks</a>",
+					"services": "Development, Consulting, Interaction Design"
+				},
+				{
+					"image": {
+						"src": "videos/gleichgestellt.mp4",
+						"width": 1360,
+						"height": 720,
+						"kind": "video",
+						"alt": "Gleichstellungsbehörde Kanton Basel-Stadt"
+					},
+					"year": 2021,
+					"title": "gleichgestellt.ch",
+					"link": {
+						"title": "https://www.gleichstellung.bs.ch/gleichgestellt",
+						"url": "https://www.gleichstellung.bs.ch/gleichgestellt"
+					},
+					"text": [
+						"Complete redesign and technical overhaul for front and backend of Migros Sommernachts-Ball web presence.",
+						"Built with Gatsby/React the website featues a scrolling navigation and monochrome color concept."
+					],
+					"client": "<a href='https://www.bs.ch' rel='noopener noreferrer' target='_blank' aria-label='Kanton Basel-Stadt' class='link'>Kanton Basel-Stadt</a>",
+					"partner": "<a href='https://gianbesset.ch' rel='noopener noreferrer' target='_blank' aria-label='Gian Besset' class='link'>Gian Besset</a>",
+					"services": "Development, Consulting, Interaction Design"
+				},
+				{
+					"image": {
+						"src": "videos/papiermuseum.mp4",
+						"width": 1284,
+						"height": 720,
+						"kind": "video",
+						"alt": "Papiermuseum Basel"
+					},
+					"year": 2021,
+					"title": "Typografisches Raster",
+					"link": {
+						"title": "https://www.papiermuseum.ch",
+						"url": "https://www.papiermuseum.ch"
+					},
+					"text": [
+						"For the exhibition «Charaktertypen. Basel und die Typografie von 1920 bis heute» the Studio created a hands on media station that can be used via touch screen.",
+						"The didactic and interactive installation lets visitors experience how digital systems helped to develop a new kind of typographic workflow and thus changed how typography is made."
+					],
+					"client": "<a href='https://www.papiermuseum.ch' rel='noopener noreferrer' target='_blank' aria-label='Papiermuseum' class='link'>Papiermuseum Basel</a>",
+					"services": "Development, Consulting"
+				},
+				{
+					"image": {
 						"src": "img/gmz1.jpg",
 						"width": 1024,
+						"kind": "image",
 						"height": 544,
 						"alt": "Migros Sommernachts-Ball"
 					},
@@ -102,33 +167,13 @@
 					],
 					"client": "Genossenschaft Migros Zürich",
 					"partner": "<a href='http://www.komun.ch' rel='noopener noreferrer' target='_blank' aria-label='Komun' class='link'>Komun</a>",
-					"services": "Code, Consulting, Interaction Design"
-				},
-				{
-					"image": {
-						"src": "img/hyundai1.jpg",
-						"width": 1024,
-						"height": 576,
-						"alt": "Hyundai Pavilion Water Installation",
-						"label": "Image Copyright Luke Hayes"
-					},
-					"year": 2019,
-					"title": "Hyundai Pavilion Water Installation",
-					"link": {
-						"title": "iart project documentation",
-						"url": "https://iart.ch/en/work/hyundai"
-					},
-					"text": [
-						"Interactive water installation within the pavilion of Hyundai at the 2018 Winter Olympics in Pyeongchang, South Korea.",
-						"The pavilion presented hydrogen as a sustainable and efficient fuel of the future. An art installation made of hydrophobic waited on the inside, with thousands of water droplets moving in a choreography through its milled paths."
-					],
-					"employer": "Under employment at <a href='http://www.iart.ch' rel='noopener noreferrer' target='_blank' aria-label='iart AG' class='link'>iart AG</a>",
-					"services": "Concept, Project Planning, Project Management, Commissioning"
+					"services": "Development, Consulting, Interaction Design"
 				},
 				{
 					"image": {
 						"src": "img/armory1.jpg",
 						"width": 1024,
+						"kind": "image",
 						"height": 576,
 						"alt": "Hansel & Gretel, Armory On Park",
 						"label": "Image Copyright iart AG"

@@ -38,6 +38,7 @@ export default {
 		plugins: [
 			threeMinifier(),
 			replace({
+				preventAssignment: true,
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
@@ -86,6 +87,7 @@ export default {
 		plugins: [
 			threeMinifier(),
 			replace({
+				preventAssignment: true,
 				'process.browser': false,
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
@@ -114,6 +116,7 @@ export default {
 			threeMinifier(),
 			resolve(),
 			replace({
+				preventAssignment: true,
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),

@@ -78,10 +78,6 @@
 							@include breakpoint($breakMobile) {
 								margin: 0 $pad * 0.25 0 0 !important;
 							}
-
-							&:last-child {
-								margin: 0 !important;
-							}
 						}
 					}
 				}
@@ -126,21 +122,6 @@
 
 					li {
 						margin: 0 $pad * 0.25 0 0;
-
-						&:last-child {
-							position: absolute;
-							bottom: -$pad * 1.35;
-							margin: 0;
-						  font-size: $pad * 0.75;
-						  line-height: 150%;
-
-						  @include breakpoint($breakMobile) {
-						  	position: static;
-						  	bottom: auto;
-						    font-size: $pad * 1.75;
-						    line-height: unset;
-							}
-						}
 
 						&:before {
 							content: "#";
