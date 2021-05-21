@@ -60,8 +60,7 @@
 
 			const material = new MeshLambertMaterial({
 				color: 0xffffff,
-				depthWrite: true,
-				flatShading: false
+				depthWrite: true
 			});
 
 			data.paths.forEach((path, i) => {
@@ -72,7 +71,6 @@
 			      curveSegments: 32,
 			      bevelEnabled: false
 			    });
-			    geometry.mergeVertices();
 			    geometry.center();
 			    const mesh = new Mesh(geometry, material);
 			    group.add(mesh);
@@ -86,9 +84,8 @@
 			scene.add(group);
 
 		  renderer = new WebGLRenderer({
-	      antialias: true, 
-	      alpha: true, 
-	      powerPreference: 'high-performance' 
+	      antialias: true,
+	      alpha: true
 		  });
 		  renderer.setPixelRatio(pixelRatio);
 		  renderer.setSize(winW, winH);
