@@ -52,10 +52,6 @@
 					}
 				}
 
-				.work-year, .work-link {
-					display: block;
-				}
-
 				.work-text {
 					padding: 0 0 0 $pad * 2;
 

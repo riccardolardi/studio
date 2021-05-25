@@ -106,10 +106,10 @@
 				},
 				{
 					"image": {
-						"src": "videos/gleichgestellt.mp4",
+						"src": "img/gleichgestellt1.jpg",
 						"width": 1360,
 						"height": 720,
-						"kind": "video",
+						"kind": "image",
 						"alt": "Gleichstellungsbehörde Kanton Basel-Stadt"
 					},
 					"year": 2021,

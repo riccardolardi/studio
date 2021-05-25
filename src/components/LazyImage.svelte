@@ -39,7 +39,7 @@
 
 		@include breakpoint($breakMobile) {
 			width: 100%;
-			margin: 0;
+			margin: 1rem 0 !important;
 			transform: skew(0, 5deg);
 		}
 
