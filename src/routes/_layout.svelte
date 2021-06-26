@@ -34,16 +34,17 @@
 </script>
 
 <svelte:head>
+	<link rel="stylesheet" href="/global.css">
 	{#if $activeIndex !== 0}
 	  <style>
 	  	body {
-	  		background-color: #fff;
+	  		background-color: #fff !important;
 	  	}
 			header {
 				opacity: 1;
 			}
 			main {
-				color: #0c0c0c;
+				color: #0c0c0c !important;
 			}
 	  </style>
 	{/if}
