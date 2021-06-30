@@ -41,7 +41,7 @@
 	  		background-color: #fff !important;
 	  	}
 			header {
-				opacity: 1;
+				opacity: 1 !important;
 			}
 			main {
 				color: #0c0c0c !important;
