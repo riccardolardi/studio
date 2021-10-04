@@ -10,11 +10,11 @@
       <Three :is-intro="activeEntry === 'index'" />
     </client-only>
     <main>
-      <Index id="index" :active="activeEntry === 'index'" />
-      <Services id="services" :active="activeEntry === 'services'" />
-      <Projects id="projects" :active="activeEntry === 'projects'" />
-      <Profile id="profile" :active="activeEntry === 'profile'" />
-      <Contact id="contact" :active="activeEntry === 'contact'" />
+      <Index :active="activeEntry === 'index'" />
+      <Services :active="activeEntry === 'services'" />
+      <Projects :active="activeEntry === 'projects'" />
+      <Profile :active="activeEntry === 'profile'" />
+      <Contact :active="activeEntry === 'contact'" />
     </main>
     <Header :active-entry="activeEntry" :is-intro="activeEntry === 'index'" />
     <figure class="blend-overlay" />

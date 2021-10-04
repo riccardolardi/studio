@@ -1,11 +1,11 @@
 <template>
-  <div class="page page--index" :class="{ 'is-active': active }">
+  <section id="index" class="page page--index" :class="{ 'is-active': active }">
     <p>
       Hoi, ich bin ein Interaction Designer und Software Entwickler und arbeite
       zwischen digitalem und physischem Raum.
     </p>
     <ArrowSvg class="arrow--down" />
-  </div>
+  </section>
 </template>
 
 <script>

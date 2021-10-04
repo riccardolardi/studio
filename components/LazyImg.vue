@@ -1,6 +1,7 @@
 <template>
-  <img
+  <nuxt-picture
     ref="image"
+    format="webp"
     :class="{
       loaded: isLoaded,
       intersecting: watch ? isIntersecting : true,
@@ -53,20 +54,20 @@ export default {
       isIntersecting: false,
     }
   },
-  mounted() {
-    if (this.watch) {
-      this.observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          this.isIntersecting = true
-          this.observer.unobserve(entries[0].target)
-        }
-      })
-      this.observer.observe(this.$refs.image)
-    }
-  },
-  beforeDestroy() {
-    if (this.observer) this.observer.disconnect()
-  },
+  // mounted() {
+  //   if (this.watch) {
+  //     this.observer = new IntersectionObserver((entries) => {
+  //       if (entries[0].isIntersecting) {
+  //         this.isIntersecting = true
+  //         this.observer.unobserve(entries[0].target)
+  //       }
+  //     })
+  //     this.observer.observe(this.$refs.image)
+  //   }
+  // },
+  // beforeDestroy() {
+  //   if (this.observer) this.observer.disconnect()
+  // },
   methods: {
     onLoaded() {
       this.isLoaded = true
@@ -81,7 +82,7 @@ img {
   display: block;
   width: 100%;
   height: auto;
-  opacity: 0;
+  // opacity: 0;
   transition: opacity 500ms 250ms;
   &.loaded.intersecting {
     opacity: 1;

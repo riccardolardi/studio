@@ -1,5 +1,9 @@
 <template>
-  <div class="page page--projects" :class="{ 'is-active': active }">
+  <section
+    id="projects"
+    class="page page--projects"
+    :class="{ 'is-active': active }"
+  >
     <h1>Projekte</h1>
     <p class="subtitle">Web, Apps und mediale Installationen</p>
     <article class="project">
@@ -30,8 +34,8 @@
           </span>
         </div>
         <p>
-          Ende April 2021 öffnet die Ausstellung Digitale Demokratie - Eine
-          interaktive Reise in die politische Zukunft ihre Tore. Auf drei
+          Ende April 2021 öffnet die Ausstellung "Digitale Demokratie - Eine
+          interaktive Reise in die politische Zukunft" ihre Tore. Auf drei
           Stockwerken sollen Fragestellungen und Forschungsergebnisse zu Themen
           rund um den Einzug Digitaler Technologien in die Politik präsentiert
           werden.
@@ -189,8 +193,8 @@
                   :lazy="false"
                 />
                 <figcaption>
-                  ...bis hin zu interaktiven, auf die Besucher/innen
-                  reagierende Sound- und Lichtinstallationen.
+                  ...bis hin zu interaktiven, auf die Besucher/innen reagierende
+                  Sound- und Lichtinstallationen.
                 </figcaption>
               </figure>
             </slide>
@@ -295,7 +299,7 @@
         </client-only>
       </div>
     </article>
-  </div>
+  </section>
 </template>
 
 <script>

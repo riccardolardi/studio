@@ -1,5 +1,9 @@
 <template>
-  <div class="page page--profile" :class="{ 'is-active': active }">
+  <section
+    id="profile"
+    class="page page--profile"
+    :class="{ 'is-active': active }"
+  >
     <h1>Profil</h1>
     <p class="subtitle">Riccardo Alberto Lardi, *1984</p>
     <p>
@@ -25,7 +29,7 @@
       <iartSvg />
       <unizhSvg />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

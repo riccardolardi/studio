@@ -1,5 +1,9 @@
 <template>
-  <div class="page page--services" :class="{ 'is-active': active }">
+  <section
+    id="services"
+    class="page page--services"
+    :class="{ 'is-active': active }"
+  >
     <h1>Services</h1>
     <p class="subtitle">Planung, Design und Realisation</p>
     <p>
@@ -10,15 +14,15 @@
     </p>
     <p>
       Neben der Planung, Gestaltung und Umsetzung von digitalen Produkten
-      betätige ich mich auch in der <u>Lehre</u> wie z.B. in der
-      Schulung oder im Unterricht.
+      betätige ich mich auch in der <u>Lehre</u> wie z.B. in der Schulung oder
+      im Unterricht.
     </p>
     <ul>
       <li>Planung und Begleitung der Gestaltung von digitalen Produkten</li>
       <li>Prototypisierung, Machbarkeitsstudien und technische Umsetzung</li>
       <li>Lehre, Schulung, Vermittlung</li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>

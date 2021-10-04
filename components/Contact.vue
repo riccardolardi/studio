@@ -1,7 +1,7 @@
 <template>
-  <div class="page page--contact" :class="{ 'is-active': active }">
+  <section id="contact" class="page page--contact" :class="{ 'is-active': active }">
     <h1>Kontakt</h1>
-    <p class="subtitle">Ereichbar über alles ausser Fax</p>
+    <p class="subtitle">Erreichbar über alles ausser Fax</p>
     <p>Riccardo Lardi<br />Schertlingasse 3<br />4051 Basel<br />Schweiz</p>
     <a href="tel:0041793396538">+41 (0)79 339 65 38</a>
     <a href="mailto:hello@riccardolardi.com">hello@riccardolardi.com</a>
@@ -27,7 +27,7 @@
       class="external"
       >GitHub</a
     >
-  </div>
+  </section>
 </template>
 
 <script>
