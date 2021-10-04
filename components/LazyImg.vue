@@ -3,7 +3,7 @@
     ref="image"
     format="webp"
     quality="80"
-    sizes="sm:768px lg:1024px"
+    sizes="sm:420px md:768px lg:920px"
     :class="{
       loaded: isLoaded,
       intersecting: watch ? isIntersecting : true,
@@ -13,6 +13,7 @@
     :width="width"
     :height="height"
     :loading="lazy ? 'lazy' : null"
+    class="lazy-img"
     @load="onLoaded"
   />
 </template>
@@ -80,14 +81,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  // opacity: 0;
-  transition: opacity 500ms 250ms;
-  &.loaded.intersecting {
-    opacity: 1;
-  }
+.lazy-img {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    // opacity: 0;
+    transition: opacity 500ms 250ms;
+    &.loaded.intersecting {
+      opacity: 1;
+    }
+}
 }
 </style>
