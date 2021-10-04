@@ -13,7 +13,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Das Studio Riccardo Lardi spezialisiert sich auf die Planung, Konzeption, Gestaltung und Entwicklung von Projekten zwischen digitalem und physischem Raum.',
+      },
       { name: 'format-detection', content: 'telephone=no' },
       { property: 'og:url', content: 'https://www.riccardolardi.com' },
       { property: 'og:image', content: 'https://www.riccardolardi.com/og.png' },
@@ -40,9 +45,7 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/carousel.js', mode: 'client', ssr: false },
-  ],
+  plugins: [{ src: '~/plugins/carousel.js', mode: 'client', ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: false,
@@ -75,6 +78,6 @@ export default {
   // https://github.com/nuxt-community/robots-module
   robots: {
     UserAgent: '*',
-    Disallow: '/',
+    Disallow: '',
   },
 }
