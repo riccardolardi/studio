@@ -1,30 +1,3 @@
-@font-face {
-  font-family: BuenosAires;
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('~assets/fonts/BuenosAiresWeb-Regular.woff2') format('woff2'),
-    url('~assets/fonts/BuenosAiresWeb-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: BuenosAires;
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('~assets/fonts/BuenosAiresWeb-Bold.woff2') format('woff2'),
-    url('~assets/fonts/BuenosAiresWeb-Bold.woff') format('woff');
-}
-
-@font-face {
-  font-family: AssemblyHumanOne;
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('~assets/fonts/AssemblyHumanOneWeb-Regular.woff2') format('woff2'),
-    url('~assets/fonts/AssemblyHumanOneWeb-Regular.woff') format('woff');
-}
-
 html {
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;

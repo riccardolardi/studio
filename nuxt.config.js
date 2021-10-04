@@ -62,6 +62,8 @@ export default {
     '@nuxtjs/style-resources',
     // https://image.nuxtjs.org
     '@nuxt/image',
+    // https://github.com/ivodolenc/nuxt-font-loader
+    'nuxt-font-loader',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -83,5 +85,11 @@ export default {
   robots: {
     UserAgent: '*',
     Disallow: '',
+  },
+
+  fontLoader: {
+    url: '/fonts.css',
+    prefetch: true,
+    preconnect: true,
   },
 }
