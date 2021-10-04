@@ -1,0 +1,166 @@
+<template>
+  <div
+    class="layout layout--default"
+    :class="[
+      { 'is-intro': activeEntry === 'index', 'is-ready': ready },
+      `browser-${browser.name}`,
+    ]"
+  >
+    <client-only>
+      <Three :is-intro="activeEntry === 'index'" />
+    </client-only>
+    <main>
+      <Index id="index" :active="activeEntry === 'index'" />
+      <Services id="services" :active="activeEntry === 'services'" />
+      <Projects id="projects" :active="activeEntry === 'projects'" />
+      <Profile id="profile" :active="activeEntry === 'profile'" />
+      <Contact id="contact" :active="activeEntry === 'contact'" />
+    </main>
+    <Header :active-entry="activeEntry" :is-intro="activeEntry === 'index'" />
+    <figure class="blend-overlay" />
+  </div>
+</template>
+
+<script>
+import Three from '~/components/Three'
+import Header from '~/components/Header'
+import Index from '~/components/Index'
+import Services from '~/components/Services'
+import Projects from '~/components/Projects'
+import Profile from '~/components/Profile'
+import Contact from '~/components/Contact'
+const { detect } = require('detect-browser')
+export default {
+  name: 'Layout',
+  components: {
+    Three,
+    Header,
+    Index,
+    Services,
+    Projects,
+    Profile,
+    Contact,
+  },
+  data: () => {
+    return {
+      ready: false,
+      pages: [],
+      intersectingEntries: [],
+      activeEntry: undefined,
+    }
+  },
+  computed: {
+    browser() {
+      return detect()
+    },
+  },
+  mounted() {
+    this.pages = document.querySelectorAll('.page')
+    this.initScrollDetection()
+    this.onScroll()
+    setTimeout(() => {
+      this.ready = true
+    }, 250)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    initScrollDetection() {
+      window.addEventListener('scroll', this.onScroll)
+    },
+    onScroll() {
+      this.pages.forEach((page) => {
+        if (window.scrollY + window.innerHeight / 2 >= page.offsetTop) {
+          this.activeEntry = page.getAttribute('id')
+          // this.activeEntry =
+          //   page.getAttribute('id') === 'index' && window.scrollY > 0
+          //     ? 'services'
+          //     : page.getAttribute('id')
+        }
+      })
+    },
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.layout--default {
+  opacity: 0;
+  transition: color 250ms, opacity 250ms;
+  &.is-ready {
+    opacity: 1;
+  }
+  &.is-intro {
+    ::v-deep nav {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: opacity 0ms 0ms, transform 0ms 0ms;
+      @media (min-width: $bp-4) {
+        transition: opacity 250ms 0ms, transform 250ms 0ms;
+      }
+    }
+    header,
+    main {
+      color: $white;
+      mix-blend-mode: difference;
+      ::v-deep svg polyline {
+        stroke: $white;
+      }
+    }
+  }
+  &:not(.is-intro) {
+    background-color: $white;
+    .Three {
+      opacity: 0;
+    }
+    .blend-overlay {
+      opacity: 0;
+    }
+    header {
+      background-color: rgba(255, 255, 255, 0.95);
+      transition: transform 250ms, background-color 0ms 250ms;
+      @media (min-width: $bp-4) {
+        background-color: transparent;
+      }
+    }
+  }
+  &.browser-safari,
+  &.browser-ios {
+    .blend-overlay {
+      mix-blend-mode: lighten;
+    }
+  }
+  &.browser-ios {
+    .page--index {
+      &:not(.is-active) {
+        visibility: hidden;
+      }
+      ::v-deep p {
+        margin-top: -12.5vh;
+      }
+      ::v-deep svg {
+        bottom: 15vh;
+      }
+    }
+    .page--services {
+      margin-top: -49.999vh;
+    }
+  }
+  header,
+  main {
+    @extend %pageWidth;
+  }
+  .blend-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    mix-blend-mode: color;
+    transition: opacity 250ms;
+    pointer-events: none;
+  }
+}
+</style>

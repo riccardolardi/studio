@@ -1,0 +1,88 @@
+html, body {
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: unset;
+  &.external {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin: 0 0 0.2em;
+    }
+    &::before {
+      content: '';
+      height: 0.8em;
+      width: 0.8em;
+      background-image: url(~/assets/icons/arrow.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(-90deg) scale(0.75);
+    }
+  }
+}
+
+.page {
+  @extend %t-0;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: $pad * 10 $pad * 2 0;
+  @media (min-width: $bp-3) {
+    padding: $pad * 12 $pad * 2 0;
+  }
+  &:not(&--index) {
+    opacity: 0;
+    transition: opacity 250ms;
+    &.is-active {
+      opacity: 1;
+    }
+  }
+  &:first-of-type,
+  &:last-of-type {
+    min-height: 100vh;
+  }
+  figure {
+    img {
+      width: 100%;
+      height: auto;
+    }
+    figcaption {
+      @extend %t-1;
+
+      margin: 1em 0 0;
+    }
+  }
+}
+
+h1 {
+  @extend %t-2;
+
+  font-weight: bold;
+  & + .subtitle {
+    @extend %t-4;
+  }
+}
+
+h2 {
+  @extend %t-3;
+
+  margin: 0 0 1em;
+}
+
+p {
+  &:not(:last-child) {
+    margin: 0 0 1em;
+  }
+}
+
+ul {
+  list-style: disc;
+  padding: 0 0 0 $pad * 2;
+}
