@@ -56,6 +56,8 @@
                 <LazyImg
                   src="/images/digitaledemokratie/digitale-demokratie-8.jpg"
                   alt="Digitale Demokratie"
+                  width="1024"
+                  height="1535"
                   :lazy="false"
                 />
                 <figcaption>
@@ -69,6 +71,8 @@
                 <LazyImg
                   src="/images/digitaledemokratie/digitale-demokratie-7.jpg"
                   alt="Digitale Demokratie"
+                  width="1024"
+                  height="1535"
                   :lazy="false"
                 />
                 <figcaption>
@@ -82,6 +86,8 @@
                 <LazyImg
                   src="/images/digitaledemokratie/digitale-demokratie-32.jpg"
                   alt="Digitale Demokratie"
+                  width="1024"
+                  height="1535"
                   :lazy="false"
                 />
                 <figcaption>
@@ -95,6 +101,8 @@
                 <LazyImg
                   src="/images/digitaledemokratie/digitale-demokratie-39.jpg"
                   alt="Digitale Demokratie"
+                  width="1024"
+                  height="1535"
                   :lazy="false"
                 />
                 <figcaption>
@@ -150,6 +158,8 @@
                 <LazyImg
                   src="/images/hslu/hslu-1.jpg"
                   alt="HSLU Spatial Design Media 1"
+                  width="1024"
+                  height="1535"
                   :lazy="false"
                 />
                 <figcaption>
@@ -163,6 +173,8 @@
                 <LazyImg
                   src="/images/hslu/hslu-2.jpg"
                   alt="HSLU Spatial Design Media 1"
+                  width="1024"
+                  height="1535"
                   :lazy="false"
                 />
                 <figcaption>
@@ -176,6 +188,8 @@
                 <LazyImg
                   src="/images/hslu/hslu-3.jpg"
                   alt="HSLU Spatial Design Media 1"
+                  width="1024"
+                  height="1535"
                   :lazy="false"
                 />
                 <figcaption>
@@ -241,6 +255,8 @@
                 <LazyImg
                   src="/images/sia/sia-1.png"
                   alt="Schweizerischer Ingenieur- und Architektenverein SIA"
+                  width="1024"
+                  height="849"
                   :lazy="false"
                 />
                 <figcaption>
@@ -254,6 +270,8 @@
                 <LazyImg
                   src="/images/sia/sia-2.png"
                   alt="Schweizerischer Ingenieur- und Architektenverein SIA"
+                  width="1024"
+                  height="849"
                   :lazy="false"
                 />
                 <figcaption>
@@ -267,6 +285,8 @@
                 <LazyImg
                   src="/images/sia/sia-3.jpg"
                   alt="Schweizerischer Ingenieur- und Architektenverein SIA"
+                  width="1024"
+                  height="1535"
                   :lazy="false"
                 />
                 <figcaption>

@@ -9,6 +9,8 @@
       intersecting: watch ? isIntersecting : true,
     }"
     :src="src"
+    :width="width"
+    :height="height"
     :alt="alt"
     :loading="lazy ? 'lazy' : null"
     class="lazy-img"
