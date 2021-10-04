@@ -344,6 +344,7 @@ export default {
       }
     }
     &__media {
+      width: 100%;
       margin: $pad * 2 0 0;
       @media (min-width: $bp-2) {
         margin: 0;
