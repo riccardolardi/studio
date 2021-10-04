@@ -58,11 +58,15 @@ export default {
 .page--profile {
   .clients {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    column-gap: 4rem;
+    column-gap: 2rem;
     grid-row-gap: 2rem;
     margin: 1rem 0 0;
+    @media (min-width: $bp-2) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 4rem;
+    }
     ::v-deep svg {
       width: 100%;
       height: auto;
