@@ -2,6 +2,8 @@
   <nuxt-picture
     ref="image"
     format="webp"
+    quality="80"
+    sizes="sm:768px lg:1024px"
     :class="{
       loaded: isLoaded,
       intersecting: watch ? isIntersecting : true,
