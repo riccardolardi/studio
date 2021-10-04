@@ -14,6 +14,7 @@ a {
       margin: 0 0 0.2em;
     }
     &::before {
+      flex: 0 0 auto;
       content: '';
       height: 0.8em;
       width: 0.8em;
@@ -34,15 +35,13 @@ a {
   max-width: 920px;
   margin: 0 auto;
   padding: $pad * 10 $pad * 2 0;
+  opacity: 0;
+  transition: opacity 250ms;
   @media (min-width: $bp-3) {
     padding: $pad * 12 $pad * 2 0;
   }
-  &:not(&--index) {
-    opacity: 0;
-    transition: opacity 250ms;
-    &.is-active {
-      opacity: 1;
-    }
+  &.is-active {
+    opacity: 1;
   }
   &:first-of-type,
   &:last-of-type {

@@ -94,8 +94,11 @@ export default {
   &.is-intro {
     ::v-deep nav {
       opacity: 0;
-      transform: translateX(100%);
-      transition: opacity 0ms 0ms, transform 0ms 0ms;
+      transform: translateY(-100%);
+      @media (min-width: $bp-2) {
+        transform: translateX(100%);
+        transition: opacity 0ms 0ms, transform 0ms 0ms;
+      }
       @media (min-width: $bp-4) {
         transition: opacity 250ms 0ms, transform 250ms 0ms;
       }
@@ -137,9 +140,6 @@ export default {
   }
   &.browser-ios {
     .page--index {
-      &:not(.is-active) {
-        visibility: hidden;
-      }
       ::v-deep svg {
         bottom: 15vh;
       }

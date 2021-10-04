@@ -54,21 +54,6 @@
             <slide>
               <figure class="project__media__item">
                 <LazyImg
-                  src="/images/digitaledemokratie/digitale-demokratie-8.jpg"
-                  alt="Digitale Demokratie"
-                  width="1024"
-                  height="1535"
-                  :lazy="false"
-                />
-                <figcaption>
-                  Die Web-App dient als Audio-Guide und führt den Besucher durch
-                  die Ausstellung
-                </figcaption>
-              </figure>
-            </slide>
-            <slide>
-              <figure class="project__media__item">
-                <LazyImg
                   src="/images/digitaledemokratie/digitale-demokratie-7.jpg"
                   alt="Digitale Demokratie"
                   width="1024"
@@ -78,6 +63,21 @@
                 <figcaption>
                   Benutzerführung durch das Museum mittels dem eigenen
                   Mobiltelefon
+                </figcaption>
+              </figure>
+            </slide>
+            <slide>
+              <figure class="project__media__item">
+                <LazyImg
+                  src="/images/digitaledemokratie/digitale-demokratie-8.jpg"
+                  alt="Digitale Demokratie"
+                  width="1024"
+                  height="1535"
+                  :lazy="false"
+                />
+                <figcaption>
+                  Die Web-App dient als Audio-Guide und führt den Besucher durch
+                  die Ausstellung
                 </figcaption>
               </figure>
             </slide>

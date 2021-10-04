@@ -67,7 +67,10 @@ export default {
 
 <style lang="scss" scoped>
 nav {
-  transition: opacity 250ms 250ms, transform 250ms 250ms;
+  transition: opacity 250ms 0ms, transform 250ms 0ms;
+  @media (min-width: $bp-2) {
+    transition: opacity 250ms 250ms, transform 250ms 250ms;
+  }
   ul {
     display: flex;
     flex-direction: column;
@@ -80,6 +83,10 @@ nav {
     }
     li {
       a {
+        color: $grey;
+        @media (min-width: $bp-2) {
+          color: $black;
+        }
         @extend %t-1;
         @extend %underline;
 
@@ -89,6 +96,7 @@ nav {
           transform: scaleX(0);
         }
         &.active {
+          color: $black;
           &::after {
             transform: scaleX(1);
             opacity: 1;
