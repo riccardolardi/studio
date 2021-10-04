@@ -3,18 +3,15 @@
     ref="image"
     format="webp"
     quality="80"
-    sizes="sm:420px md:768px lg:920px"
+    sizes="sm:320px md:560px lg:768px"
     :class="{
       loaded: isLoaded,
       intersecting: watch ? isIntersecting : true,
     }"
     :src="src"
     :alt="alt"
-    :width="width"
-    :height="height"
     :loading="lazy ? 'lazy' : null"
     class="lazy-img"
-    @load="onLoaded"
   />
 </template>
 
@@ -57,24 +54,25 @@ export default {
       isIntersecting: false,
     }
   },
-  // mounted() {
-  //   if (this.watch) {
-  //     this.observer = new IntersectionObserver((entries) => {
-  //       if (entries[0].isIntersecting) {
-  //         this.isIntersecting = true
-  //         this.observer.unobserve(entries[0].target)
-  //       }
-  //     })
-  //     this.observer.observe(this.$refs.image)
-  //   }
-  // },
-  // beforeDestroy() {
-  //   if (this.observer) this.observer.disconnect()
-  // },
+  mounted() {
+    this.$refs.image.$el.onload = this.onLoaded()
+    if (this.watch) {
+      this.observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          this.isIntersecting = true
+          this.observer.unobserve(entries[0].target)
+        }
+      })
+      this.observer.observe(this.$refs.image.$el)
+    }
+  },
+  beforeDestroy() {
+    if (this.observer) this.observer.disconnect()
+  },
   methods: {
     onLoaded() {
       this.isLoaded = true
-      this.$emit('loaded', this.$refs.image)
+      this.$emit('loaded', this.$refs.image.$el)
     },
   },
 }
@@ -82,15 +80,15 @@ export default {
 
 <style lang="scss" scoped>
 .lazy-img {
+  opacity: 0;
+  transition: opacity 500ms 250ms;
   img {
     display: block;
     width: 100%;
     height: auto;
-    // opacity: 0;
-    transition: opacity 500ms 250ms;
-    &.loaded.intersecting {
-      opacity: 1;
-    }
-}
+  }
+  &.loaded.intersecting {
+    opacity: 1;
+  }
 }
 </style>
