@@ -67,11 +67,11 @@ export default {
   },
   methods: {
     initScrollDetection() {
-      window.addEventListener('scroll', this.onScroll)
+      window.addEventListener('scroll', this.onScroll, { passive: true })
     },
     onScroll() {
       this.pages.forEach((page) => {
-        if (window.scrollY + window.innerHeight / 2 >= page.offsetTop) {
+        if (window.scrollY + window.innerHeight / 2.5 >= page.offsetTop) {
           this.activeEntry = page.getAttribute('id')
           // this.activeEntry =
           //   page.getAttribute('id') === 'index' && window.scrollY > 0
@@ -102,10 +102,14 @@ export default {
     }
     header,
     main {
-      color: $white;
-      mix-blend-mode: difference;
+      @media (min-width: $bp-2) {
+        color: $white;
+        mix-blend-mode: difference;
+      }
       ::v-deep svg polyline {
-        stroke: $white;
+        @media (min-width: $bp-2) {
+          stroke: $white;
+        }
       }
     }
   }
@@ -136,9 +140,6 @@ export default {
       &:not(.is-active) {
         visibility: hidden;
       }
-      ::v-deep p {
-        margin-top: -12.5vh;
-      }
       ::v-deep svg {
         bottom: 15vh;
       }
@@ -152,6 +153,7 @@ export default {
     @extend %pageWidth;
   }
   .blend-overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -161,6 +163,9 @@ export default {
     mix-blend-mode: color;
     transition: opacity 250ms;
     pointer-events: none;
+    @media (min-width: $bp-2) {
+      display: block;
+    }
   }
 }
 </style>

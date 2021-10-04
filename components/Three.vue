@@ -138,6 +138,7 @@ export default {
 
 <style lang="scss" scoped>
 .Three {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -146,6 +147,9 @@ export default {
   overflow: hidden;
   pointer-events: none;
   transition: opacity 250ms;
+  @media (min-width: $bp-2) {
+    display: block;
+  }
   ::v-deep canvas {
     transform: scale(1.1);
     filter: blur(16px);
