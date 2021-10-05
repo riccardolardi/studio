@@ -22,7 +22,7 @@ const svgMarkup =
 const loader = new SVGLoader()
 const blueColor = 0x0018cc
 export default {
-  name: 'Three',
+  name: 'LazyThree',
   props: {
     isIntro: {
       type: Boolean,

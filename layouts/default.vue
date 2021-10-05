@@ -7,7 +7,7 @@
     ]"
   >
     <client-only>
-      <Three :is-intro="activeEntry === 'index'" />
+      <LazyThree :is-intro="activeEntry === 'index'" />
     </client-only>
     <main>
       <Index :active="activeEntry === 'index'" />
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import Three from '~/components/Three'
+import LazyThree from '~/components/LazyThree'
 import Header from '~/components/Header'
 import Index from '~/components/Index'
 import Services from '~/components/Services'
@@ -33,7 +33,7 @@ const { detect } = require('detect-browser')
 export default {
   name: 'Layout',
   components: {
-    Three,
+    LazyThree,
     Header,
     Index,
     Services,
