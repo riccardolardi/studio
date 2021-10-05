@@ -2,7 +2,7 @@
   <div
     class="layout layout--default"
     :class="[
-      { 'is-intro': activeEntry === 'index', 'is-ready': ready },
+      { 'is-intro': activeEntry === 'index' },
       `browser-${browser.name}`,
     ]"
   >
@@ -43,7 +43,6 @@ export default {
   },
   data: () => {
     return {
-      ready: false,
       pages: [],
       intersectingEntries: [],
       activeEntry: undefined,
@@ -58,9 +57,6 @@ export default {
     this.pages = document.querySelectorAll('.page')
     this.initScrollDetection()
     this.onScroll()
-    setTimeout(() => {
-      this.ready = true
-    }, 250)
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.onScroll)
@@ -86,11 +82,6 @@ export default {
 
 <style lang="scss" scoped>
 .layout--default {
-  opacity: 0;
-  transition: color 250ms, opacity 250ms;
-  &.is-ready {
-    opacity: 1;
-  }
   &.is-intro {
     ::v-deep nav {
       opacity: 0;
