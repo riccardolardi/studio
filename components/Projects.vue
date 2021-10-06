@@ -298,6 +298,17 @@ export default {
             prevNextButtons: false,
           })
           this.carousels = this.carousels.concat(carousel)
+          ;(() => { // https://github.com/metafizzy/flickity/issues/740
+            let startX = 0
+            carouselDiv.ontouchstart = function (e) {
+              startX = e.touches[0].clientX
+            }
+            carouselDiv.ontouchmove = function (e) {
+              if (Math.abs(e.touches[0].clientX - startX) > 5 && e.cancelable) {
+                e.preventDefault()
+              }
+            }
+          })()
         })
     },
   },
