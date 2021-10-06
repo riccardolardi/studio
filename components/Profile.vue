@@ -33,9 +33,9 @@
 </template>
 
 <script>
-import bsSvg from '~/assets/icons/clients/bs.svg?inline'
+import bsSvg from '~/assets/icons/clients/bsgfm.svg?inline'
 import iartSvg from '~/assets/icons/clients/iart.svg?inline'
-import unizhSvg from '~/assets/icons/clients/unizh.svg?inline'
+import unizhSvg from '~/assets/icons/clients/uzhifi.svg?inline'
 import hsluSvg from '~/assets/icons/clients/hslu.svg?inline'
 import siaSvg from '~/assets/icons/clients/sia.svg?inline'
 import kulturprozentSvg from '~/assets/icons/clients/kulturprozent.svg?inline'
