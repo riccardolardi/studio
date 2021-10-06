@@ -58,7 +58,6 @@
                   alt="Digitale Demokratie"
                   width="1024"
                   height="1535"
-                  :lazy="false"
                 />
                 <figcaption>
                   Benutzerführung durch das Museum mittels dem eigenen
@@ -73,7 +72,6 @@
                   alt="Digitale Demokratie"
                   width="1024"
                   height="1535"
-                  :lazy="false"
                 />
                 <figcaption>
                   Die Web-App dient als Audio-Guide und führt den Besucher durch
@@ -88,7 +86,6 @@
                   alt="Digitale Demokratie"
                   width="1024"
                   height="1535"
-                  :lazy="false"
                 />
                 <figcaption>
                   Zusätzliche Informationen, Spiele, Audio und Videos ergänzen
@@ -103,7 +100,6 @@
                   alt="Digitale Demokratie"
                   width="1024"
                   height="1535"
-                  :lazy="false"
                 />
                 <figcaption>
                   Die Vermittlung von Inhalten kann während des Besuchs medial
@@ -160,7 +156,6 @@
                   alt="HSLU Spatial Design Media 1"
                   width="1024"
                   height="1535"
-                  :lazy="false"
                 />
                 <figcaption>
                   Die Student/innen wurden angeleitet Experimente bezüglich
@@ -175,7 +170,6 @@
                   alt="HSLU Spatial Design Media 1"
                   width="1024"
                   height="1535"
-                  :lazy="false"
                 />
                 <figcaption>
                   Die Resultate waren vielfältig und reichten von immersiven,
@@ -190,7 +184,6 @@
                   alt="HSLU Spatial Design Media 1"
                   width="1024"
                   height="1535"
-                  :lazy="false"
                 />
                 <figcaption>
                   ...bis hin zu interaktiven, auf die Besucher/innen reagierende
@@ -257,7 +250,6 @@
                   alt="Schweizerischer Ingenieur- und Architektenverein SIA"
                   width="1024"
                   height="849"
-                  :lazy="false"
                 />
                 <figcaption>
                   Übersichtsseite mit aktuellen Beiträgen rund um das Thema des
@@ -272,7 +264,6 @@
                   alt="Schweizerischer Ingenieur- und Architektenverein SIA"
                   width="1024"
                   height="849"
-                  :lazy="false"
                 />
                 <figcaption>
                   Informationsteil der einzelnen Phasen des Beschaffungswesens
@@ -287,7 +278,6 @@
                   alt="Schweizerischer Ingenieur- und Architektenverein SIA"
                   width="1024"
                   height="1535"
-                  :lazy="false"
                 />
                 <figcaption>
                   Der Live-Stream der Konferenz wurde dreisprachig
