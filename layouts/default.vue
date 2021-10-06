@@ -59,11 +59,11 @@ export default {
     this.onScroll()
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll)
+    document.removeEventListener('scroll', this.onScroll)
   },
   methods: {
     initScrollDetection() {
-      window.addEventListener('scroll', this.onScroll, { passive: true })
+      document.addEventListener('scroll', this.onScroll, { passive: true })
     },
     onScroll() {
       this.pages.forEach((page) => {
