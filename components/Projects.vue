@@ -49,55 +49,58 @@
         </p>
       </div>
       <div class="project__media">
-        <div class="carousel-container">
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/digitaledemokratie/digitale-demokratie-7.jpg"
-              alt="Digitale Demokratie"
-              width="1024"
-              height="1535"
-            />
-            <figcaption>
-              Benutzerführung durch das Museum mittels dem eigenen Mobiltelefon
-            </figcaption>
-          </figure>
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/digitaledemokratie/digitale-demokratie-8.jpg"
-              alt="Digitale Demokratie"
-              width="1024"
-              height="1535"
-            />
-            <figcaption>
-              Die Web-App dient als Audio-Guide und führt den Besucher durch die
-              Ausstellung
-            </figcaption>
-          </figure>
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/digitaledemokratie/digitale-demokratie-32.jpg"
-              alt="Digitale Demokratie"
-              width="1024"
-              height="1535"
-            />
-            <figcaption>
-              Zusätzliche Informationen, Spiele, Audio und Videos ergänzen den
-              Museumsbesuch
-            </figcaption>
-          </figure>
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/digitaledemokratie/digitale-demokratie-39.jpg"
-              alt="Digitale Demokratie"
-              width="1024"
-              height="1535"
-            />
-            <figcaption>
-              Die Vermittlung von Inhalten kann während des Besuchs medial
-              unterstützt werden
-            </figcaption>
-          </figure>
-        </div>
+        <client-only>
+          <LazyCarousel class="carousel-container">
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/digitaledemokratie/digitale-demokratie-7.jpg"
+                alt="Digitale Demokratie"
+                width="1024"
+                height="1535"
+              />
+              <figcaption>
+                Benutzerführung durch das Museum mittels dem eigenen
+                Mobiltelefon
+              </figcaption>
+            </figure>
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/digitaledemokratie/digitale-demokratie-8.jpg"
+                alt="Digitale Demokratie"
+                width="1024"
+                height="1535"
+              />
+              <figcaption>
+                Die Web-App dient als Audio-Guide und führt den Besucher durch
+                die Ausstellung
+              </figcaption>
+            </figure>
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/digitaledemokratie/digitale-demokratie-32.jpg"
+                alt="Digitale Demokratie"
+                width="1024"
+                height="1535"
+              />
+              <figcaption>
+                Zusätzliche Informationen, Spiele, Audio und Videos ergänzen den
+                Museumsbesuch
+              </figcaption>
+            </figure>
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/digitaledemokratie/digitale-demokratie-39.jpg"
+                alt="Digitale Demokratie"
+                width="1024"
+                height="1535"
+              />
+              <figcaption>
+                Die Vermittlung von Inhalten kann während des Besuchs medial
+                unterstützt werden
+              </figcaption>
+            </figure>
+          </LazyCarousel>
+        </client-only>
       </div>
     </article>
     <article class="project">
@@ -136,44 +139,46 @@
         </p>
       </div>
       <div class="project__media">
-        <div class="carousel-container">
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/hslu/hslu-1.jpg"
-              alt="HSLU Spatial Design Media 1"
-              width="1024"
-              height="1535"
-            />
-            <figcaption>
-              Die Student/innen wurden angeleitet Experimente bezüglich
-              Sinneswahrnehmung und Medien zu planen und durchzuführen
-            </figcaption>
-          </figure>
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/hslu/hslu-2.jpg"
-              alt="HSLU Spatial Design Media 1"
-              width="1024"
-              height="1535"
-            />
-            <figcaption>
-              Die Resultate waren vielfältig und reichten von immersiven, für
-              Besucher/innen zugänglichen Farbkuben...
-            </figcaption>
-          </figure>
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/hslu/hslu-3.jpg"
-              alt="HSLU Spatial Design Media 1"
-              width="1024"
-              height="1535"
-            />
-            <figcaption>
-              ...bis hin zu sensorgesteuerten, interaktiven, auf die
-              Besucher/innen reagierende Sound- und Lichtinstallationen.
-            </figcaption>
-          </figure>
-        </div>
+        <client-only>
+          <LazyCarousel class="carousel-container">
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/hslu/hslu-1.jpg"
+                alt="HSLU Spatial Design Media 1"
+                width="1024"
+                height="1535"
+              />
+              <figcaption>
+                Die Student/innen wurden angeleitet Experimente bezüglich
+                Sinneswahrnehmung und Medien zu planen und durchzuführen
+              </figcaption>
+            </figure>
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/hslu/hslu-2.jpg"
+                alt="HSLU Spatial Design Media 1"
+                width="1024"
+                height="1535"
+              />
+              <figcaption>
+                Die Resultate waren vielfältig und reichten von immersiven, für
+                Besucher/innen zugänglichen Farbkuben...
+              </figcaption>
+            </figure>
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/hslu/hslu-3.jpg"
+                alt="HSLU Spatial Design Media 1"
+                width="1024"
+                height="1535"
+              />
+              <figcaption>
+                ...bis hin zu sensorgesteuerten, interaktiven, auf die
+                Besucher/innen reagierende Sound- und Lichtinstallationen.
+              </figcaption>
+            </figure>
+          </LazyCarousel>
+        </client-only>
       </div>
     </article>
     <article class="project">
@@ -222,94 +227,64 @@
         </p>
       </div>
       <div class="project__media">
-        <div class="carousel-container">
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/sia/sia-1.png"
-              alt="Schweizerischer Ingenieur- und Architektenverein SIA"
-              width="1024"
-              height="849"
-            />
-            <figcaption>
-              Übersichtsseite mit aktuellen Beiträgen rund um das Thema des
-              Beschaffungswesens
-            </figcaption>
-          </figure>
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/sia/sia-2.png"
-              alt="Schweizerischer Ingenieur- und Architektenverein SIA"
-              width="1024"
-              height="849"
-            />
-            <figcaption>
-              Informationsteil der einzelnen Phasen des Beschaffungswesens
-              innerhalb eines Bauvorhabens
-            </figcaption>
-          </figure>
-          <figure class="project__media__item carousel-cell">
-            <LazyImg
-              src="/images/sia/sia-3.jpg"
-              alt="Schweizerischer Ingenieur- und Architektenverein SIA"
-              width="1024"
-              height="1535"
-            />
-            <figcaption>
-              Der Live-Stream der Konferenz wurde dreisprachig simultanübersetzt
-              und über die Website übertragen
-            </figcaption>
-          </figure>
-        </div>
+        <client-only>
+          <LazyCarousel class="carousel-container">
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/sia/sia-1.png"
+                alt="Schweizerischer Ingenieur- und Architektenverein SIA"
+                width="1024"
+                height="849"
+              />
+              <figcaption>
+                Übersichtsseite mit aktuellen Beiträgen rund um das Thema des
+                Beschaffungswesens
+              </figcaption>
+            </figure>
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/sia/sia-2.png"
+                alt="Schweizerischer Ingenieur- und Architektenverein SIA"
+                width="1024"
+                height="849"
+              />
+              <figcaption>
+                Informationsteil der einzelnen Phasen des Beschaffungswesens
+                innerhalb eines Bauvorhabens
+              </figcaption>
+            </figure>
+            <figure class="project__media__item carousel-cell">
+              <Img
+                src="/images/sia/sia-3.jpg"
+                alt="Schweizerischer Ingenieur- und Architektenverein SIA"
+                width="1024"
+                height="1535"
+              />
+              <figcaption>
+                Der Live-Stream der Konferenz wurde dreisprachig
+                simultanübersetzt und über die Website übertragen
+              </figcaption>
+            </figure>
+          </LazyCarousel>
+        </client-only>
       </div>
     </article>
   </section>
 </template>
 
 <script>
-import LazyImg from '~/components/LazyImg'
+import Img from '~/components/Img'
 export default {
   name: 'Projects',
   components: {
-    LazyImg,
+    LazyCarousel: () =>
+      process.client ? import('../components/LazyCarousel.vue') : null,
+    Img,
   },
   props: {
     active: {
       type: Boolean,
       default: false,
-    },
-  },
-  data: () => {
-    return {
-      carousels: [],
-    }
-  },
-  mounted() {
-    this.initCarousels()
-  },
-  methods: {
-    initCarousels() {
-      document
-        .querySelectorAll('.carousel-container')
-        .forEach((carouselDiv) => {
-          const carousel = new this.$Flickity(carouselDiv, {
-            // adaptiveHeight: true,
-            groupCells: false,
-            accessibility: false,
-            prevNextButtons: false,
-          })
-          this.carousels = this.carousels.concat(carousel)
-          ;(() => { // https://github.com/metafizzy/flickity/issues/740
-            let startX = 0
-            carouselDiv.ontouchstart = function (e) {
-              startX = e.touches[0].clientX
-            }
-            carouselDiv.ontouchmove = function (e) {
-              if (Math.abs(e.touches[0].clientX - startX) > 5 && e.cancelable) {
-                e.preventDefault()
-              }
-            }
-          })()
-        })
     },
   },
 }
@@ -370,23 +345,6 @@ export default {
         margin: 0;
         padding: 0 0 0 $pad * 4;
         width: 40%;
-      }
-      .carousel-container {
-        position: relative;
-        cursor: grab;
-        .carousel-cell {
-          width: 100%;
-        }
-        ::v-deep .flickity-slider {
-          display: flex;
-          align-items: flex-end;
-        }
-        ::v-deep .flickity-page-dots {
-          text-align: left;
-          .dot:first-child {
-            margin-left: 0;
-          }
-        }
       }
     }
   }
