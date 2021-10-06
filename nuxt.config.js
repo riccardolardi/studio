@@ -45,7 +45,7 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/flickity.js', mode: 'client', ssr: false }],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: false,
@@ -79,6 +79,7 @@ export default {
   // https://sitemap.nuxtjs.org
   sitemap: {
     hostname: frontendUrl,
+    routes: ['/'],
   },
 
   // https://github.com/nuxt-community/robots-module
