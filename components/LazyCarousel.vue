@@ -16,7 +16,7 @@ export default {
   },
   mounted() {
     this.carousel = new Flickity(this.$refs.carousel, {
-      // adaptiveHeight: true,
+      adaptiveHeight: true,
       groupCells: false,
       accessibility: false,
       prevNextButtons: false,
@@ -42,11 +42,10 @@ export default {
   position: relative;
   cursor: grab;
   .carousel-cell {
-    width: 100%;
-  }
-  ::v-deep .flickity-slider {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
   }
   ::v-deep .flickity-page-dots {
     text-align: left;
