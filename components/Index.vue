@@ -30,6 +30,10 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 0;
+  opacity: unset;
+  &:not(.is-active) {
+    visibility: hidden;
+  }
   p {
     @extend %t-2;
 
