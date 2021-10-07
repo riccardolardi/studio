@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .Img {
-  img {
+  ::v-deep img {
     display: block;
     width: 100%;
     height: auto;
