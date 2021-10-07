@@ -1,7 +1,7 @@
 <template>
   <section id="index" class="page page--index" :class="{ 'is-active': active }">
     <p>
-      Hoi, ich bin ein Interaction Designer und Software Entwickler und arbeite
+      Hoi, ich bin ein <u>Interaction Designer</u> und <u>Software Entwickler</u> und arbeite
       zwischen digitalem und physischem Raum.
     </p>
     <ArrowSvg class="arrow--down" />
@@ -30,9 +30,14 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 0;
-  opacity: unset;
-  &:not(.is-active) {
-    visibility: hidden;
+  @media (min-width: $bp-2) {
+    opacity: unset;
+    &:not(.is-active) {
+      visibility: hidden;
+    }
+    u {
+      text-decoration: none;
+    }
   }
   p {
     @extend %t-2;
@@ -41,11 +46,12 @@ export default {
     padding: 0 $pad * 2;
   }
   .arrow--down {
-    position: fixed;
+    position: absolute;
     bottom: 15vw;
     width: 24px;
     height: auto;
     @media (min-width: $bp-2) {
+      position: fixed;
       bottom: 15%;
     }
   }
