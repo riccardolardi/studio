@@ -1,8 +1,11 @@
 <template>
   <section id="index" class="page page--index" :class="{ 'is-active': active }">
     <p>
-      Hoi, ich bin ein <u>Interaction Designer</u> und <u>Software Entwickler</u> und arbeite
-      zwischen digitalem und physischem Raum.
+      Hoi, ich bin ein
+      <u>Interaction Designer</u>
+      und
+      <u>Software Entwickler</u>
+      und arbeite zwischen digitalem und physischem Raum.
     </p>
     <ArrowSvg class="arrow--down" />
   </section>

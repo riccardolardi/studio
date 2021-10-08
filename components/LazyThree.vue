@@ -73,11 +73,7 @@ export default {
         0.1,
         3000
       )
-      this.camera.position.set(
-        0,
-        0,
-        this.winDim[0] < 768 ? 10 : 5
-      )
+      this.camera.position.set(0, 0, this.winDim[0] < 768 ? 10 : 5)
       this.scene = new Scene()
       this.scene.add(new AmbientLight(blueColor))
       this.scene.add(new HemisphereLight(0xffffff, 1))
@@ -123,9 +119,12 @@ export default {
       this.renderer.render(this.scene, this.camera)
     },
     animate() {
-      setTimeout(() => {
-        requestAnimationFrame(this.animate)
-      }, 1000 / this.winDim[0] < 768 ? 5 : 30)
+      setTimeout(
+        () => {
+          requestAnimationFrame(this.animate)
+        },
+        1000 / this.winDim[0] < 768 ? 5 : 30
+      )
       if (!this.isIntro) return
       // this.group.rotation.x -= 0.0008
       this.group.rotation.y -= 0.0011

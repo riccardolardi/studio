@@ -25,7 +25,7 @@ $bp-6: 1680px; // Desktop large
   font-family: BuenosAires, sans-serif;
   font-size: 18px;
   line-height: 1.4;
-  font-feature-settings: "ss01";
+  font-feature-settings: 'ss01';
   @media (min-width: $bp-3) {
     font-size: 24px;
   }
@@ -42,7 +42,7 @@ $bp-6: 1680px; // Desktop large
   font-family: BuenosAires, sans-serif;
   font-size: 28px;
   line-height: 1.2;
-  font-feature-settings: "dlig", "ss01";
+  font-feature-settings: 'dlig', 'ss01';
   @media (min-width: $bp-2) {
     font-size: 42px;
   }
@@ -53,14 +53,14 @@ $bp-6: 1680px; // Desktop large
   font-size: 24px;
   line-height: 1.2;
   font-weight: bold;
-  font-feature-settings: "ss01";
+  font-feature-settings: 'ss01';
 }
 
 %t-4 {
   font-family: BuenosAires, sans-serif;
   font-size: 26px;
   line-height: 1.2;
-  font-feature-settings: "dlig";
+  font-feature-settings: 'dlig';
   @media (min-width: $bp-2) {
     font-size: 36px;
   }

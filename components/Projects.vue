@@ -15,23 +15,33 @@
           Blumline / Frontend
         -->
         <div class="project__info__title">
-          <h2>Digitale Demokratie,<br />Web-App & Audio-Guide</h2>
-          <span class="contractor">
-            <a
-              href="https://www.polit-forum-bern.ch/ausstellung/digitale-demokratie"
-              class="external"
-              target="_blank"
-              rel="noopener"
-              >Polit-Forum Bern</a
-            >
-            <a
-              href="https://www.prolog.work"
-              class="external"
-              target="_blank"
-              rel="noopener"
-              >Prolog AG</a
-            >
-          </span>
+          <h2>
+            Digitale Demokratie,
+            <br />
+            Web-App & Audio-Guide
+          </h2>
+          <ul class="contractor-list">
+            <li>
+              <a
+                href="https://www.polit-forum-bern.ch/ausstellung/digitale-demokratie"
+                class="external"
+                target="_blank"
+                rel="noopener"
+              >
+                Polit-Forum Bern
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.prolog.work"
+                class="external"
+                target="_blank"
+                rel="noopener"
+              >
+                Prolog AG
+              </a>
+            </li>
+          </ul>
         </div>
         <p>
           Ende April 2021 öffnet die Ausstellung "Digitale Demokratie - Eine
@@ -106,23 +116,33 @@
     <article class="project">
       <div class="project__info">
         <div class="project__info__title">
-          <h2>Spatial Design / Media 1<br />Lehre, Unterrichtsassistenz</h2>
-          <span class="contractor">
-            <a
-              href="https://www.hslu.ch/en/lucerne-school-of-art-and-design/degree-programmes/bachelor/spatial-design"
-              class="external"
-              target="_blank"
-              rel="noopener"
-              >Spatial Design Bachelor, HSLU</a
-            >
-            <a
-              href="https://www.iart.ch"
-              class="external"
-              target="_blank"
-              rel="noopener"
-              >iart AG</a
-            >
-          </span>
+          <h2>
+            Spatial Design / Media 1
+            <br />
+            Lehre, Unterrichtsassistenz
+          </h2>
+          <ul class="contractor-list">
+            <li>
+              <a
+                href="https://www.hslu.ch/en/lucerne-school-of-art-and-design/degree-programmes/bachelor/spatial-design"
+                class="external"
+                target="_blank"
+                rel="noopener"
+              >
+                Spatial Design Bachelor, HSLU
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.iart.ch"
+                class="external"
+                target="_blank"
+                rel="noopener"
+              >
+                iart AG
+              </a>
+            </li>
+          </ul>
         </div>
         <p>
           Der Bachelor "Spatial Design" an der Hochschule Luzern lehrt die
@@ -185,32 +205,44 @@
       <div class="project__info">
         <div class="project__info__title">
           <h2>
-            SIA Ordnungstag 2021<br />Website zum Beschaffungswesen<br />und
-            Live-Stream
+            SIA Ordnungstag 2021
+            <br />
+            Website zum Beschaffungswesen
+            <br />
+            und Live-Stream
           </h2>
-          <span class="contractor">
-            <a
-              href="https://www.hslu.ch/en/lucerne-school-of-art-and-design/degree-programmes/bachelor/spatial-design"
-              class="external"
-              target="_blank"
-              rel="noopener"
-              >Schweizerischer Ingenieur- und Architektenverein SIA</a
-            >
-            <a
-              href="https://www.ronnyhunger.com"
-              class="external"
-              target="_blank"
-              rel="noopener"
-              >Ronny Hunger Graphic Design</a
-            >
-            <a
-              href="https://ordnungstag.sia.ch"
-              class="external"
-              target="_blank"
-              rel="noopener"
-              >https://ordnungstag.sia.ch</a
-            >
-          </span>
+          <ul class="contractor-list">
+            <li>
+              <a
+                href="https://www.sia.ch"
+                class="external"
+                target="_blank"
+                rel="noopener"
+              >
+                Schweizerischer Ingenieur- und Architektenverein SIA
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.ronnyhunger.com"
+                class="external"
+                target="_blank"
+                rel="noopener"
+              >
+                Ronny Hunger Graphic Design
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://ordnungstag.sia.ch"
+                class="external"
+                target="_blank"
+                rel="noopener"
+              >
+                https://ordnungstag.sia.ch
+              </a>
+            </li>
+          </ul>
         </div>
         <p>
           Für den Schweizerischen Ingenieur- und Architektenverband SIA durfte
@@ -326,9 +358,12 @@ export default {
         padding: 0 $pad * 4 0 0;
         width: 60%;
       }
-      .contractor {
-        display: block;
+      .contractor-list {
+        display: flex;
+        flex-direction: column;
         margin: 0.4em 0 0;
+        list-style: none;
+        padding: 0;
         @extend %t-1;
       }
       &__title {

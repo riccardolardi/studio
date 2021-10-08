@@ -8,7 +8,6 @@
     :width="width"
     :height="height"
     :alt="alt"
-    loading="lazy"
     class="Img"
   />
 </template>
