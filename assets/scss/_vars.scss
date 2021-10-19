@@ -66,5 +66,15 @@ $bp-6: 1680px; // Desktop large
   }
 }
 
+%t-5 {
+  font-family: BuenosAires, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  font-feature-settings: 'ss01';
+  @media (min-width: $bp-3) {
+    font-size: 18px;
+  }
+}
+
 // other
 $pad: 12px;

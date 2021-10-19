@@ -8,7 +8,7 @@
     <p class="subtitle">Riccardo Alberto Lardi, *1984</p>
     <p>
       Ich bin ein Interaction Designer und Software/Web/Frontend Entwickler mit
-      umfassender Erfahrung in der Gestaltung und Umsetzung von
+      langjähriger Erfahrung in der Gestaltung und Umsetzung von
       Benutzeroberflächen.
     </p>
     <p>

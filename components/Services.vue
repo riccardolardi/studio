@@ -5,7 +5,7 @@
     :class="{ 'is-active': active }"
   >
     <h1>Services</h1>
-    <p class="subtitle">Planung, Design und Realisation</p>
+    <p class="subtitle">Frontend Entwicklung und Interaction Design</p>
     <p>
       Ich begleite
       <u>Gestaltungsprozesse</u>
@@ -21,8 +21,25 @@
       wie z.B. in der Schulung oder im Unterricht.
     </p>
     <ul>
-      <li>Planung und Begleitung der Gestaltung von digitalen Produkten</li>
-      <li>Prototypisierung, Machbarkeitsstudien und technische Umsetzung</li>
+      <li>
+        Planung und Begleitung der Gestaltung von digitalen Produkten
+        <ul>
+          <li>Beratung von Designer/innen bei Projekten im Bereich Web/Apps</li>
+          <li>
+            Projektleitung bei Full-Service Projekten (von Design bis zur
+            Umsetzung)
+          </li>
+          <li>Guidance und Mentorship</li>
+        </ul>
+      </li>
+      <li>
+        Technische Umsetzung
+        <ul>
+          <li>Entwicklung spezialisiert auf Nuxt / Vue / React / Expo</li>
+          <li>Jamstack, Serverless, Microservices</li>
+          <li>Prototyping, Machbarkeitsstudien</li>
+        </ul>
+      </li>
       <li>Lehre, Schulung, Vermittlung</li>
     </ul>
   </section>
