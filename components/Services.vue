@@ -9,8 +9,9 @@
     <p>
       Ich begleite
       <u>Gestaltungsprozesse</u>
-      , berate hinsichtlich UI/UX und Interaction Design und übernehme die
-      <u>technische Realisierung</u>
+      , berate vorausschauend auf die technische Umsetzung UI/UX und Interaction
+      Design und übernehme die
+      <u>Programmierung</u>
       von Projekten im Bereich von Web/Frontend & Apps sowie auch bei
       physischen, medialen Applikationen wie z.B. für Museen oder Ausstellungen.
     </p>

@@ -8,14 +8,18 @@
     <p class="subtitle">Riccardo Alberto Lardi, *1984</p>
     <p>
       Ich bin ein Interaction Designer und Software/Web/Frontend Entwickler mit
-      langjähriger Erfahrung in der Gestaltung und Umsetzung von
-      Benutzeroberflächen.
+      langjähriger Erfahrung in der Gestaltung und Umsetzung von digitalen
+      Produkten und Benutzererlebnissen.
     </p>
     <p>
       Bevor ich das Studio eröffnete, war ich massgeblich an zahlreichen
       Projekten für Unternehmen wie Takram (London) und iart (Basel) beteiligt.
       Ich trage einen BA von der Zürcher Hochschule der Künste und einen MA vom
       Royal College of Art, London.
+    </p>
+    <p>
+      Das Studio bewegt sich in einem engen Netzwerk von Partnern aus den
+      Bereichen Grafik, Photografie, Film, Software, Design und Kunst.
     </p>
     <p>
       Ich schätze mich glücklich u.a. die folgenden Institutionen/Firmen bei
