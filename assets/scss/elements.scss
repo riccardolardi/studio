@@ -24,6 +24,14 @@ a {
       background-repeat: no-repeat;
       background-position: center;
       transform: rotate(-90deg) scale(0.75);
+      transition: transform 250ms;
+    }
+    @media (hover: hover) {
+      &:hover {
+        &::before {
+          transform: rotate(-90deg) scale(0.75) translateY(0.2em);
+        }
+      }
     }
   }
 }

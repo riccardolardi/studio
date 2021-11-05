@@ -56,3 +56,11 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.page--contact {
+  a {
+    align-self: flex-start;
+  }
+}
+</style>
