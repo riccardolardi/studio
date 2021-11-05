@@ -335,8 +335,8 @@ export default {
       margin: $pad * 8 0 0;
       flex-direction: row;
     }
-    @media (min-width: $bp-3) {
-      margin: $pad * 8 -5vw 0;
+    @media (min-width: $bp-4) {
+      margin: $pad * 8 -12.5vw 0;
     }
     &:nth-of-type(even) {
       @media (min-width: $bp-2) {
@@ -380,6 +380,11 @@ export default {
         margin: 0;
         padding: 0 0 0 $pad * 4;
         width: 40%;
+      }
+      &__item {
+        figcaption {
+          padding: 0 1em 0 0;
+        }
       }
     }
   }

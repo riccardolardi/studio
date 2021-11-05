@@ -45,7 +45,9 @@ export default {
   ::v-deep img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    max-height: 75vh;
+    object-fit: cover;
   }
 }
 </style>
