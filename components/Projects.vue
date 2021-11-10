@@ -63,6 +63,18 @@
           <LazyCarousel class="carousel-container">
             <figure class="project__media__item carousel-cell">
               <Img
+                src="/images/digitaledemokratie/digitale-demokratie-32.jpg"
+                alt="Digitale Demokratie"
+                width="1024"
+                height="1535"
+              />
+              <figcaption>
+                Zusätzliche Informationen, Spiele, Audio und Videos ergänzen den
+                Museumsbesuch
+              </figcaption>
+            </figure>
+            <figure class="project__media__item carousel-cell">
+              <Img
                 src="/images/digitaledemokratie/digitale-demokratie-8.jpg"
                 alt="Digitale Demokratie"
                 width="1024"
@@ -95,18 +107,6 @@
               <figcaption>
                 Eine fiktive Figur kommuniziert mit den Besucher/innen in Form
                 eines Chats und begleitet diese/n durch die Ausstellung
-              </figcaption>
-            </figure>
-            <figure class="project__media__item carousel-cell">
-              <Img
-                src="/images/digitaledemokratie/digitale-demokratie-32.jpg"
-                alt="Digitale Demokratie"
-                width="1024"
-                height="1535"
-              />
-              <figcaption>
-                Zusätzliche Informationen, Spiele, Audio und Videos ergänzen den
-                Museumsbesuch
               </figcaption>
             </figure>
           </LazyCarousel>
