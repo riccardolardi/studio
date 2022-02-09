@@ -67,13 +67,18 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/robots',
-  ],
+  modules: ['@nuxtjs/robots'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['three'],
+    extend(config) {
+      config.module.rules.push({
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
+      })
+    },
   },
 
   // https://sitemap.nuxtjs.org

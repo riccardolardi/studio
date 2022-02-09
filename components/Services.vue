@@ -5,7 +5,7 @@
     :class="{ 'is-active': active }"
   >
     <h1>Services</h1>
-    <p class="subtitle">Frontend Entwicklung & Interaction Design</p>
+    <p class="subtitle">Software Entwicklung & Interaction Design</p>
     <p>
       Ich begleite
       <u>Gestaltungsprozesse</u>

@@ -4,7 +4,7 @@
       Hoi, ich bin ein
       <u>Interaction Designer</u>
       und
-      <u>Frontend Entwickler</u>
+      <u>Software Entwickler</u>
       und arbeite zwischen digitalem und physischem Raum.
     </p>
     <ArrowSvg class="arrow--down" />
