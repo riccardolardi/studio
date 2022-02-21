@@ -1,6 +1,5 @@
 <template>
   <nuxt-picture
-    ref="image"
     format="webp"
     quality="80"
     sizes="sm:320px md:480px lg:640px"
