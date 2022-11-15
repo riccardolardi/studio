@@ -442,7 +442,8 @@ import SIAimg3 from '@/assets/images/sia/sia3.jpg'
             }
           }
           .projects-other-list {
-            max-height: 999px;
+            max-height: 1234px;
+            opacity: 1;
           }
         }
         &-title {
@@ -451,6 +452,9 @@ import SIAimg3 from '@/assets/images/sia/sia3.jpg'
           padding: 1rem 0;
           border-bottom: 1px solid $black;
           cursor: pointer;
+          @include bp(1) {
+            cursor: unset;
+          }
           &::after {
             content: '';
             display: block;
@@ -469,8 +473,9 @@ import SIAimg3 from '@/assets/images/sia/sia3.jpg'
         }
         &-list {
           max-height: 0;
+          opacity: 0;
           overflow: hidden;
-          transition: max-height 255ms;
+          transition: max-height 255ms, opacity 255ms;
           @include bp(1) {
             all: unset;
           }
