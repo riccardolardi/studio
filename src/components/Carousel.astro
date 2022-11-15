@@ -1,6 +1,7 @@
 ---
 import { Image } from '@astrojs/image/components'
 import Type from '@/components/Type.astro'
+import Carousel from '@/components/Carousel.jsx'
 
 type Slide = {
   imageSrc: string | Promise<any> | ImageMetadata
@@ -9,48 +10,15 @@ type Slide = {
 
 export interface Props {
   slides: Slide[]
-  extraClasses?: string[]
 }
 
-const { slides, extraClasses } = Astro.props
+const { slides } = Astro.props
 ---
 
-<script type="module" hoist>
-  import Flickity from 'flickity'
-  import 'flickity-imagesloaded'
-  import 'flickity/dist/flickity.min.css'
-
-  class ImageCarouselElement extends HTMLElement {
-    constructor() {
-      super()
-      this.flickity = new Flickity(this, {
-        prevNextButtons: false,
-        percentPosition: true,
-        adaptiveHeight: true,
-        imagesLoaded: true,
-      })
-      ;(() => {
-        // https://github.com/metafizzy/flickity/issues/740
-        let startX = 0
-        this.ontouchstart = (e) => {
-          startX = e.touches[0].clientX
-        }
-        this.ontouchmove = (e) => {
-          if (Math.abs(e.touches[0].clientX - startX) > 5 && e.cancelable) {
-            e.preventDefault()
-          }
-        }
-      })()
-    }
-  }
-
-  window.customElements.define('image-carousel', ImageCarouselElement)
-</script>
-
-<image-carousel class:list={['carousel', ...(extraClasses || [])]}>
+<Carousel client:only>
   {
     slides.map((slide) => (
-      <figure class="carousel-slide">
+      <figure>
         <Image
           src={slide.imageSrc}
           loading="lazy"
@@ -63,11 +31,11 @@ const { slides, extraClasses } = Astro.props
       </figure>
     ))
   }
-</image-carousel>
+</Carousel>
 
 <style lang="scss">
   @import '../assets/styles/_index.scss';
-  .carousel {
+  :global(.carousel) {
     img {
       width: 100%;
       height: auto;
