@@ -24,9 +24,8 @@ const { slides, extraClasses } = Astro.props
     constructor() {
       super()
       this.flickity = new Flickity(this, {
-        contain: true,
-        cellAlign: 'left',
         prevNextButtons: false,
+        percentPosition: true,
         adaptiveHeight: true,
         imagesLoaded: true,
       })
@@ -78,7 +77,7 @@ const { slides, extraClasses } = Astro.props
       max-width: 42ch;
     }
     :global(.flickity-viewport) {
-      transition: height 0.2s;
+      transition: height 255ms;
     }
     :global(.flickity-page-dots) {
       justify-content: flex-start;
