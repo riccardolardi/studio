@@ -1,0 +1,86 @@
+---
+import { Image } from '@astrojs/image/components'
+import Type from '@/components/Type.astro'
+
+type Slide = {
+  imageSrc: string | Promise<any> | ImageMetadata
+  caption?: string
+}
+
+export interface Props {
+  slides: Slide[]
+  extraClasses?: string[]
+}
+
+const { slides, extraClasses } = Astro.props
+---
+
+<script type="module" hoist>
+  import Flickity from 'flickity'
+  import 'flickity/dist/flickity.min.css'
+  class ImageCarouselElement extends HTMLElement {
+    constructor() {
+      super()
+      this.flkty = new Flickity(this, {
+        prevNextButtons: false,
+        adaptiveHeight: true,
+        imagesLoaded: true,
+      })
+      ;(() => {
+        // https://github.com/metafizzy/flickity/issues/740
+        let startX = 0
+        this.ontouchstart = (e) => {
+          startX = e.touches[0].clientX
+        }
+        this.ontouchmove = (e) => {
+          if (Math.abs(e.touches[0].clientX - startX) > 5 && e.cancelable) {
+            e.preventDefault()
+          }
+        }
+      })()
+    }
+  }
+
+  customElements.define('image-carousel', ImageCarouselElement)
+</script>
+
+<image-carousel
+  class:list={['carousel splide', ...(extraClasses || [])]}
+  role="group"
+  aria-label="Media">
+  {
+    slides.map((slide) => (
+      <figure class="carousel-slide">
+        <Image
+          src={slide.imageSrc}
+          loading="lazy"
+          alt={slide.caption || ''}
+          format="webp"
+        />
+        <Type Element="figcaption" type="label">
+          {slide.caption}
+        </Type>
+      </figure>
+    ))
+  }
+</image-carousel>
+
+<style lang="scss">
+  @import '../assets/styles/_index.scss';
+  .carousel {
+    img {
+      width: 100%;
+      height: auto;
+    }
+    :global(figcaption) {
+      margin: 0.8em 0 0;
+      max-width: 42ch;
+    }
+    :global(.flickity-page-dots) {
+      justify-content: flex-start;
+      :global(.flickity-page-dot:first-child) {
+        margin-left: 0;
+      }
+    }
+  }
+</style>

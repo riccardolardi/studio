@@ -1,0 +1,108 @@
+---
+import Type from '@/components/Type.astro'
+import Carousel from '@/components/Carousel.astro'
+
+export interface Props {
+  title: string
+  type: string
+  contractors: {
+    name: string
+    link: string
+  }[]
+  images: {
+    imageSrc: string | Promise<any> | ImageMetadata
+    caption: string
+  }[]
+  extraClasses?: string[]
+  children: any
+}
+
+const { title, type, contractors, images, extraClasses } = Astro.props
+---
+
+<div class:list={['project', ...(extraClasses || [])]}>
+  <div class="project-content">
+    <div class="project-content-title">
+      <Type Element="h2" type="title-small">{title}</Type>
+    </div>
+    <div class="project-content-type">
+      <Type Element="span" type="caption">{type}</Type>
+    </div>
+    <div class="project-content-contractors">
+      <ul>
+        {
+          contractors.map((contractor) => (
+            <li>
+              <a
+                href={contractor.link}
+                target="_blank"
+                rel="noopener"
+                class="external">
+                <Type Element="span" type="caption">
+                  {contractor.name}
+                </Type>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="project-content-text">
+      <slot />
+    </div>
+  </div>
+  <div class="project-media">
+    <Carousel slides={images} />
+  </div>
+</div>
+
+<style lang="scss">
+  @import '../assets/styles/_index.scss';
+  .project {
+    margin: 0 0 6rem;
+    @include bp(1) {
+      display: flex;
+      gap: 4rem;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+  .project-content {
+    :global(p) {
+      &:not(:last-child) {
+        margin: 0 0 0.8em;
+      }
+    }
+    &-type {
+      padding: 0 4em 0 0;
+    }
+    &-contractors {
+      margin: 0.6em 0 1em;
+      padding: 0 4em 0 0;
+      li {
+        display: flex;
+        align-items: center;
+        &::before {
+          content: '';
+          width: 1em;
+          height: 0.4em;
+          background-image: url(/icons/arrow.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: 50%;
+        }
+      }
+    }
+    &-text {
+      margin: 0.6rem 0 0;
+    }
+  }
+  .project-media {
+    margin: 1rem 0 0;
+    @include bp(1) {
+      width: 40%;
+      margin: 0;
+    }
+  }
+</style>

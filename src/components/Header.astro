@@ -1,0 +1,87 @@
+---
+import Type from '@/components/Type.astro'
+---
+
+<script type="module" hoist>
+  document.querySelector('header .page-title').addEventListener(
+    'click',
+    (e) => {
+      e.preventDefault()
+      window.scrollTo(0, 0)
+    },
+    false
+  )
+</script>
+
+<header>
+  <a href="/">
+    <Type Element="span" type="caption" extraClasses={['page-title']}>
+      Studio Riccardo Lardi
+    </Type>
+  </a>
+  <ul>
+    <li>
+      <a href="#services">
+        <Type Element="span" type="caption">Services</Type>
+      </a>
+    </li>
+    <li>
+      <a href="#projects">
+        <Type Element="span" type="caption">Projekte</Type>
+      </a>
+    </li>
+    <li>
+      <a href="#profile"><Type Element="span" type="caption">Profil</Type></a>
+    </li>
+    <li>
+      <a href="#contact"><Type Element="span" type="caption">Kontakt</Type></a>
+    </li>
+  </ul>
+</header>
+
+<style lang="scss">
+  @import '../assets/styles/_index.scss';
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    @include bp(1) {
+      background-color: transparent;
+    }
+    z-index: 1;
+    :global(.page-title) {
+      width: min-content;
+      pointer-events: auto;
+    }
+    ul {
+      display: flex;
+      gap: 1em;
+      pointer-events: auto;
+      li {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 0.1em;
+          background-color: $black;
+          bottom: -0.2em;
+          transform: scaleX(0);
+          opacity: 0;
+          transition: transform 125ms, opacity 125ms;
+        }
+        &.is-active {
+          &::after {
+            transform: scaleX(1);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+</style>

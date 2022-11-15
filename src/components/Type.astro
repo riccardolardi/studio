@@ -1,0 +1,53 @@
+---
+export interface Props {
+  Element: keyof HTMLElementTagNameMap
+  type:
+    | 'paragraph'
+    | 'title'
+    | 'title-small'
+    | 'subtitle'
+    | 'label'
+    | 'caption'
+    | 'intro'
+  extraClasses?: string[]
+  children: any
+}
+
+const { Element, type, extraClasses } = Astro.props
+---
+
+<Element class:list={['type', `type--${type}`, ...(extraClasses || [])]}>
+  <slot />
+</Element>
+
+<style lang="scss">
+  @import '../assets/styles/_index.scss';
+  .type {
+    display: block;
+    &--paragraph {
+      max-width: 68ch;
+      @extend %t-paragraph;
+    }
+    &--title {
+      max-width: 36ch;
+      @extend %t-title;
+    }
+    &--title-small {
+      max-width: 36ch;
+      @extend %t-title-small;
+    }
+    &--subtitle {
+      max-width: 36ch;
+      @extend %t-subtitle;
+    }
+    &--label {
+      @extend %t-label;
+    }
+    &--caption {
+      @extend %t-caption;
+    }
+    &--intro {
+      @extend %t-intro;
+    }
+  }
+</style>

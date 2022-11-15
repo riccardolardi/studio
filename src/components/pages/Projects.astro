@@ -1,0 +1,491 @@
+---
+import Page from '@/components/Page.astro'
+import Type from '@/components/Type.astro'
+import Project from '@/components/Project.astro'
+import DDimg1 from '@/assets/images/digitaledemokratie/digitale-demokratie-32.jpg'
+import DDimg2 from '@/assets/images/digitaledemokratie/digitale-demokratie-8.jpg'
+import DDimg3 from '@/assets/images/digitaledemokratie/digitale-demokratie-39.jpg'
+import DDimg4 from '@/assets/images/digitaledemokratie/digitale-demokratie-7.jpg'
+import GCimg1 from '@/assets/images/garcoa/garcoa1.png'
+import GCimg2 from '@/assets/images/garcoa/garcoa2.png'
+import GCimg3 from '@/assets/images/garcoa/garcoa3.png'
+import SIAimg1 from '@/assets/images/sia/sia1.png'
+import SIAimg2 from '@/assets/images/sia/sia2.png'
+import SIAimg3 from '@/assets/images/sia/sia3.jpg'
+---
+
+<script type="module" hoist>
+  document.querySelector('.projects-other-title').addEventListener(
+    'click',
+    (e) => {
+      e.target.closest('.projects-other').classList.toggle('is-open')
+    },
+    false
+  )
+</script>
+
+<Page id="projects">
+  <Type Element="h1" type="title">Projekte</Type>
+  <Type Element="span" type="subtitle">Web, Apps, interaktive Erlebnisse</Type>
+  <div class="content">
+    <div class="projects-featured">
+      <Project
+        title="Digitale Demokratie"
+        type="Web-App, Audio Guide"
+        contractors={[
+          {
+            name: 'Polit-Forum Bern',
+            link: 'https://www.polit-forum-bern.ch/ausstellung/digitale-demokratie',
+          },
+          {
+            name: 'Prolog AG',
+            link: 'https://www.prolog.work',
+          },
+        ]}
+        images={[
+          {
+            imageSrc: DDimg1,
+            caption:
+              'Zusätzliche Informationen, Spiele, Audio und Videos ergänzen den Museumsbesuch',
+          },
+          {
+            imageSrc: DDimg2,
+            caption:
+              'Die Web-App dient als Audio-Guide und führt den Besucher durch die Ausstellung',
+          },
+          {
+            imageSrc: DDimg3,
+            caption:
+              'Die Vermittlung von Inhalten wird durch zusätzliches Bild-, Video- und Audiomaterial medial unterstützt und erweitert',
+          },
+          {
+            imageSrc: DDimg4,
+            caption:
+              'Eine fiktive Figur kommuniziert mit den Besucher/innen in Form eines Chats und begleitet diese/n durch die Ausstellung',
+          },
+        ]}>
+        <Type Element="p" type="paragraph">
+          Ende April 2021 öffnet die Ausstellung "Digitale Demokratie - Eine
+          interaktive Reise in die politische Zukunft" ihre Tore. Auf drei
+          Stockwerken sollen Fragestellungen und Forschungsergebnisse zu Themen
+          rund um den Einzug Digitaler Technologien in die Politik präsentiert
+          werden.
+        </Type>
+        <Type Element="p" type="paragraph">
+          Die Basler Web-Agentur Prolog AG wurde mit der Konzeption und
+          Entwicklung eines Audio-Guides beauftragt, der die Besucher/in auf
+          interaktive Art und Weise durch die Ausstellung führen soll. Für
+          Prolog AG durfte ich den Lead für die technische Umsetzung der Web-App
+          übernehmen.
+        </Type>
+      </Project>
+      <Project
+        title="Garçoa Chocolate"
+        type="Website, Shop, CMS"
+        contractors={[
+          {
+            name: 'Garçoa Chocolate Zürich',
+            link: 'https://www.garcoa.ch',
+          },
+          {
+            name: 'Studio HübnerBraun',
+            link: 'https://www.huebnerbraun.ch',
+          },
+          {
+            name: 'https://www.garcoa.ch',
+            link: 'https://www.garcoa.ch',
+          },
+        ]}
+        images={[
+          {
+            imageSrc: GCimg1,
+            caption:
+              'Die Inhalte können per Modulbausteine selbstständig gestaltet und konstruiert werden',
+          },
+          {
+            imageSrc: GCimg2,
+            caption:
+              'Durch das modulare System entstehen laufend neue inhaltliche und gestalterische Kompositionen',
+          },
+          {
+            imageSrc: GCimg3,
+            caption:
+              'Die Produkte werden direkt aus Shopify bezogen - worüber auch Bestellungsabwicklung und -versand etc. gehandhabt werden',
+          },
+        ]}>
+        <Type Element="p" type="paragraph">
+          Die Zürcher Schoggi-Manufaktur Garçoa stellt "bean to bar" Schokolade
+          her - das heisst der gesamte Produktionsprozess von der Beschaffung
+          der Bohnen, bis hin zum Verpacken und Vertrieb, wird in-house und von
+          Hand gemacht.
+        </Type>
+        <Type Element="p" type="paragraph">
+          In Zusammenarbeit mit dem Grafikstudio HübnerBraun ebenfalls aus
+          Zürich wurde ein Redesign umgesetzt und ein komplett
+          massgeschneiderter Online-Shop (mittels Shopify Storefront API)
+          implementiert.
+        </Type>
+        <Type Element="p" type="paragraph">
+          Zur Bewirtschaftung der Inhalte und Produkte steht dem Kunden CraftCMS
+          resp. Shopify zur Verfügung.
+        </Type>
+      </Project>
+      <Project
+        title="SIA Ordnungstag 2021"
+        type="Website zum SIA Beschaffungswesen, Live-Stream"
+        contractors={[
+          {
+            name: 'Schweizerischer Ingenieur- und Architektenverein SIA',
+            link: 'https://www.sia.ch',
+          },
+          {
+            name: 'Ronny Hunger Graphic Design',
+            link: 'https://www.ronnyhunger.com',
+          },
+          {
+            name: 'https://ordnungstag.sia.ch',
+            link: 'https://ordnungstag.sia.ch',
+          },
+        ]}
+        images={[
+          {
+            imageSrc: SIAimg2,
+            caption:
+              'Informationsteil der einzelnen Phasen des Beschaffungswesens innerhalb eines Bauvorhabens',
+          },
+          {
+            imageSrc: SIAimg1,
+            caption:
+              'Übersichtsseite mit aktuellen Beiträgen rund um das Thema des Beschaffungswesens',
+          },
+          {
+            imageSrc: SIAimg3,
+            caption:
+              'Der Live-Stream der Konferenz wurde dreisprachig simultanübersetzt und über die Website übertragen',
+          },
+        ]}>
+        <Type Element="p" type="paragraph">
+          Für den Schweizerischen Ingenieur- und Architektenverband SIA durfte
+          ich einen neuen Webauftritt zum Thema des Beschaffungswesens
+          implementieren. In enger Zusammenarbeit mit dem Grafiker Ronny Hunger
+          konnte ein klare, verständliche und doch verspielte Gestaltung
+          umgesetzt werden.
+        </Type>
+        <Type Element="p" type="paragraph">
+          Zusätzlich zur Nachschlagefunktion beherbergte die Website ebenfalls
+          den Live-Stream zur Konferenz des SIA Ordungstages 2021 im
+          Kongresshaus Zürich. Dieser wurde auf einer Unterseite per Login den
+          angemeldeten Personen zugänglich gemacht.
+        </Type>
+      </Project>
+    </div>
+  </div>
+  <div class="projects-other">
+    <div class="projects-other-title">
+      <Type Element="h3" type="caption">Weitere Projekte</Type>
+    </div>
+    <div class="projects-other-list">
+      <div class="projects-other-list-item">
+        <a
+          href="https://theclimatedrive.org"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="caption">theclimatedrive.org</Type>
+        </a>
+        <Type Element="span" type="label">Website, CMS, Beratung</Type>
+        <a
+          href="https://tlgg.de"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">TLGG GmbH, Berlin</Type>
+        </a>
+        <Type Element="span" type="label">–</Type>
+        <Type Element="span" type="label">2022</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <Type Element="span" type="caption">
+          Swiss Innovation Park Medieninstallation
+        </Type>
+        <Type Element="span" type="label">
+          Interaktiver Medientisch & OLED Screens, CMS
+        </Type>
+        <a
+          href="https://iart.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">iart AG, Basel</Type>
+        </a>
+        <Type Element="span" type="label">–</Type>
+        <Type Element="span" type="label">2022</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <a
+          href="https://wortstellwerk.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="caption">wortstellwerk.ch</Type>
+        </a>
+        <Type Element="span" type="label">Website, CMS, Beratung</Type>
+        <a
+          href="https://wortstellwerk.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">Wortstellwerk, Basel</Type>
+        </a>
+        <a
+          href="https://debutdebut.com"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">Debut Debut, Basel</Type>
+        </a>
+        <Type Element="span" type="label">2022</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <a
+          href="https://gleichgestellt.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="caption">gleichgestellt.ch</Type>
+        </a>
+        <Type Element="span" type="label">Website, CMS, Beratung</Type>
+        <a
+          href="https://www.gleichstellung.bs.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">Kanton Basel-Stadt</Type>
+        </a>
+        <a
+          href="https://www.gianbesset.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">
+            Gian Besset Brand Design, Basel
+          </Type>
+        </a>
+        <Type Element="span" type="label">2021</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <a
+          href="https://blumline.com"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="caption">blumline.com</Type>
+        </a>
+        <Type Element="span" type="label">Website, CMS, Beratung</Type>
+        <a
+          href="https://www.blumline.com"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">Blumline, SF USA</Type>
+        </a>
+        <a
+          href="https://www.wearesuperworks.com"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">SuperWorks, SF USA</Type>
+        </a>
+        <Type Element="span" type="label">2021</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <a
+          href="https://bf-architekten.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="caption">bf-architekten.ch</Type>
+        </a>
+        <Type Element="span" type="label">Website, CMS, Beratung</Type>
+        <a
+          href="https://www.bf-architekten.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">
+            Bischof Föhn Architekten, Zürich
+          </Type>
+        </a>
+        <a
+          href="https://www.estherrieser.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">Esther Rieser, Zürich</Type>
+        </a>
+        <Type Element="span" type="label">2021</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <Type Element="span" type="caption">
+          Papiermuseum Basel Medieninstallation
+        </Type>
+        <Type Element="span" type="label">
+          Interaktiver Medientisch, Hardware
+        </Type>
+        <a
+          href="https://www.baslerpapiermuehle.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">Papiermuseum Basel</Type>
+        </a>
+        <Type Element="span" type="label">–</Type>
+        <Type Element="span" type="label">2022</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <a
+          href="https://huebnerbraun.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="caption">huebnerbraun.ch</Type>
+        </a>
+        <Type Element="span" type="label">Website, CMS, Beratung</Type>
+        <a
+          href="https://www.huebnerbraun.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">
+            Studio HübnerBraun, Basel/Zürich
+          </Type>
+        </a>
+        <Type Element="span" type="label">–</Type>
+        <Type Element="span" type="label">2020</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <a
+          href="https://sommernachts-ball.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="caption">sommernachts-ball.ch</Type>
+        </a>
+        <Type Element="span" type="label">Website, CMS, Beratung</Type>
+        <a
+          href="https://www.migros-engagement.ch/de/kulturprozent"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">Migros Kulturprozent, Zürich</Type>
+        </a>
+        <a
+          href="https://stephanwalter.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">Stephan Walter, Zürich</Type>
+        </a>
+        <Type Element="span" type="label">2020</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <Type Element="span" type="caption">
+          Kloster Einsiedeln Medieninstallation
+        </Type>
+        <Type Element="span" type="label">Interaktive Medienstationen</Type>
+        <a
+          href="https://furbo.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">Furbo GmbH, Zürich</Type>
+        </a>
+        <Type Element="span" type="label">–</Type>
+        <Type Element="span" type="label">2020</Type>
+      </div>
+      <div class="projects-other-list-item">
+        <a
+          href="https://kinaesthetic.design"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="caption">kinaesthetic.design</Type>
+        </a>
+        <Type Element="span" type="label">Website, CMS, Beratung</Type>
+        <a
+          href="https://miyoshikensho.com"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <Type Element="span" type="label">
+            Dr. Kensho Miyoshi, London/Tokyo
+          </Type>
+        </a>
+        <Type Element="span" type="label">–</Type>
+        <Type Element="span" type="label">2020</Type>
+      </div>
+    </div>
+
+    <style lang="scss">
+      @import '../../assets/styles/_index.scss';
+      .content {
+        margin: 2rem 0 0;
+        @include bp(1) {
+          margin: 4rem 0 0 2rem;
+        }
+      }
+      .projects-other {
+        &.is-open {
+          .projects-other-title {
+            &::after {
+              transform: rotateZ(-90deg);
+            }
+          }
+          .projects-other-list {
+            max-height: 999px;
+          }
+        }
+        &-title {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem 0;
+          border-bottom: 1px solid $black;
+          cursor: pointer;
+          &::after {
+            content: '';
+            display: block;
+            width: 0.8em;
+            height: 0.8em;
+            background-image: url(/icons/arrow.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: rotateZ(90deg);
+            transition: transform 255ms;
+            @include bp(1) {
+              all: unset;
+            }
+          }
+        }
+        &-list {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 255ms;
+          @include bp(1) {
+            all: unset;
+          }
+          &-item {
+            padding: 1em 0;
+            border-bottom: 1px solid $black;
+            @include bp(1) {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr) fit-content(1rem);
+              column-gap: 2ch;
+              align-items: center;
+            }
+          }
+        }
+      }
+    </style>
+  </div>
+</Page>

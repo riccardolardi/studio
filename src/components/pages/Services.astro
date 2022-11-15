@@ -1,0 +1,102 @@
+---
+import Page from '@/components/Page.astro'
+import Type from '@/components/Type.astro'
+import iconCode from '@/assets/icons/code.svg'
+import iconRuler from '@/assets/icons/ruler.svg'
+import iconPerson from '@/assets/icons/person.svg'
+---
+
+<Page id="services">
+  <Type Element="h1" type="title">Services</Type>
+  <Type Element="span" type="subtitle">Code, Design, Beratung</Type>
+  <div class="content">
+    <ul>
+      <li>
+        <img src={iconCode} alt="Code" />
+        <ul>
+          <li>
+            <Type Element="p" type="paragraph">
+              Frontend Engineering (React, TypeScript, Next.js)
+            </Type>
+          </li>
+          <li>
+            <Type Element="p" type="paragraph">
+              Backend / Fullstack (Node.js, Strapi, CraftCMS)
+            </Type>
+          </li>
+          <li>
+            <Type Element="p" type="paragraph">
+              DevOps (Vercel, Github Actions, Docker)
+            </Type>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <img src={iconRuler} alt="Ruler" />
+        <ul>
+          <li>
+            <Type Element="p" type="paragraph">
+              Beratung und Begleitung von Designprozessen
+            </Type>
+          </li>
+          <li>
+            <Type Element="p" type="paragraph">
+              Machbarkeitsstudien, technische Einschätzungen
+            </Type>
+          </li>
+          <li>
+            <Type Element="p" type="paragraph">
+              Konzeption, Prototyping, agile Methoden
+            </Type>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <img src={iconPerson} alt="Person" />
+        <ul>
+          <li>
+            <Type Element="p" type="paragraph">Technische Projektleitung</Type>
+          </li>
+          <li>
+            <Type Element="p" type="paragraph">
+              Schulungen, Workshops, Wissenstransfer
+            </Type>
+          </li>
+          <li>
+            <Type Element="p" type="paragraph">
+              Mentoring, Code Reviews, Pair Programming
+            </Type>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</Page>
+
+<style lang="scss">
+  @import '../../assets/styles/_index.scss';
+  .content {
+    margin: 2rem 2rem 0;
+    @include bp(1) {
+      margin: 4rem 0 0 2rem;
+    }
+    > ul {
+      > li {
+        @include bp(1) {
+          display: flex;
+          align-items: center;
+          gap: 2em;
+        }
+        + li {
+          margin: 1.4rem 0 0;
+        }
+        img {
+          max-width: 3.2rem;
+        }
+        ul {
+          list-style-type: disc;
+        }
+      }
+    }
+  }
+</style>

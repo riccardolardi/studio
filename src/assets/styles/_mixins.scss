@@ -1,0 +1,19 @@
+@import './_vars.scss';
+
+@mixin clampLines($numLines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $numLines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin bp($i) {
+  @media (min-width: nth($bp, $i)) {
+    @content;
+  }
+}
+
+@mixin only-mobile() {
+  @media (max-width: nth($bp, 1)) {
+    @content;
+  }
+}

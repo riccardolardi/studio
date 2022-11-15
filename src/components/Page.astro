@@ -1,0 +1,30 @@
+---
+export interface Props {
+  id?: string
+  extraClasses?: string[]
+  children: any
+}
+
+const { id, extraClasses } = Astro.props
+---
+
+<div id={id} class:list={['page', ...(extraClasses || [])]}>
+  <slot />
+</div>
+
+<style lang="scss">
+  @import '../assets/styles/_index.scss';
+  .page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    transition: opacity 255ms;
+    &:not(#intro) {
+      padding: 8rem 2rem 0;
+      @include bp(1) {
+        padding: 8rem 8rem 2rem;
+      }
+    }
+  }
+</style>

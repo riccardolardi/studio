@@ -1,0 +1,106 @@
+---
+import Page from '@/components/Page.astro'
+import Type from '@/components/Type.astro'
+
+const words = ['Web', 'Apps', 'Interaction']
+---
+
+<script>
+  const container = document.querySelector('.intro .words')
+  const mutationObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (
+        mutation.type === 'attributes' &&
+        mutation.attributeName === 'class'
+      ) {
+        const el = mutation.target as HTMLElement
+        if (el.classList.contains('is-active')) {
+          el.style.opacity = '1'
+          shuffleWords()
+        } else {
+          el.style.opacity = '0'
+        }
+      }
+    })
+  })
+
+  const pageEl = container?.closest('.page')
+  if (pageEl) {
+    mutationObserver.observe(pageEl, {
+      attributes: true,
+    })
+  }
+
+  shuffleWords()
+
+  function shuffleWords() {
+    let i: number | undefined = 0
+    for (i = container?.children.length; i! >= 0; i!--) {
+      const child = container?.children[(Math.random() * i!) | 0] as HTMLElement
+      const maxTranslateX = 16
+      const translateX = Math.floor(
+        Math.random() * (maxTranslateX + maxTranslateX) - maxTranslateX
+      )
+      if (child) {
+        child.style.opacity = '0'
+        child.style.transform = `translateX(${translateX * 2}vw)`
+        container?.appendChild(child)
+        setTimeout(() => {
+          child.style.opacity = '1'
+          child.style.transform = `translateX(${translateX}vw)`
+        }, 255)
+      }
+    }
+  }
+</script>
+
+<Page id="intro">
+  <div class="intro">
+    <div class="words">
+      {
+        words.map((word) => (
+          <Type Element="span" type="intro">
+            {word}
+          </Type>
+        ))
+      }
+    </div>
+  </div>
+</Page>
+
+<style lang="scss">
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    .words {
+      > :global(*) {
+        transition: transform 255ms, opacity 255ms;
+        will-change: transform, opacity;
+        &:after {
+          content: ',';
+        }
+        &:last-child {
+          &:after {
+            display: inline-block;
+            content: '.';
+            animation: slidein 255ms ease 510ms 1 normal forwards;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  @keyframes slidein {
+    from {
+      opacity: 0;
+      transform: translateX(10vw);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>

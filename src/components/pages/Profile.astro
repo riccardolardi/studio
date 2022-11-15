@@ -1,0 +1,128 @@
+---
+import Page from '@/components/Page.astro'
+import Type from '@/components/Type.astro'
+---
+
+<Page id="profile">
+  <Type Element="h1" type="title">Profil</Type>
+  <Type Element="span" type="subtitle">Riccardo Alberto Lardi, *1984</Type>
+  <div class="content">
+    <Type Element="p" type="paragraph">
+      Ich bin ein Software Entwickler und Interaction Designer mit langjähriger
+      Erfahrung in der Gestaltung und Umsetzung von digitalen Produkten und
+      Benutzererlebnissen.
+    </Type>
+    <Type Element="p" type="paragraph">
+      Bevor ich das Studio eröffnete, war ich massgeblich an zahlreichen
+      Projekten für Unternehmen wie Takram (London) und iart (Basel) beteiligt.
+      Ich halte einen BA von der Zürcher Hochschule der Künste und einen MA vom
+      Royal College of Art, London.
+    </Type>
+    <Type Element="p" type="paragraph">
+      Das Studio bewegt sich in einem engen Netzwerk von Partnern aus den
+      Bereichen Grafik, Photografie, Film, Software, Design und Kunst.
+    </Type>
+    <Type Element="p" type="paragraph">
+      Ich schätze mich glücklich u.a. die folgenden Institutionen/Firmen bei
+      Projekten erfolgreich unterstützt zu haben:
+    </Type>
+    <ul class="clients-list">
+      <li class="clients-list-item">
+        <a
+          href="https://sia.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <img
+            src="/clients/sia.svg"
+            alt="Schweizerischer Ingenieur- und Architektenverein"
+          />
+        </a>
+      </li>
+      <li class="clients-list-item">
+        <a
+          href="https://www.gleichstellung.bs.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <img
+            src="/clients/bsgfm.svg"
+            alt="Gleichstellungsbehörde Basel-Stadt"
+          />
+        </a>
+      </li>
+      <li class="clients-list-item">
+        <a
+          href="https://www.migros-engagement.ch/de/kulturprozent"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <img
+            src="/clients/kulturprozent.svg"
+            alt="Migros Kulturprozent Zürich"
+          />
+        </a>
+      </li>
+      <li class="clients-list-item">
+        <a
+          href="https://www.hslu.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <img src="/clients/hslu.svg" alt="Hochschule Luzern" />
+        </a>
+      </li>
+      <li class="clients-list-item">
+        <a
+          href="https://www.iart.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <img src="/clients/iart.svg" alt="iart AG" />
+        </a>
+      </li>
+      <li class="clients-list-item">
+        <a
+          href="https://www.iart.ch"
+          target="_blank"
+          rel="noopener"
+          class="external">
+          <img
+            src="/clients/uzhifi.svg"
+            alt="University of Zurich Department of Informatics"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</Page>
+
+<style lang="scss">
+  @import '../../assets/styles/_index.scss';
+  .content {
+    margin: 2rem 0 0;
+    @include bp(1) {
+      margin: 4rem 0 0 2rem;
+    }
+    :global(p) {
+      &:not(:last-child) {
+        margin: 0 0 0.8em;
+      }
+    }
+    .clients-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem 1rem;
+      margin: 2rem 0 0;
+      @include bp(1) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      &-item {
+        img {
+          max-width: 75%;
+          max-height: 4rem;
+        }
+      }
+    }
+  }
+</style>

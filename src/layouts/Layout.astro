@@ -1,0 +1,84 @@
+---
+import '@/assets/styles/reset.css'
+import '@/assets/styles/fonts.css'
+import Header from '@/components/Header.astro'
+---
+
+<script>
+  const pages = document.querySelectorAll('.page')
+  const menuItems = document.querySelectorAll('header ul li')
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target as HTMLElement
+        const isActive = entry.intersectionRect.height >= window.innerHeight / 2
+        el.classList.toggle('is-active', isActive)
+        document.body.classList.toggle(
+          'is-intro',
+          !!el.querySelector('.intro') && isActive
+        )
+        menuItems.forEach((menuItem, index) => {
+          const activePageIndex = isActive && Array.from(pages).indexOf(el) - 1
+          if (activePageIndex !== false) {
+            menuItem.classList.toggle(
+              'is-active',
+              activePageIndex === index && isActive
+            )
+          }
+        })
+      })
+    },
+    {
+      threshold: (() => {
+        const length = 20
+        const result = new Array(length + 1).fill(0).map((num, i) => i / length)
+        return result
+      })(),
+    }
+  )
+  pages.forEach((page) => observer.observe(page))
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>Studio Riccardo Lardi - Web, Apps & interaktive Erlebnisse</title>
+
+<html lang="de">
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <style lang="scss" is:global>
+      @import '../assets/styles/_index.scss';
+      html {
+        scroll-behavior: smooth;
+        text-rendering: optimizeLegibility;
+        text-size-adjust: 100%;
+        font-kerning: normal;
+        font-variant-ligatures: none;
+        -webkit-font-smoothing: antialiased;
+        @extend %t-root;
+      }
+      body {
+        color: $black;
+        &.is-intro {
+          // ...
+        }
+      }
+      main {
+        min-height: 100vh;
+        @extend %pageWidth;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+      }
+    </style>
+  </body>
+</html>

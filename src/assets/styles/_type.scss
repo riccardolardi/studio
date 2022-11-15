@@ -1,0 +1,71 @@
+@import './_mixins.scss';
+
+%t-root {
+  font-size: 186x;
+  @include bp(1) {
+    font-size: 10px;
+  }
+  @include bp(2) {
+    font-size: 14px;
+  }
+  @include bp(3) {
+    font-size: 16px;
+  }
+  @include bp(4) {
+    font-size: 20px;
+  }
+}
+
+%t-paragraph {
+  font-family: BuenosAires, sans-serif;
+  font-size: 1rem;
+  line-height: 1.32;
+  font-feature-settings: 'ss01';
+}
+
+%t-title {
+  font-family: BuenosAires, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+%t-title-small {
+  font-family: BuenosAires, sans-serif;
+  font-size: 1.32rem;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+%t-subtitle {
+  font-family: BuenosAires, sans-serif;
+  font-size: 1.42rem;
+  line-height: 1.4;
+  font-feature-settings: 'dlig', 'ss01';
+}
+
+%t-label {
+  font-family: BuenosAires, sans-serif;
+  font-size: 0.6rem;
+  line-height: 1.4;
+  font-feature-settings: 'ss01';
+}
+
+%t-caption {
+  font-family: BuenosAires, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  font-weight: bold;
+  font-feature-settings: 'ss01';
+}
+
+%t-intro {
+  font-family: BuenosAires, sans-serif;
+  font-size: 3.6rem;
+  line-height: 1.8;
+  font-weight: bold;
+  font-feature-settings: 'dlig', 'ss01';
+  @media (max-width: nth($bp, 1)) {
+    font-size: 1.8rem;
+  }
+}
