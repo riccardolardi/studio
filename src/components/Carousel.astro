@@ -18,15 +18,15 @@ const { slides, extraClasses } = Astro.props
 <script type="module" hoist>
   import Flickity from 'flickity'
   import 'flickity/dist/flickity.min.css'
+
   class ImageCarouselElement extends HTMLElement {
     constructor() {
       super()
-      this.flkty = new Flickity(this, {
+      new Flickity(this, {
         contain: true,
         cellAlign: 'left',
         prevNextButtons: false,
         adaptiveHeight: true,
-        imagesLoaded: true,
       })
       ;(() => {
         // https://github.com/metafizzy/flickity/issues/740
