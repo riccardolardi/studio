@@ -66,26 +66,34 @@ import Type from '@/components/Type.astro'
       column-gap: 1em;
       pointer-events: auto;
       li {
-        position: relative;
         a {
           display: block;
           padding: 0.3em 0.2em;
-        }
-        &::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 0.1em;
-          background-color: $black;
-          bottom: -0.2em;
-          transform: scaleX(0);
-          opacity: 0;
-          transition: transform 125ms, opacity 125ms;
+          @include bp(1) {
+            padding: 0;
+          }
+          :global(span) {
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 0.12em;
+              background-color: $black;
+              left: 0;
+              bottom: -0.2em;
+              transform: scaleX(0);
+              opacity: 0;
+              transition: transform 125ms, opacity 125ms;
+            }
+          }
         }
         &.is-active {
-          &::after {
-            transform: scaleX(1);
-            opacity: 1;
+          :global(span) {
+            &::after {
+              transform: scaleX(1);
+              opacity: 1;
+            }
           }
         }
       }
