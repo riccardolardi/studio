@@ -115,9 +115,12 @@ import Type from '@/components/Type.astro'
       gap: 2rem 1rem;
       margin: 2rem 0 0;
       @include bp(1) {
+        width: 75%;
         grid-template-columns: repeat(3, 1fr);
       }
       &-item {
+        display: flex;
+        align-items: center;
         img {
           max-width: 75%;
           max-height: 4rem;
