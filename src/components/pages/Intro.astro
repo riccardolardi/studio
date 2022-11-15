@@ -77,6 +77,7 @@ const words = ['Web', 'Apps', 'Interaction']
     flex: 1;
     .words {
       > :global(*) {
+        opacity: 0;
         transition: transform 255ms, opacity 255ms;
         will-change: transform, opacity;
         &:after {
