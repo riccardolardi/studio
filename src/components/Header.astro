@@ -45,6 +45,7 @@ import Type from '@/components/Type.astro'
     display: flex;
     justify-content: space-between;
     align-items: center;
+    column-gap: 1em;
     position: fixed;
     width: 100%;
     padding: 2rem;
@@ -60,7 +61,9 @@ import Type from '@/components/Type.astro'
     }
     ul {
       display: flex;
-      gap: 1em;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      column-gap: 1em;
       pointer-events: auto;
       li {
         position: relative;
