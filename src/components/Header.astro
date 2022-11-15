@@ -7,6 +7,7 @@ import Type from '@/components/Type.astro'
     'click',
     (e) => {
       e.preventDefault()
+      window.history.pushState(undefined, undefined, '/')
       window.scrollTo(0, 0)
     },
     false
