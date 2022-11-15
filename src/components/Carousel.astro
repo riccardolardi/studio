@@ -22,6 +22,8 @@ const { slides, extraClasses } = Astro.props
     constructor() {
       super()
       this.flkty = new Flickity(this, {
+        contain: true,
+        cellAlign: 'left',
         prevNextButtons: false,
         adaptiveHeight: true,
         imagesLoaded: true,
