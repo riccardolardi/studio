@@ -17,16 +17,18 @@ const { slides, extraClasses } = Astro.props
 
 <script type="module" hoist>
   import Flickity from 'flickity'
+  import 'flickity-imagesloaded'
   import 'flickity/dist/flickity.min.css'
 
   class ImageCarouselElement extends HTMLElement {
     constructor() {
       super()
-      new Flickity(this, {
+      this.flickity = new Flickity(this, {
         contain: true,
         cellAlign: 'left',
         prevNextButtons: false,
         adaptiveHeight: true,
+        imagesLoaded: true,
       })
       ;(() => {
         // https://github.com/metafizzy/flickity/issues/740
@@ -43,13 +45,10 @@ const { slides, extraClasses } = Astro.props
     }
   }
 
-  customElements.define('image-carousel', ImageCarouselElement)
+  window.customElements.define('image-carousel', ImageCarouselElement)
 </script>
 
-<image-carousel
-  class:list={['carousel splide', ...(extraClasses || [])]}
-  role="group"
-  aria-label="Media">
+<image-carousel class:list={['carousel', ...(extraClasses || [])]}>
   {
     slides.map((slide) => (
       <figure class="carousel-slide">
@@ -77,6 +76,9 @@ const { slides, extraClasses } = Astro.props
     :global(figcaption) {
       margin: 0.8em 0 0;
       max-width: 42ch;
+    }
+    :global(.flickity-viewport) {
+      transition: height 0.2s;
     }
     :global(.flickity-page-dots) {
       justify-content: flex-start;
