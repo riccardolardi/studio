@@ -10,22 +10,33 @@ import iconPerson from '@/assets/icons/person.svg'
   <Type Element="h1" type="title">Services</Type>
   <Type Element="span" type="subtitle">Code, Design, Beratung</Type>
   <div class="content">
+    <div class="intro-text">
+      <Type Element="p" type="paragraph">
+        Software Entwicklung von Projekten im Bereich von Web/Frontend & Apps
+        sowie auch von physischen, medialen Applikationen wie z.B. für Museen
+        oder Ausstellungen.
+      </Type>
+      <Type Element="p" type="paragraph">
+        Begleitung von Gestaltungsprozessen, Beratung im Hinblick auf die
+        technische Umsetzung, UI/UX und Interaction Design.
+      </Type>
+    </div>
     <ul>
       <li>
         <img src={iconCode} alt="Code" />
         <ul>
           <li>
-            <Type Element="p" type="paragraph">
+            <Type Element="p" type="caption-small">
               Frontend Engineering (React, TypeScript, Next.js)
             </Type>
           </li>
           <li>
-            <Type Element="p" type="paragraph">
+            <Type Element="p" type="caption-small">
               Backend / Fullstack (Node.js, Strapi, CraftCMS)
             </Type>
           </li>
           <li>
-            <Type Element="p" type="paragraph">
+            <Type Element="p" type="caption-small">
               DevOps (Vercel, Github Actions, Docker)
             </Type>
           </li>
@@ -35,17 +46,17 @@ import iconPerson from '@/assets/icons/person.svg'
         <img src={iconRuler} alt="Ruler" />
         <ul>
           <li>
-            <Type Element="p" type="paragraph">
+            <Type Element="p" type="caption-small">
               Beratung und Begleitung von Designprozessen
             </Type>
           </li>
           <li>
-            <Type Element="p" type="paragraph">
+            <Type Element="p" type="caption-small">
               Machbarkeitsstudien, technische Einschätzungen
             </Type>
           </li>
           <li>
-            <Type Element="p" type="paragraph">
+            <Type Element="p" type="caption-small">
               Konzeption, Prototyping, agile Methoden
             </Type>
           </li>
@@ -55,15 +66,17 @@ import iconPerson from '@/assets/icons/person.svg'
         <img src={iconPerson} alt="Person" />
         <ul>
           <li>
-            <Type Element="p" type="paragraph">Technische Projektleitung</Type>
+            <Type Element="p" type="caption-small">
+              Technische Projektleitung
+            </Type>
           </li>
           <li>
-            <Type Element="p" type="paragraph">
+            <Type Element="p" type="caption-small">
               Schulungen, Workshops, Wissenstransfer
             </Type>
           </li>
           <li>
-            <Type Element="p" type="paragraph">
+            <Type Element="p" type="caption-small">
               Mentoring, Code Reviews, Pair Programming
             </Type>
           </li>
@@ -76,11 +89,20 @@ import iconPerson from '@/assets/icons/person.svg'
 <style lang="scss">
   @import '../../assets/styles/_index.scss';
   .content {
-    margin: 2rem 2rem 0;
+    margin: 2rem 0 0;
     @include bp(1) {
       margin: 4rem 0 0 2rem;
     }
+    :global(p) {
+      &:not(:last-child) {
+        margin: 0 0 0.8em;
+      }
+    }
     > ul {
+      margin: 2rem 2rem 0;
+      @include bp(1) {
+        margin: 4rem 0 0;
+      }
       > li {
         @include bp(1) {
           display: flex;

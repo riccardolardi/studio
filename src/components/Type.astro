@@ -8,6 +8,7 @@ export interface Props {
     | 'subtitle'
     | 'label'
     | 'caption'
+    | 'caption-small'
     | 'intro'
   extraClasses?: string[]
   children: any
@@ -45,6 +46,9 @@ const { Element, type, extraClasses } = Astro.props
     }
     &--caption {
       @extend %t-caption;
+    }
+    &--caption-small {
+      @extend %t-caption-small;
     }
     &--intro {
       @extend %t-intro;
