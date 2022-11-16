@@ -1,8 +1,12 @@
 import { defineConfig } from "astro/config";
 import image from '@astrojs/image';
-import react from "@astrojs/react";
+
+// https://astro.build/config
+import preact from "@astrojs/preact";
+
+// https://astro.build/config
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [image(), react()]
+  integrations: [image(), preact()]
 });
