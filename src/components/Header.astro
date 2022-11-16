@@ -46,13 +46,14 @@ import Type from '@/components/Type.astro'
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: 1em;
+    column-gap: 5em;
     position: fixed;
     width: 100%;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.9);
     pointer-events: none;
     @include bp(1) {
+      column-gap: 1em;
       background-color: transparent;
     }
     z-index: 1;
