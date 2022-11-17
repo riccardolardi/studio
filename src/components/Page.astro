@@ -8,9 +8,9 @@ export interface Props {
 const { id, extraClasses } = Astro.props
 ---
 
-<div id={id} class:list={['page', ...(extraClasses || [])]}>
+<section id={id} class:list={['page', ...(extraClasses || [])]}>
   <slot />
-</div>
+</section>
 
 <style lang="scss">
   @import '../assets/styles/_index.scss';
