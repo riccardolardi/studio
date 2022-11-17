@@ -23,10 +23,10 @@ const { title, type, contractors, images, extraClasses } = Astro.props
 <div class:list={['project', ...(extraClasses || [])]}>
   <div class="project-content">
     <div class="project-content-title">
-      <Type Element="h2" type="title-small">{title}</Type>
+      <Type Element="h3" type="title-small">{title}</Type>
     </div>
     <div class="project-content-type">
-      <Type Element="span" type="caption">{type}</Type>
+      <Type Element="p" type="caption">{type}</Type>
     </div>
     <div class="project-content-contractors">
       <ul>
