@@ -2,12 +2,12 @@
 import Type from '@/components/Type.astro'
 ---
 
-<script type="module" hoist>
-  document.querySelector('header .page-title').addEventListener(
+<script>
+  document.querySelector('header .page-title')?.addEventListener(
     'click',
     (e) => {
       e.preventDefault()
-      window.history.pushState(undefined, undefined, '/')
+      window.history.pushState(undefined, '', '/')
       window.scrollTo(0, 0)
     },
     false
