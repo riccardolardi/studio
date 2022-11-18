@@ -14,14 +14,17 @@ import SIAimg2 from '@/assets/images/sia/sia2.png'
 import SIAimg3 from '@/assets/images/sia/sia3.jpg'
 ---
 
-<script type="module" hoist>
-  document.querySelector('.projects-other-title').addEventListener(
-    'click',
-    (e) => {
-      e.target.closest('.projects-other').classList.toggle('is-open')
-    },
-    false
-  )
+<script>
+  document
+    .querySelector('.projects-other-title')
+    ?.addEventListener(
+      'click',
+      (e) =>
+        (e.target as Element)
+          .closest('.projects-other')
+          ?.classList.toggle('is-open'),
+      false
+    )
 </script>
 
 <Page id="projects">
@@ -42,7 +45,7 @@ import SIAimg3 from '@/assets/images/sia/sia3.jpg'
             link: 'https://www.prolog.work',
           },
         ]}
-        technologies="PWA, Vue"
+        technologies="Progressive Web App, Vue"
         slides={[
           {
             imageSrc: DDimg1,
@@ -97,7 +100,7 @@ import SIAimg3 from '@/assets/images/sia/sia3.jpg'
             link: 'https://www.garcoa.ch',
           },
         ]}
-        technologies="Nuxt/Vue, Shopify Storefront API, CraftCMS"
+        technologies="Vue/Nuxt.js, Shopify Storefront API, CraftCMS"
         slides={[
           {
             imageSrc: GCimg1,
@@ -149,7 +152,7 @@ import SIAimg3 from '@/assets/images/sia/sia3.jpg'
             link: 'https://ordnungstag.sia.ch',
           },
         ]}
-        technologies="Nuxt/Vue, CraftCMS"
+        technologies="Vue/Nuxt.js, CraftCMS"
         slides={[
           {
             imageSrc: SIAimg2,
