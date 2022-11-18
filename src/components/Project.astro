@@ -1,15 +1,17 @@
 ---
+import { Image } from '@astrojs/image/components'
 import Type from '@/components/Type.astro'
 import Carousel from '@/components/Carousel.astro'
 
 export interface Props {
   title: string
   type: string
+  technologies?: string
   contractors: {
     name: string
     link: string
   }[]
-  images: {
+  slides: {
     imageSrc: string | Promise<any> | ImageMetadata
     caption: string
   }[]
@@ -17,7 +19,8 @@ export interface Props {
   children: any
 }
 
-const { title, type, contractors, images, extraClasses } = Astro.props
+const { title, type, contractors, technologies, slides, extraClasses } =
+  Astro.props
 ---
 
 <article class:list={['project', ...(extraClasses || [])]}>
@@ -27,6 +30,15 @@ const { title, type, contractors, images, extraClasses } = Astro.props
     </div>
     <div class="project-content-type">
       <Type Element="p" type="caption">{type}</Type>
+    </div>
+    <div class="project-content-tech">
+      {
+        technologies && (
+          <Type Element="span" type="label">
+            {technologies}
+          </Type>
+        )
+      }
     </div>
     <div class="project-content-contractors">
       <ul>
@@ -52,7 +64,23 @@ const { title, type, contractors, images, extraClasses } = Astro.props
     </div>
   </div>
   <div class="project-media">
-    <Carousel slides={images} />
+    <Carousel>
+      {
+        slides.map((slide) => (
+          <figure>
+            <Image
+              src={slide.imageSrc}
+              loading="lazy"
+              alt={slide.caption || ''}
+              format="webp"
+            />
+            <Type Element="figcaption" type="label">
+              {slide.caption}
+            </Type>
+          </figure>
+        ))
+      }
+    </Carousel>
   </div>
 </article>
 
@@ -93,6 +121,9 @@ const { title, type, contractors, images, extraClasses } = Astro.props
           background-position: 50%;
         }
       }
+    }
+    &-tech {
+      margin: 0.2em 0 0;
     }
     &-text {
       margin: 0.6rem 0 0;

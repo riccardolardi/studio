@@ -1,42 +1,19 @@
 ---
-import { Image } from '@astrojs/image/components'
-import Type from '@/components/Type.astro'
 import Carousel from '@/components/Carousel.jsx'
 
-type Slide = {
-  imageSrc: string | Promise<any> | ImageMetadata
-  caption?: string
-}
-
 export interface Props {
-  slides: Slide[]
+  children: any
 }
-
-const { slides } = Astro.props
 ---
 
 <Carousel client:only>
-  {
-    slides.map((slide) => (
-      <figure>
-        <Image
-          src={slide.imageSrc}
-          loading="lazy"
-          alt={slide.caption || ''}
-          format="webp"
-        />
-        <Type Element="figcaption" type="label">
-          {slide.caption}
-        </Type>
-      </figure>
-    ))
-  }
+  <slot />
 </Carousel>
 
 <style lang="scss">
   @import '../assets/styles/_index.scss';
   :global(.carousel) {
-    img {
+    :global(img) {
       width: 100%;
       height: auto;
     }
