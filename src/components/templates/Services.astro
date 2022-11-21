@@ -102,6 +102,8 @@ import iconPerson from '@/assets/icons/person.svg'
     }
     article {
       > ul {
+        @extend %t-caption;
+        font-weight: unset;
         margin: 2rem 2rem 0;
         @include bp(1) {
           margin: 2rem 0 0;
