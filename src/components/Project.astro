@@ -88,7 +88,7 @@ const { title, type, contractors, technologies, slides, extraClasses } =
   @import '../assets/styles/_index.scss';
   .project {
     margin: 0 0 6rem;
-    @include bp(1) {
+    @include bp(4) {
       display: flex;
       gap: 4rem;
     }
@@ -112,6 +112,7 @@ const { title, type, contractors, technologies, slides, extraClasses } =
         display: flex;
         align-items: center;
         &::before {
+          flex-shrink: 0;
           content: '';
           width: 1em;
           height: 0.4em;
@@ -132,7 +133,9 @@ const { title, type, contractors, technologies, slides, extraClasses } =
   .project-media {
     margin: 1rem 0 0;
     @include bp(1) {
-      width: 40%;
+      width: clamp(35%, 60%, 35vh);
+    }
+    @include bp(4) {
       margin: 0;
     }
   }
