@@ -22,7 +22,10 @@ const { id, extraClasses } = Astro.props
     transition: opacity 255ms;
     &:not(#intro) {
       padding: 8rem 1.8rem 0;
-      @include bp(1) {
+      @include bp(2) {
+        padding: 8rem 4.6rem 2rem;
+      }
+      @include bp(3) {
         padding: 8rem 8rem 2rem;
       }
     }
