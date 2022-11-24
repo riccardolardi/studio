@@ -39,66 +39,68 @@ import Header from '@/components/Header.astro'
   pages.forEach((page) => observer.observe(page))
 </script>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<meta property="og:title" content="Web, Apps & interaktive Erlebnisse" />
-<meta
-  property="og:site_name"
-  content="Studio Riccardo Lardi - Web, Apps & interaktive Erlebnisse"
-/>
-<meta property="og:image" content="/og.jpg" />
-<meta
-  property="og:description"
-  content="Programmierung & Design von Websites, mobile Apps und interaktiven Erlebnissen. Intuitive Schnittstellen zwischen Mensch und Maschine."
-/>
-<meta
-  name="description"
-  content="Programmierung & Design von Websites, mobile Apps und interaktiven Erlebnissen. Intuitive Schnittstellen zwischen Mensch und Maschine."
-/>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link
-  rel="mask-icon"
-  type="image/svg+xml"
-  href="/favicon.svg"
-  color="#0035cc"
-/>
-<meta name="generator" content={Astro.generator} />
-<title>Studio Riccardo Lardi - Web, Apps & interaktive Erlebnisse</title>
-
 <html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content="Web, Apps & interaktive Erlebnisse" />
+    <meta
+      property="og:site_name"
+      content="Studio Riccardo Lardi - Web, Apps & interaktive Erlebnisse"
+    />
+    <meta property="og:image" content="/og.jpg" />
+    <meta
+      property="og:description"
+      content="Programmierung & Design von Websites, mobile Apps und interaktiven Erlebnissen. Intuitive Schnittstellen zwischen Mensch und Maschine."
+    />
+    <meta
+      name="description"
+      content="Programmierung & Design von Websites, mobile Apps und interaktiven Erlebnissen. Intuitive Schnittstellen zwischen Mensch und Maschine."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="mask-icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+      color="#0035cc"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Studio Riccardo Lardi - Web, Apps & interaktive Erlebnisse</title>
+  </head>
   <body>
     <Header />
     <main>
       <slot />
     </main>
-    <style lang="scss" is:global>
-      @import '../assets/styles/_index.scss';
-      html {
-        scroll-behavior: smooth;
-        text-rendering: optimizeLegibility;
-        text-size-adjust: 100%;
-        font-kerning: normal;
-        font-variant-ligatures: none;
-        -webkit-font-smoothing: antialiased;
-        @extend %t-root;
-      }
-      body {
-        color: $black;
-        &.is-intro {
-          // ...
-        }
-      }
-      main {
-        min-height: 100vh;
-        @extend %pageWidth;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      img {
-        display: block;
-      }
-    </style>
   </body>
 </html>
+
+<style lang="scss" is:global>
+  @import '../assets/styles/_index.scss';
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    font-kerning: normal;
+    font-variant-ligatures: none;
+    -webkit-font-smoothing: antialiased;
+    @extend %t-root;
+  }
+  body {
+    color: $black;
+    &.is-intro {
+      // ...
+    }
+  }
+  main {
+    min-height: 100vh;
+    @extend %pageWidth;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img {
+    display: block;
+  }
+</style>
