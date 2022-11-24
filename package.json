@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "studioriccardolardi",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrojs/preact": "^1.2.0",
-    "astro": "^1.4.7",
+    "astro": "^1.6.11",
     "preact": "^10.6.5"
   },
   "devDependencies": {
