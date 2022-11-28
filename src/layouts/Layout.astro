@@ -4,41 +4,6 @@ import '@/assets/styles/fonts.css'
 import Header from '@/components/Header.astro'
 ---
 
-<script>
-  const pages = document.querySelectorAll('.page')
-  const menuItems = document.querySelectorAll('header ul li')
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const el = entry.target as HTMLElement
-        const isActive = entry.intersectionRect.height >= window.innerHeight / 2
-        el.classList.toggle('is-active', isActive)
-        document.body.classList.toggle(
-          'is-intro',
-          !!el.querySelector('.intro') && isActive
-        )
-        menuItems.forEach((menuItem, index) => {
-          const activePageIndex = isActive && Array.from(pages).indexOf(el) - 1
-          if (activePageIndex !== false) {
-            menuItem.classList.toggle(
-              'is-active',
-              activePageIndex === index && isActive
-            )
-          }
-        })
-      })
-    },
-    {
-      threshold: (() => {
-        const length = 20
-        const result = new Array(length + 1).fill(0).map((num, i) => i / length)
-        return result
-      })(),
-    }
-  )
-  pages.forEach((page) => observer.observe(page))
-</script>
-
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
@@ -72,6 +37,44 @@ import Header from '@/components/Header.astro'
     <main>
       <slot />
     </main>
+    <script>
+      const pages = document.querySelectorAll('.page')
+      const menuItems = document.querySelectorAll('header ul li')
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const el = entry.target as HTMLElement
+            const isActive =
+              entry.intersectionRect.height >= window.innerHeight / 2
+            el.classList.toggle('is-active', isActive)
+            document.body.classList.toggle(
+              'is-intro',
+              !!el.querySelector('.intro') && isActive
+            )
+            menuItems.forEach((menuItem, index) => {
+              const activePageIndex =
+                isActive && Array.from(pages).indexOf(el) - 1
+              if (activePageIndex !== false) {
+                menuItem.classList.toggle(
+                  'is-active',
+                  activePageIndex === index && isActive
+                )
+              }
+            })
+          })
+        },
+        {
+          threshold: (() => {
+            const length = 20
+            const result = new Array(length + 1)
+              .fill(0)
+              .map((num, i) => i / length)
+            return result
+          })(),
+        }
+      )
+      pages.forEach((page) => observer.observe(page))
+    </script>
   </body>
 </html>
 
