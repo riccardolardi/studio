@@ -2,22 +2,14 @@
 import '@/assets/styles/reset.css'
 import '@/assets/styles/fonts.css'
 import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
 ---
 
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta property="og:title" content="Web, Apps & interaktive Erlebnisse" />
-    <meta
-      property="og:site_name"
-      content="Studio Riccardo Lardi - Web, Apps & interaktive Erlebnisse"
-    />
     <meta property="og:image" content="/og.jpg" />
-    <meta
-      property="og:description"
-      content="Programmierung & Design von Websites, mobile Apps und interaktiven Erlebnissen. Intuitive Schnittstellen zwischen Mensch und Maschine."
-    />
     <meta
       name="description"
       content="Programmierung & Design von Websites, mobile Apps und interaktiven Erlebnissen. Intuitive Schnittstellen zwischen Mensch und Maschine."
@@ -30,13 +22,14 @@ import Header from '@/components/Header.astro'
       color="#0035cc"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>Studio Riccardo Lardi - Web, Apps & interaktive Erlebnisse</title>
+    <title>Studio Riccardo Lardi - Web, Apps & interactive experiences</title>
   </head>
   <body>
     <Header />
     <main>
       <slot />
     </main>
+    <Footer />
     <script>
       const pages = document.querySelectorAll('.page')
       const menuItems = document.querySelectorAll('header ul li')
