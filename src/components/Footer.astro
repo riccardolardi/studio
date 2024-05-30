@@ -5,13 +5,13 @@ import Type from '@/components/Type.astro'
 <footer>
   <ul>
     <li>
-      <a href="mailto:hello@riccardolardi.com">
-        <Type Element="span" type="caption">hello@riccardolardi.com</Type>
+      <a href="tel:+41793396538">
+        <Type Element="span" type="caption">+41 (0)79 3396538</Type>
       </a>
     </li>
     <li>
-      <a href="tel:+41793396538">
-        <Type Element="span" type="caption">+41 (0)79 3396538</Type>
+      <a href="mailto:hello@riccardolardi.com">
+        <Type Element="span" type="caption">hello@riccardolardi.com</Type>
       </a>
     </li>
   </ul>
@@ -20,35 +20,22 @@ import Type from '@/components/Type.astro'
 <style lang="scss">
   @import '../assets/styles/_index.scss';
   footer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    column-gap: 5em;
     position: fixed;
     bottom: 0;
     width: 100%;
     padding: 1.8rem;
     background-color: rgba(255, 255, 255, 0.9);
-    pointer-events: none;
-    @include bp(3) {
-      padding: 2rem;
-      column-gap: 1em;
-      background-color: transparent;
-    }
     z-index: 1;
     ul {
       display: flex;
-      justify-content: flex-end;
       flex-wrap: wrap;
-      column-gap: 1em;
-      pointer-events: auto;
+      justify-content: space-between;
+      column-gap: 2em;
+      width: 100%;
       li {
         a {
           display: block;
           padding: 0.3em 0.2em;
-          @include bp(1) {
-            padding: 0;
-          }
           :global(span) {
             position: relative;
             &::after {
